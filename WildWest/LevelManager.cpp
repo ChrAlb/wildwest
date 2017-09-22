@@ -80,8 +80,30 @@ int** LevelManager::nextLevel(VertexArray& rVaLevel)
 			int verticalOffset = arrayLevel[y][x] * TILE_SIZE;
  
 			rVaLevel[currentVertex + 0].texCoords = Vector2f(0, 0 + verticalOffset);
-
+			rVaLevel[currentVertex + 1].texCoords = Vector2f(TILE_SIZE, 0 + verticalOffset);
+			rVaLevel[currentVertex + 2].texCoords = Vector2f(TILE_SIZE,TILE_SIZE + verticalOffset);
+			rVaLevel[currentVertex + 3].texCoords = Vector2f(0, TILE_SIZE + verticalOffset);
 		}
 	}
 	return arrayLevel;
+}
+
+Vector2i LevelManager::getLevelSize()
+{
+	return m_LevelSize;
+}
+
+int LevelManager::getCurrentLevel()
+{
+	return m_CurrentLevel;
+}
+
+float LevelManager::getTimeLimit()
+{
+	return 0;
+}
+
+Vector2f LevelManager::getStartPosition()
+{
+	return m_StartPosition;
 }
