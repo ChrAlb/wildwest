@@ -5,6 +5,7 @@
 #include <sstream>
 #include <fstream>
 #include "LevelManager.h"
+#include <iostream>
 
 using namespace sf;
 using namespace std;
@@ -15,8 +16,10 @@ int** LevelManager::nextLevel(VertexArray& rVaLevel)
 	m_LevelSize.y = 0;
 
 	m_CurrentLevel++;
+	
 	if (m_CurrentLevel > NUM_LEVELS)
 	{
+		cout << m_CurrentLevel;
 		// Hier etwas tun: Spielende oder zurück zu 1 mit Zeitlimite;
 	}
 
@@ -40,6 +43,7 @@ int** LevelManager::nextLevel(VertexArray& rVaLevel)
 	}
 	m_LevelSize.x = s.length();
 	
+	
 	inputFile.clear();
 	inputFile.seekg(0, ios::beg);
 
@@ -57,6 +61,7 @@ int** LevelManager::nextLevel(VertexArray& rVaLevel)
 		{
 			const char val = row[x];
 			arrayLevel[y][x] = atoi(&val);
+			
 		}
 		y++;
 	}
@@ -73,9 +78,9 @@ int** LevelManager::nextLevel(VertexArray& rVaLevel)
 		for (int y = 0; y < m_LevelSize.y; y++)
 		{
 			rVaLevel[currentVertex + 0].position = Vector2f(x*TILE_SIZE, y* TILE_SIZE);
-			rVaLevel[currentVertex + 1].position = Vector2f(x*TILE_SIZE, y* TILE_SIZE);
-			rVaLevel[currentVertex + 2].position = Vector2f(x*TILE_SIZE, y* TILE_SIZE);
-			rVaLevel[currentVertex + 3].position = Vector2f(x*TILE_SIZE, y* TILE_SIZE);
+			rVaLevel[currentVertex + 1].position = Vector2f(x*TILE_SIZE+TILE_SIZE, y* TILE_SIZE);
+			rVaLevel[currentVertex + 2].position = Vector2f(x*TILE_SIZE+TILE_SIZE, y* TILE_SIZE+TILE_SIZE);
+			rVaLevel[currentVertex + 3].position = Vector2f(x*TILE_SIZE, y* TILE_SIZE+TILE_SIZE);
 
 			int verticalOffset = arrayLevel[y][x] * TILE_SIZE;
  
@@ -83,6 +88,8 @@ int** LevelManager::nextLevel(VertexArray& rVaLevel)
 			rVaLevel[currentVertex + 1].texCoords = Vector2f(TILE_SIZE, 0 + verticalOffset);
 			rVaLevel[currentVertex + 2].texCoords = Vector2f(TILE_SIZE,TILE_SIZE + verticalOffset);
 			rVaLevel[currentVertex + 3].texCoords = Vector2f(0, TILE_SIZE + verticalOffset);
+
+			currentVertex = currentVertex + VERTS_IN_QUAD;
 		}
 	}
 	return arrayLevel;
@@ -107,3 +114,4 @@ Vector2f LevelManager::getStartPosition()
 {
 	return m_StartPosition;
 }
+

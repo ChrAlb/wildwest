@@ -5,9 +5,10 @@
 
 void Engine::update(float dtAsSeconds)
 {
-if (m_Playing)
+
+if (m_NewLevelRequiered)
 {
-	;
+	loadLevel();
 }
 }
 
