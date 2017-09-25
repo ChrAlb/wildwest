@@ -19,7 +19,7 @@ int** LevelManager::nextLevel(VertexArray& rVaLevel)
 	
 	if (m_CurrentLevel > NUM_LEVELS)
 	{
-		cout << m_CurrentLevel;
+		
 		// Hier etwas tun: Spielende oder zurück zu 1 mit Zeitlimite;
 	}
 
