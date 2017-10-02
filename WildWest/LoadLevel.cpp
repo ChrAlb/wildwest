@@ -13,6 +13,8 @@ void Engine::loadLevel()
 	delete[] m_ArrayLevel;
 
 	m_ArrayLevel = m_LM.nextLevel(m_VALevel);
+	
+	//m_player.spawn(m_LM.getStartPosition(), GRAVITY);
 
 	m_NewLevelRequiered = false;
 

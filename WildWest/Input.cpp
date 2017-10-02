@@ -21,4 +21,8 @@ void Engine::input()
 			}
 		}
 	}
+	if (m_player.handleInput())
+	{
+		;
+	}
 }

@@ -31,5 +31,19 @@ private:
 
 public:
 
+	void spawn(Vector2f startPosition, float gravity);
+	bool virtual handleInput() = 0;
 
+	FloatRect getPosition();
+
+	Sprite getSprite();
+
+	void stopFalling(float position);
+	void stopRight(float position);
+	void stopLeft(float position);
+	void stopJump();
+
+	Vector2f getCenter();
+
+	void update(float elapsedtime);
 };
