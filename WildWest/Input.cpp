@@ -14,15 +14,8 @@ void Engine::input()
 			{
 				m_Window.close();
 			}
-			if (Keyboard::isKeyPressed(Keyboard::Return))
-			{
-				// m_Playing =true;
-				;
-			}
+			
 		}
 	}
-	if (m_player.handleInput())
-	{
-		;
-	}
+	
 }

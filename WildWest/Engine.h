@@ -13,35 +13,26 @@ private:
 
 	Player m_player;
 
-	LevelManager m_LM;
-
 	const int TILE_SIZE = 50;
 	const int VERTS_IN_QUAD = 4;
 
-	const int GRAVITY = 300;
+	//const int GRAVITY = 300;
 
 	RenderWindow m_Window;
-
-	View m_MainView;
-	View m_BGMainView;
 
 	Sprite m_BackgroundSprite;
 	Texture m_BackgroundTexture;
 
-	bool m_Playing = false;
+	//bool m_Playing = false;
 
-	bool m_NewLevelRequiered = true;
-
-	VertexArray m_VALevel;
+	
+	//VertexArray m_VALevel;
 
 	int** m_ArrayLevel = NULL;
 
-	Texture m_TextureTiles;
+	//Texture m_TextureTiles;
 
-
-	Time m_GameTimeTotal;
-
-	void input();
+    void input();
 	void update(float dtAsSeconds);
 	void draw();
 

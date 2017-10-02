@@ -4,6 +4,7 @@
 void Engine::loadLevel()
 
 {
+/*$player
 	m_Playing = false;
 
 	for (int i = 0; i < m_LM.getLevelSize().y; ++i)
@@ -14,8 +15,8 @@ void Engine::loadLevel()
 
 	m_ArrayLevel = m_LM.nextLevel(m_VALevel);
 	
-	//m_player.spawn(m_LM.getStartPosition(), GRAVITY);
+	m_player.spawn(m_LM.getStartPosition(),GRAVITY);
 
 	m_NewLevelRequiered = false;
-
+*/
 }
