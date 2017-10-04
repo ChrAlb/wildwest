@@ -16,14 +16,15 @@ private:
 	const int TILE_SIZE = 50;
 	const int VERTS_IN_QUAD = 4;
 
-	//const int GRAVITY = 300;
+	const int GRAVITY = 300;
 
 	RenderWindow m_Window;
 
 	Sprite m_BackgroundSprite;
 	Texture m_BackgroundTexture;
 
-	//bool m_Playing = false;
+	bool m_newlevelrequiered = true;
+	bool m_Playing = false;
 
 	
 	//VertexArray m_VALevel;

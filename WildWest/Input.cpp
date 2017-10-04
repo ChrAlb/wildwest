@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "Engine.h"
+#include <iostream>
 
 void Engine::input()
 
@@ -14,8 +15,13 @@ void Engine::input()
 			{
 				m_Window.close();
 			}
+			if (Keyboard::isKeyPressed(Keyboard::Return))
+			{
+				m_Playing = true;
+			}
 			
 		}
+
 	}
-	
+	m_player.handleInput();
 }

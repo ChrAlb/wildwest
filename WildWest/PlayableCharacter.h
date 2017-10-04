@@ -32,7 +32,7 @@ private:
 public:
 
 	void spawn(Vector2f startPosition, float gravity);
-	bool virtual handleInput() = 0;
+	void virtual handleInput() = 0;
 
 	FloatRect getPosition();
 
@@ -44,6 +44,8 @@ public:
 	void stopJump();
 
 	Vector2f getCenter();
+
+	Vector2f  getm_Position();
 
 	void update(float elapsedtime);
 };

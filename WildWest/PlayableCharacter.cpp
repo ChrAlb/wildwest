@@ -1,5 +1,7 @@
 #include "stdafx.h"
 #include "PlayableCharacter.h"
+#include <iostream>
+
 
 void PlayableCharacter::spawn(Vector2f startPosition, float gravity)
 {
@@ -12,7 +14,7 @@ void PlayableCharacter::spawn(Vector2f startPosition, float gravity)
 }
 
 void PlayableCharacter::update(float elapsedTime)
-{
+{	
 	if (m_RightPressed)
 	{
 		m_Position.x += m_Speed * elapsedTime;
@@ -22,7 +24,7 @@ void PlayableCharacter::update(float elapsedTime)
 	{
 		m_Position.x -= m_Speed * elapsedTime;
 	}
-
+	
 	if (m_isJumping)
 	{
 		m_TimeThisJump += elapsedTime;
@@ -40,11 +42,11 @@ void PlayableCharacter::update(float elapsedTime)
 
 	if (m_isFalling)
 	{
-		m_Position.y += m_Gravity * elapsedTime;
+		//m_Position.y += m_Gravity * elapsedTime;
 	}
 
 	m_Sprite.setPosition(m_Position);
-
+	
 }
 
 FloatRect PlayableCharacter::getPosition()
@@ -87,3 +89,7 @@ void PlayableCharacter::stopJump()
 	m_isFalling = true;
 }
 
+Vector2f  PlayableCharacter::getm_Position()
+{
+	return  m_Position;
+}

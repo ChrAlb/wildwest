@@ -1,16 +1,21 @@
 #include "stdafx.h"
 #include "Player.h"
 #include "TextureHolder.h"
+#include <iostream>
+
+
 
 Player::Player()
 {
 	m_Sprite = Sprite(TextureHolder::GetTexture("graphics/player.png"));
 	m_JumpDuration = .45;
+	
 }
 
-bool Player::handleInput()
+void Player::handleInput()
 {
 	m_JustJumped = false;
+	
 
 	if (Keyboard::isKeyPressed(Keyboard::Up))
 	{
@@ -40,5 +45,6 @@ bool Player::handleInput()
 	{
 		m_RightPressed = false;
 	}
-	return m_JustJumped;
+	//return m_JustJumped;
+
 }
