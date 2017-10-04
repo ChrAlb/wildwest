@@ -15,6 +15,8 @@ void PlayableCharacter::spawn(Vector2f startPosition, float gravity)
 
 void PlayableCharacter::update(float elapsedTime)
 {	
+	//m_isFalling = false;  // Hier stimmt was nicht: is Falling wird vom Konstruktur auf true gesetzt?
+
 	if (m_RightPressed)
 	{
 		m_Position.x += m_Speed * elapsedTime;
@@ -42,7 +44,7 @@ void PlayableCharacter::update(float elapsedTime)
 
 	if (m_isFalling)
 	{
-		//m_Position.y += m_Gravity * elapsedTime;
+		m_Position.y += m_Gravity * elapsedTime;
 	}
 
 	m_Sprite.setPosition(m_Position);

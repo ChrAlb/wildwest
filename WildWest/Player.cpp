@@ -37,6 +37,7 @@ void Player::handleInput()
 	}
 	else
 		m_LeftPressed = false;
+
 	if (Keyboard::isKeyPressed(Keyboard::Right))
 	{
 		m_RightPressed = true;
