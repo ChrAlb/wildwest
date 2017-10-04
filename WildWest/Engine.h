@@ -13,10 +13,12 @@ private:
 
 	Player m_player;
 
+	LevelManager m_LM;
+
 	const int TILE_SIZE = 50;
 	const int VERTS_IN_QUAD = 4;
 
-	const int GRAVITY = 1; // Default 300
+	const int GRAVITY = 300;
 
 	RenderWindow m_Window;
 
@@ -27,11 +29,11 @@ private:
 	bool m_Playing = false;
 
 	
-	//VertexArray m_VALevel;
+	VertexArray m_VALevel;
 
 	int** m_ArrayLevel = NULL;
 
-	//Texture m_TextureTiles;
+	Texture m_TextureTiles;
 
     void input();
 	void update(float dtAsSeconds);

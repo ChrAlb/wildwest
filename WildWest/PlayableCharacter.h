@@ -29,6 +29,12 @@ private:
 
 	Texture m_Texture;
 
+	FloatRect m_Feet;
+	FloatRect m_Head;
+	FloatRect m_Right;
+	FloatRect m_Left;
+
+
 public:
 
 	void spawn(Vector2f startPosition, float gravity);
