@@ -12,7 +12,7 @@ Player::Player()
 	
 }
 
-void Player::handleInput()
+bool Player::handleInput()
 {
 	m_JustJumped = false;
 	
@@ -46,6 +46,6 @@ void Player::handleInput()
 	{
 		m_RightPressed = false;
 	}
-	//return m_JustJumped;
+	return m_JustJumped;
 
 }

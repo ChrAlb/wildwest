@@ -23,5 +23,9 @@ void Engine::input()
 		}
 
 	}
-	m_player.handleInput();
+	if (m_player.handleInput())
+	{
+            ;
+	}
+		
 }

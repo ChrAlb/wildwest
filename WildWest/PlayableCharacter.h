@@ -32,7 +32,7 @@ private:
 public:
 
 	void spawn(Vector2f startPosition, float gravity);
-	void virtual handleInput() = 0;
+	bool virtual handleInput() = 0;
 
 	FloatRect getPosition();
 

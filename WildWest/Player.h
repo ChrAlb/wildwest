@@ -6,5 +6,5 @@ class Player : public PlayableCharacter
 public:
 	Player::Player();
 	
-	void virtual handleInput();
+	bool virtual handleInput();
 };
