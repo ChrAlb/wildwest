@@ -41,6 +41,11 @@ public:
 	bool virtual handleInput() = 0;
 
 	FloatRect getPosition();
+	
+	FloatRect getFeet();
+	FloatRect getHead();
+	FloatRect getRight();
+	FloatRect getLeft();
 
 	Sprite getSprite();
 

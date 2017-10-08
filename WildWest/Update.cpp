@@ -19,6 +19,12 @@ void Engine::update(float dtAsSeconds)
 
 
 		m_player.update(dtAsSeconds);
+
+		
+		if (detectCollisions(m_player))
+		{
+			m_newlevelrequiered = true;
+		}
 		
 		m_player.spawn(m_player.getm_Position(), GRAVITY);
 	}

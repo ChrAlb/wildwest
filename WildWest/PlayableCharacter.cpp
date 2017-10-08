@@ -75,7 +75,8 @@ void PlayableCharacter::update(float elapsedTime)
 	m_Left.height = r.height * .3;
 
 
-	m_Sprite.setPosition(m_Position);
+	m_Sprite.setPosition(
+		m_Position);
 	
 }
 
@@ -122,4 +123,24 @@ void PlayableCharacter::stopJump()
 Vector2f  PlayableCharacter::getm_Position()
 {
 	return  m_Position;
+}
+
+FloatRect PlayableCharacter::getFeet()
+{
+	return m_Feet;
+}
+
+FloatRect PlayableCharacter::getHead()
+{
+	return m_Head;
+}
+
+FloatRect PlayableCharacter::getLeft()
+{
+	return m_Left;
+}
+
+FloatRect PlayableCharacter::getRight()
+{
+	return m_Right;
 }
