@@ -7,7 +7,7 @@
 
 Player::Player()
 {
-	m_Sprite = Sprite(TextureHolder::GetTexture("graphics/player.png"));
+	m_Sprite = Sprite(TextureHolder::GetTexture("graphics/Joe.png"));
 	m_JumpDuration = .45;
 	
 }

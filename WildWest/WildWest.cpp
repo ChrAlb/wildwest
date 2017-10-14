@@ -2,13 +2,13 @@
 //
 
 #include "stdafx.h"
-#include "Engine.h"
+#include "game.h"
 
 
 int main()
 {
-	Engine engine;
-	engine.run();
+	Game game;
+	game.gameLoop();
 	return 0;
 }
 

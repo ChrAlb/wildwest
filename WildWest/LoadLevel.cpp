@@ -1,7 +1,7 @@
 #include "stdafx.h"
-#include "Engine.h"
+#include "game.h"
 
-void Engine::loadLevel()
+void Game::loadLevel()
 
 {
 

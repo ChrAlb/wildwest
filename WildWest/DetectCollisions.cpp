@@ -1,8 +1,8 @@
 #include "stdafx.h"
-#include "Engine.h"
+#include "game.h"
 #include <iostream>
 
-bool Engine::detectCollisions(PlayableCharacter& character)
+bool Game::detectCollisions(PlayableCharacter& character)
 
 {
 	bool reachedGoal = false;
