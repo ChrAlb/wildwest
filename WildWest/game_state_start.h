@@ -2,11 +2,16 @@
 #include <SFML\Graphics.hpp>
 
 #include "Game_state.h"
+#include "TextureHolder.h"
 
 class GameStateStart : public GameState
 {
 private:
 	sf::View view;
+	TextureHolder th;
+
+	Sprite m_BackgroundSprite;
+	Texture m_BackgroundTexture;
 
 public:
 

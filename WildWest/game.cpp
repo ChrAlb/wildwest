@@ -1,3 +1,5 @@
+#include "stdafx.h"
+
 #include <stack>
 
 #include <SFML/Graphics.hpp>
@@ -34,7 +36,7 @@ void Game::changeState(GameState* state)
 GameState* Game::peekState()
 {
 	if (this->states.empty()) return nullptr;
-	return this - states.top;
+	return this->states.top();
 }
 
 void Game::gameLoop()

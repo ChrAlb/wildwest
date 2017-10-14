@@ -1,3 +1,5 @@
+#include "stdafx.h"
+
 #include <SFML\Graphics.hpp>
 
 #include "game_state_start.h"
@@ -6,10 +8,13 @@
 
 void GameStateStart::draw(const float dt)
 {
+	
+	
 	this->game->window.setView(this->view);
 
 	this->game->window.clear(sf::Color::White);
-	//this->game->window.draw(this->game ->m_BackgroundSprite);
+	m_BackgroundSprite.setTexture(m_BackgroundTexture);
+	this->game->window.draw(m_BackgroundSprite);
 
 	return;
 }
@@ -45,4 +50,15 @@ void GameStateStart::handleInput()
 		}
 	}
 	return;
+}
+
+GameStateStart::GameStateStart(Game* game)
+{
+	m_BackgroundTexture = TextureHolder::GetTexture("graphics/Title.png");
+	this->game = game;
+	sf::Vector2f pos = sf::Vector2f(this->game->window.getSize());
+	this->view.setSize(pos);
+	this->view.setCenter(pos);
+
+
 }
