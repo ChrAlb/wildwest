@@ -4,7 +4,7 @@
 
 #include "game_state_start.h"
 #include "Game_state.h"
-
+#include "Game_state_game.h"
 
 void GameStateStart::draw(const float dt)
 {
@@ -44,6 +44,7 @@ void GameStateStart::handleInput()
 		case sf::Event::KeyPressed:
 		{
 			if (event.key.code == sf::Keyboard::Escape) this->game->window.close();
+			else if (event.key.code == sf::Keyboard::Return) this->loadgame();
 			break;
 		}
 	defautl: break;
@@ -62,4 +63,9 @@ GameStateStart::GameStateStart(Game* game)
 	this->view.setCenter(pos);
 
 
+}
+
+void GameStateStart::loadgame()
+{
+	this->game->pushState(new GameStateGame(this->game)); 
 }

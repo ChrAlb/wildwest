@@ -8,6 +8,9 @@ class GameStateStart : public GameState
 {
 private:
 	sf::View view;
+
+	void loadgame();
+
 	TextureHolder th;
 
 	Sprite m_BackgroundSprite;
