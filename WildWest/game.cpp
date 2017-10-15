@@ -67,10 +67,8 @@ Game::Game()
 	this->window.create(sf::VideoMode(resolution.x, resolution.y), "Wild Wild West");
 	this->window.setFramerateLimit(60);
 
-	m_BackgroundTexture = TextureHolder::GetTexture("graphics/BG.png");
-	m_BackgroundSprite.setTexture(m_BackgroundTexture);
-
-	m_TextureTiles = TextureHolder::GetTexture("graphics/tiles_sheet.png");
+	
+	//m_TextureTiles = TextureHolder::GetTexture("graphics/tiles_sheet.png");
 
 
 }

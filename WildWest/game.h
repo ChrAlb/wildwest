@@ -3,7 +3,7 @@
 #include <stack>
 #include <SFML\Graphics.hpp>
 #include "TextureHolder.h"
-#include "Player.h"
+
 #include "LevelManager.h"
 
 class GameState;
@@ -13,8 +13,6 @@ class Game
 private:
 
 	TextureHolder th;
-
-	Player m_player;
 
 	LevelManager m_LM;
 
@@ -28,8 +26,8 @@ private:
 	Sprite m_BackgroundSprite;
 	Texture m_BackgroundTexture;
 
-	bool m_newlevelrequiered = true;
-	bool m_Playing = false;
+	//bool m_newlevelrequiered = true;
+	//bool m_Playing = false;
 
 
 	VertexArray m_VALevel;
@@ -38,9 +36,9 @@ private:
 
 	Texture m_TextureTiles;
 
-	void loadLevel();
+	//void loadLevel();
 
-	bool detectCollisions(PlayableCharacter& characters);
+	//bool detectCollisions(PlayableCharacter& characters);
 
 
 public:
