@@ -6,8 +6,10 @@
 
 void GameStateGame::draw(const float dt)
 {
+	m_BackgroundSprite.setTexture(m_BackgroundTexture);
+	
 	this->game->window.clear(sf::Color::White);
-	//this->game->window.draw(this->game->background);
+	this->game->window.draw(m_BackgroundSprite);
 
 	return;
 }
@@ -42,6 +44,7 @@ void GameStateGame::handleInput()
 
 GameStateGame::GameStateGame(Game* game)
 {
+	m_BackgroundTexture = TextureHolder::GetTexture("graphics/BG.png");
 	this->game = game;
 	sf::Vector2f pos = sf::Vector2f(this->game->window.getSize());
 	this->gameview.setSize(pos);

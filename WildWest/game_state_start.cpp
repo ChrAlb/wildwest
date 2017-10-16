@@ -67,5 +67,6 @@ GameStateStart::GameStateStart(Game* game)
 
 void GameStateStart::loadgame()
 {
+	//game->popState();
 	this->game->pushState(new GameStateGame(this->game)); 
 }
