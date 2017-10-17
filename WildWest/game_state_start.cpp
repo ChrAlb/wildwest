@@ -47,7 +47,7 @@ void GameStateStart::handleInput()
 			else if (event.key.code == sf::Keyboard::Return) this->loadgame();
 			break;
 		}
-	defautl: break;
+	default: break;
 		}
 	}
 	return;

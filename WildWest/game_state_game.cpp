@@ -10,12 +10,20 @@ void GameStateGame::draw(const float dt)
 	
 	this->game->window.clear(sf::Color::White);
 	this->game->window.draw(m_BackgroundSprite);
-
-	return;
+	this->game->window.draw(m_VALevel, &m_TextureTiles);
+	
+    return;
 }
 
 void GameStateGame::update(const float dt)
 {
+	if (m_newlevelrequiered)
+	{
+		//m_player.spawn(Vector2f(500, 500), GRAVITY);
+		//m_newlevelrequiered = false;
+		loadLevel();
+	}
+	
 	return;
 }
 
@@ -45,6 +53,7 @@ void GameStateGame::handleInput()
 GameStateGame::GameStateGame(Game* game)
 {
 	m_BackgroundTexture = TextureHolder::GetTexture("graphics/BG.png");
+	m_TextureTiles = TextureHolder::GetTexture("graphics/tiles_sheet.png");
 	this->game = game;
 	sf::Vector2f pos = sf::Vector2f(this->game->window.getSize());
 	this->gameview.setSize(pos);

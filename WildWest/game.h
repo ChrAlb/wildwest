@@ -12,29 +12,29 @@ class Game
 {
 private:
 
-	TextureHolder th;
+	//TextureHolder th;
 
-	LevelManager m_LM;
+	//LevelManager m_LM;
 
-	const int TILE_SIZE = 50;
-	const int VERTS_IN_QUAD = 4;
+	//const int TILE_SIZE = 50;
+	//const int VERTS_IN_QUAD = 4;
 
-	const int GRAVITY = 300;
+	//const int GRAVITY = 300;
 
 	
 
-	Sprite m_BackgroundSprite;
-	Texture m_BackgroundTexture;
+	//Sprite m_BackgroundSprite;
+	//Texture m_BackgroundTexture;
 
 	//bool m_newlevelrequiered = true;
 	//bool m_Playing = false;
 
 
-	VertexArray m_VALevel;
+	//VertexArray m_VALevel;
 
-	int** m_ArrayLevel = NULL;
+	//int** m_ArrayLevel = NULL;
 
-	Texture m_TextureTiles;
+	//Texture m_TextureTiles;
 
 	//void loadLevel();
 
