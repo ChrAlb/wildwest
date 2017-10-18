@@ -19,8 +19,8 @@ void GameStateGame::update(const float dt)
 {
 	if (m_newlevelrequiered)
 	{
-		//m_player.spawn(Vector2f(500, 500), GRAVITY);
-		//m_newlevelrequiered = false;
+		m_player.spawn(Vector2f(500, 500), GRAVITY);
+		m_newlevelrequiered = false;
 		loadLevel();
 	}
 	

@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "game.h"
 #include "Game_state_game.h"
+//#include "Player.h"
+//#include  "PlayableCharacter.h"
 
 void GameStateGame::loadLevel()
 
@@ -16,7 +18,7 @@ void GameStateGame::loadLevel()
 
 	m_ArrayLevel = m_LM.nextLevel(m_VALevel);
 	
-	//m_player.spawn(m_LM.getStartPosition(),GRAVITY);
+	m_player.spawn(m_LM.getStartPosition(),GRAVITY);
 
 	m_newlevelrequiered = false;
 
