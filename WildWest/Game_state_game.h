@@ -4,7 +4,8 @@
 
 #include "Game_state.h"
 #include "TextureHolder.h"
-#include "PlayableCharacter.h"
+//#include "PlayableCharacter.h"
+#include "Player.h"
 
 class GameStateGame : public GameState
 {
@@ -14,6 +15,8 @@ private:
     TextureHolder th;
 	Sprite m_BackgroundSprite;
 	Texture m_BackgroundTexture;
+
+	Player m_player;
 
 	LevelManager m_LM;
 

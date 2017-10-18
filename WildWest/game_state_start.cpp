@@ -50,6 +50,7 @@ void GameStateStart::handleInput()
 	default: break;
 		}
 	}
+	if (m_Player)
 	return;
 }
 
