@@ -23,6 +23,23 @@ void GameStateGame::update(const float dt)
 		m_newlevelrequiered = false;
 		loadLevel();
 	}
+
+	if (m_Playing)
+
+	{
+
+
+
+		m_player.update(dt);
+
+
+		if (detectCollisions(m_player))
+		{
+			m_newlevelrequiered = true;
+		}
+
+		m_player.spawn(m_player.getm_Position(), GRAVITY);
+	}
 	
 	return;
 }
