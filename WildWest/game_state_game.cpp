@@ -47,6 +47,13 @@ void GameStateGame::handleInput()
 		default: break;
 		}
 	}
+	
+	if (m_player.handleInput())
+	{
+		;
+	}
+
+
 	return;
 }
 
