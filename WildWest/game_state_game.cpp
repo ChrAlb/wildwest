@@ -11,6 +11,7 @@ void GameStateGame::draw(const float dt)
 	this->game->window.clear(sf::Color::White);
 	this->game->window.draw(m_BackgroundSprite);
 	this->game->window.draw(m_VALevel, &m_TextureTiles);
+	this->game->window.draw(m_player.getSprite());
 	
     return;
 }
