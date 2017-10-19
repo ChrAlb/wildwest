@@ -15,7 +15,7 @@ void PlayableCharacter::spawn(Vector2f startPosition, float gravity)
 
 void PlayableCharacter::update(float elapsedTime)
 {	
-	m_isFalling = false;  // Hier stimmt was nicht: is Falling wird vom Konstruktur auf true gesetzt?
+	//m_isFalling = false;  // Hier stimmt was nicht: is Falling wird vom Konstruktur auf true gesetzt?
 
 	if (m_RightPressed)
 	{

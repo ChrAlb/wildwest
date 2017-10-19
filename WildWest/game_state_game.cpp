@@ -49,6 +49,7 @@ void GameStateGame::handleInput()
 {
 	sf::Event event;
 
+
 	while (this->game->window.pollEvent(event))
 	{
 		switch (event.type)
@@ -62,16 +63,19 @@ void GameStateGame::handleInput()
 		{
 			;
 		}
+		
 		default: break;
 		}
+
 	}
 	
+	m_Playing = true;
+
 	if (m_player.handleInput())
 	{
 		;
 	}
-
-
+	
 	return;
 }
 
