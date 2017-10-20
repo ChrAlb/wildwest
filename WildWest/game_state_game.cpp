@@ -28,9 +28,6 @@ void GameStateGame::update(const float dt)
 	if (m_Playing)
 
 	{
-
-
-
 		m_player.update(dt);
 
 
