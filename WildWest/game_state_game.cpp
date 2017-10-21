@@ -3,6 +3,9 @@
 
 #include "Game_state.h"
 #include "Game_state_game.h"
+#include "game_state_start.h"
+#include <iostream>
+
 
 void GameStateGame::draw(const float dt)
 {
@@ -37,6 +40,11 @@ void GameStateGame::update(const float dt)
 		}
 
 		m_player.spawn(m_player.getm_Position(), GRAVITY);
+		this->gameview.setCenter(m_player.getCenter());
+		//cout << m_player.getCenter().x << "  ";
+		//cout << m_player.getCenter().y << "  ";
+
+
 	}
 	
 	return;
@@ -56,10 +64,7 @@ void GameStateGame::handleInput()
 			this->game->window.close();
 			break;
 		}
-		case sf::Event::Resized:
-		{
-			;
-		}
+		
 		
 		default: break;
 		}
@@ -81,8 +86,12 @@ GameStateGame::GameStateGame(Game* game)
 	m_BackgroundTexture = TextureHolder::GetTexture("graphics/BG.png");
 	m_TextureTiles = TextureHolder::GetTexture("graphics/tiles_sheet.png");
 	this->game = game;
-	sf::Vector2f pos = sf::Vector2f(this->game->window.getSize());
-	this->gameview.setSize(pos);
-	pos *= 0.5f;
-	this->gameview.setCenter(pos);
+	//sf::Vector2f pos = sf::Vector2f(this->game->window.getSize());
+	//this->gameview.setSize(pos);
+	//pos *= 0.5f; 
+	//cout << m_player.getCenter().x << "  ";
+	//cout << m_player.getCenter().y << "  ";
+	this->gameview.setCenter(m_player.getCenter());
+	
+
 }

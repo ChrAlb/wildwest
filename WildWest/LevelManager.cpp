@@ -29,7 +29,7 @@ int** LevelManager::nextLevel(VertexArray& rVaLevel)
 	case 1:
 		levelToLoad = "levels/level1.txt";
 		m_StartPosition.x = 100;
-		m_StartPosition.y = 100;
+		m_StartPosition.y = 900;
 		break;
 	
 
