@@ -42,8 +42,7 @@ void GameStateGame::update(const float dt)
 
 		m_player.spawn(m_player.getm_Position(), GRAVITY);
 		this->gameview.setCenter(m_player.getCenter());
-		//cout << m_player.getCenter().x << "  ";
-		//cout << m_player.getCenter().y << "  ";
+		
 
 
 	}
@@ -88,18 +87,10 @@ GameStateGame::GameStateGame(Game* game)
 	m_TextureTiles = TextureHolder::GetTexture("graphics/tiles_sheet.png");
 	this->game = game;
     
-	this->gameview.setSize(VideoMode::getDesktopMode().width,VideoMode::getDesktopMode().height);
-	this->gameview.setCenter(m_player.getCenter());
-	
-	//pos = m_player.getCenter(); 
-	//sf::Vector2f pos = sf::Vector2f(this->game->window.getSize());
-	
-	//this->gameview.setSize(pos);
-	//pos *= 0.5f; 
+	//this->gameview.setSize(sf::FloatRect(0, 0, VideoMode::getDesktopMode().width, VideoMode::getDesktopMode().height));
+	this->gameview.reset(sf::FloatRect(0, 0, VideoMode::getDesktopMode().width, VideoMode::getDesktopMode().height));
 	
 	
-	//this->gameview.setCenter(pos);
-	//cout << m_player.getCenter().x << "  ";
-	//cout << m_player.getCenter().y << "  ";
+	
 
 }
