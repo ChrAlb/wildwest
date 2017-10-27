@@ -11,6 +11,7 @@ class GameStateGame : public GameState
 {
 private:
 	sf::View gameview;
+	sf::View bgview;
 
     TextureHolder th;
 	Sprite m_BackgroundSprite;
@@ -28,8 +29,9 @@ private:
 	bool m_newlevelrequiered = true;
 	bool m_Playing = false;
 
-
 	VertexArray m_VALevel;
+
+	float oldpos;
 
 	int** m_ArrayLevel = NULL;
 

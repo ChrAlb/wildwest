@@ -24,12 +24,14 @@ int** LevelManager::nextLevel(VertexArray& rVaLevel)
 	}
 
 	string levelToLoad;
+	
 	switch (m_CurrentLevel)
 	{
 	case 1:
 		levelToLoad = "levels/level1.txt";
 		m_StartPosition.x = 100;
 		m_StartPosition.y = 900;
+		
 		break;
 	
 

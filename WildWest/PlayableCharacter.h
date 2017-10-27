@@ -34,6 +34,8 @@ private:
 	FloatRect m_Right;
 	FloatRect m_Left;
 
+	
+
 
 public:
 
@@ -54,9 +56,16 @@ public:
 	void stopLeft(float position);
 	void stopJump();
 
+	
 	Vector2f getCenter();
 
 	Vector2f  getm_Position();
 
+
 	void update(float elapsedtime);
+
+
+
 };
+
+

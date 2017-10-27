@@ -4,7 +4,7 @@
 class Player : public PlayableCharacter
 {
 public:
-	
+	float oldpos;
 	Player::Player();
 	
 	bool virtual handleInput();

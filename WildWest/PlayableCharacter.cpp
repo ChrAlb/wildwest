@@ -144,3 +144,4 @@ FloatRect PlayableCharacter::getRight()
 {
 	return m_Right;
 }
+

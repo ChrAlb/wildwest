@@ -9,11 +9,15 @@
 
 void GameStateGame::draw(const float dt)
 {
+
 	m_BackgroundSprite.setTexture(m_BackgroundTexture);
-	
+
 	this->game->window.clear(sf::Color::White);
+
+	this->game->window.setView(bgview);
+    this->game->window.draw(m_BackgroundSprite);
+	
 	this->game->window.setView(gameview);
-	this->game->window.draw(m_BackgroundSprite);
 	this->game->window.draw(m_VALevel, &m_TextureTiles);
 	this->game->window.draw(m_player.getSprite());
 	
@@ -22,9 +26,11 @@ void GameStateGame::draw(const float dt)
 
 void GameStateGame::update(const float dt)
 {
+	float newpos,move;
+
 	if (m_newlevelrequiered)
 	{
-		m_player.spawn(Vector2f(500, 500), GRAVITY);
+		oldpos = 150;
 		m_newlevelrequiered = false;
 		loadLevel();
 	}
@@ -41,10 +47,25 @@ void GameStateGame::update(const float dt)
 		}
 
 		m_player.spawn(m_player.getm_Position(), GRAVITY);
-		this->gameview.setCenter(m_player.getCenter());
+	    
 		
+		newpos = m_player.getCenter().x;
 
+		
+		
+		if ((oldpos == newpos) || (newpos < (VideoMode::getDesktopMode().width/2)))
+		{
+			move = 0;
 
+		}
+		else
+		{
+			move = newpos-oldpos;
+		}
+		oldpos = newpos;
+
+		this->gameview.move(move,0);
+		
 	}
 	
 	return;
@@ -86,10 +107,11 @@ GameStateGame::GameStateGame(Game* game)
 	m_BackgroundTexture = TextureHolder::GetTexture("graphics/BG.png");
 	m_TextureTiles = TextureHolder::GetTexture("graphics/tiles_sheet.png");
 	this->game = game;
-    
-	//this->gameview.setSize(sf::FloatRect(0, 0, VideoMode::getDesktopMode().width, VideoMode::getDesktopMode().height));
-	this->gameview.reset(sf::FloatRect(0, 0, VideoMode::getDesktopMode().width, VideoMode::getDesktopMode().height));
 	
+	this->bgview.reset(sf::FloatRect(0, 0, VideoMode::getDesktopMode().width, VideoMode::getDesktopMode().height));
+	this->gameview.reset(sf::FloatRect(0,0,VideoMode::getDesktopMode().width, VideoMode::getDesktopMode().height));
+	
+	 	
 	
 	
 
