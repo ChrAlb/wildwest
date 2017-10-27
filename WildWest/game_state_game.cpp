@@ -30,6 +30,7 @@ void GameStateGame::update(const float dt)
 
 	if (m_newlevelrequiered)
 	{
+		oldpos = m_player.getCenter().x;
 		oldpos = 150;
 		m_newlevelrequiered = false;
 		loadLevel();
@@ -53,7 +54,7 @@ void GameStateGame::update(const float dt)
 
 		
 		
-		if ((oldpos == newpos) || (newpos < (VideoMode::getDesktopMode().width/2)))
+		if ((oldpos == newpos) || (newpos < (VideoMode::getDesktopMode().width/2))  || (newpos> 1800))
 		{
 			move = 0;
 
