@@ -12,6 +12,8 @@ using namespace std;
 
 int** LevelManager::nextLevel(VertexArray& rVaLevel)
 {
+	LevelManager lm;
+
 	m_LevelSize.x = 0;
 	m_LevelSize.y = 0;
 
@@ -44,7 +46,9 @@ int** LevelManager::nextLevel(VertexArray& rVaLevel)
 		++m_LevelSize.y;
 	}
 	m_LevelSize.x = s.length();
+	VArraySize = s.length();
 	
+
 	
 	inputFile.clear();
 	inputFile.seekg(0, ios::beg);

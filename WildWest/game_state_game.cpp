@@ -5,6 +5,7 @@
 #include "Game_state_game.h"
 #include "game_state_start.h"
 #include <iostream>
+#include "LevelManager.h"
 
 
 void GameStateGame::draw(const float dt)
@@ -27,7 +28,8 @@ void GameStateGame::draw(const float dt)
 void GameStateGame::update(const float dt)
 {
 	float newpos,move;
-
+	LevelManager lm;
+	
 	if (m_newlevelrequiered)
 	{
 		oldpos = m_player.getCenter().x;
@@ -53,8 +55,7 @@ void GameStateGame::update(const float dt)
 		newpos = m_player.getCenter().x;
 
 		
-		
-		if ((oldpos == newpos) || (newpos < (VideoMode::getDesktopMode().width/2))  || (newpos> 1800))
+		if ((oldpos == newpos) || (newpos < (VideoMode::getDesktopMode().width/2))  || (newpos> (m_VALevel.getBounds().width - (VideoMode::getDesktopMode().width / 2))))
 		{
 			move = 0;
 
