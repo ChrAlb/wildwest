@@ -49,11 +49,12 @@ void GameStateGame::update(const float dt)
 			m_newlevelrequiered = true;
 		}
 
-		m_player.spawn(m_player.getm_Position(), GRAVITY);
+		//m_player.spawn(m_player.getm_Position(), GRAVITY);
 	    
 		
 		newpos = m_player.getCenter().x;
-
+		cout << newpos << "   ";
+		cout << oldpos << "                   ";
 		
 		if ((oldpos == newpos) || (newpos < (VideoMode::getDesktopMode().width/2))  || (newpos> (m_VALevel.getBounds().width - (VideoMode::getDesktopMode().width / 2))))
 		{
