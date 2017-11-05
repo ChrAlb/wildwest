@@ -34,7 +34,6 @@ private:
 	FloatRect m_Right;
 	FloatRect m_Left;
 
-	
 
 
 public:

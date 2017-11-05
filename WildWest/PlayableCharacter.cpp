@@ -17,7 +17,7 @@ void PlayableCharacter::update(float elapsedTime)
 {	
 	//m_isFalling = false;  // Hier stimmt was nicht: is Falling wird vom Konstruktur auf true gesetzt?
 
-	if (m_RightPressed)
+	if  (m_RightPressed) 
 	{
 		m_Position.x += m_Speed * elapsedTime;
 	}
@@ -104,13 +104,13 @@ void PlayableCharacter::stopFalling(float position)
 
 void PlayableCharacter::stopRight(float position)
 {
-	m_Position.x = position -  m_Sprite.getGlobalBounds().width;
-	//m_Sprite.setPosition(m_Position);
+	m_Position.x = position -  (m_Sprite.getGlobalBounds().width/2);
+	
 }
 
 void PlayableCharacter::stopLeft(float position)
 {
-	m_Position.x = position + m_Sprite.getGlobalBounds().width;
+	m_Position.x = position + (m_Sprite.getGlobalBounds().width / 2);
 	//m_Sprite.setPosition(m_Position);
 }
 
