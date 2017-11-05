@@ -59,9 +59,6 @@ public:
 	
 	Vector2f getCenter();
 
-	Vector2f  getm_Position();
-
-
 	void update(float elapsedtime);
 
 

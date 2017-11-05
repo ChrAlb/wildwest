@@ -98,20 +98,20 @@ Sprite PlayableCharacter::getSprite()
 void PlayableCharacter::stopFalling(float position)
 {
 	m_Position.y = position - getPosition().height;
-	m_Sprite.setPosition(m_Position);
+	//m_Sprite.setPosition(m_Position);
 	m_isFalling = false;
 }
 
 void PlayableCharacter::stopRight(float position)
 {
 	m_Position.x = position -  m_Sprite.getGlobalBounds().width;
-	m_Sprite.setPosition(m_Position);
+	//m_Sprite.setPosition(m_Position);
 }
 
 void PlayableCharacter::stopLeft(float position)
 {
 	m_Position.x = position + m_Sprite.getGlobalBounds().width;
-	m_Sprite.setPosition(m_Position);
+	//m_Sprite.setPosition(m_Position);
 }
 
 void PlayableCharacter::stopJump()
@@ -120,10 +120,6 @@ void PlayableCharacter::stopJump()
 	m_isFalling = true;
 }
 
-Vector2f  PlayableCharacter::getm_Position()
-{
-	return  m_Position;
-}
 
 FloatRect PlayableCharacter::getFeet()
 {
