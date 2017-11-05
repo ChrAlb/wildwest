@@ -31,6 +31,7 @@ bool GameStateGame::detectCollisions(PlayableCharacter& character)
 	if (!character.getPosition().intersects(level))
 	{
 		character.spawn(m_LM.getStartPosition(), GRAVITY);
+		this->gameview.reset(sf::FloatRect(0, 0, VideoMode::getDesktopMode().width, VideoMode::getDesktopMode().height));
 	}
 	
 
