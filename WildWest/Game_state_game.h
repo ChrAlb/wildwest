@@ -10,6 +10,9 @@
 class GameStateGame : public GameState
 {
 private:
+
+    bool debug = true;
+
 	sf::View gameview;
 	sf::View bgview;
 
@@ -42,6 +45,7 @@ private:
 	bool detectCollisions(PlayableCharacter& characters);
 
 
+	sf::RectangleShape  box;
 
 public:
 

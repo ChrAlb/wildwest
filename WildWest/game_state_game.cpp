@@ -21,6 +21,10 @@ void GameStateGame::draw(const float dt)
 	this->game->window.setView(gameview);
 	this->game->window.draw(m_VALevel, &m_TextureTiles);
 	this->game->window.draw(m_player.getSprite());
+
+    // DEBUG
+	this->game->window.draw(box);
+	// DEBUNG End
 	
     return;
 }
@@ -43,6 +47,19 @@ void GameStateGame::update(const float dt)
 	{
 		m_player.update(dt);
 
+        // DEBUG
+		if (debug)
+		{
+			box.setSize(sf::Vector2f(m_player.getHead().width, m_player.getHead().height));
+			box.setOutlineColor(sf::Color::Red);
+			box.setOutlineThickness(5);
+			box.setPosition(m_player.getHead().left, m_player.getHead().top);
+		}
+		// DEBUG End
+
+
+
+		m_player.getHead().top;
 
 		if (detectCollisions(m_player))
 		{

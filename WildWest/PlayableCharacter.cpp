@@ -73,10 +73,8 @@ void PlayableCharacter::update(float elapsedTime)
 	m_Left.top = r.top + r.height *.5;
 	m_Left.width = 1;
 	m_Left.height = r.height * .3;
-
-
-	m_Sprite.setPosition(
-		m_Position);
+	
+	m_Sprite.setPosition(m_Position);
 	
 }
 

@@ -16,6 +16,8 @@ private:
 
 public:
 	
+	
+
 	std::stack<GameState*> states;
 
 	RenderWindow window;
