@@ -23,9 +23,15 @@ void GameStateGame::draw(const float dt)
 	this->game->window.draw(m_player.getSprite());
 
     // DEBUG
-	this->game->window.draw(box);
-	// DEBUNG End
-	
+	if (debug)
+	{
+		this->game->window.draw(head_box);
+		this->game->window.draw(right_box);
+		this->game->window.draw(left_box);
+		this->game->window.draw(feet_box);
+		// DEBUNG End
+	}
+
     return;
 }
 
@@ -50,10 +56,26 @@ void GameStateGame::update(const float dt)
         // DEBUG
 		if (debug)
 		{
-			box.setSize(sf::Vector2f(m_player.getHead().width, m_player.getHead().height));
-			box.setOutlineColor(sf::Color::Red);
-			box.setOutlineThickness(5);
-			box.setPosition(m_player.getHead().left, m_player.getHead().top);
+			head_box.setSize(sf::Vector2f(m_player.getHead().width, m_player.getHead().height));
+			head_box.setOutlineColor(sf::Color::Red);
+			head_box.setOutlineThickness(5);
+			head_box.setPosition(m_player.getHead().left, m_player.getHead().top);
+
+			right_box.setSize(sf::Vector2f(m_player.getRight().width, m_player.getRight().height));
+			right_box.setOutlineColor(sf::Color::Green);
+			right_box.setOutlineThickness(5);
+			right_box.setPosition(m_player.getRight().left, m_player.getRight().top);
+
+			left_box.setSize(sf::Vector2f(m_player.getLeft().width, m_player.getLeft().height));
+			left_box.setOutlineColor(sf::Color::Blue);
+			left_box.setOutlineThickness(5);
+			left_box.setPosition(m_player.getLeft().left,m_player.getLeft().top);
+
+			feet_box.setSize(sf::Vector2f(m_player.getFeet().width, m_player.getFeet().height));
+			feet_box.setOutlineColor(sf::Color::Magenta);
+			feet_box.setOutlineThickness(5);
+			feet_box.setPosition(m_player.getFeet().left, m_player.getFeet().top);
+
 		}
 		// DEBUG End
 
