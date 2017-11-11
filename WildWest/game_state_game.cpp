@@ -30,7 +30,8 @@ void GameStateGame::draw(const float dt)
 		this->game->window.draw(left_box);
 		this->game->window.draw(feet_box);
 		this->game->window.draw(box);
-		//this->game->window.draw(box_position);
+		
+		this->game->window.draw(box_position);
 		// DEBUNG End
 	}
 

@@ -12,9 +12,10 @@ bool GameStateGame::detectCollisions(PlayableCharacter& character)
 	
 	if (debug)
 	{
-    box_position.setSize(sf::Vector2f(detecionZone.left, detecionZone.top));
+    box_position.setSize(sf::Vector2f(TILE_SIZE*2, TILE_SIZE*2));
 	box_position.setOutlineColor(sf::Color::Black);
 	box_position.setOutlineThickness(5);
+	box_position.setFillColor(sf::Color(255, 255, 255, 128));
 	box_position.setPosition(detecionZone.left,detecionZone.top);
 	}
 	
@@ -25,7 +26,7 @@ bool GameStateGame::detectCollisions(PlayableCharacter& character)
 	block.height = TILE_SIZE;
 
 	int startX = (int)(detecionZone.left / TILE_SIZE - 1);
-	int startY = (int)(detecionZone.top / TILE_SIZE - 1);
+	int startY = (int)(detecionZone.top / TILE_SIZE -1);
 	int endX = (int)(detecionZone.left / TILE_SIZE + 2);
 	int endY = (int)(detecionZone.top / TILE_SIZE + 3);
 
@@ -59,9 +60,10 @@ bool GameStateGame::detectCollisions(PlayableCharacter& character)
 			//********** DEBUG
 			if (debug)
 			{
-            box.setSize(sf::Vector2f(block.left,block.top));
+            box.setSize(sf::Vector2f((endX-startX)*TILE_SIZE,(endY-startY)*TILE_SIZE));
 			box.setOutlineColor(sf::Color::White);
-			box.setOutlineThickness(1);
+			box.setOutlineThickness(5);
+			box_position.setFillColor(sf::Color(255, 255, 255, 128));
 			box.setPosition(block.left,block.top);
 			}
 			//**************
