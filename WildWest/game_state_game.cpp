@@ -12,6 +12,8 @@ void GameStateGame::draw(const float dt)
 {
 
 	m_BackgroundSprite.setTexture(m_BackgroundTexture);
+	m_Tree_Sprite.setTexture(m_Tree);
+	m_Tree_Sprite.setPosition(Vector2f(1000, 700));
 
 	this->game->window.clear(sf::Color::White);
 
@@ -19,6 +21,9 @@ void GameStateGame::draw(const float dt)
     this->game->window.draw(m_BackgroundSprite);
 	
 	this->game->window.setView(gameview);
+
+	this->game->window.draw(m_Tree_Sprite);
+
 	this->game->window.draw(m_VALevel, &m_TextureTiles);
 	this->game->window.draw(m_player.getSprite());
 
@@ -146,7 +151,11 @@ void GameStateGame::handleInput()
 GameStateGame::GameStateGame(Game* game)
 {
 	m_BackgroundTexture = TextureHolder::GetTexture("graphics/BG.png");
+	
 	m_TextureTiles = TextureHolder::GetTexture("graphics/tiles_sheet.png");
+
+	m_Tree = TextureHolder::GetTexture("graphics/Tree.png");
+	
 	this->game = game;
 	
 	this->bgview.reset(sf::FloatRect(0, 0, VideoMode::getDesktopMode().width, VideoMode::getDesktopMode().height));

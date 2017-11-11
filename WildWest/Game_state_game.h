@@ -12,7 +12,7 @@ class GameStateGame : public GameState
 private:
 
 	//******************
-    bool debug = true;
+	bool debug = false;
 	//******************
 
 	sf::View gameview;
@@ -21,6 +21,9 @@ private:
     TextureHolder th;
 	Sprite m_BackgroundSprite;
 	Texture m_BackgroundTexture;
+	
+	Texture m_Tree;
+	Sprite m_Tree_Sprite;
 
 	Player m_player;
 
