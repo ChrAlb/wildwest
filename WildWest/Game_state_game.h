@@ -51,6 +51,8 @@ private:
 	sf::RectangleShape  feet_box;
 	sf::RectangleShape  left_box;
 	sf::RectangleShape  right_box;
+	sf::RectangleShape  box;
+	sf::RectangleShape  box_position;
 
 public:
 

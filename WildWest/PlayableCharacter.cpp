@@ -70,7 +70,7 @@ void PlayableCharacter::update(float elapsedTime)
 
 	// Left
 	m_Left.left = r.left;
-	m_Left.top = r.top + r.height *.5;
+	m_Left.top = r.top + r.height * .35;
 	m_Left.width = 1;
 	m_Left.height = r.height * .3;
 	
@@ -103,7 +103,7 @@ void PlayableCharacter::stopFalling(float position)
 void PlayableCharacter::stopRight(float position)
 {
 	m_Position.x = position -  (m_Sprite.getGlobalBounds().width/2);
-	
+	//m_Sprite.setPosition(m_Position);
 }
 
 void PlayableCharacter::stopLeft(float position)
