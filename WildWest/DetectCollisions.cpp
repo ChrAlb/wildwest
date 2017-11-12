@@ -91,7 +91,7 @@ bool GameStateGame::detectCollisions(PlayableCharacter& character)
 
 			}
 
-			if (m_ArrayLevel[y][x] == 1)
+			if (m_ArrayLevel[y][x] == 2)
 			{
 				reachedGoal = true;
 			}
