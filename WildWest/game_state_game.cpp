@@ -4,6 +4,7 @@
 #include "Game_state.h"
 #include "Game_state_game.h"
 #include "game_state_start.h"
+#include "game_state_end.h"
 #include <iostream>
 #include "LevelManager.h"
 
@@ -48,6 +49,9 @@ void GameStateGame::update(const float dt)
 	float newpos,move;
 	LevelManager lm;
 	
+	
+		//this->game->pushState(new GameStateEnd(this->game));
+
 	if (m_newlevelrequiered)
 	{
 		oldpos = m_player.getCenter().x;
@@ -88,12 +92,12 @@ void GameStateGame::update(const float dt)
 		// DEBUG End
 
 
-
 		m_player.getHead().top;
 
 		if (detectCollisions(m_player))
 		{
 			m_newlevelrequiered = true;
+			this->game->pushState(new GameStateEnd(this->game));
 		}
 		
 		newpos = m_player.getCenter().x;

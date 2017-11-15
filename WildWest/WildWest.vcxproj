@@ -153,6 +153,7 @@
   <ItemGroup>
     <ClInclude Include="game.h" />
     <ClInclude Include="Game_state.h" />
+    <ClInclude Include="game_state_end.h" />
     <ClInclude Include="Game_state_game.h" />
     <ClInclude Include="game_state_start.h" />
     <ClInclude Include="LevelManager.h" />
@@ -165,6 +166,7 @@
   <ItemGroup>
     <ClCompile Include="DetectCollisions.cpp" />
     <ClCompile Include="game.cpp" />
+    <ClCompile Include="game_state_end.cpp" />
     <ClCompile Include="game_state_game.cpp" />
     <ClCompile Include="game_state_start.cpp" />
     <ClCompile Include="LevelManager.cpp" />

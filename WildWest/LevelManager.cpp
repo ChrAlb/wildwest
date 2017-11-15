@@ -5,6 +5,7 @@
 #include <sstream>
 #include <fstream>
 #include "LevelManager.h"
+
 #include <iostream>
 
 using namespace sf;
@@ -21,8 +22,7 @@ int** LevelManager::nextLevel(VertexArray& rVaLevel)
 	
 	if (m_CurrentLevel > NUM_LEVELS)
 	{
-		
-		// Hier etwas tun: Spielende oder zurück zu 1 mit Zeitlimite;
+		; //
 	}
 
 	string levelToLoad;
