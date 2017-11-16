@@ -13,7 +13,9 @@ private:
 	float m_TimeModifier = 1;
 	int VArraySize;
 	int m_CurrentLevel = 0;
-	const int NUM_LEVELS = 4;
+	const int NUM_LEVELS = 2;
+	bool m_allLevel = false;
+
 
 public:
 
@@ -25,6 +27,9 @@ public:
 	int** nextLevel(VertexArray& rVaLevel);
 	Vector2i getLevelSize();
 	int getCurrentLevel();
+	bool get_allLeveldone();
+	void set_allLeveldone(bool allLeveldone);
+	
 };
 
 

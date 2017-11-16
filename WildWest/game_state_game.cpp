@@ -47,15 +47,18 @@ void GameStateGame::draw(const float dt)
 void GameStateGame::update(const float dt)
 {
 	float newpos,move;
-	LevelManager lm;
+	//LevelManager lm;
 	
-	
-		//this->game->pushState(new GameStateEnd(this->game));
+	if (m_LM.get_allLeveldone())
+	{
+     this->game->pushState(new GameStateEnd(this->game));
+	}
+		
 
 	if (m_newlevelrequiered)
 	{
 		oldpos = m_player.getCenter().x;
-		oldpos = 150;
+		//oldpos = 150;
 		m_newlevelrequiered = false;
 		loadLevel();
 	}
@@ -97,7 +100,8 @@ void GameStateGame::update(const float dt)
 		if (detectCollisions(m_player))
 		{
 			m_newlevelrequiered = true;
-			this->game->pushState(new GameStateEnd(this->game));
+			this->gameview.reset(sf::FloatRect(0, 0, VideoMode::getDesktopMode().width, VideoMode::getDesktopMode().height));
+			//this->game->pushState(new GameStateEnd(this->game));
 		}
 		
 		newpos = m_player.getCenter().x;

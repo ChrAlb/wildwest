@@ -22,7 +22,7 @@ int** LevelManager::nextLevel(VertexArray& rVaLevel)
 	
 	if (m_CurrentLevel > NUM_LEVELS)
 	{
-		; //
+	LevelManager::set_allLeveldone(true);
 	}
 
 	string levelToLoad;
@@ -36,6 +36,12 @@ int** LevelManager::nextLevel(VertexArray& rVaLevel)
 		
 		break;
 	
+	case 2:
+		levelToLoad = "levels/level2.txt";
+		m_StartPosition.x = 300;
+		m_StartPosition.y = 300;
+
+		break;
 
 	}
 	ifstream inputFile(levelToLoad);
@@ -121,3 +127,12 @@ Vector2f LevelManager::getStartPosition()
 	return m_StartPosition;
 }
 
+bool LevelManager::get_allLeveldone()
+{
+	return m_allLevel;
+}
+
+void LevelManager::set_allLeveldone(bool allLeveldone)
+{
+	m_allLevel = allLeveldone;
+}
