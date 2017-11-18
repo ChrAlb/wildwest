@@ -17,7 +17,7 @@ bool Player::handleInput()
 	m_JustJumped = false;
 	
 
-	if (Keyboard::isKeyPressed(Keyboard::Up))
+	if (Keyboard::isKeyPressed(Keyboard::Space))
 	{
 		if (!m_isJumping && !m_isFalling)
 		{

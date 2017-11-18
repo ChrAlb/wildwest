@@ -5,6 +5,15 @@
 using namespace sf;
 using namespace std;
 
+struct leveldate
+{
+	string BGFileName;
+	string TilSetName;
+	string LevelName;
+
+};
+
+
 class LevelManager
 {
 private:
@@ -16,7 +25,8 @@ private:
 	const int NUM_LEVELS = 2;
 	bool m_allLevel = false;
 	
-
+	leveldate m_leveldata;
+	
 
 public:
 

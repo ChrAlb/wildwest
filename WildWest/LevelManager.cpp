@@ -30,18 +30,24 @@ int** LevelManager::nextLevel(VertexArray& rVaLevel)
 	switch (m_CurrentLevel)
 	{
 	case 1:
-		levelToLoad = "levels/level1.txt";
-		
-		m_StartPosition.x = 100;
+		m_leveldata.LevelName = "levels/level1.txt";
+		m_leveldata.BGFileName = "graphics/tiles_sheet.png";
+		m_leveldata.TilSetName = "graphics/Tree.png";
+			
+		levelToLoad = m_leveldata.LevelName;
+        m_StartPosition.x = 100;
 		m_StartPosition.y = 850;
 		
 		break;
 	
 	case 2:
-		levelToLoad = "levels/level2.txt";
-		
-		m_StartPosition.x = 300;
-		m_StartPosition.y = 300;
+		m_leveldata.LevelName = "levels/level2.txt";
+		m_leveldata.BGFileName = "graphics/tiles_sheet.png";
+		m_leveldata.TilSetName = "graphics/Tree.png";
+
+		levelToLoad = m_leveldata.LevelName;
+		m_StartPosition.x = 250;
+		m_StartPosition.y = 850;
 
 		break;
 
