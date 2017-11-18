@@ -17,8 +17,13 @@ void GameStateGame::loadLevel()
 	delete[] m_ArrayLevel;
 
 	m_ArrayLevel = m_LM.nextLevel(m_VALevel);
-	
-	m_player.spawn(m_LM.getStartPosition(),GRAVITY);
+	m_player.spawn(m_LM.getStartPosition(),GRAVITY);m_BackgroundTexture = TextureHolder::GetTexture("graphics/BG.png");
+	m_TextureTiles = TextureHolder::GetTexture("graphics/tiles_sheet.png");
+	m_Tree = TextureHolder::GetTexture("graphics/Tree.png");
+
+	this->bgview.reset(sf::FloatRect(0, 0, VideoMode::getDesktopMode().width, VideoMode::getDesktopMode().height));
+	this->gameview.reset(sf::FloatRect(0, 0, VideoMode::getDesktopMode().width, VideoMode::getDesktopMode().height));
+
 
 	m_newlevelrequiered = false;
 

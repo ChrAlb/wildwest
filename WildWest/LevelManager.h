@@ -15,6 +15,7 @@ private:
 	int m_CurrentLevel = 0;
 	const int NUM_LEVELS = 2;
 	bool m_allLevel = false;
+	
 
 
 public:

@@ -31,6 +31,7 @@ int** LevelManager::nextLevel(VertexArray& rVaLevel)
 	{
 	case 1:
 		levelToLoad = "levels/level1.txt";
+		
 		m_StartPosition.x = 100;
 		m_StartPosition.y = 850;
 		
@@ -38,6 +39,7 @@ int** LevelManager::nextLevel(VertexArray& rVaLevel)
 	
 	case 2:
 		levelToLoad = "levels/level2.txt";
+		
 		m_StartPosition.x = 300;
 		m_StartPosition.y = 300;
 
@@ -136,3 +138,4 @@ void LevelManager::set_allLeveldone(bool allLeveldone)
 {
 	m_allLevel = allLeveldone;
 }
+

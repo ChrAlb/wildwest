@@ -158,19 +158,7 @@ void GameStateGame::handleInput()
 
 GameStateGame::GameStateGame(Game* game)
 {
-	m_BackgroundTexture = TextureHolder::GetTexture("graphics/BG.png");
-	
-	m_TextureTiles = TextureHolder::GetTexture("graphics/tiles_sheet.png");
-
-	m_Tree = TextureHolder::GetTexture("graphics/Tree.png");
 	
 	this->game = game;
 	
-	this->bgview.reset(sf::FloatRect(0, 0, VideoMode::getDesktopMode().width, VideoMode::getDesktopMode().height));
-	this->gameview.reset(sf::FloatRect(0,0,VideoMode::getDesktopMode().width, VideoMode::getDesktopMode().height));
-	
-	 	
-	
-	
-
 }
