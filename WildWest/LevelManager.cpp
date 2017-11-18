@@ -5,15 +5,15 @@
 #include <sstream>
 #include <fstream>
 #include "LevelManager.h"
-
 #include <iostream>
+
 
 using namespace sf;
 using namespace std;
 
-int** LevelManager::nextLevel(VertexArray& rVaLevel)
+int** LevelManager::nextLevel(VertexArray& rVaLevel, leveldate& m_leveldaten)
 {
-	LevelManager lm;
+	
 
 	m_LevelSize.x = 0;
 	m_LevelSize.y = 0;
@@ -31,8 +31,8 @@ int** LevelManager::nextLevel(VertexArray& rVaLevel)
 	{
 	case 1:
 		m_leveldata.LevelName = "levels/level1.txt";
-		m_leveldata.BGFileName = "graphics/tiles_sheet.png";
-		m_leveldata.TilSetName = "graphics/Tree.png";
+		m_leveldata.BGFileName = "graphics/bg.png";
+		m_leveldata.TilSetName = "graphics/tiles_sheet.png";
 			
 		levelToLoad = m_leveldata.LevelName;
         m_StartPosition.x = 100;
@@ -42,16 +42,19 @@ int** LevelManager::nextLevel(VertexArray& rVaLevel)
 	
 	case 2:
 		m_leveldata.LevelName = "levels/level2.txt";
-		m_leveldata.BGFileName = "graphics/tiles_sheet.png";
-		m_leveldata.TilSetName = "graphics/Tree.png";
+		m_leveldata.BGFileName = "graphics/bg2.png";
+		m_leveldata.TilSetName = "graphics/tiles_sheet.png";
 
 		levelToLoad = m_leveldata.LevelName;
 		m_StartPosition.x = 250;
 		m_StartPosition.y = 850;
-
+		
 		break;
-
+		
 	}
+
+	m_leveldaten = m_leveldata;
+
 	ifstream inputFile(levelToLoad);
 	string s;
 

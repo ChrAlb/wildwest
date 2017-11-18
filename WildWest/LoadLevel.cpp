@@ -1,14 +1,16 @@
 #include "stdafx.h"
 #include "game.h"
 #include "Game_state_game.h"
+#include <iostream>
+
 //#include "Player.h"
 //#include  "PlayableCharacter.h"
 
 void GameStateGame::loadLevel()
 
 {
-
 	m_Playing = false;
+	leveldate leveldata;
 
 	for (int i = 0; i < m_LM.getLevelSize().y; ++i)
 	{
@@ -16,9 +18,12 @@ void GameStateGame::loadLevel()
 	}
 	delete[] m_ArrayLevel;
 
-	m_ArrayLevel = m_LM.nextLevel(m_VALevel);
-	m_player.spawn(m_LM.getStartPosition(),GRAVITY);m_BackgroundTexture = TextureHolder::GetTexture("graphics/BG.png");
-	m_TextureTiles = TextureHolder::GetTexture("graphics/tiles_sheet.png");
+	
+
+	m_ArrayLevel = m_LM.nextLevel(m_VALevel, leveldata);
+	
+	m_player.spawn(m_LM.getStartPosition(),GRAVITY);m_BackgroundTexture = TextureHolder::GetTexture(leveldata.BGFileName);
+	m_TextureTiles = TextureHolder::GetTexture(leveldata.TilSetName);
 	m_Tree = TextureHolder::GetTexture("graphics/Tree.png");
 
 	this->bgview.reset(sf::FloatRect(0, 0, VideoMode::getDesktopMode().width, VideoMode::getDesktopMode().height));
