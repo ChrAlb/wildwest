@@ -1,5 +1,16 @@
-// WildWest.cpp : Defines the entry point for the console application.
-//
+/*
+
+WildWest ist ein Plattformer Game, programmiert mit Visual Studio 2115, c++ und SFML
+
+Autor: Christian Albrecht
+Projektstart: Oktober 2017
+
+Github:  https://github.com/ChrAlb/wildwest
+
+*/
+
+// WildWest.cpp : Definiert den Entry Point für die Console Applikation
+
 
 #include "stdafx.h"
 #include "game.h"

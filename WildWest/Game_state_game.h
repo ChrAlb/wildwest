@@ -12,6 +12,7 @@ class GameStateGame : public GameState
 private:
 
 	//******************
+	// falls debug= true; Kollisionsboxen werden angezeigt
 	bool debug = false;
 	//******************
 

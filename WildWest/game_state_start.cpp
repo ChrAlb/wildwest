@@ -1,5 +1,11 @@
-#include "stdafx.h"
+/*
 
+Status für den Spielstart: gmae_state_start
+
+*/
+
+
+#include "stdafx.h"
 #include <SFML\Graphics.hpp>
 
 #include "game_state_start.h"
@@ -43,7 +49,9 @@ void GameStateStart::handleInput()
 		}
 		case sf::Event::KeyPressed:
 		{
+			// Falls Esc-Taste => Spielabbruch;
 			if (event.key.code == sf::Keyboard::Escape) this->game->window.close();
+			// Falls Enter-Taste => Starte Lade Spiel (Game- Status , game-state-game)
 			else if (event.key.code == sf::Keyboard::Return) this->loadgame();
 			break;
 		}
@@ -56,7 +64,9 @@ void GameStateStart::handleInput()
 
 GameStateStart::GameStateStart(Game* game)
 {
+	// Grafikstartbild: Title.png wird geladen
 	m_BackgroundTexture = TextureHolder::GetTexture("graphics/Title.png");
+
 	this->game = game;
 	sf::Vector2f pos = sf::Vector2f(this->game->window.getSize());
 	this->view.setSize(pos);
