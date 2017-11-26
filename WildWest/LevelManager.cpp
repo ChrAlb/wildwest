@@ -78,6 +78,27 @@ int** LevelManager::nextLevel(VertexArray& rVaLevel, leveldate& m_leveldaten)
 
 	string row;
 	int y = 0;
+	std::string delimiter = ",";
+	
+
+	while (inputFile >> row)
+	{
+		int x = 0;
+		std::string token;
+		size_t pos = 0;
+			
+			while ((pos = row.find(delimiter)) != std::string::npos)
+			{
+				token = row.substr(0, pos);
+				arrayLevel[y][x] = std::stoi(token);
+				row.erase(0, pos + delimiter.length());
+				x++;
+			}
+		
+		y++;
+	}
+	
+	/*
 	while (inputFile >> row)
 	{
 		for (int x = 0; x < row.length(); x++)
@@ -88,6 +109,8 @@ int** LevelManager::nextLevel(VertexArray& rVaLevel, leveldate& m_leveldaten)
 		}
 		y++;
 	}
+	*/
+
 
 	inputFile.close();
 
