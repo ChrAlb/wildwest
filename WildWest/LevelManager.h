@@ -10,6 +10,7 @@ struct leveldate
 	string BGFileName;
 	string TilSetName;
 	string LevelName;
+	int MaxInt;
 
 };
 
@@ -20,7 +21,6 @@ private:
 	Vector2i m_LevelSize;
 	Vector2f m_StartPosition;
 	float m_TimeModifier = 1;
-	int VArraySize;
 	int m_CurrentLevel = 0;
 	const int NUM_LEVELS = 2;
 	bool m_allLevel = false;
