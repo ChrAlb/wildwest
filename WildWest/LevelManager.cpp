@@ -62,6 +62,7 @@ int** LevelManager::nextLevel(VertexArray& rVaLevel, leveldate& m_leveldaten)
 	{
 		++m_LevelSize.y;
 	}
+	// Levelsize muss hier 
 	m_LevelSize.x = s.length();
 	VArraySize = s.length();
 	
@@ -98,19 +99,7 @@ int** LevelManager::nextLevel(VertexArray& rVaLevel, leveldate& m_leveldaten)
 		y++;
 	}
 	
-	/*
-	while (inputFile >> row)
-	{
-		for (int x = 0; x < row.length(); x++)
-		{
-			const char val = row[x];
-			arrayLevel[y][x] = atoi(&val);
-			
-		}
-		y++;
-	}
-	*/
-
+	
 
 	inputFile.close();
 
