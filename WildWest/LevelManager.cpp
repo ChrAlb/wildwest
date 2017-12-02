@@ -38,7 +38,7 @@ int** LevelManager::nextLevel(VertexArray& rVaLevel, leveldate& m_leveldaten)
         m_StartPosition.x = 100;
 		m_StartPosition.y = 850;
 		// Korrektur Kommas aus level.txt
-		m_leveldata.MaxInt = 109;
+		m_leveldata.MaxInt = 45;
 		
 		break;
 	
@@ -50,7 +50,7 @@ int** LevelManager::nextLevel(VertexArray& rVaLevel, leveldate& m_leveldaten)
 		levelToLoad = m_leveldata.LevelName;
 		m_StartPosition.x = 250;
 		m_StartPosition.y = 850;
-		m_leveldata.MaxInt = 46;
+		m_leveldata.MaxInt = 45;
 		
 		break;
 		
@@ -66,7 +66,7 @@ int** LevelManager::nextLevel(VertexArray& rVaLevel, leveldate& m_leveldaten)
 		++m_LevelSize.y;
 	}
 	
-	m_LevelSize.x = s.length() - m_leveldata.MaxInt;
+	m_LevelSize.x = m_leveldata.MaxInt;
 	
 	inputFile.clear();
 	inputFile.seekg(0, ios::beg);

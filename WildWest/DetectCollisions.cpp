@@ -70,8 +70,7 @@ bool GameStateGame::detectCollisions(PlayableCharacter& character)
 
 			
 		
-			if (m_ArrayLevel[y][x] == 0)
-			{
+			if ( (m_ArrayLevel[y][x] == 0) || (m_ArrayLevel[y][x]== 9) )			{
 				if (character.getRight().intersects(block))
 				{
 					character.stopRight(block.left);
@@ -90,6 +89,8 @@ bool GameStateGame::detectCollisions(PlayableCharacter& character)
 				}
 
 			}
+
+
 
 			if (m_ArrayLevel[y][x] == 2)
 			{
