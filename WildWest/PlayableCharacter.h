@@ -19,6 +19,7 @@ protected:
 	float m_TimeThisJump;
 
 	bool m_JustJumped;
+	unsigned int m_id;
 
 private:
 
@@ -34,10 +35,11 @@ private:
 	FloatRect m_Right;
 	FloatRect m_Left;
 
-
+	
 
 public:
 
+	PlayableCharacter();
 	void spawn(Vector2f startPosition, float gravity);
 	bool virtual handleInput() = 0;
 

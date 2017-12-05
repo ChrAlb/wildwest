@@ -2,6 +2,10 @@
 #include "PlayableCharacter.h"
 #include <iostream>
 
+PlayableCharacter::PlayableCharacter() : m_id(0)
+{
+	
+}
 
 void PlayableCharacter::spawn(Vector2f startPosition, float gravity)
 {
