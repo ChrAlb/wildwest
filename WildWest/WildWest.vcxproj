@@ -151,6 +151,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="EntityManager.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="Game_state.h" />
     <ClInclude Include="game_state_end.h" />

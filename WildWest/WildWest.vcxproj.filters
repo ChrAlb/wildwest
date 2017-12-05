@@ -51,6 +51,9 @@
     <ClInclude Include="game_state_end.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="EntityManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
