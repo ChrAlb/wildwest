@@ -9,11 +9,12 @@ using EntityContainer = std::unordered_map <unsigned int, PlayableCharacter*>;
 class EntityManager 
 
 {
+	
 public:
 	EntityManager();
 	~EntityManager();
 
-	int Add(const EntityType& l_type);
+	int Add(PlayableCharacter& object);
 	void Remove(unsigned int l_id);
 	PlayableCharacter* Find(unsigned int l_id);
 

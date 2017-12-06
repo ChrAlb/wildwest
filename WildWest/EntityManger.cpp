@@ -1,5 +1,6 @@
 #include "EntityManager.h"
-
+#include "PlayableCharacter.h"
+#include "stdafx.h"
 
 
 EntityManager::EntityManager()
@@ -12,12 +13,12 @@ EntityManager::~EntityManager()
 	Purge();
 }
 
-int EntityManager::Add(const EntityType& l_type)
+int EntityManager::Add(PlayableCharacter& object)
 
 {
 	
-	PlayableCharacter* entity;
-	entity->m_id
+	m_entities.emplace(3,object);
+	//entity->m_id 
 
 }
 

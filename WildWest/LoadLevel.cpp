@@ -2,6 +2,7 @@
 #include "game.h"
 #include "Game_state_game.h"
 #include <iostream>
+#include "EntityManager.h"
 
 //#include "Player.h"
 //#include  "PlayableCharacter.h"
@@ -9,6 +10,7 @@
 void GameStateGame::loadLevel()
 
 {
+	
 	m_Playing = false;
 	leveldate leveldata;
 
@@ -23,6 +25,8 @@ void GameStateGame::loadLevel()
 	m_ArrayLevel = m_LM.nextLevel(m_VALevel, leveldata);
 	
 	m_player.spawn(m_LM.getStartPosition(),GRAVITY);m_BackgroundTexture = TextureHolder::GetTexture(leveldata.BGFileName);
+	
+
 	m_TextureTiles = TextureHolder::GetTexture(leveldata.TilSetName);
 	m_Tree = TextureHolder::GetTexture("graphics/Tree.png");
 

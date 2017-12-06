@@ -4,7 +4,35 @@
 using namespace sf;
 
 class PlayableCharacter
+	
 {
+	friend class EntityManager;
+
+public:
+
+	PlayableCharacter();
+	void spawn(Vector2f startPosition, float gravity);
+	bool virtual handleInput() = 0;
+
+	FloatRect getPosition();
+
+	FloatRect getFeet();
+	FloatRect getHead();
+	FloatRect getRight();
+	FloatRect getLeft();
+
+	Sprite getSprite();
+
+	void stopFalling(float position);
+	void stopRight(float position);
+	void stopLeft(float position);
+	void stopJump();
+
+
+	Vector2f getCenter();
+
+	void update(float elapsedtime);
+
 protected:
 	Sprite m_Sprite;
 
@@ -36,32 +64,6 @@ private:
 	FloatRect m_Left;
 
 	
-
-public:
-
-	PlayableCharacter();
-	void spawn(Vector2f startPosition, float gravity);
-	bool virtual handleInput() = 0;
-
-	FloatRect getPosition();
-	
-	FloatRect getFeet();
-	FloatRect getHead();
-	FloatRect getRight();
-	FloatRect getLeft();
-
-	Sprite getSprite();
-
-	void stopFalling(float position);
-	void stopRight(float position);
-	void stopLeft(float position);
-	void stopJump();
-
-	
-	Vector2f getCenter();
-
-	void update(float elapsedtime);
-
 
 
 };

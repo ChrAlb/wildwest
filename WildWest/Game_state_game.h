@@ -27,7 +27,7 @@ private:
 	Sprite m_Tree_Sprite;
 
 	Player m_player;
-
+	
 	LevelManager m_LM;
 
 	const int TILE_SIZE = 50;
