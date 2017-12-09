@@ -24,8 +24,10 @@ void GameStateGame::loadLevel()
 
 	m_ArrayLevel = m_LM.nextLevel(m_VALevel, leveldata);
 	
-	m_player.spawn(m_LM.getStartPosition(),GRAVITY);m_BackgroundTexture = TextureHolder::GetTexture(leveldata.BGFileName);
+	player = new Player();
+    player->spawn(m_LM.getStartPosition(), GRAVITY); m_BackgroundTexture = TextureHolder::GetTexture(leveldata.BGFileName);
 	
+	objects.push_back(player);
 
 	m_TextureTiles = TextureHolder::GetTexture(leveldata.TilSetName);
 	m_Tree = TextureHolder::GetTexture("graphics/Tree.png");

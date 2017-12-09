@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML\Graphics.hpp>
+#include <list>
 
 #include "Game_state.h"
 #include "TextureHolder.h"
@@ -26,7 +27,7 @@ private:
 	Texture m_Tree;
 	Sprite m_Tree_Sprite;
 
-	Player m_player;
+	//Player m_player;
 	
 	LevelManager m_LM;
 
@@ -57,6 +58,12 @@ private:
 	sf::RectangleShape  right_box;
 	sf::RectangleShape  box;
 	sf::RectangleShape  box_position;
+
+	std::list<PlayableCharacter*> objects;
+	std::list<PlayableCharacter*>::iterator iter;
+	std::list <PlayableCharacter* >::iterator iter2;
+
+	Player *player;
 
 public:
 
