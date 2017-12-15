@@ -26,7 +26,7 @@ void GameStateGame::loadLevel()
 	
 	player = new Player();
     player->spawn(m_LM.getStartPosition(), GRAVITY); m_BackgroundTexture = TextureHolder::GetTexture(leveldata.BGFileName);
-	
+	otype = t_Player;
 	objects.push_back(player);
 
 	m_TextureTiles = TextureHolder::GetTexture(leveldata.TilSetName);

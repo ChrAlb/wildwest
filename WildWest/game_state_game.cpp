@@ -182,3 +182,15 @@ GameStateGame::GameStateGame(Game* game)
 	
 	
 }
+
+void GameStateGame::cleanup()
+{
+	for (iter = objects.begin(); iter != objects.end(); )
+	{
+		(*iter)->();
+		delete (*iter);
+		iter = objects.erase(iter);
+	}
+
+
+}
