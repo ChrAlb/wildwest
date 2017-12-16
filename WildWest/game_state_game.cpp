@@ -58,7 +58,8 @@ void GameStateGame::update(const float dt)
 	
 	if (m_LM.get_allLeveldone())
 	{
-     this->game->pushState(new GameStateEnd(this->game));
+		
+		this->game->pushState(new GameStateEnd(this->game));
 	}
 		
 
@@ -183,14 +184,3 @@ GameStateGame::GameStateGame(Game* game)
 	
 }
 
-void GameStateGame::cleanup()
-{
-	for (iter = objects.begin(); iter != objects.end(); )
-	{
-		(*iter)->();
-		delete (*iter);
-		iter = objects.erase(iter);
-	}
-
-
-}

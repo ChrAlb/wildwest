@@ -74,7 +74,6 @@ public:
 	virtual void update(const float dt);
 	virtual void handleInput();
 
-	void cleanup();
-
+	
 	GameStateGame(Game* game);
 };
