@@ -8,4 +8,5 @@ public:
 	Player::Player();
 	
 	bool virtual handleInput();
+	void update(float dt);
 };

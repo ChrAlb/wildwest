@@ -15,12 +15,17 @@ Enemy::Enemy() : m_hasDestination(false)
 
 bool Enemy::handleInput(float dt) 
 {
-	PlayableCharacter::update(dt);
+	//PlayableCharacter::update(dt);
 	
 	if (m_hasDestination)
 	{
 		//if (abs(m_destination.x - m_Po))  Hier weiter bauen.....
 	}
 	return true;
+
+}
+
+void Enemy::update(float dt)
+{
 
 }

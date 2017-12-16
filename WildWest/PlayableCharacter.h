@@ -13,6 +13,7 @@ public:
 	PlayableCharacter();
 	void spawn(Vector2f startPosition, float gravity);
 	bool virtual handleInput() = 0;
+	void virtual update(float dt) = 0;
 
 	FloatRect getPosition();
 
@@ -31,7 +32,7 @@ public:
 
 	Vector2f getCenter();
 
-	void update(float elapsedtime);
+	//void update(float elapsedtime);
 
 protected:
 	Sprite m_Sprite;
@@ -50,8 +51,6 @@ protected:
 	bool m_JustJumped;
 	unsigned int m_id;
 
-private:
-
 	float m_Gravity;
 	float m_Speed = 400;
 
@@ -64,7 +63,6 @@ private:
 	FloatRect m_Right;
 	FloatRect m_Left;
 
-	
 
 
 };
