@@ -5,7 +5,7 @@ class Enemy : public PlayableCharacter
 {
 public:
 	Enemy();
-	bool virtual handleInput();
+	bool virtual handleInput(float dt);
 
 private:
 	sf::Vector2f m_destination;

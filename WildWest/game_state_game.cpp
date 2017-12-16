@@ -110,6 +110,8 @@ void GameStateGame::update(const float dt)
 
 				(*iter)->getHead().top;
 
+				// newpos  ALLLES IN PLAYER kLASSE
+
 				if (detectCollisions(*(*iter)))
 				{
 					m_newlevelrequiered = true;
