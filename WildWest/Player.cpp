@@ -3,9 +3,6 @@
 #include "TextureHolder.h"
 #include <iostream>
 
-
-
-
 Player::Player()
 {
 	
@@ -18,6 +15,7 @@ Player::Player()
 bool Player::handleInput()
 {
 	m_JustJumped = false;
+	
 	
 
 	if (Keyboard::isKeyPressed(Keyboard::Space))
@@ -56,6 +54,8 @@ bool Player::handleInput()
 void Player::update(float elapsedTime)
 {
 	//m_isFalling = false;  // Hier stimmt was nicht: is Falling wird vom Konstruktur auf true gesetzt?
+	
+
 
 	if (m_RightPressed)
 	{
@@ -116,4 +116,5 @@ void Player::update(float elapsedTime)
 
 	m_Sprite.setPosition(m_Position);
 
+	
 }

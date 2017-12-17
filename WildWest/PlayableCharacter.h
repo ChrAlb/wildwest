@@ -3,10 +3,12 @@
 
 using namespace sf;
 
+enum object_types { t_Player, t_Enemy, t_Others };
+
 class PlayableCharacter
 	
 {
-	friend class EntityManager;
+	//friend class EntityManager;
 
 public:
 
@@ -29,10 +31,11 @@ public:
 	void stopLeft(float position);
 	void stopJump();
 
+	void set_objecttype(object_types otype);
+	object_types get_objecttype();
 
 	Vector2f getCenter();
 
-	//void update(float elapsedtime);
 
 protected:
 	Sprite m_Sprite;
@@ -62,6 +65,8 @@ protected:
 	FloatRect m_Head;
 	FloatRect m_Right;
 	FloatRect m_Left;
+
+	object_types m_otype;
 
 
 

@@ -5,10 +5,9 @@
 
 #include "Game_state.h"
 #include "TextureHolder.h"
-//#include "PlayableCharacter.h"
 #include "Player.h"
 
-enum object_types { t_Player, t_Enemy, t_Others };
+
 
 class GameStateGame : public GameState
 {
@@ -66,9 +65,11 @@ private:
 	std::list <PlayableCharacter* >::iterator iter2;
 
 	Player *player;
-	object_types otype;
+	
 
 public:
+
+	
 
 	virtual void draw(const float dt);
 	virtual void update(const float dt);

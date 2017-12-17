@@ -2,7 +2,7 @@
 #include "game.h"
 #include "Game_state_game.h"
 #include <iostream>
-#include "EntityManager.h"
+//#include "EntityManager.h"
 
 //#include "Player.h"
 //#include  "PlayableCharacter.h"
@@ -26,7 +26,7 @@ void GameStateGame::loadLevel()
 	
 	player = new Player();
     player->spawn(m_LM.getStartPosition(), GRAVITY); m_BackgroundTexture = TextureHolder::GetTexture(leveldata.BGFileName);
-	otype = t_Player;
+	player->set_objecttype(t_Player);
 	objects.push_back(player);
 
 	m_TextureTiles = TextureHolder::GetTexture(leveldata.TilSetName);

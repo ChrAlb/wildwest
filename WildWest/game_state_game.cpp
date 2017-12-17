@@ -119,21 +119,26 @@ void GameStateGame::update(const float dt)
 					//this->game->pushState(new GameStateEnd(this->game));
 				}
 
-				newpos = (*iter)->getCenter().x;
-
-
-				if ((oldpos == newpos) || (newpos < (VideoMode::getDesktopMode().width / 2)) || (newpos>(m_VALevel.getBounds().width - (VideoMode::getDesktopMode().width / 2))))
+				object_types tt = (*iter)->get_objecttype();
+				if ( tt == t_Player)
 				{
-					move = 0;
 
-				}
-				else
-				{
-					move = newpos - oldpos;
-				}
-				oldpos = newpos;
+					newpos = (*iter)->getCenter().x;
 
-				this->gameview.move(move, 0);
+
+					if ((oldpos == newpos) || (newpos < (VideoMode::getDesktopMode().width / 2)) || (newpos > (m_VALevel.getBounds().width - (VideoMode::getDesktopMode().width / 2))))
+					{
+						move = 0;
+
+					}
+					else
+					{
+						move = newpos - oldpos;
+					}
+					oldpos = newpos;
+
+					this->gameview.move(move, 0);
+				}
 
 			}
 
@@ -150,6 +155,7 @@ void GameStateGame::handleInput()
 	while (this->game->window.pollEvent(event))
 	{
 		switch (event.type)
+
 		{
 		case sf::Event::Closed:
 		{
