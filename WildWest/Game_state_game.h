@@ -6,6 +6,7 @@
 #include "Game_state.h"
 #include "TextureHolder.h"
 #include "Player.h"
+#include "Enemy.h"
 
 
 
@@ -15,7 +16,7 @@ private:
 
 	//******************
 	// falls debug= true; Kollisionsboxen werden angezeigt
-	bool debug = false;
+	bool debug = true;
 	//******************
 
 	sf::View gameview;
@@ -65,6 +66,7 @@ private:
 	std::list <PlayableCharacter* >::iterator iter2;
 
 	Player *player;
+	Enemy *enemy;
 	
 
 public:

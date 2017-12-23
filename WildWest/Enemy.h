@@ -5,7 +5,7 @@ class Enemy : public PlayableCharacter
 {
 public:
 	Enemy();
-	bool virtual handleInput(float dt);
+	bool virtual handleInput();
 	void update(float dt);
 
 private:

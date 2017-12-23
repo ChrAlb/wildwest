@@ -39,7 +39,7 @@ public:
 
 protected:
 	Sprite m_Sprite;
-	Sprite m_Enemy;
+	
 
 	float m_JumpDuration;
 
