@@ -66,7 +66,7 @@ bool GameStateGame::detectCollisions(PlayableCharacter& character)
 			//box.setOutlineColor(sf::Color::Blue);
 			//box.setOutlineThickness(5);
 			box.setFillColor(sf::Color(255, 0, 255, 50));
-			box.setPosition(block.left - (endX-startX)/2*TILE_SIZE ,(block.top - (endY - startY)/2*TILE_SIZE));
+			box.setPosition(block.left-((endX-startX)*TILE_SIZE) +  TILE_SIZE    ,   block.top -((endY-startY)*TILE_SIZE) + TILE_SIZE     );
 			
 			}
 			//**************
