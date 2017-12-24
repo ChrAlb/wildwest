@@ -16,6 +16,7 @@ Enemy::Enemy() : m_hasDestination(false)
 bool Enemy::handleInput() 
 {
 	m_JustJumped = false;
+	m_isFalling = true;
 	return m_JustJumped;
 
 }
@@ -49,7 +50,7 @@ void Enemy::update(float dt)
 		m_hasDestination = true;
 	 
 	}  */
-	m_Position.x += (m_Speed/25) * dt;
+	m_Position.x += (m_Speed/10) * dt;
 	if (m_isFalling)
 	{
 		m_Position.y += m_Gravity * dt;
