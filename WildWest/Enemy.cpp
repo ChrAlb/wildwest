@@ -23,8 +23,7 @@ bool Enemy::handleInput()
 
 void Enemy::update(float dt)
 {
-    //Enemy::update(dt);
-/*	
+    
 	if (m_hasDestination)
 	{
 		if (abs(m_destination.x - m_Position.x) < 16)
@@ -34,23 +33,30 @@ void Enemy::update(float dt)
 		}
 		if (m_destination.x - m_Position.x > 0)
 		{
-			m_Position.x += m_Speed * dt;
+			m_Position.x += (m_Speed) * dt;
 		}
 		else
 		{
-			m_Position.x -= m_Speed * dt;
+			m_Position.x -= (m_Speed) * dt;
+			
 		}
-		//Hier Collisionstest?
-		int random = rand() % 1000 + 1;
-		if (random != 1000) { return; }
+		return;
+		//Hier Collisionstest? 
+	} 
+	
+	int random = rand() % 1000 + 1;
+	if (random != 1000) { ; }
+	else
+	{
 		int newX = rand() % 65 + 0;
-		if (rand() % 2) {newX = -newX; }
+		if (rand() % 2) { newX = -newX; }
 		m_destination.x = m_Position.x + newX;
 		if (m_destination.x < 0) { m_destination.x = 0; }
 		m_hasDestination = true;
-	 
-	}  */
-	m_Position.x += (m_Speed/10) * dt;
+	}
+	  
+
+	
 	if (m_isFalling)
 	{
 		m_Position.y += m_Gravity * dt;
@@ -72,13 +78,13 @@ void Enemy::update(float dt)
 	m_Head.height = 1;
 
 	// Right
-	m_Right.left = r.left + r.width - 2 - 25;
+	m_Right.left = r.left + r.width - 10;
 	m_Right.top = r.top + r.height *.35;
 	m_Right.width = 1;
 	m_Right.height = r.height * .3;
 
 	// Left
-	m_Left.left = r.left + 25;
+	m_Left.left = r.left + 10;
 	m_Left.top = r.top + r.height * .35;
 	m_Left.width = 1;
 	m_Left.height = r.height * .3;
