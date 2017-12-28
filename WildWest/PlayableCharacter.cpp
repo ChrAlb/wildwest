@@ -36,22 +36,22 @@ Sprite PlayableCharacter::getSprite()
 
 void PlayableCharacter::stopFalling(float position)
 {
-	m_Position.y = position - getPosition().height;
-	//m_Sprite.setPosition(m_Position);
+	//m_Position.y = position - getPosition().height;
+	m_Sprite.setPosition(m_Position);
 	m_isFalling = false;
 }
 
 void PlayableCharacter::stopRight(float position)
 {
-	m_Position.x = position - (m_Sprite.getGlobalBounds().width / 2);
+	m_Position.x = position - (m_Sprite.getGlobalBounds().width) + 50;
 	
-	//m_Sprite.setPosition(m_Position);
+	
 }
 
 void PlayableCharacter::stopLeft(float position)
 {
-	m_Position.x = position + (m_Sprite.getGlobalBounds().width/2) -25;
-	//m_Sprite.setPosition(m_Position);
+	m_Position.x = position + (m_Sprite.getGlobalBounds().width) - 75;
+	
 }
 
 void PlayableCharacter::stopJump()
@@ -86,13 +86,16 @@ void PlayableCharacter::set_objecttype(object_types otype) { m_otype = otype; }
 object_types PlayableCharacter::get_objecttype() { return m_otype; }
 
 
-void PlayableCharacter::right_slope()
+void PlayableCharacter::right_slopeup()
 {
 	m_Position.x = m_Position.x + (m_Sprite.getGlobalBounds().width);
-	m_Position.y = m_Position.y - 750;
-	//m_Position.y=  m_Position.y - (m_Sprite.getGlobalBounds().height);
-	
-	
-	
-	//m_Position.y = m_Position.y - 150;
+	m_Position.y=  m_Position.y - (m_Sprite.getGlobalBounds().height/2);
+ 	
+}
+
+void PlayableCharacter::left_slopeup()
+{
+	m_Position.x = m_Position.x - (m_Sprite.getGlobalBounds().width);
+	m_Position.y = m_Position.y - (m_Sprite.getGlobalBounds().height / 2);
+
 }

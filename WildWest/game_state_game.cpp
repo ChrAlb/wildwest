@@ -79,7 +79,7 @@ void GameStateGame::update(const float dt)
 
 
 			{
-				(*iter)->update(dt);
+				//(*iter)->update(dt);
 
 				// DEBUG
 				if (debug)
@@ -112,13 +112,16 @@ void GameStateGame::update(const float dt)
 
 				// newpos  ALLLES IN PLAYER kLASSE
 
+
 				if (detectCollisions(*(*iter)))
 				{
 					m_newlevelrequiered = true;
 					this->gameview.reset(sf::FloatRect(0, 0, VideoMode::getDesktopMode().width, VideoMode::getDesktopMode().height));
 					//this->game->pushState(new GameStateEnd(this->game));
 				}
-
+				
+				(*iter)->update(dt);
+				
 				object_types tt = (*iter)->get_objecttype();
 				if ( tt == t_Player)
 				{

@@ -83,9 +83,6 @@ bool GameStateGame::detectCollisions(PlayableCharacter& character)
 
 				(m_ArrayLevel[y][x] == 10) ||
 				
-				(m_ArrayLevel[y][x] == 11) ||
-				(m_ArrayLevel[y][x] == 12) ||
-				
 				(m_ArrayLevel[y][x] == 14) ||
 				(m_ArrayLevel[y][x] == 15) ||
 				(m_ArrayLevel[y][x] == 16) ||
@@ -118,12 +115,25 @@ bool GameStateGame::detectCollisions(PlayableCharacter& character)
 
 			    }
 
-			// Right Slope (Tile # 10)
+			// Right Slope up (Tile # 10)
 			if (m_ArrayLevel[y][x] == 10)
 			   if (character.getRight().intersects(block))
 			    {
-				character.right_slope();
+				character.right_slopeup();
 			    }
+
+
+			// Left Slope up (Tile # 11 + 12)
+			if ( (m_ArrayLevel[y][x] == 11)   )
+
+				if (character.getLeft().intersects(block))
+				{
+					character.left_slopeup();
+				}
+
+
+			
+
 
 			// LevelEnd Reached (Tile #2)
 			if (m_ArrayLevel[y][x] == 2)
