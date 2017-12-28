@@ -117,13 +117,14 @@ bool GameStateGame::detectCollisions(PlayableCharacter& character)
 				}
 
 			    }
-/*
+
 			// Right Slope (Tile # 10)
 			if (m_ArrayLevel[y][x] == 10)
-			{
+			   if (character.getRight().intersects(block))
+			    {
 				character.right_slope();
-			}
-*/
+			    }
+
 			// LevelEnd Reached (Tile #2)
 			if (m_ArrayLevel[y][x] == 2)
 			{

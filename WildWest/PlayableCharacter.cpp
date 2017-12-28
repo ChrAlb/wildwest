@@ -89,5 +89,10 @@ object_types PlayableCharacter::get_objecttype() { return m_otype; }
 void PlayableCharacter::right_slope()
 {
 	m_Position.x = m_Position.x + (m_Sprite.getGlobalBounds().width);
-	m_Position.y=  m_Position.y + (m_Sprite.getGlobalBounds().height);
+	m_Position.y = m_Position.y - 750;
+	//m_Position.y=  m_Position.y - (m_Sprite.getGlobalBounds().height);
+	
+	
+	
+	//m_Position.y = m_Position.y - 150;
 }
