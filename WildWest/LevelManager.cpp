@@ -48,8 +48,8 @@ int** LevelManager::nextLevel(VertexArray& rVaLevel, leveldate& m_leveldaten)
 		m_leveldata.TilSetName = "graphics/tiles_sheet.png";
 
 		levelToLoad = m_leveldata.LevelName;
-		m_StartPosition.x = 250;
-		m_StartPosition.y = 850;
+		m_StartPosition.x = 150;
+		m_StartPosition.y = 750;
 		m_leveldata.MaxInt = 45;
 		
 		break;
