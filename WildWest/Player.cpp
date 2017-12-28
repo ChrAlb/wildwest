@@ -114,7 +114,6 @@ void Player::update(float elapsedTime)
 	m_Left.width = 1;
 	m_Left.height = r.height * .3;
 
-	m_Sprite.setPosition(m_Position);
-
-	
+	m_Sprite.setPosition(m_Position);	
 }
+

@@ -31,6 +31,8 @@ public:
 	void stopLeft(float position);
 	void stopJump();
 
+	void right_slope();
+
 	void set_objecttype(object_types otype);
 	object_types get_objecttype();
 

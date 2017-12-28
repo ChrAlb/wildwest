@@ -84,3 +84,10 @@ FloatRect PlayableCharacter::getRight()
 void PlayableCharacter::set_objecttype(object_types otype) { m_otype = otype; }
 
 object_types PlayableCharacter::get_objecttype() { return m_otype; }
+
+
+void PlayableCharacter::right_slope()
+{
+	m_Position.x = m_Position.x + (m_Sprite.getGlobalBounds().width);
+	m_Position.y=  m_Position.y + (m_Sprite.getGlobalBounds().height);
+}

@@ -23,45 +23,13 @@ bool Enemy::handleInput()
 
 void Enemy::update(float dt)
 {
-    
-	if (m_hasDestination)
-	{
-		if (abs(m_destination.x - m_Position.x) < 16)
-		{
-			m_hasDestination = false;
-			return;
-		}
-		if (m_destination.x - m_Position.x > 0)
-		{
-			m_Position.x += (m_Speed) * dt;
-		}
-		else
-		{
-			m_Position.x -= (m_Speed) * dt;
-			
-		}
-		return;
-		//Hier Collisionstest? 
-	} 
-	
-	int random = rand() % 1000 + 1;
-	if (random != 1000) { ; }
-	else
-	{
-		int newX = rand() % 65 + 0;
-		if (rand() % 2) { newX = -newX; }
-		m_destination.x = m_Position.x + newX;
-		if (m_destination.x < 0) { m_destination.x = 0; }
-		m_hasDestination = true;
-	}
-	  
-
+    	
 	
 	if (m_isFalling)
 	{
 		m_Position.y += m_Gravity * dt;
 	}
-
+	Enemy::update_Enemy(dt);
 
 	FloatRect r = getPosition();
 
@@ -93,3 +61,42 @@ void Enemy::update(float dt)
 
 
 }
+
+void Enemy::update_Enemy(float dt)
+{
+
+	if (m_hasDestination)
+	{
+
+		
+		if (abs(m_destination.x - m_Position.x) < 16)
+		{
+			m_hasDestination = false;
+			return;
+		}
+		
+		if (m_destination.x - m_Position.x > 0)
+		{
+			m_Position.x += 16;
+		}
+		else
+		{
+			m_Position.x -= 16;
+
+		}	
+		
+		
+		return;
+		//Hier Collisionstest? 
+	}
+	
+		int random = rand() % 500 + 1;
+		if (random != 500) { return; }
+
+		int newX = rand() % 65 + 0;
+		if (rand() % 2) { newX = -newX; }
+		m_destination.x = m_Position.x + newX;
+		if (m_destination.x < 0) { m_destination.x = 0; }
+		m_hasDestination = true;
+}
+
