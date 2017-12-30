@@ -55,7 +55,7 @@ int** LevelManager::nextLevel(VertexArray& rVaLevel, leveldate& m_leveldaten)
 		break;
 		
 	}
-
+	
 	m_leveldaten = m_leveldata;
 
 	ifstream inputFile(levelToLoad);

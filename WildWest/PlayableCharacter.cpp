@@ -88,14 +88,14 @@ object_types PlayableCharacter::get_objecttype() { return m_otype; }
 
 void PlayableCharacter::right_slopeup()
 {
-	m_Position.x = m_Position.x + (m_Sprite.getGlobalBounds().width);
+	m_Position.x = m_Position.x + (m_Sprite.getGlobalBounds().width/2);
 	m_Position.y=  m_Position.y - (m_Sprite.getGlobalBounds().height/2);
  	
 }
 
 void PlayableCharacter::left_slopeup()
 {
-	m_Position.x = m_Position.x - (m_Sprite.getGlobalBounds().width);
+	m_Position.x = m_Position.x - (m_Sprite.getGlobalBounds().width/ 2);
 	m_Position.y = m_Position.y - (m_Sprite.getGlobalBounds().height / 2);
 
 }

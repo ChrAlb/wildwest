@@ -41,14 +41,14 @@ bool GameStateGame::detectCollisions(PlayableCharacter& character)
 	FloatRect level(0, 0, m_LM.getLevelSize().x * TILE_SIZE, m_LM.getLevelSize().y * TILE_SIZE);
 	
 
-	
+
 	
 	if (!character.getPosition().intersects(level))
 	{
 		character.spawn(m_LM.getStartPosition(), GRAVITY);
 		this->gameview.reset(sf::FloatRect(0, 0, VideoMode::getDesktopMode().width, VideoMode::getDesktopMode().height));
 	}
-	
+
 	//cout << m_ArrayLevel[20][7];
 
 	for (int x = startX; x < endX ;  x++)

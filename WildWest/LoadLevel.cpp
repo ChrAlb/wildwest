@@ -30,7 +30,7 @@ void GameStateGame::loadLevel()
 	player->set_objecttype(t_Player);
 	objects.push_back(player);
 
-/*
+
 	enemy = new Enemy();
 	Vector2f ll;
 	ll.x = 2200;
@@ -39,7 +39,7 @@ void GameStateGame::loadLevel()
 	//m_BackgroundTexture = TextureHolder::GetTexture(leveldata.BGFileName);
 	enemy->set_objecttype(t_Enemy);
 	objects.push_back(enemy);
-*/	
+
 	m_TextureTiles = TextureHolder::GetTexture(leveldata.TilSetName);
 	m_Tree = TextureHolder::GetTexture("graphics/Tree.png");
 

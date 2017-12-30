@@ -3,6 +3,7 @@
 #include "TextureHolder.h"
 #include <iostream>
 
+
 Player::Player()
 {
 	
@@ -56,7 +57,6 @@ void Player::update(float elapsedTime)
 	//m_isFalling = false;  // Hier stimmt was nicht: is Falling wird vom Konstruktur auf true gesetzt?
 	
 
-
 	if (m_RightPressed)
 	{
 		m_Position.x += m_Speed * elapsedTime;
@@ -87,6 +87,18 @@ void Player::update(float elapsedTime)
 		m_Position.y += m_Gravity * elapsedTime;
 	}
 
+	if (Player::m_Position.x < 0)
+	   {
+		Player::m_Position.x = 0;
+       }
+
+	
+/*
+	if (Player::m_Position.x > m_leveldata.MaxInt*50);
+	{
+		Player::m_Position.x = m_leveldata.MaxInt*50;
+	}
+*/	
 
 	FloatRect r = getPosition();
 

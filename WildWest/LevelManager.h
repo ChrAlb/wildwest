@@ -27,6 +27,7 @@ private:
 	
 	leveldate m_leveldata;
 	
+	
 
 public:
 
@@ -37,6 +38,7 @@ public:
     Vector2f getStartPosition();
 	int** nextLevel(VertexArray& rVaLevel, leveldate& m_leveldaten);
 	Vector2i getLevelSize();
+	
 	int getCurrentLevel();
 	bool get_allLeveldone();
 	void set_allLeveldone(bool allLeveldone);
