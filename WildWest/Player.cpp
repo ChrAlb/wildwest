@@ -88,18 +88,19 @@ void Player::update(float elapsedTime)
 	} 
 
     Vector2i levelsize = Player::get_levelsize();
+	levelsize.x = levelsize.x - 1;
 
 	if (Player::m_Position.x < 0)
 	   {
 		Player::m_Position.x = 0;
        }
 
-/*
-	if (Player::m_Position.x > (levelsize.x*50));
-	{
+
+	if (Player::m_Position.x > (levelsize.x*50))
+	   {
 		Player::m_Position.x = (levelsize.x*50);
-	}
-*/
+	    }
+
 
 	FloatRect r = getPosition();
 
