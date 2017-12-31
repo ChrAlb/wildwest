@@ -37,6 +37,9 @@ public:
 	void set_objecttype(object_types otype);
 	object_types get_objecttype();
 
+	void set_levelsize(Vector2i levelsize);
+	Vector2i get_levelsize();
+
 	Vector2f getCenter();
 
 
@@ -59,6 +62,8 @@ protected:
 
 	float m_Gravity;
 	float m_Speed = 400;
+
+	Vector2i max_levelsize;
 
 	Vector2f m_Position;
 

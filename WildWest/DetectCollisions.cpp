@@ -42,7 +42,7 @@ bool GameStateGame::detectCollisions(PlayableCharacter& character)
 	
 
 
-	
+
 	if (!character.getPosition().intersects(level))
 	{
 		character.spawn(m_LM.getStartPosition(), GRAVITY);

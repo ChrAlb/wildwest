@@ -99,3 +99,13 @@ void PlayableCharacter::left_slopeup()
 	m_Position.y = m_Position.y - (m_Sprite.getGlobalBounds().height / 2);
 
 }
+
+void PlayableCharacter::set_levelsize(Vector2i levelsize)
+{
+	PlayableCharacter::max_levelsize = levelsize;
+}
+
+Vector2i PlayableCharacter::get_levelsize()
+{
+	return max_levelsize;
+}

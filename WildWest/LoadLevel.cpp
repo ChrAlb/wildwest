@@ -23,11 +23,13 @@ void GameStateGame::loadLevel()
 	
 
 	m_ArrayLevel = m_LM.nextLevel(m_VALevel, leveldata);
+
 	
 	player = new Player();
     player->spawn(m_LM.getStartPosition(), GRAVITY); 
 	m_BackgroundTexture = TextureHolder::GetTexture(leveldata.BGFileName);
 	player->set_objecttype(t_Player);
+	player->set_levelsize(m_LM.getLevelSize());
 	objects.push_back(player);
 
 

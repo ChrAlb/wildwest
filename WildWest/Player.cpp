@@ -85,20 +85,21 @@ void Player::update(float elapsedTime)
 	if (m_isFalling)
 	{
 		m_Position.y += m_Gravity * elapsedTime;
-	}
+	} 
+
+    Vector2i levelsize = Player::get_levelsize();
 
 	if (Player::m_Position.x < 0)
 	   {
 		Player::m_Position.x = 0;
        }
 
-	
 /*
-	if (Player::m_Position.x > m_leveldata.MaxInt*50);
+	if (Player::m_Position.x > (levelsize.x*50));
 	{
-		Player::m_Position.x = m_leveldata.MaxInt*50;
+		Player::m_Position.x = (levelsize.x*50);
 	}
-*/	
+*/
 
 	FloatRect r = getPosition();
 
