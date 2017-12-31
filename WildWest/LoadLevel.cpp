@@ -29,7 +29,7 @@ void GameStateGame::loadLevel()
     player->spawn(m_LM.getStartPosition(), GRAVITY); 
 	m_BackgroundTexture = TextureHolder::GetTexture(leveldata.BGFileName);
 	player->set_objecttype(t_Player);
-	player->set_levelsize(m_LM.getLevelSize());
+	
 	objects.push_back(player);
 
 /*

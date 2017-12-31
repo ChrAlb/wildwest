@@ -37,9 +37,7 @@ public:
 	void set_objecttype(object_types otype);
 	object_types get_objecttype();
 
-	void set_levelsize(Vector2i levelsize);
-	Vector2i get_levelsize();
-
+	
 	Vector2f getCenter();
 
 
