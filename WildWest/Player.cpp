@@ -96,9 +96,9 @@ void Player::update(float elapsedTime)
        }
 
 
-	if (Player::m_Position.x > (levelsize.x*50))
+	if (Player::m_Position.x > (levelsize.x*TILE_SIZE))
 	   {
-		Player::m_Position.x = (levelsize.x*50);
+		Player::m_Position.x = (levelsize.x*TILE_SIZE);
 	    }
 
 
