@@ -128,7 +128,7 @@ void GameStateGame::update(const float dt)
 				object_types tt = (*iter)->get_objecttype();
 				if ( tt == t_Player)
 				{
-
+					
 					newpos = (*iter)->getCenter().x;
 
 

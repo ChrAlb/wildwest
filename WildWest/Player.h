@@ -2,13 +2,24 @@
 #include "PlayableCharacter.h"
 
 
-class Player : public PlayableCharacter
+
+
+class Player : public PlayableCharacter 
+
 {
 public:
-	const int TILE_SIZE = 50; //// Achtung noch doppelt zu  game State
+
+	
 	
 	Player::Player();
 	
 	bool virtual handleInput();
 	void update(float dt);
+
+	void set_maxlevelsize(int mlevelsize);
+	int get_maxlevelsize();
+
+private:
+	int m_maxlevelsize;
+
 };

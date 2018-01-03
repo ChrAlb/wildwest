@@ -35,7 +35,7 @@ int** LevelManager::nextLevel(VertexArray& rVaLevel, leveldate& m_leveldaten)
 		m_leveldata.TilSetName = "graphics/tiles_sheet.png";
 			
 		levelToLoad = m_leveldata.LevelName;
-        m_StartPosition.x = 100;
+        m_StartPosition.x = 150;
 		m_StartPosition.y = 800;
 		// Korrektur Kommas aus level.txt
 		m_leveldata.MaxInt = 47;
@@ -76,7 +76,7 @@ int** LevelManager::nextLevel(VertexArray& rVaLevel, leveldate& m_leveldaten)
 	{
 		arrayLevel[i] = new int[m_LevelSize.x];
 	}
-
+	
 	string row;
 	int y = 0;
 	std::string delimiter = ",";

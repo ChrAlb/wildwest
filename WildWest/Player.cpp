@@ -4,6 +4,8 @@
 #include <iostream>
 
 
+
+
 Player::Player()
 {
 	
@@ -54,9 +56,9 @@ bool Player::handleInput()
 
 void Player::update(float elapsedTime)
 {
-	//m_isFalling = false;  // Hier stimmt was nicht: is Falling wird vom Konstruktur auf true gesetzt?
-	
+	int mlevelsize;
 
+	
 	if (m_RightPressed)
 	{
 		m_Position.x += m_Speed * elapsedTime;
@@ -87,11 +89,20 @@ void Player::update(float elapsedTime)
 		m_Position.y += m_Gravity * elapsedTime;
 	} 
 
-    
+  
 	if (Player::m_Position.x < 0)
 	   {
 		Player::m_Position.x = 0;
        }
+	
+
+
+	mlevelsize = Player::get_maxlevelsize();
+
+	if (Player::m_Position.x > mlevelsize)
+	{
+		Player::m_Position.x = mlevelsize;
+	}
 
 	FloatRect r = getPosition();
 
@@ -122,3 +133,12 @@ void Player::update(float elapsedTime)
 	m_Sprite.setPosition(m_Position);	
 }
 
+void Player::set_maxlevelsize(int mlevelsize)
+{
+	m_maxlevelsize = mlevelsize;
+}
+
+int Player::get_maxlevelsize()
+{
+	return m_maxlevelsize;
+}
