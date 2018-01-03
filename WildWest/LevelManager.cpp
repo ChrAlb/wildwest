@@ -133,6 +133,8 @@ int** LevelManager::nextLevel(VertexArray& rVaLevel, leveldate& m_leveldaten)
 Vector2i LevelManager::getLevelSize()
 {
 	return m_LevelSize;
+
+
 }
 
 int LevelManager::getCurrentLevel()
