@@ -133,12 +133,3 @@ void Player::update(float elapsedTime)
 	m_Sprite.setPosition(m_Position);	
 }
 
-void Player::set_maxlevelsize(int mlevelsize)
-{
-	m_maxlevelsize = mlevelsize;
-}
-
-int Player::get_maxlevelsize()
-{
-	return m_maxlevelsize;
-}

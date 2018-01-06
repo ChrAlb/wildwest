@@ -100,3 +100,12 @@ void PlayableCharacter::left_slopeup()
 
 }
 
+void PlayableCharacter::set_maxlevelsize(int mlevelsize)
+{
+	m_maxlevelsize = mlevelsize;
+}
+
+int PlayableCharacter::get_maxlevelsize()
+{
+	return m_maxlevelsize;
+}

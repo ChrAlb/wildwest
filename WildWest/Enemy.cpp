@@ -29,7 +29,8 @@ void Enemy::update(float dt)
 	{
 		m_Position.y += m_Gravity * dt;
 	}
-	Enemy::update_Enemy(dt);
+	
+	m_Position.x = m_Position.x - .15;
 
 	FloatRect r = getPosition();
 
@@ -62,10 +63,4 @@ void Enemy::update(float dt)
 
 }
 
-void Enemy::update_Enemy(float dt)
-{
-	m_Position.x = m_Position.x - .15;
-
-	
-}
 

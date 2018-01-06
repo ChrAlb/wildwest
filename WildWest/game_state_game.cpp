@@ -126,7 +126,7 @@ void GameStateGame::update(const float dt)
 					}
 				}
 				(*iter)->update(dt);
-			
+						
 				if ((*iter)->get_objecttype() == t_Player)
 				{
 					

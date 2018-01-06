@@ -42,13 +42,16 @@ bool GameStateGame::detectCollisions(PlayableCharacter& character)
 	
 
 
-
+   
 	if (!character.getPosition().intersects(level))
 	{
+		if (character.get_objecttype() == t_Player)
+		{
 		character.spawn(m_LM.getStartPosition(), GRAVITY);
 		this->gameview.reset(sf::FloatRect(0, 0, VideoMode::getDesktopMode().width, VideoMode::getDesktopMode().height));
+		}
 	}
-
+	
 	//cout << m_ArrayLevel[20][7];
 
 	for (int x = startX; x < endX ;  x++)
@@ -132,9 +135,6 @@ bool GameStateGame::detectCollisions(PlayableCharacter& character)
 				{
 					character.left_slopeup();
 				}
-
-
-			
 
 
 			// LevelEnd Reached (Tile #2)

@@ -40,6 +40,9 @@ public:
 	
 	Vector2f getCenter();
 
+	void set_maxlevelsize(int mlevelsize);
+	int get_maxlevelsize();
+
 
 protected:
 	Sprite m_Sprite;
@@ -74,7 +77,7 @@ protected:
 
 	object_types m_otype;
 
-
+	int m_maxlevelsize;
 
 };
 
