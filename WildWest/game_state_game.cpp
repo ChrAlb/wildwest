@@ -118,15 +118,16 @@ void GameStateGame::update(const float dt)
 
 				if (detectCollisions(*(*iter)))
 				{
-					m_newlevelrequiered = true;
-					this->gameview.reset(sf::FloatRect(0, 0, VideoMode::getDesktopMode().width, VideoMode::getDesktopMode().height));
-					//this->game->pushState(new GameStateEnd(this->game));
+					if ((*iter)->get_objecttype() == t_Player)
+					{
+						m_newlevelrequiered = true;
+						this->gameview.reset(sf::FloatRect(0, 0, VideoMode::getDesktopMode().width, VideoMode::getDesktopMode().height));
+
+					}
 				}
-				
 				(*iter)->update(dt);
-				
-				object_types tt = (*iter)->get_objecttype();
-				if ( tt == t_Player)
+			
+				if ((*iter)->get_objecttype() == t_Player)
 				{
 					
 					newpos = (*iter)->getCenter().x;

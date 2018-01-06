@@ -99,20 +99,22 @@ bool GameStateGame::detectCollisions(PlayableCharacter& character)
 				if (character.getRight().intersects(block))
 				{
 					character.stopRight(block.left);
+					
 				}
 				else if (character.getLeft().intersects(block))
 				{
 					character.stopLeft(block.left);
+					
 				}
 				if (character.getFeet().intersects(block))
 				{
 					character.stopFalling(block.top);
+	
 				} 
 				else if (character.getHead().intersects(block))
 				{
-					character.stopJump();
-				}
-
+					character.stopJump();				}
+				    
 			    }
 
 			// Right Slope up (Tile # 10)

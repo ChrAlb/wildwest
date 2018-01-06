@@ -52,8 +52,8 @@ void GameStateGame::loadLevel()
 
 	enemy = new Enemy();
 	Vector2f ll;
-	ll.x = 2200;
-	ll.y = 500;
+	ll.x =100;
+	ll.y = 300;
 	enemy->spawn(ll,GRAVITY);
 	//m_BackgroundTexture = TextureHolder::GetTexture(leveldata.BGFileName);
 	enemy->set_objecttype(t_Enemy);

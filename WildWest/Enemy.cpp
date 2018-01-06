@@ -64,39 +64,8 @@ void Enemy::update(float dt)
 
 void Enemy::update_Enemy(float dt)
 {
+	m_Position.x = m_Position.x - .15;
 
-	if (m_hasDestination)
-	{
-
-		
-		if (abs(m_destination.x - m_Position.x) < 16)
-		{
-			m_hasDestination = false;
-			return;
-		}
-		
-		if (m_destination.x - m_Position.x > 0)
-		{
-			m_Position.x += 16;
-		}
-		else
-		{
-			m_Position.x -= 16;
-
-		}	
-		
-		
-		return;
-		//Hier Collisionstest? 
-	}
 	
-		int random = rand() % 500 + 1;
-		if (random != 500) { return; }
-
-		int newX = rand() % 65 + 0;
-		if (rand() % 2) { newX = -newX; }
-		m_destination.x = m_Position.x + newX;
-		if (m_destination.x < 0) { m_destination.x = 0; }
-		m_hasDestination = true;
 }
 
