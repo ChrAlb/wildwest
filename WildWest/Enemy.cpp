@@ -32,6 +32,18 @@ void Enemy::update(float dt)
 	
 	m_Position.x = m_Position.x - .15;
 
+	if (Enemy::m_Position.x < 0)
+	{
+		Enemy::m_Position.x = 0;
+	}
+
+
+	if (Enemy::m_Position.x > Enemy::get_maxlevelsize())
+	{
+		Enemy::m_Position.x = Enemy::get_maxlevelsize();
+	}
+
+
 	FloatRect r = getPosition();
 
 	// Feet

@@ -43,6 +43,8 @@ public:
 	void set_maxlevelsize(int mlevelsize);
 	int get_maxlevelsize();
 
+	void set_iscollided(bool iscollided);
+
 
 protected:
 	Sprite m_Sprite;
@@ -78,6 +80,8 @@ protected:
 	object_types m_otype;
 
 	int m_maxlevelsize;
+
+	bool m_iscollided;
 
 };
 

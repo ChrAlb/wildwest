@@ -46,7 +46,7 @@ void GameStateGame::loadLevel()
 
 	player->set_objecttype(t_Player);
 	player->set_maxlevelsize(maxlevelsize);
-
+	player->set_iscollided(false);    
 	objects.push_back(player);
 
 
@@ -57,6 +57,8 @@ void GameStateGame::loadLevel()
 	enemy->spawn(ll,GRAVITY);
 	//m_BackgroundTexture = TextureHolder::GetTexture(leveldata.BGFileName);
 	enemy->set_objecttype(t_Enemy);
+	enemy->set_maxlevelsize(maxlevelsize);
+	enemy->set_iscollided(false);
 	objects.push_back(enemy);
 
 

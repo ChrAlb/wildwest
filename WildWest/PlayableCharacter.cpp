@@ -109,3 +109,10 @@ int PlayableCharacter::get_maxlevelsize()
 {
 	return m_maxlevelsize;
 }
+
+void PlayableCharacter::set_iscollided(bool iscollided)
+{
+
+	m_iscollided = iscollided;
+
+}
