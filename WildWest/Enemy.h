@@ -8,7 +8,7 @@ public:
 	bool virtual handleInput();
 	void update(float dt);
 	
-	const int EnemySpeed = 2;
+	const int EnemySpeed = 400;
 
 private:
 	sf::Vector2f m_destination;

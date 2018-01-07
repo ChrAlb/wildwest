@@ -51,10 +51,10 @@ void GameStateGame::loadLevel()
 
 
 	enemy = new Enemy();
-	Vector2f ll;
-	ll.x = 800;
-	ll.y = 700;
-	enemy->spawn(ll,GRAVITY);
+	Vector2f startpoint;
+	startpoint.x = 800;
+	startpoint.y = 700;
+	enemy->spawn(startpoint,GRAVITY);
 	//m_BackgroundTexture = TextureHolder::GetTexture(leveldata.BGFileName);
 	enemy->set_objecttype(t_Enemy);
 	enemy->set_maxlevelsize(maxlevelsize);

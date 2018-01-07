@@ -55,7 +55,7 @@ void Enemy::update(float dt)
 		m_hasDestination = false;
   	}
     
-	m_Position.x = m_Position.x * EnemySpeed * m_destination.x * dt;
+	m_Position.x +=  EnemySpeed * m_destination.x * dt;
 
 	FloatRect r = getPosition();
 
