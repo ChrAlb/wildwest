@@ -6,10 +6,7 @@
 
 Enemy::Enemy() : m_hasDestination(false)
 {
-
 	m_Sprite = Sprite(TextureHolder::GetTexture("graphics/Slyppy.png"));
-
-	
 }
 
 
@@ -18,31 +15,47 @@ bool Enemy::handleInput()
 	m_JustJumped = false;
 	m_isFalling = true;
 	return m_JustJumped;
-
 }
 
 void Enemy::update(float dt)
-{
-    	
+{    	
 	
 	if (m_isFalling)
 	{
 		m_Position.y += m_Gravity * dt;
 	}
 	
-	m_Position.x = m_Position.x - .15;
+	m_destination.x = 1;
 
+	if (!m_hasDestination)
+	{
+		if (int random = rand() % 2);
+		{
+			m_destination.x = -m_destination.x;
+			m_hasDestination = true;
+		}		
+	}
+
+	if (m_iscollided)
+	{
+		m_hasDestination = false;
+	}
+
+	
 	if (Enemy::m_Position.x < 0)
 	{
 		Enemy::m_Position.x = 0;
+		m_hasDestination = false;
 	}
-
+	
 
 	if (Enemy::m_Position.x > Enemy::get_maxlevelsize())
 	{
 		Enemy::m_Position.x = Enemy::get_maxlevelsize();
-	}
-
+		m_hasDestination = false;
+  	}
+    
+	m_Position.x = m_Position.x * EnemySpeed * m_destination.x * dt;
 
 	FloatRect r = getPosition();
 

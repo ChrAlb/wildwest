@@ -102,12 +102,13 @@ bool GameStateGame::detectCollisions(PlayableCharacter& character)
 				if (character.getRight().intersects(block))
 				{
 					character.stopRight(block.left);
+					character.set_iscollided(true);
 					
 				}
 				else if (character.getLeft().intersects(block))
 				{
 					character.stopLeft(block.left);
-					
+					character.set_iscollided(true);
 				}
 				if (character.getFeet().intersects(block))
 				{
