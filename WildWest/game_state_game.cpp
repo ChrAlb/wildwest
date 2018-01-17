@@ -108,13 +108,9 @@ void GameStateGame::update(const float dt)
 				// DEBUG End
 
 
-				(*iter)->getHead().top;
+				//(*iter)->getHead().top;
 
 				// newpos  ALLLES IN PLAYER kLASSE
-
-
-
-
 
 				if (detectCollisions(*(*iter)))
 				{

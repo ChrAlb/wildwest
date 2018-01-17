@@ -13,9 +13,10 @@ bool GameStateGame::detectCollisions(PlayableCharacter& character)
 	//Debug
 	if (debug)
 	{
-    box_position.setSize(sf::Vector2f(TILE_SIZE*2, TILE_SIZE*2));
+
+	box_position.setSize(sf::Vector2f(detecionZone.width, detecionZone.height));
 	box_position.setOutlineColor(sf::Color::Black);
-	box_position.setOutlineThickness(5);
+	box_position.setOutlineThickness(3);
 	box_position.setFillColor(sf::Color(255, 0,0,0));
 	box_position.setPosition(detecionZone.left,detecionZone.top);
 	}
@@ -103,7 +104,6 @@ bool GameStateGame::detectCollisions(PlayableCharacter& character)
 				{
 					character.stopRight(block.left);
 					character.set_iscollided(true);
-					
 				}
 				else if (character.getLeft().intersects(block))
 				{
