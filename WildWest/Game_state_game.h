@@ -67,6 +67,12 @@ private:
 
 	Player *player;
 	Enemy *enemy;
+
+
+	sf::Font m_font;
+	sf::Text text;
+
+	
 	
 
 public:

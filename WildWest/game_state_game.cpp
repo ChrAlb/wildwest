@@ -24,6 +24,8 @@ void GameStateGame::draw(const float dt)
 	
 	this->game->window.setView(gameview);
 
+	
+
 	this->game->window.draw(m_Tree_Sprite);
 
 	this->game->window.draw(m_VALevel, &m_TextureTiles);
@@ -32,8 +34,8 @@ void GameStateGame::draw(const float dt)
 	{
       this->game->window.draw((*iter)->getSprite());
 	}
-
 	
+	this->game->window.draw(text);
 
     // DEBUG
 	if (debug)
@@ -76,7 +78,7 @@ void GameStateGame::update(const float dt)
 
 		for (iter = objects.begin(); iter != objects.end(); ++iter)
 		{
-
+			
 
 			{
 				//(*iter)->update(dt);
@@ -84,6 +86,7 @@ void GameStateGame::update(const float dt)
 				// DEBUG
 				if (debug)
 				{
+									
 					head_box.setSize(sf::Vector2f((*iter)->getHead().width, (*iter)->getHead().height));
 					head_box.setOutlineColor(sf::Color::Red);
 					head_box.setOutlineThickness(5);
@@ -144,6 +147,16 @@ void GameStateGame::update(const float dt)
 				}
 
 			}
+			
+			if (debug)
+			{
+            text.setFont(m_font);
+			text.setString("hello");
+			text.setCharacterSize(24);
+			text.setFillColor(sf::Color::Red);
+			}
+			
+
 
 		}
 
@@ -189,7 +202,7 @@ void GameStateGame::handleInput()
 
 GameStateGame::GameStateGame(Game* game)
 {
-	
+	m_font.loadFromFile("graphics/Arial.ttf");
 	this->game = game;
 	
 	
