@@ -72,7 +72,7 @@ GameStateStart::GameStateStart(Game* game)
 	this->view.setSize(pos);
 	pos *= 0.5f;
 	this->view.setCenter(pos);
-
+	
 
 }
 

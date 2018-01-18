@@ -104,7 +104,8 @@ bool GameStateGame::detectCollisions(PlayableCharacter& character)
 				{
 					character.stopRight(block.left);
 					character.set_iscollided(true);
-					cout << block.left << "\n";
+					cout << block.left << "   ";
+					cout << character.getRight().width << "   ";
 					cout << character.getRight().left << "\n";
 				}
 				else if (character.getLeft().intersects(block))

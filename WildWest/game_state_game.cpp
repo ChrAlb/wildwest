@@ -24,8 +24,6 @@ void GameStateGame::draw(const float dt)
 	
 	this->game->window.setView(gameview);
 
-	
-
 	this->game->window.draw(m_Tree_Sprite);
 
 	this->game->window.draw(m_VALevel, &m_TextureTiles);
@@ -154,6 +152,7 @@ void GameStateGame::update(const float dt)
 			text.setString("hello");
 			text.setCharacterSize(24);
 			text.setFillColor(sf::Color::Red);
+			
 			}
 			
 
