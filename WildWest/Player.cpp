@@ -119,7 +119,7 @@ void Player::update(float elapsedTime)
 	m_Head.height = 1;
 
 	// Right
-	m_Right.left = r.left + r.width;
+	m_Right.left = r.left + r.width ;
 	m_Right.top = r.top + r.height *.35;
 	m_Right.width = 1;
 	m_Right.height = r.height * .3;

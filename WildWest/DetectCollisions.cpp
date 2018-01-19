@@ -101,10 +101,11 @@ bool GameStateGame::detectCollisions(PlayableCharacter& character)
 				
 				{
 				if (character.getRight().intersects(block))
+					
 				{
 					character.stopRight(block.left);
 					character.set_iscollided(true);
-					cout << block.left << "   ";
+					cout << "Rechts:  " << block.left << "   ";
 					cout << character.getRight().width << "   ";
 					cout << character.getRight().left << "\n";
 				}
@@ -112,6 +113,9 @@ bool GameStateGame::detectCollisions(PlayableCharacter& character)
 				{
 					character.stopLeft(block.left);
 					character.set_iscollided(true);
+					cout << "Links:  " << block.left << "   ";
+					cout << character.getLeft().width << "   ";
+					cout << character.getLeft().left << "\n";
 				}
 				if (character.getFeet().intersects(block))
 				{

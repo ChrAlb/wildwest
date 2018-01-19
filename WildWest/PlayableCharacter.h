@@ -64,7 +64,7 @@ protected:
 	unsigned int m_id;
 
 	float m_Gravity;
-	float m_Speed = 400;
+	float m_Speed = 300;
 
 	Vector2i max_levelsize;
 

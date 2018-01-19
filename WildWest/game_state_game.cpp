@@ -113,6 +113,8 @@ void GameStateGame::update(const float dt)
 
 				// newpos  ALLLES IN PLAYER kLASSE
 
+				//(*iter)->update(dt);
+
 				if (detectCollisions(*(*iter)))
 				{
 					if ((*iter)->get_objecttype() == t_Player)
