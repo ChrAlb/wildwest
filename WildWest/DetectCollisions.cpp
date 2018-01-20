@@ -29,7 +29,7 @@ bool GameStateGame::detectCollisions(PlayableCharacter& character)
 
 	int startX = (int)(detecionZone.left / TILE_SIZE - 1);
 	int startY = (int)(detecionZone.top / TILE_SIZE -1);
-	int endX = (int)(detecionZone.left / TILE_SIZE + 2);
+	int endX = (int)(detecionZone.left / TILE_SIZE + 3);
 	int endY = (int)(detecionZone.top / TILE_SIZE + 3);
 
     //cout << startX << "    " << endX << "   ";
@@ -64,6 +64,8 @@ bool GameStateGame::detectCollisions(PlayableCharacter& character)
 			
 			//********** DEBUG
 			
+
+
 			if (debug)
 			{
             box.setSize(sf::Vector2f((endX-startX)*TILE_SIZE,(endY-startY)*TILE_SIZE));
@@ -137,6 +139,8 @@ bool GameStateGame::detectCollisions(PlayableCharacter& character)
 
 
 			// Left Slope up (Tile # 11 + 12)
+
+
 			if ( (m_ArrayLevel[y][x] == 11)   )
 
 				if (character.getLeft().intersects(block))
