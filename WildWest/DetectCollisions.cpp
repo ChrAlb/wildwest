@@ -148,7 +148,6 @@ bool GameStateGame::detectCollisions(PlayableCharacter& character)
 					character.left_slopeup();
 				}
 
-
 			// LevelEnd Reached (Tile #2)
 			if (m_ArrayLevel[y][x] == 2)
 			{
