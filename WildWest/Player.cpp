@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Player.h"
 #include "TextureHolder.h"
+
 #include <iostream>
 
 
@@ -9,9 +10,10 @@
 Player::Player()
 {
 	
-	m_Sprite = Sprite(TextureHolder::GetTexture("graphics/Joe.png"));
+	//m_Sprite = Sprite(TextureHolder::GetTexture("graphics/Joe.png"));
 	
 	m_JumpDuration = .25;
+	rightWalk.AnimationInit(80, 100, 80, 100);
 	
 }
 
@@ -129,6 +131,9 @@ void Player::update(float elapsedTime)
 	m_Left.top = r.top + r.height * .35;
 	m_Left.width = 1;
 	m_Left.height = r.height * .3;
+
+	rightWalk.Update(elapsedTime);
+	rightWalk.ApplytoSprite(m_Sprite);
 
 	m_Sprite.setPosition(m_Position);	
 }

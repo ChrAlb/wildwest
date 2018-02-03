@@ -16,7 +16,7 @@ private:
 
 	//******************
 	// falls debug= true; Kollisionsboxen werden angezeigt
-	bool debug = true;
+	bool debug = false;
 	//******************
 
 	sf::View gameview;
