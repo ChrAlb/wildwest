@@ -11,7 +11,7 @@ Player::Player()
 {
 	
 	//m_Sprite = Sprite(TextureHolder::GetTexture("graphics/Joe.png"));
-	
+	m_Sprite = Sprite(m_Texture);
 	m_JumpDuration = .25;
 	rightWalk.AnimationInit(80, 100, 80, 100);
 	
