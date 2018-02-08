@@ -142,4 +142,4 @@ void Player::update(float elapsedTime)
 	
 	m_Sprite.setPosition(m_Position);	
 }
-
+ 
