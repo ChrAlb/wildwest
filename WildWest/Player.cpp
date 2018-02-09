@@ -24,6 +24,8 @@ Player::Player()
 
 bool Player::handleInput()
 {
+	sf::Vector2f dir = { 0.0f,0.0f };
+
 	m_JustJumped = false;
 	
 	
@@ -45,18 +47,27 @@ bool Player::handleInput()
 	if (Keyboard::isKeyPressed(Keyboard::Left))
 	{
 		m_LeftPressed = true;
+		dir.x -= 1.0f;
+		
 	}
 	else
-		m_LeftPressed = false;
+	{
+        m_LeftPressed = false;
+	    
+	}
+		
 
 	if (Keyboard::isKeyPressed(Keyboard::Right))
 	{
 		m_RightPressed = true;
+		dir.x += 1.0f;
 	}
 	else
 	{
 		m_RightPressed = false;
+		
 	}
+	Player::SetDirection(dir);
 	return m_JustJumped;
 
 }
@@ -69,6 +80,7 @@ void Player::update(float elapsedTime)
 	if (m_RightPressed)
 	{
 		m_Position.x += m_Speed * elapsedTime;
+		
 	}
 
 	if (m_LeftPressed)
@@ -136,6 +148,7 @@ void Player::update(float elapsedTime)
 	m_Left.top = r.top + r.height * .35;
 	m_Left.width = 1;
 	m_Left.height = r.height * .3;
+
 
 	rightWalk.Update(elapsedTime);
 	rightWalk.ApplytoSprite(m_Sprite);

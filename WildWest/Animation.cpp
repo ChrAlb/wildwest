@@ -27,10 +27,16 @@ void Animation::Update(float dt)
 	}
 }
 
+
+	
+
 void Animation::Advance()
 {
-	if (++iFrame >= nFrames)
+	
+    if (++iFrame >= nFrames)
 	{
 		iFrame = 0;
 	}
+	
+	
 }

@@ -37,6 +37,8 @@ public:
 	void set_objecttype(object_types otype);
 	object_types get_objecttype();
 
+	void SetDirection(const sf::Vector2f& dir);
+
 	
 	Vector2f getCenter();
 
@@ -65,6 +67,7 @@ protected:
 
 	float m_Gravity;
 	float m_Speed = 300;
+	sf::Vector2f m_vel;
 
 	Vector2i max_levelsize;
 

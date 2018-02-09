@@ -86,6 +86,11 @@ void PlayableCharacter::set_objecttype(object_types otype) { m_otype = otype; }
 
 object_types PlayableCharacter::get_objecttype() { return m_otype; }
 
+void PlayableCharacter::SetDirection(const sf::Vector2f & dir)
+{
+	m_vel = dir * m_Speed;
+}
+
 
 void PlayableCharacter::right_slopeup()
 {
