@@ -2,7 +2,7 @@
 #include "Animation.h"
 #include "TextureHolder.h"
 
-void Animation::AnimationInit(int x, int y, int width, int height)
+Animation::Animation(int x, int y, int width, int height)
 {
 	m_texture = TextureHolder::GetTexture("graphics/joe_sheet.png");
 	for (int i = 0; i < nFrames; i++)

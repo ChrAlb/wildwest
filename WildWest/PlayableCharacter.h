@@ -1,5 +1,7 @@
 #pragma once
 #include <SFML\Graphics.hpp>
+#include "Animation.h"
+
 
 using namespace sf;
 
@@ -9,6 +11,15 @@ class PlayableCharacter
 	
 {
 	//friend class EntityManager;
+protected:
+
+	enum class AnimationIndex
+	{
+		WalkingLeft,
+		WalkingRight,
+		Count
+	};
+
 
 public:
 
@@ -85,6 +96,9 @@ protected:
 	int m_maxlevelsize;
 
 	bool m_iscollided;
+
+	Animation animations[int(AnimationIndex::Count)];
+	AnimationIndex curAnimation = AnimationIndex::WalkingLeft;
 
 };
 

@@ -1,6 +1,5 @@
 #pragma once
 #include "PlayableCharacter.h"
-#include "Animation.h"
 
 
 
@@ -20,6 +19,8 @@ public:
 	
 
 private:
-	Animation rightWalk;
+
+	
+	
 
 };

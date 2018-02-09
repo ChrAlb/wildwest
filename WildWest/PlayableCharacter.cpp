@@ -89,6 +89,14 @@ object_types PlayableCharacter::get_objecttype() { return m_otype; }
 void PlayableCharacter::SetDirection(const sf::Vector2f & dir)
 {
 	m_vel = dir * m_Speed;
+	if (dir.x > 0.0f)
+	    {
+		    curAnimation = AnimationIndex::WalkingRight;
+	     } 
+	else if (dir.x < 0.0f)
+		{
+			curAnimation = AnimationIndex::WalkingRight;
+		}
 }
 
 

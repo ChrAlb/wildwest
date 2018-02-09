@@ -4,8 +4,9 @@
 
 class Animation
 {
-public: 
-	void AnimationInit(int x, int y, int width, int height);
+public:
+	Animation() = default;
+	Animation(int x, int y, int width, int height);
 	void ApplytoSprite(sf::Sprite& s);
 	void Update(float dt);
 
