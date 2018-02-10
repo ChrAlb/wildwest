@@ -12,7 +12,7 @@ Player::Player()
 	
 	
 	animations[int(AnimationIndex::WalkingRight)] = Animation(0, 0, 80, 100);
-	animations[int(AnimationIndex::WalkingLeft)] = Animation(0, 3*100, 80, 100);
+	animations[int(AnimationIndex::WalkingLeft)] = Animation(0, 100, 80, 100);
 	
 
 	m_JumpDuration = .25;
@@ -21,7 +21,7 @@ Player::Player()
 
 bool Player::handleInput()
 {
-	sf::Vector2f dir = { 0.0f,0.0f };
+	
 
 	m_JustJumped = false;
 	
@@ -44,7 +44,7 @@ bool Player::handleInput()
 	if (Keyboard::isKeyPressed(Keyboard::Left))
 	{
 		m_LeftPressed = true;
-		dir.x -= 1.0f;
+		dir.x = -1.0f;
 		
 	}
 	else
@@ -57,7 +57,7 @@ bool Player::handleInput()
 	if (Keyboard::isKeyPressed(Keyboard::Right))
 	{
 		m_RightPressed = true;
-		dir.x += 1.0f;
+		dir.x = 1.0f;
 	}
 	else
 	{
@@ -152,3 +152,17 @@ void Player::update(float elapsedTime)
 	m_Sprite.setPosition(m_Position);	
 }
  
+
+void Player::SetDirection(const sf::Vector2f & dir)
+{
+	m_vel = dir * m_Speed;
+	if (dir.x > 0.0f)
+	{
+		curAnimation = AnimationIndex::WalkingRight;
+	}
+	else if (dir.x < 0.0f)
+	{
+		curAnimation = AnimationIndex::WalkingLeft;
+	}
+}
+

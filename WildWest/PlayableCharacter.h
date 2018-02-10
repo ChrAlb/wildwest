@@ -1,6 +1,6 @@
 #pragma once
 #include <SFML\Graphics.hpp>
-#include "Animation.h"
+
 
 
 using namespace sf;
@@ -11,14 +11,6 @@ class PlayableCharacter
 	
 {
 	//friend class EntityManager;
-protected:
-
-	enum class AnimationIndex
-	{
-		WalkingLeft,
-		WalkingRight,
-		Count
-	};
 
 
 public:
@@ -48,7 +40,7 @@ public:
 	void set_objecttype(object_types otype);
 	object_types get_objecttype();
 
-	void SetDirection(const sf::Vector2f& dir);
+	
 
 	
 	Vector2f getCenter();
@@ -97,8 +89,9 @@ protected:
 
 	bool m_iscollided;
 
-	Animation animations[int(AnimationIndex::Count)];
-	AnimationIndex curAnimation = AnimationIndex::WalkingLeft;
+	sf::Vector2f dir = { 0.0f,0.0f };
+
+	
 
 };
 
