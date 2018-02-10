@@ -45,12 +45,13 @@ bool Player::handleInput()
 	{
 		m_LeftPressed = true;
 		dir.x = -1.0f;
+		animations[int(curAnimation)].Go();
 		
 	}
 	else
 	{
         m_LeftPressed = false;
-	    
+		animations[int(curAnimation)].Stop();
 	}
 		
 
@@ -58,11 +59,12 @@ bool Player::handleInput()
 	{
 		m_RightPressed = true;
 		dir.x = 1.0f;
+		animations[int(curAnimation)].Go();
 	}
 	else
 	{
 		m_RightPressed = false;
-		
+		animations[int(curAnimation)].Stop();
 	}
 	Player::SetDirection(dir);
 	return m_JustJumped;

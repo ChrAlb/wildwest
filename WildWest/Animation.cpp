@@ -23,8 +23,19 @@ void Animation::Update(float dt)
 	while (time >= holdtime)
 	{
 		time -= holdtime;
-		Advance();
+		//if (!animation_stop)
+		   Advance();
 	}
+}
+
+void Animation::Go()
+{
+	animation_stop = false;
+}
+
+void Animation::Stop()
+{
+	animation_stop = true;
 }
 
 
@@ -32,11 +43,11 @@ void Animation::Update(float dt)
 
 void Animation::Advance()
 {
-	
-    if (++iFrame >= nFrames)
-	{
-		iFrame = 0;
-	}
+
+		if (++iFrame >= nFrames)
+		{
+			iFrame = 0;
+		}
 	
 	
 }

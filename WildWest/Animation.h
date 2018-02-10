@@ -9,6 +9,8 @@ public:
 	Animation(int x, int y, int width, int height);
 	void ApplytoSprite(sf::Sprite& s);
 	void Update(float dt);
+	void Go();
+	void Stop();
 
 private:
 	void Advance();
@@ -21,6 +23,8 @@ private:
 	sf::IntRect frames[nFrames];
 	int iFrame = 0;
 	float time = 0.0f;
+
+	bool animation_stop = false;
 
 
 };
