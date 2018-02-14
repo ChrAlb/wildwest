@@ -42,10 +42,10 @@ void Animation::Update(float dt)
 void Animation::Advance()
 {
 	
-
-		if (++iFrame >= nFrames)
+	its = m_frames.begin();
+		if (its++ != m_frames.end()) 
 		{
-			iFrame = 0;
+			*iFrame = 0;
 		}
 	
 	
