@@ -43,6 +43,7 @@ void Animation::Stop()
 
 void Animation::Advance()
 {
+	
 
 		if (++iFrame >= nFrames)
 		{
