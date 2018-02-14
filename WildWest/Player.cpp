@@ -10,11 +10,6 @@
 Player::Player()
 {
 	
-	
-	animations[int(AnimationIndex::WalkingRight)] = Animation(0, 0, 80, 100);
-	animations[int(AnimationIndex::WalkingLeft)] = Animation(0, 100, 80, 100);
-	
-
 	m_JumpDuration = .25;
 	
 }
@@ -45,13 +40,11 @@ bool Player::handleInput()
 	{
 		m_LeftPressed = true;
 		dir.x = -1.0f;
-		animations[int(curAnimation)].Go();
 		
 	}
 	else
 	{
         m_LeftPressed = false;
-		animations[int(curAnimation)].Stop();
 	}
 		
 
@@ -59,12 +52,10 @@ bool Player::handleInput()
 	{
 		m_RightPressed = true;
 		dir.x = 1.0f;
-		animations[int(curAnimation)].Go();
 	}
 	else
 	{
 		m_RightPressed = false;
-		animations[int(curAnimation)].Stop();
 	}
 	Player::SetDirection(dir);
 	return m_JustJumped;

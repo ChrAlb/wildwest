@@ -2,13 +2,23 @@
 #include "Animation.h"
 #include "TextureHolder.h"
 
-Animation::Animation(int x, int y, int width, int height)
+Animation::Animation()
 {
 	m_texture = TextureHolder::GetTexture("graphics/joe_sheet.png");
-	for (int i = 0; i < nFrames; i++)
+	
+}
+
+void Animation::addFrame(sf::IntRect rect)
+{
+	m_frames.push_back(rect);
+}
+
+void Animation::addRow(int x, int y, int width,int height,int maxframe)
+{
+	for (int i = 0; i < maxframe; i++)
 	{
-		frames[i] = { x + i*width, y,width, height };
-    }
+		addFrame({ x + i*width, y,width, height });		
+	}
 }
 
 void Animation::ApplytoSprite(sf::Sprite& s)
@@ -28,19 +38,7 @@ void Animation::Update(float dt)
 	}
 }
 
-void Animation::Go()
-{
-	animation_stop = false;
-}
-
-void Animation::Stop()
-{
-	animation_stop = true;
-}
-
-
 	
-
 void Animation::Advance()
 {
 	
