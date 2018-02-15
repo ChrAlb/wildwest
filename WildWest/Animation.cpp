@@ -24,7 +24,7 @@ void Animation::addRow(int x, int y, int width,int height,int maxframe)
 void Animation::ApplytoSprite(sf::Sprite& s)
 {
 	s.setTexture(m_texture);
-	s.setTextureRect(frames[iFrame]);
+	s.setTextureRect(m_frames[iFrame]);
 }
 
 void Animation::Update(float dt)
@@ -42,11 +42,9 @@ void Animation::Update(float dt)
 void Animation::Advance()
 {
 	
-	its = m_frames.begin();
-		if (its++ != m_frames.end()) 
-		{
-			*iFrame = 0;
-		}
-	
+	if (++iFrame >= sizeof(m_frames))
+	{
+		iFrame = 0;
+	}
 	
 }

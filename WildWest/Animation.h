@@ -22,7 +22,7 @@ private:
 	sf::Texture m_texture;
 
 	std::vector<sf::IntRect> m_frames;
-	
+	int iFrame = 0;
 	float time = 0.0f;
 
 	

@@ -9,7 +9,13 @@
 
 Player::Player()
 {
-	
+	//animations[int(AnimationIndex::WalkingRight)] = Animation(0, 0, 80, 100);
+	//animations[int(AnimationIndex::WalkingLeft)] = Animation(0, 100, 80, 100);
+
+    animations[int(AnimationIndex::WalkingRight)].addRow(0, 0, 80, 100,8);
+	animations[int(AnimationIndex::WalkingLeft)].addRow(0, 100, 80, 100,8);
+
+
 	m_JumpDuration = .25;
 	
 }
