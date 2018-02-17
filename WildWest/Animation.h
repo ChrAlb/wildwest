@@ -9,7 +9,7 @@ public:
 	void addFrame(sf::IntRect rect);
 	void addRow(int x, int y, int width, int height, int maxframe);
 	void ApplytoSprite(sf::Sprite& s);
-	void Update(float dt);
+	void Update(float dt, int maxframes);
 	
 
 private:
@@ -24,6 +24,8 @@ private:
 	std::vector<sf::IntRect> m_frames;
 	int iFrame = 0;
 	float time = 0.0f;
+
+	int mframe;
 
 	
 

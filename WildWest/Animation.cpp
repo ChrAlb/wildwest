@@ -27,8 +27,9 @@ void Animation::ApplytoSprite(sf::Sprite& s)
 	s.setTextureRect(m_frames[iFrame]);
 }
 
-void Animation::Update(float dt)
+void Animation::Update(float dt, int maxframes)
 {
+	mframe = maxframes;
 	time += dt;
 	while (time >= holdtime)
 	{
@@ -42,7 +43,8 @@ void Animation::Update(float dt)
 void Animation::Advance()
 {
 	
-	if (++iFrame >= sizeof(m_frames))
+	//if (++iFrame >= maxframes)   => hier geht es noch nicht
+		if (++iFrame >= mframe)
 	{
 		iFrame = 0;
 	}

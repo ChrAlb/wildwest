@@ -13,6 +13,7 @@ private:
 	{
 		WalkingLeft,
 		WalkingRight,
+		Stoping,
 		Count
 	};
 
@@ -26,8 +27,10 @@ public:
 	
 	bool virtual handleInput();
 	void update(float dt);
+
 	Animation animations[int(AnimationIndex::Count)];
-	AnimationIndex curAnimation = AnimationIndex::WalkingRight;
+	AnimationIndex curAnimation = AnimationIndex::Stoping;
+	int max_frames[int(AnimationIndex::Count)];
 	
 
 

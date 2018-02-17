@@ -9,11 +9,14 @@
 
 Player::Player()
 {
-	//animations[int(AnimationIndex::WalkingRight)] = Animation(0, 0, 80, 100);
-	//animations[int(AnimationIndex::WalkingLeft)] = Animation(0, 100, 80, 100);
-
+	
     animations[int(AnimationIndex::WalkingRight)].addRow(0, 0, 80, 100,8);
 	animations[int(AnimationIndex::WalkingLeft)].addRow(0, 100, 80, 100,8);
+	animations[int(AnimationIndex::Stoping)].addRow(0, 200, 80, 100, 1);
+
+	max_frames[int(AnimationIndex::WalkingRight)] = 8;
+	max_frames[int(AnimationIndex::WalkingLeft)] = 8;
+	max_frames[int(AnimationIndex::Stoping)] = 1;
 
 
 	m_JumpDuration = .25;
@@ -145,7 +148,7 @@ void Player::update(float elapsedTime)
 	m_Left.width = 1;
 	m_Left.height = r.height * .3;
 
-	animations[int(curAnimation)].Update(elapsedTime);
+	animations[int(curAnimation)].Update(elapsedTime, max_frames[int(curAnimation)]);
 	animations[int(curAnimation)].ApplytoSprite(m_Sprite);
 	
 	m_Sprite.setPosition(m_Position);	
