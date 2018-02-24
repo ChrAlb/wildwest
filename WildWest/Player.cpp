@@ -114,6 +114,10 @@ void Player::update(float elapsedTime)
        }
 	
 
+	if ((!m_LeftPressed) && (!m_RightPressed))
+	{
+		curAnimation = curAnimation = AnimationIndex::Stoping;
+	}
 
 	mlevelsize = Player::get_maxlevelsize();
 
