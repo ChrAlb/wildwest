@@ -36,7 +36,7 @@ int** LevelManager::nextLevel(VertexArray& rVaLevel, leveldate& m_leveldaten)
 			
 		levelToLoad = m_leveldata.LevelName;
         m_StartPosition.x = 150;
-		m_StartPosition.y = 800;
+		m_StartPosition.y = 750;
 		// Korrektur Kommas aus level.txt
 		m_leveldata.MaxInt = 47;
 		

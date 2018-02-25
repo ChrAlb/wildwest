@@ -58,7 +58,9 @@ void PlayableCharacter::stopLeft(float position)
 void PlayableCharacter::stopJump()
 {
 	m_isJumping = false;
-	m_isFalling = true;
+
+	// Gelöscht, weil bei 2 Steinen aufeinander sonst Character fällt
+	//m_isFalling = true;
 }
 
 
