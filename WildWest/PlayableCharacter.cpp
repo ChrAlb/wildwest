@@ -88,21 +88,40 @@ void PlayableCharacter::set_objecttype(object_types otype) { m_otype = otype; }
 
 object_types PlayableCharacter::get_objecttype() { return m_otype; }
 
+void PlayableCharacter::slope45()
+
+{
+
+	if (m_vel.x > 0)
+	    {
+	    m_Position.y=  m_Position.y  - (m_Sprite.getGlobalBounds().height / 2);
+	    } else 
+
+	if (m_vel.x < 0)
+		{
+		m_Position.y = m_Position.y - (m_Sprite.getGlobalBounds().height / 2);
+		}
 
 
+
+}
+
+/*
 void PlayableCharacter::right_slopeup()
 {
-	m_Position.x = m_Position.x + (m_Sprite.getGlobalBounds().width/2);
-	m_Position.y=  m_Position.y - (m_Sprite.getGlobalBounds().height/2);
+	//m_Position.x = m_Position.x + (m_Sprite.getGlobalBounds().width/2);
+	
  	
 }
 
 void PlayableCharacter::left_slopeup()
 {
-	m_Position.x = m_Position.x - (m_Sprite.getGlobalBounds().width/ 2);
+	//m_Position.x = m_Position.x - (m_Sprite.getGlobalBounds().width/ 2);
 	m_Position.y = m_Position.y - (m_Sprite.getGlobalBounds().height / 2);
 
 }
+
+*/
 
 void PlayableCharacter::set_maxlevelsize(int mlevelsize)
 {
