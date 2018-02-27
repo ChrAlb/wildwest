@@ -94,12 +94,12 @@ void PlayableCharacter::slope45()
 
 	if (m_vel.x > 0)
 	    {
-	    m_Position.y=  m_Position.y  - (m_Sprite.getGlobalBounds().height / 2);
+	    m_Position.y=  m_Position.y  - (m_Sprite.getGlobalBounds().height);
 	    } else 
 
 	if (m_vel.x < 0)
 		{
-		m_Position.y = m_Position.y - (m_Sprite.getGlobalBounds().height / 2);
+		m_Position.y = m_Position.y - (m_Sprite.getGlobalBounds().height );
 		}
 
 

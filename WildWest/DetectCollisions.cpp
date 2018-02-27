@@ -106,17 +106,15 @@ bool GameStateGame::detectCollisions(PlayableCharacter& character)
 				{
 					character.stopRight(block.left);
 					character.set_iscollided(true);
-					//cout << "Rechts:  " << block.left << "   ";
-					//cout << character.getRight().width << "   ";
-					//cout << character.getRight().left << "\n";
+					
+
+
 				}
 				else if (character.getLeft().intersects(block))
 				{
 					character.stopLeft(block.left+TILE_SIZE);
 					character.set_iscollided(true);
-					//cout << "Links:  " << block.left << "   ";
-					//cout << character.getLeft().width << "   ";
-					//cout << character.getLeft().left << "\n";
+					
 				}
 				if (character.getFeet().intersects(block))
 				{
@@ -129,23 +127,12 @@ bool GameStateGame::detectCollisions(PlayableCharacter& character)
 				    
 			    }
 
-			
-			if (m_ArrayLevel[y][x] == 10)
-			   if (character.getRight().intersects(block))
-			    {
-				character.slope45();
-			    }
 
-
-			
-
-			if ( (m_ArrayLevel[y][x] == 11)   )
-
-				if (character.getLeft().intersects(block))
-				{
-					character.slope45();
-				}
-
+			    if (  (character.getRight().intersects(block)) &&  (m_ArrayLevel[y][x] ==10) )
+			    //if ((m_ArrayLevel[y][x] == 10) || (m_ArrayLevel[y][x] == 11) || (m_ArrayLevel[y][x] == 12))
+     		      {
+				    character.slope45();
+			      }
 			// LevelEnd Reached (Tile #2)
 			if (m_ArrayLevel[y][x] == 2)
 			{
