@@ -44,7 +44,10 @@ void PlayableCharacter::stopFalling(float position)
 void PlayableCharacter::stopRight(float position)
  
 {
+	m_isFalling = false;
+ 	oldx = m_Position.x;
 	m_Position.x = position - (m_Sprite.getGlobalBounds().width) ;
+	
 	//m_Sprite.setPosition(m_Position);
 	
 }
@@ -94,12 +97,15 @@ void PlayableCharacter::slope45()
 
 	if (m_vel.x > 0)
 	    {
-	    m_Position.y=  m_Position.y  - (m_Sprite.getGlobalBounds().height);
+		m_Position.y = m_Position.y + (m_Position.x - oldx);
+		//y1 = y + (x1 - x)
+	    //m_Position.y=  m_Position.y  - (m_Sprite.getGlobalBounds().height/2);
 	    } else 
 
 	if (m_vel.x < 0)
 		{
-		m_Position.y = m_Position.y - (m_Sprite.getGlobalBounds().height );
+		
+		m_Position.y = m_Position.y - (m_Sprite.getGlobalBounds().height/2 );
 		}
 
 

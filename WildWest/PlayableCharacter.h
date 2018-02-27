@@ -40,6 +40,8 @@ public:
 	void set_objecttype(object_types otype);
 	object_types get_objecttype();
 
+	float oldx;
+
 	
 
 	
