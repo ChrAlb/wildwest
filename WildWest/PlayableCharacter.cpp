@@ -44,7 +44,7 @@ void PlayableCharacter::stopFalling(float position)
 void PlayableCharacter::stopRight(float position)
  
 {
-	m_isFalling = false;
+	//m_isFalling = false;
  	oldx = m_Position.x;
 	m_Position.x = position - (m_Sprite.getGlobalBounds().width) ;
 	
@@ -94,12 +94,11 @@ object_types PlayableCharacter::get_objecttype() { return m_otype; }
 void PlayableCharacter::slope45()
 
 {
-
+	m_isFalling = false;
 	if (m_vel.x > 0)
 	    {
 		m_Position.y = m_Position.y + (m_Position.x - oldx);
-		//y1 = y + (x1 - x)
-	    //m_Position.y=  m_Position.y  - (m_Sprite.getGlobalBounds().height/2);
+		
 	    } else 
 
 	if (m_vel.x < 0)
@@ -107,27 +106,9 @@ void PlayableCharacter::slope45()
 		
 		m_Position.y = m_Position.y - (m_Sprite.getGlobalBounds().height/2 );
 		}
-
-
-
 }
 
-/*
-void PlayableCharacter::right_slopeup()
-{
-	//m_Position.x = m_Position.x + (m_Sprite.getGlobalBounds().width/2);
-	
- 	
-}
 
-void PlayableCharacter::left_slopeup()
-{
-	//m_Position.x = m_Position.x - (m_Sprite.getGlobalBounds().width/ 2);
-	m_Position.y = m_Position.y - (m_Sprite.getGlobalBounds().height / 2);
-
-}
-
-*/
 
 void PlayableCharacter::set_maxlevelsize(int mlevelsize)
 {
