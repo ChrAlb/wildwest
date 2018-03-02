@@ -87,6 +87,8 @@ bool GameStateGame::detectCollisions(PlayableCharacter& character)
 				(m_ArrayLevel[y][x] == 8) ||
 				(m_ArrayLevel[y][x] == 9) ||
 				(m_ArrayLevel[y][x] == 10) ||
+				(m_ArrayLevel[y][x] == 11) ||
+				(m_ArrayLevel[y][x] == 12) ||
 				
 				(m_ArrayLevel[y][x] == 14) ||
 				(m_ArrayLevel[y][x] == 15) ||
@@ -106,6 +108,10 @@ bool GameStateGame::detectCollisions(PlayableCharacter& character)
 				{
 					character.stopRight(block.left);
 					character.set_iscollided(true);
+					if (m_ArrayLevel[y][x] == 10)
+					{
+						character.slope45();
+					}
 					
 
 				}
@@ -126,12 +132,13 @@ bool GameStateGame::detectCollisions(PlayableCharacter& character)
 				    
 			    }
 
-
+/*
 
 			if (
 				(
-    			  (m_ArrayLevel[y][x] == 10) 
-                  
+    			  (m_ArrayLevel[y][x] == 10) ||
+                  (m_ArrayLevel[y][x] == 11) ||
+				  (m_ArrayLevel[y][x] == 12)
 				 ) && 
 				(
 				  (character.getRight().intersects(block)) ||
@@ -143,7 +150,8 @@ bool GameStateGame::detectCollisions(PlayableCharacter& character)
 			{
 				character.slope45();
 			}
-			
+			*/
+	
 			if (m_ArrayLevel[y][x] == 2)
 			{
 				reachedGoal = true;
