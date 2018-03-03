@@ -51,7 +51,9 @@ private:
 
 	void loadLevel();
 
-	bool detectCollisions(PlayableCharacter& characters);
+	bool detectCollisions(PlayableCharacter& character);
+
+	bool detectSlope(PlayableCharacter & character);
 
 
 	sf::RectangleShape  head_box;
@@ -72,7 +74,7 @@ private:
 	sf::Font m_font;
 	sf::Text text;
 
-	
+	bool m_onSlope = false;
 	
 
 public:

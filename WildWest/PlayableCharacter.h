@@ -34,9 +34,7 @@ public:
 	void stopLeft(float position);
 	void stopJump();
 
-	void right_slopeup();
-	void left_slopeup();
-
+	
 	void set_objecttype(object_types otype);
 	object_types get_objecttype();
 
@@ -88,6 +86,8 @@ protected:
 	int m_maxlevelsize;
 
 	bool m_iscollided;
+
+	
 
 	sf::Vector2f dir = { 0.0f,0.0f };
 
