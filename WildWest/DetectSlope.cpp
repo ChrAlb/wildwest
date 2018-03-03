@@ -11,11 +11,8 @@ bool GameStateGame::detectSlope(PlayableCharacter & character)
 	bool      on_slope;
 
 
-
-
 	on_slope = false;
 	position = character.getPosition();
-
 	x = (( (int)position.left + (int)position.width) / TILE_SIZE) - 1;
 	y = ( (int)position.top / TILE_SIZE) + 1;
 
@@ -23,7 +20,8 @@ bool GameStateGame::detectSlope(PlayableCharacter & character)
 	if (y >= m_LM.getLevelSize().y)
 		 y = 0;
 
-	if (m_ArrayLevel[y][x] == 10)
+	if (   (m_ArrayLevel[y][x] == 10)  || (m_ArrayLevel[y][x] == 11)  || (m_ArrayLevel[y][x] == 12)   )
+
 	{
 		on_slope = true;
 	}
