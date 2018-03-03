@@ -28,7 +28,7 @@ public:
 	FloatRect getLeft();
 	 
 	Sprite getSprite();
-
+	 
 	void stopFalling(float position);
 	void stopRight(float position);
 	void stopLeft(float position);
