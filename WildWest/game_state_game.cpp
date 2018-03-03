@@ -112,11 +112,9 @@ void GameStateGame::update(const float dt)
 				if (detectSlope(*(*iter)))
 				{
 					m_onSlope = true;
+					resolveSlope(*(*iter));
 				}
-				else
-				{
-					m_onSlope = false;
-				}
+				
 
 				if (detectCollisions(*(*iter)))
 				{

@@ -54,6 +54,7 @@ private:
 	bool detectCollisions(PlayableCharacter& character);
 
 	bool detectSlope(PlayableCharacter & character);
+	void resolveSlope(PlayableCharacter & character);
 
 
 	sf::RectangleShape  head_box;
