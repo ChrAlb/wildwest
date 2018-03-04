@@ -113,11 +113,13 @@ void GameStateGame::update(const float dt)
 				{
 					m_onSlope = true;
 					
+					
 					(*iter)->resolve_slope45();
 
 				}else
 				{
 					m_onSlope = false;
+					
 				}
 				
 
@@ -209,6 +211,7 @@ void GameStateGame::handleInput()
 
 GameStateGame::GameStateGame(Game* game)
 {
+	
 	m_font.loadFromFile("graphics/Arial.ttf");
 	this->game = game;
 	

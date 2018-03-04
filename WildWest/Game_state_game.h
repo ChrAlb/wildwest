@@ -54,7 +54,7 @@ private:
 	bool detectCollisions(PlayableCharacter& character);
 
 	bool detectSlope(PlayableCharacter & character);
-	
+
 
 	sf::RectangleShape  head_box;
 	sf::RectangleShape  feet_box;
@@ -76,6 +76,7 @@ private:
 
 	bool m_onSlope = false;
 	
+	float m_Gravity;
 
 public:
 
