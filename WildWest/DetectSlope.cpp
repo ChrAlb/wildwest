@@ -29,7 +29,3 @@ bool GameStateGame::detectSlope(PlayableCharacter & character)
 	return on_slope;
 }
 
-void GameStateGame::resolveSlope(PlayableCharacter & character)
-{
-	;
-}

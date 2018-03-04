@@ -119,7 +119,7 @@ bool GameStateGame::detectCollisions(PlayableCharacter& character)
 					if (character.getFeet().intersects(block))
 					{
 						character.stopFalling(block.top);
-
+						
 					}
 					else if (character.getHead().intersects(block))
 					{

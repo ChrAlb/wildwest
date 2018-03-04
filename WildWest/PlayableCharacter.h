@@ -26,6 +26,9 @@ public:
 	FloatRect getHead();
 	FloatRect getRight();
 	FloatRect getLeft();
+
+	Vector2f old_position;
+
 	 
 	Sprite getSprite();
 	 
@@ -39,7 +42,7 @@ public:
 	object_types get_objecttype();
 
 	
-
+	void resolve_slope45();
 	
 	Vector2f getCenter();
 
@@ -68,7 +71,7 @@ protected:
 
 	float m_Gravity;
 	float m_Speed = 300;
-	sf::Vector2f m_vel;
+	Vector2f m_vel;
 
 	Vector2i max_levelsize;
 
@@ -87,8 +90,8 @@ protected:
 
 	bool m_iscollided;
 
+	Vector2f m_oldposition;
 	
-
 	sf::Vector2f dir = { 0.0f,0.0f };
 
 	

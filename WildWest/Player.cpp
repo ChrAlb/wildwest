@@ -80,12 +80,14 @@ void Player::update(float elapsedTime)
 	
 	if (m_RightPressed)
 	{
+		m_oldposition = m_Position;
 		m_Position.x += m_Speed * elapsedTime;
 		
 	}
 
 	if (m_LeftPressed)
 	{
+		m_oldposition = m_Position;
 		m_Position.x -= m_Speed * elapsedTime;
 	}
 
@@ -104,7 +106,7 @@ void Player::update(float elapsedTime)
 		}
 	}
 
-	if (m_isFalling)
+	if  (m_isFalling)
 	{
 		m_Position.y += m_Gravity * elapsedTime;
 	} 

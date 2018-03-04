@@ -112,7 +112,12 @@ void GameStateGame::update(const float dt)
 				if (detectSlope(*(*iter)))
 				{
 					m_onSlope = true;
-					resolveSlope(*(*iter));
+					
+					(*iter)->resolve_slope45();
+
+				}else
+				{
+					m_onSlope = false;
 				}
 				
 
