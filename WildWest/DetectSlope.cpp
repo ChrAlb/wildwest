@@ -13,7 +13,7 @@ bool GameStateGame::detectSlope(PlayableCharacter & character)
 
 	on_slope = false;
 	position = character.getPosition();
-	x = (( (int)position.left + (int)position.width) / TILE_SIZE) - 1;
+	x = (( (int)position.left + (int)position.width) / TILE_SIZE) ;
 	y = ( (int)position.top / TILE_SIZE) + 1;
 
 	// Warum wird y hier in gamestate hochgezählt?

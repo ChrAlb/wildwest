@@ -51,6 +51,8 @@ public:
 
 	void set_iscollided(bool iscollided);
 
+	void set_gravity(float gravity);
+
 
 protected:
 	Sprite m_Sprite;

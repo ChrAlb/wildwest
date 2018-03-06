@@ -26,8 +26,8 @@ FloatRect PlayableCharacter::getPosition()
  
 void PlayableCharacter::resolve_slope45()
 {
-	m_isFalling = false;
-	m_Position.y = m_Position.y + (m_Position.x - m_oldposition.x);
+	//m_Position.y = m_Position.y - (m_Position.x - m_oldposition.x);
+	m_Position.y = m_Position.y - 100;
 }
 
 Vector2f PlayableCharacter::getCenter()
@@ -110,4 +110,9 @@ void PlayableCharacter::set_iscollided(bool iscollided)
 
 	m_iscollided = iscollided;
 
+}
+
+void PlayableCharacter::set_gravity(float gravity)
+{
+	m_Gravity = gravity;
 }
