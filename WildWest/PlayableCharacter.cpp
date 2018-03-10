@@ -26,8 +26,9 @@ FloatRect PlayableCharacter::getPosition()
  
 void PlayableCharacter::resolve_slope45()
 {
-	//m_Position.y = m_Position.y - (m_Position.x - m_oldposition.x);
-	m_Position.y = m_Position.y - 100;
+	m_Position.y = m_Position.y - (m_Position.x - m_oldposition.x);
+	//m_Position.y = m_Position.y - 300;
+	m_isFalling = false;
 }
 
 Vector2f PlayableCharacter::getCenter()

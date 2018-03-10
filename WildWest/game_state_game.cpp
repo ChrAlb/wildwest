@@ -106,21 +106,7 @@ void GameStateGame::update(const float dt)
 					feet_box.setPosition((*iter)->getFeet().left, (*iter)->getFeet().top);
 
 				}
-				// DEBUG End
-			if (detectSlope(*(*iter)))
-				{
-					m_onSlope = true;
-					
-					(*iter)->set_gravity(0);
-					(*iter)->resolve_slope45();
 
-				}else
-				{
-					(*iter)->set_gravity(GRAVITY);
-					m_onSlope = false;
-				
-				}
-			
 				if (detectCollisions(*(*iter)))
 				{
 					if ((*iter)->get_objecttype() == t_Player)
