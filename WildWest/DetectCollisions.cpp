@@ -65,9 +65,17 @@ for (int x = startX; x < endX; x++)
             }
 			//**************
 			
-			 if (m_ArrayLevel[y][x] == 10)
+			 if (
+				 (m_ArrayLevel[y][x] == 10) ||
+				 (m_ArrayLevel[y][x] == 11)
+				 )
 			 {
-				 if (character.getRight().intersects(block))
+				 if (
+					 (character.getRight().intersects(block)) ||
+					 (character.getLeft().intersects(block))  ||
+					 (character.getHead().intersects(block))  ||
+					 (character.getFeet().intersects(block))
+					)
 				 {
 					 character.resolve_slope45();
 				 }
