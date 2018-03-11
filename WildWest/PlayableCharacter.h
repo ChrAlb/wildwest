@@ -42,7 +42,7 @@ public:
 	object_types get_objecttype();
 
 	
-	void resolve_slope45();
+	void resolve_slope45(float position);
 	
 	Vector2f getCenter();
 

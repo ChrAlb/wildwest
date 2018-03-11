@@ -66,8 +66,8 @@ for (int x = startX; x < endX; x++)
 			//**************
 			
 			 if (
-				 (m_ArrayLevel[y][x] == 10) ||
-				 (m_ArrayLevel[y][x] == 11)
+				 (m_ArrayLevel[y][x] == 10) /*||
+				 (m_ArrayLevel[y][x] == 11) */
 				 )
 			 {
 				 if (
@@ -77,7 +77,7 @@ for (int x = startX; x < endX; x++)
 					 (character.getFeet().intersects(block))
 					)
 				 {
-					 character.resolve_slope45();
+					 character.resolve_slope45(block.left + TILE_SIZE);
 				 }
 			 }
 			 else

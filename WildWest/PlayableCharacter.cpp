@@ -24,11 +24,14 @@ FloatRect PlayableCharacter::getPosition()
 	return m_Sprite.getGlobalBounds();
 }
  
-void PlayableCharacter::resolve_slope45()
+void PlayableCharacter::resolve_slope45(float position)
 {
-	m_Position.y = m_Position.y - (m_Position.x - m_oldposition.x);
-	//m_Position.y = m_Position.y - 300;
-	m_isFalling = false;
+	if (m_vel.x > 0)
+	{
+        m_Position.y = m_Position.y - (m_Position.x - m_oldposition.x);
+	    m_isFalling = false;
+	} 
+	
 }
 
 Vector2f PlayableCharacter::getCenter()
