@@ -66,8 +66,9 @@ for (int x = startX; x < endX; x++)
 			//**************
 			
 			 if (
-				 (m_ArrayLevel[y][x] == 10) /*||
-				 (m_ArrayLevel[y][x] == 11) */
+				 (m_ArrayLevel[y][x] == 10) ||
+				 (m_ArrayLevel[y][x] == 11) ||
+				 (m_ArrayLevel[y][x] == 12)
 				 )
 			 {
 				 if (
