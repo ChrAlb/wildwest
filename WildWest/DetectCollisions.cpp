@@ -75,13 +75,10 @@ for (int x = startX; x < endX; x++)
 				 )
 			 {
 				 if (
-					 (character.getRight().intersects(block)) ||
-					 (character.getLeft().intersects(block))  ||
-					 (character.getHead().intersects(block))  ||
-					 (character.getFeet().intersects(block))
+					 character.get_Center().intersects(block)
 					)
 				 {
-					 character.resolve_slope45(block.left + TILE_SIZE);
+					 character.resolve_slope45(block.left);
 				 }
 			 }
 			 else

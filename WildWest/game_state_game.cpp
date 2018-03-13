@@ -42,6 +42,7 @@ void GameStateGame::draw(const float dt)
 		this->game->window.draw(right_box);
 		this->game->window.draw(left_box);
 		this->game->window.draw(feet_box);
+		this->game->window.draw(center_box);
 		this->game->window.draw(box);
 		
 		this->game->window.draw(box_position);
@@ -104,6 +105,11 @@ void GameStateGame::update(const float dt)
 					feet_box.setOutlineColor(sf::Color::Magenta);
 					feet_box.setOutlineThickness(5);
 					feet_box.setPosition((*iter)->getFeet().left, (*iter)->getFeet().top);
+
+					center_box.setSize(sf::Vector2f((*iter)->get_Center().width, (*iter)->get_Center().height));
+					center_box.setOutlineColor(sf::Color::Blue);
+					center_box.setOutlineThickness(5);
+					center_box.setPosition((*iter)->get_Center().left, (*iter)->get_Center().top);
 
 				}
 

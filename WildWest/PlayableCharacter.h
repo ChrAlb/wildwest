@@ -26,6 +26,7 @@ public:
 	FloatRect getHead();
 	FloatRect getRight();
 	FloatRect getLeft();
+	FloatRect get_Center();
 
 	Vector2f old_position;
 
@@ -85,6 +86,7 @@ protected:
 	FloatRect m_Head;
 	FloatRect m_Right;
 	FloatRect m_Left;
+	FloatRect m_Center;
 
 	object_types m_otype;
 

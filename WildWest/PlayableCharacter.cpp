@@ -100,6 +100,11 @@ FloatRect PlayableCharacter::getRight()
 	return m_Right;
 }
 
+FloatRect PlayableCharacter::get_Center()
+{
+	return m_Center;
+}
+
 void PlayableCharacter::set_objecttype(object_types otype) { m_otype = otype; }
 
 object_types PlayableCharacter::get_objecttype() { return m_otype; }

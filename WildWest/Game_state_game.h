@@ -16,7 +16,7 @@ private:
 
 	//******************
 	// falls debug= true; Kollisionsboxen werden angezeigt
-	bool debug = true;
+	bool debug = true ;
 	//******************
 
 	sf::View gameview;
@@ -60,6 +60,7 @@ private:
 	sf::RectangleShape  feet_box;
 	sf::RectangleShape  left_box;
 	sf::RectangleShape  right_box;
+	sf::RectangleShape  center_box;
 	sf::RectangleShape  box;
 	sf::RectangleShape  box_position;
 
