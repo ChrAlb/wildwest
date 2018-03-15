@@ -36,7 +36,7 @@ void PlayableCharacter::resolve_slope45(float position)
 
 	if (m_vel.x < 0)
 	{
-		m_Position.y = m_Position.y + (m_Position.x - m_oldposition.x);
+		m_Position.y = m_Position.y + (m_oldposition.x - m_Position.x);
 		m_isFalling = false;
 	}
 	
