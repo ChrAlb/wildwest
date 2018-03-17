@@ -25,27 +25,30 @@ FloatRect PlayableCharacter::getPosition()
 	return m_Sprite.getGlobalBounds();
 }
  
-void PlayableCharacter::resolve_slope45(float position)
+void PlayableCharacter::resolve_slope45(float deltatobottom)
 {
 	if (m_vel.x > 0)
+
+		
 	{
 		if (m_rightslope_end)
 		{
-         //m_position.y = bottom//
+			m_Position.y = m_Position.y - deltatobottom;
 		} else
 		{
-          m_Position.y = m_Position.y - (m_Position.x - m_oldposition.x);
+		  m_Position.y = m_Position.y - (m_Position.x - m_oldposition.x);
 		}
-        
-	    m_isFalling = false;
-		
-	} 
 
+		m_isFalling = false;
+
+	}
+	
+	
 	if (m_vel.x < 0)
 	{  
 		if (m_leftslope_end)
 		{
-			//
+			m_Position.y = m_Position.y - deltatobottom;
 		}
 		else
 		{

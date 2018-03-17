@@ -107,7 +107,7 @@ void GameStateGame::update(const float dt)
 					feet_box.setPosition((*iter)->getFeet().left, (*iter)->getFeet().top);
 
 					center_box.setSize(sf::Vector2f((*iter)->get_Center().width, (*iter)->get_Center().height));
-					center_box.setOutlineColor(sf::Color::Blue);
+					center_box.setOutlineColor(sf::Color::Yellow);
 					center_box.setOutlineThickness(5);
 					center_box.setPosition((*iter)->get_Center().left, (*iter)->get_Center().top);
 

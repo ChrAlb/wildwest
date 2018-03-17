@@ -7,7 +7,8 @@ bool GameStateGame::detectCollisions(PlayableCharacter& character)
 
 {
 FloatRect position;
-int       x, y;
+int       tilex,tiley;
+float    deltatobottom;
 
 
 bool reachedGoal = false;
@@ -70,7 +71,8 @@ for (int x = startX; x < endX; x++)
 			//**************
 			
 			 if (
-				 (m_ArrayLevel[y][x] == 10) 
+				 (m_ArrayLevel[y][x] == 10) ||
+				 (m_ArrayLevel[y][x] == 27)
 			    )
 			 {
 				 if (
@@ -79,22 +81,26 @@ for (int x = startX; x < endX; x++)
 				 {
 					 
 					 position = character.getPosition();
-					 x = (((int)position.left + (int)position.width) / TILE_SIZE);
-					 y = ((int)position.top / TILE_SIZE) + 1;
+    				 tilex = (((int)position.left + (int)position.width) / TILE_SIZE);
+					 tiley = ((int)position.top / TILE_SIZE) + 1;
 
 
-					 if (!m_ArrayLevel[y+1][x-1] == 10)
+					 if (!m_ArrayLevel[tiley+1][tilex-1] == 10)
 					 {
 						 character.set_leftslope_end(true);
+						 deltatobottom = position.top - position.height - y*TILE_SIZE;
+	                 } else
 
-	                 }
-
-					 if (!m_ArrayLevel[y + 1][x + 1] == 10)
+/*					 if (!m_ArrayLevel[tiley + 1][tilex + 1] == 10)
 					 {
 						 character.set_rightslope_end(true);
+						 deltatobottom = position.top - position.height - y*TILE_SIZE;
+					 } else  */
+					 {
+						 deltatobottom = 0;
 					 }
 
-                     character.resolve_slope45(block.left);
+                     character.resolve_slope45(0);
 				 }
 			 }
 			 else

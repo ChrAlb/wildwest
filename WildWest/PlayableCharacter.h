@@ -44,14 +44,15 @@ public:
 
 	
 	void resolve_slope45(float position);
+	void set_leftslope_end(bool setend);
+	void set_rightslope_end(bool setend);
 	
 	Vector2f getCenter();
 
 	void set_maxlevelsize(int mlevelsize);
 	int get_maxlevelsize();
 
-	void set_leftslope_end(bool setend);
-	void set_rightslope_end(bool setend);
+	
 
 
 	void set_iscollided(bool iscollided);
