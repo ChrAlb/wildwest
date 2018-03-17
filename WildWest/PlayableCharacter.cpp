@@ -4,7 +4,8 @@
 
 PlayableCharacter::PlayableCharacter() : m_id(0)
 {
-	
+	m_leftslope_end = false;
+	m_rightslope_end = false;
 }
 
 void PlayableCharacter::spawn(Vector2f startPosition, float gravity)
@@ -28,15 +29,29 @@ void PlayableCharacter::resolve_slope45(float position)
 {
 	if (m_vel.x > 0)
 	{
-		
-        m_Position.y = m_Position.y - (m_Position.x - m_oldposition.x);
+		if (m_rightslope_end)
+		{
+         //m_position.y = bottom//
+		} else
+		{
+          m_Position.y = m_Position.y - (m_Position.x - m_oldposition.x);
+		}
+        
 	    m_isFalling = false;
 		
 	} 
 
 	if (m_vel.x < 0)
-	{
-		m_Position.y = m_Position.y + (m_oldposition.x - m_Position.x);
+	{  
+		if (m_leftslope_end)
+		{
+			//
+		}
+		else
+		{
+        m_Position.y = m_Position.y + (m_oldposition.x - m_Position.x);
+		}
+		
 		m_isFalling = false;
 	}
 	
@@ -120,6 +135,16 @@ void PlayableCharacter::set_maxlevelsize(int mlevelsize)
 int PlayableCharacter::get_maxlevelsize()
 {
 	return m_maxlevelsize;
+}
+
+void PlayableCharacter::set_leftslope_end(bool setend)
+{
+	m_leftslope_end = setend;
+}
+
+void PlayableCharacter::set_rightslope_end(bool setend)
+{
+	m_rightslope_end = setend;
 }
 
 void PlayableCharacter::set_iscollided(bool iscollided)

@@ -50,6 +50,10 @@ public:
 	void set_maxlevelsize(int mlevelsize);
 	int get_maxlevelsize();
 
+	void set_leftslope_end(bool setend);
+	void set_rightslope_end(bool setend);
+
+
 	void set_iscollided(bool iscollided);
 
 	void set_gravity(float gravity);
@@ -66,6 +70,9 @@ protected:
 
 	bool m_LeftPressed;
 	bool m_RightPressed;
+
+	bool m_leftslope_end;
+	bool m_rightslope_end;
 
 	float m_TimeThisJump;
 

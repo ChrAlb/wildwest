@@ -16,7 +16,7 @@ private:
 
 	//******************
 	// falls debug= true; Kollisionsboxen werden angezeigt
-	bool debug = false ;
+	bool debug = true ;
 	//******************
 
 	sf::View gameview;
@@ -52,9 +52,7 @@ private:
 	void loadLevel();
 
 	bool detectCollisions(PlayableCharacter& character);
-
-	bool detectSlope(PlayableCharacter & character);
-
+	
 
 	sf::RectangleShape  head_box;
 	sf::RectangleShape  feet_box;

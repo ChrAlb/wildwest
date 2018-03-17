@@ -6,6 +6,10 @@
 bool GameStateGame::detectCollisions(PlayableCharacter& character)
 
 {
+FloatRect position;
+int       x, y;
+
+
 bool reachedGoal = false;
 FloatRect detecionZone = character.getPosition();
 	
@@ -67,18 +71,30 @@ for (int x = startX; x < endX; x++)
 			
 			 if (
 				 (m_ArrayLevel[y][x] == 10) 
-				 /*
-				 ||
-				 (m_ArrayLevel[y][x] == 11) ||
-				 (m_ArrayLevel[y][x] == 12)
-				 */
-				 )
+			    )
 			 {
 				 if (
-					 character.get_Center().intersects(block)
-					)
+					character.get_Center().intersects(block)
+				    )
 				 {
-					 character.resolve_slope45(block.left);
+					 
+					 position = character.getPosition();
+					 x = (((int)position.left + (int)position.width) / TILE_SIZE);
+					 y = ((int)position.top / TILE_SIZE) + 1;
+
+
+					 if (!m_ArrayLevel[y+1][x-1] == 10)
+					 {
+						 character.set_leftslope_end(true);
+
+	                 }
+
+					 if (!m_ArrayLevel[y + 1][x + 1] == 10)
+					 {
+						 character.set_rightslope_end(true);
+					 }
+
+                     character.resolve_slope45(block.left);
 				 }
 			 }
 			 else
