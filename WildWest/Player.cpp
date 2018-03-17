@@ -158,9 +158,11 @@ void Player::update(float elapsedTime)
 
 	// Center
 	m_Center.left = r.left + (r.width / 2) - 1;
-	m_Center.top = r.top + (r.height *.3);
+	//m_Center.top = r.top + (r.height *.3);
+	m_Center.top = r.top;
 	m_Center.width = 4;
-	m_Center.height = r.height - (r.height *.3) ;
+	//Center.height = r.height - (r.height *.3) ;
+	m_Center.height = r.height;
 
 	animations[int(curAnimation)].Update(elapsedTime, max_frames[int(curAnimation)]);
 	animations[int(curAnimation)].ApplytoSprite(m_Sprite);

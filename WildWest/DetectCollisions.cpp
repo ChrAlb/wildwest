@@ -75,7 +75,7 @@ for (int x = startX; x < endX; x++)
 			    )
 			 {
 				 if (
-					character.get_Center().intersects(block)
+  					character.get_Center().intersects(block)
 				    )
 				 {
 					 
