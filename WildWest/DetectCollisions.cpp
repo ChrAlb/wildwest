@@ -71,8 +71,7 @@ for (int x = startX; x < endX; x++)
 			//**************
 			
 			 if (
-				 (m_ArrayLevel[y][x] == 10) ||
-				 (m_ArrayLevel[y][x] == 27)
+				 (m_ArrayLevel[y][x] == 10) 
 			    )
 			 {
 				 if (
@@ -83,7 +82,7 @@ for (int x = startX; x < endX; x++)
 					 position = character.getPosition();
     				 tilex = (((int)position.left + (int)position.width) / TILE_SIZE);
 					 tiley = ((int)position.top / TILE_SIZE) + 1;
-
+					  
 
 					 if (!m_ArrayLevel[tiley+1][tilex-1] == 10)
 					 {
@@ -91,11 +90,11 @@ for (int x = startX; x < endX; x++)
 						 deltatobottom = position.top - position.height - y*TILE_SIZE;
 	                 } else
 
-/*					 if (!m_ArrayLevel[tiley + 1][tilex + 1] == 10)
+				 if (!m_ArrayLevel[tiley + 1][tilex + 1] == 10)
 					 {
 						 character.set_rightslope_end(true);
 						 deltatobottom = position.top - position.height - y*TILE_SIZE;
-					 } else  */
+					 } else  
 					 {
 						 deltatobottom = 0;
 					 }
