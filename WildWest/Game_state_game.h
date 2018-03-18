@@ -41,6 +41,8 @@ private:
 	bool m_newlevelrequiered = true;
 	bool m_Playing = false;
 
+	bool on_slope;
+
 	VertexArray m_VALevel;
 
 	float oldpos;

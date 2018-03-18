@@ -72,6 +72,7 @@ protected:
 	bool m_LeftPressed;
 	bool m_RightPressed;
 
+	
 	bool m_leftslope_end;
 	bool m_rightslope_end;
 

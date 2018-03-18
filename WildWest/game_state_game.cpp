@@ -38,11 +38,12 @@ void GameStateGame::draw(const float dt)
     // DEBUG
 	if (debug)
 	{
+		this->game->window.draw(center_box);
 		this->game->window.draw(head_box);
 		this->game->window.draw(right_box);
 		this->game->window.draw(left_box);
 		this->game->window.draw(feet_box);
-		this->game->window.draw(center_box);
+		
 		this->game->window.draw(box);
 		
 		this->game->window.draw(box_position);

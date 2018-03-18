@@ -26,7 +26,7 @@ FloatRect PlayableCharacter::getPosition()
 }
  
 void PlayableCharacter::resolve_slope45(float tileposition)
-{
+{ 
 	if (m_vel.x > 0)
 
 		
@@ -37,8 +37,8 @@ void PlayableCharacter::resolve_slope45(float tileposition)
 		  m_isFalling = false;
 
 	}
-	/*
 	
+	 
 	if (m_vel.x < 0)
 	{  
 		
@@ -46,7 +46,7 @@ void PlayableCharacter::resolve_slope45(float tileposition)
 				
 		m_isFalling = false;
 	}
-	*/
+	
 }
 
 Vector2f PlayableCharacter::getCenter()
