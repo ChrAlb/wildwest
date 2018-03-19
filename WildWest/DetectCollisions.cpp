@@ -6,9 +6,9 @@
 bool GameStateGame::detectCollisions(PlayableCharacter& character)
 
 {
-//FloatRect position;
-//int       tilex,tiley;
-//float     tileposition; 
+FloatRect position;
+int       tilex,tiley;
+float     tileposition; 
 
 
 bool reachedGoal = false;
@@ -53,15 +53,12 @@ if (!character.getPosition().intersects(level))
 	}
 }
 
-on_slope = false;
 
 for (int x = startX; x < endX; x++)
 {
 	for (int y = startY; y < endY; y++)
 		{
-		if (!on_slope)
-		{
-
+		
 			block.left = x * TILE_SIZE;
 			block.top = y * TILE_SIZE;
 
@@ -83,18 +80,34 @@ for (int x = startX; x < endX; x++)
 					character.get_Center().intersects(block)
 					)
 				{
+					position = character.getPosition();
+					tilex = (((int)position.left + (int)position.width) / TILE_SIZE);
+					tiley = ((int)position.top / TILE_SIZE) + 1;
+					
+					if (character.m_vel.x > 0)
+					{
+						if (m_ArrayLevel[tiley-1][tilex+1] == 10)
+							on_slope = true;
+						else
+							on_slope = false;
+  				    }
 
-					/*					 position = character.getPosition();
-										 tilex = (((int)position.left + (int)position.width) / TILE_SIZE);
-										 tiley = ((int)position.top / TILE_SIZE) + 1;
-
-					*/
+					if (character.m_vel.x < 0)
+					{
+						if (m_ArrayLevel[tiley+1][tilex-1] == 10)
+							on_slope = true;
+						else
+							on_slope = false;
+					}
+					
 					character.resolve_slope45(0);
-					on_slope = true;
+
 				}
 			}
 			// else
 
+			if (!on_slope)
+			{
 
 			if (
 

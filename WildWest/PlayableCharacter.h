@@ -52,7 +52,7 @@ public:
 	void set_maxlevelsize(int mlevelsize);
 	int get_maxlevelsize();
 
-	
+	Vector2f m_vel;
 
 
 	void set_iscollided(bool iscollided);
@@ -83,7 +83,7 @@ protected:
 
 	float m_Gravity;
 	float m_Speed = 300;
-	Vector2f m_vel;
+	
 
 	Vector2i max_levelsize;
 
