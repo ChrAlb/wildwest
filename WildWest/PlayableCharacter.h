@@ -10,7 +10,6 @@ enum object_types { t_Player, t_Enemy, t_Others };
 class PlayableCharacter
 	
 {
-	//friend class EntityManager;
 
 
 public:
@@ -52,8 +51,10 @@ public:
 	void set_maxlevelsize(int mlevelsize);
 	int get_maxlevelsize();
 
-	Vector2f m_vel;
-
+	
+	Vector2f m_vel;   // muss zu protected!!!
+	bool m_on_slope;
+	Vector2i slope_index;
 
 	void set_iscollided(bool iscollided);
 

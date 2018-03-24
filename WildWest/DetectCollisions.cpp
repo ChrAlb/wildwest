@@ -7,8 +7,6 @@ bool GameStateGame::detectCollisions(PlayableCharacter& character)
 
 {
 FloatRect position;
-int       tilex,tiley;
-float     tileposition; 
 
 
 bool reachedGoal = false;
@@ -72,92 +70,105 @@ for (int x = startX; x < endX; x++)
 			}
 			//**************
 
-			if (
-				(m_ArrayLevel[y][x] == 10)
-				)
-			{
-				if (
-					character.get_Center().intersects(block)
-					)
+			
+			
+				if ((m_ArrayLevel[y][x] == 10))
 				{
-					position = character.getPosition();
-					tilex = (((int)position.left + (int)position.width) / TILE_SIZE);
-					tiley = ((int)position.top / TILE_SIZE) + 1;
-					
-					if (character.m_vel.x > 0)
+					if (character.get_Center().intersects(block))
 					{
-						if (m_ArrayLevel[tiley-1][tilex+1] == 10)
-							on_slope = true;
-						else
-							on_slope = false;
-  				    }
+						if (!character.m_on_slope)
+						{
+							character.m_on_slope = true;
+							position = character.getPosition();
+							character.slope_index.x = (((int)position.left + (int)position.width) / TILE_SIZE);
+							character.slope_index.y = ((int)position.top / TILE_SIZE) + 1;
 
-					if (character.m_vel.x < 0)
-					{
-						if (m_ArrayLevel[tiley+1][tilex-1] == 10)
-							on_slope = true;
+						}
 						else
-							on_slope = false;
+
+
+						{
+							if (character.m_vel.x > 0)
+							{
+								if (m_ArrayLevel[character.slope_index.y - 1][character.slope_index.x + 1] == 10)
+								{
+									character.m_on_slope = true;
+									character.slope_index = { character.slope_index.y - 1, character.slope_index.x + 1 };
+								}
+								else
+									character.m_on_slope = false;
+							}
+							else if (character.m_vel.x < 0)
+							{
+								if (m_ArrayLevel[character.slope_index.y + 1][character.slope_index.x - 1] == 10)
+								{
+									character.m_on_slope = true;
+									character.slope_index = { character.slope_index.y + 1, character.slope_index.x - 1 };
+								}
+								else
+									character.m_on_slope = false;
+							}
+
+
+						}
+						character.resolve_slope45(0);
+
 					}
-					
-					character.resolve_slope45(0);
-
 				}
-			}
+			   
 			// else
 
-			if (!on_slope)
 			{
 
-			if (
+				if (
 
-				(m_ArrayLevel[y][x] == 0) ||
-				(m_ArrayLevel[y][x] == 7) ||
-				(m_ArrayLevel[y][x] == 8) ||
-				(m_ArrayLevel[y][x] == 9) ||
-				(m_ArrayLevel[y][x] == 14) ||
-				(m_ArrayLevel[y][x] == 15) ||
-				(m_ArrayLevel[y][x] == 16) ||
-				(m_ArrayLevel[y][x] == 17) ||
-				(m_ArrayLevel[y][x] == 18) ||
-				(m_ArrayLevel[y][x] == 19) ||
-				(m_ArrayLevel[y][x] == 23) ||
-				(m_ArrayLevel[y][x] == 24)
-				)
+					(m_ArrayLevel[y][x] == 0) ||
+					(m_ArrayLevel[y][x] == 7) ||
+					(m_ArrayLevel[y][x] == 8) ||
+					(m_ArrayLevel[y][x] == 9) ||
+					(m_ArrayLevel[y][x] == 14) ||
+					(m_ArrayLevel[y][x] == 15) ||
+					(m_ArrayLevel[y][x] == 16) ||
+					(m_ArrayLevel[y][x] == 17) ||
+					(m_ArrayLevel[y][x] == 18) ||
+					(m_ArrayLevel[y][x] == 19) ||
+					(m_ArrayLevel[y][x] == 23) ||
+					(m_ArrayLevel[y][x] == 24)
+					)
 
-			{
-				if (character.getRight().intersects(block))
 				{
-					character.stopRight(block.left);
-					character.set_iscollided(true);
-
-				}
-				else
-					if (character.getLeft().intersects(block))
+					if (character.getRight().intersects(block))
 					{
-						character.stopLeft(block.left + TILE_SIZE);
+						character.stopRight(block.left);
 						character.set_iscollided(true);
-					}
 
-				if (character.getFeet().intersects(block))
-				{
-					character.stopFalling(block.top);
-				}
-				else
-					if (character.getHead().intersects(block))
+					}
+					else
+						if (character.getLeft().intersects(block))
+						{
+							character.stopLeft(block.left + TILE_SIZE);
+							character.set_iscollided(true);
+						}
+
+					if (character.getFeet().intersects(block))
 					{
-						character.stopJump();
+						character.stopFalling(block.top);
 					}
+					else
+						if (character.getHead().intersects(block))
+						{
+							character.stopJump();
+						}
 
+				}
+
+
+				// LevelEnd Reached (Tile #2)
+				if (m_ArrayLevel[y][x] == 2)
+				{
+					reachedGoal = true;
+				}
 			}
-
-
-			// LevelEnd Reached (Tile #2)
-			if (m_ArrayLevel[y][x] == 2)
-			{
-				reachedGoal = true;
-			}
-		} // endif onslope
 		} // end for
 	}  // end for
 	return reachedGoal;

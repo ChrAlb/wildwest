@@ -6,6 +6,7 @@ PlayableCharacter::PlayableCharacter() : m_id(0)
 {
 	m_leftslope_end = false;
 	m_rightslope_end = false;
+	m_on_slope = false;
 }
 
 void PlayableCharacter::spawn(Vector2f startPosition, float gravity)

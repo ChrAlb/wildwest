@@ -16,7 +16,7 @@ private:
 
 	//******************
 	// falls debug= true; Kollisionsboxen werden angezeigt
-	bool debug = true;
+	bool debug = false;
 	//******************
 	 
 	sf::View gameview;
@@ -41,8 +41,7 @@ private:
 	bool m_newlevelrequiered = true;
 	bool m_Playing = false;
 
-	bool on_slope;
-
+	
 	VertexArray m_VALevel;
 
 	float oldpos;
