@@ -82,7 +82,7 @@ for (int x = startX; x < endX; x++)
 					character.resolve_slope45(0);
 				}
 			}
-		}
+		}  
 		else
 		{
 			if (counter < 1)
