@@ -11,7 +11,8 @@ FloatRect position;
 
 bool reachedGoal = false;
 FloatRect detecionZone = character.getPosition();
-	
+int counter = 0;
+
 	
 //Debug
 if (debug)
@@ -55,70 +56,66 @@ if (!character.getPosition().intersects(level))
 for (int x = startX; x < endX; x++)
 {
 	for (int y = startY; y < endY; y++)
+	{
+
+		block.left = x * TILE_SIZE;
+		block.top = y * TILE_SIZE;
+
+		//********** DEBUG
+
+		if (debug)
 		{
-		
-			block.left = x * TILE_SIZE;
-			block.top = y * TILE_SIZE;
+			box.setSize(sf::Vector2f((endX - startX)*TILE_SIZE, (endY - startY)*TILE_SIZE));
+			box.setFillColor(sf::Color(255, 0, 255, 50));
+			box.setPosition(block.left - ((endX - startX)*TILE_SIZE) + 2 * TILE_SIZE, block.top - ((endY - startY)*TILE_SIZE) + TILE_SIZE);
+		}
+		//**************
 
-			//********** DEBUG
-
-			if (debug)
+		if (!character.m_on_slope)
+		{
+			if ((m_ArrayLevel[y][x] == 10))
 			{
-				box.setSize(sf::Vector2f((endX - startX)*TILE_SIZE, (endY - startY)*TILE_SIZE));
-				box.setFillColor(sf::Color(255, 0, 255, 50));
-				box.setPosition(block.left - ((endX - startX)*TILE_SIZE) + 2 * TILE_SIZE, block.top - ((endY - startY)*TILE_SIZE) + TILE_SIZE);
-			}
-			//**************
-
-			
-			
-				if ((m_ArrayLevel[y][x] == 10))
+				if (character.get_Center().intersects(block))
 				{
-					if (character.get_Center().intersects(block))
-					{
-						if (!character.m_on_slope)
-						{
-							character.m_on_slope = true;
-							position = character.getPosition();
-							character.slope_index.x = (((int)position.left + (int)position.width) / TILE_SIZE);
-							character.slope_index.y = ((int)position.top / TILE_SIZE) + 1;
-
-						}
-						else
-
-
-						{
-							if (character.m_vel.x > 0)
-							{
-								if (m_ArrayLevel[character.slope_index.y - 1][character.slope_index.x + 1] == 10)
-								{
-									character.m_on_slope = true;
-									character.slope_index = { character.slope_index.y - 1, character.slope_index.x + 1 };
-								}
-								else
-									character.m_on_slope = false;
-							}
-							else if (character.m_vel.x < 0)
-							{
-								if (m_ArrayLevel[character.slope_index.y + 1][character.slope_index.x - 1] == 10)
-								{
-									character.m_on_slope = true;
-									character.slope_index = { character.slope_index.y + 1, character.slope_index.x - 1 };
-								}
-								else
-									character.m_on_slope = false;
-							}
-
-
-						}
-						character.resolve_slope45(0);
-
-					}
+					character.m_on_slope = true;
+					position = character.getPosition();
+					character.resolve_slope45(0);
 				}
-			   
-			// else
-
+			}
+		}
+		else
+		{
+			if (counter < 1)
 			{
+				character.resolve_slope45(0);
+				counter = counter + 1;
+			}
+	    }
+
+		if (character.m_vel.x > 0)
+		{
+			{
+			if (m_ArrayLevel[y - 1][x + 1] == 10)
+				character.m_on_slope = true;
+			else
+				character.m_on_slope = false;
+			}
+		} 
+		else
+		{
+			if (character.m_vel.x < 0)
+			{
+				{
+					if (m_ArrayLevel[y + 1][x - 1] == 10)
+						character.m_on_slope = true;
+					else
+						character.m_on_slope = false;
+				}
+			}
+		 }
+
+        if (character.m_on_slope = false)
+		{
 
 				if (
 
