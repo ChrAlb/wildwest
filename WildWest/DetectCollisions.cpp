@@ -6,12 +6,13 @@
 bool GameStateGame::detectCollisions(PlayableCharacter& character)
 
 {
-FloatRect position;
+
 
 
 bool reachedGoal = false;
 FloatRect detecionZone = character.getPosition();
 int counter = 0;
+
 
 	
 //Debug
@@ -78,43 +79,74 @@ for (int x = startX; x < endX; x++)
 				if (character.get_Center().intersects(block))
 				{
 					character.m_on_slope = true;
-					position = character.getPosition();
 					character.resolve_slope45(0);
+					character.tilex = (((int)detecionZone.left + (int)detecionZone.width) / TILE_SIZE);
+					character.tiley = ((int)detecionZone.top / TILE_SIZE) + 1;
+
+					if (character.m_vel.x > 0)
+					{
+						{
+							if (m_ArrayLevel[character.tiley - 1][character.tilex + 1] == 10)
+								character.m_on_slope = true;
+							else
+								character.m_on_slope = false;
+						}
+					}
+					else
+					{
+						if (character.m_vel.x < 0)
+						{
+							{
+								if (m_ArrayLevel[character.tiley + 1][character.tilex - 1] == 10)
+									character.m_on_slope = true;
+								else
+									character.m_on_slope = false;
+							}
+						}
+					}
+
+
+
 				}
 			}
 		}  
-		else
+		if (character.m_on_slope)
 		{
 			if (counter < 1)
 			{
+
 				character.resolve_slope45(0);
 				counter = counter + 1;
 			}
-	    }
 
-		if (character.m_vel.x > 0)
-		{
-			{
-			if (m_ArrayLevel[y - 1][x + 1] == 10)
-				character.m_on_slope = true;
-			else
-				character.m_on_slope = false;
-			}
-		} 
-		else
-		{
-			if (character.m_vel.x < 0)
+
+			if (character.m_vel.x > 0)
 			{
 				{
-					if (m_ArrayLevel[y + 1][x - 1] == 10)
+					if (m_ArrayLevel[character.tiley - 1][character.tilex + 1] == 10)
 						character.m_on_slope = true;
 					else
 						character.m_on_slope = false;
 				}
 			}
-		 }
+			else
+			{
+				if (character.m_vel.x < 0)
+				{
+					{
+						if (m_ArrayLevel[character.tiley + 1][character.tilex - 1] == 10)
+							character.m_on_slope = true;
+						else
+							character.m_on_slope = false;
+					}
+				}
+			}
 
-        if (character.m_on_slope = false)
+
+		}
+
+
+		if (!character.m_on_slope)
 		{
 
 				if (

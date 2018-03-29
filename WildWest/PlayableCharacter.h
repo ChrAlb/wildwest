@@ -52,9 +52,10 @@ public:
 	int get_maxlevelsize();
 
 	
-	Vector2f m_vel;   // muss zu protected!!!
+	Vector2f m_vel;   // muss alles zu protected!!!
 	bool m_on_slope;
 	Vector2i slope_index;
+	int tilex, tiley;
 
 	void set_iscollided(bool iscollided);
 
