@@ -11,6 +11,7 @@ bool GameStateGame::detectCollisions(PlayableCharacter& character)
 
 bool reachedGoal = false;
 FloatRect detecionZone = character.getPosition();
+FloatRect position;
 int counter = 0;
 
 
@@ -80,8 +81,9 @@ for (int x = startX; x < endX; x++)
 				{
 					character.m_on_slope = true;
 					character.resolve_slope45(0);
-					character.tilex = (((int)detecionZone.left + (int)detecionZone.width) / TILE_SIZE);
-					character.tiley = ((int)detecionZone.top / TILE_SIZE) + 1;
+					position = character.getPosition();
+					character.tilex = (((int)position.left + (int)position.width) / TILE_SIZE);
+					character.tiley = ((int)position.top / TILE_SIZE) + 1;
 
 					if (character.m_vel.x > 0)
 					{
@@ -117,6 +119,9 @@ for (int x = startX; x < endX; x++)
 
 				character.resolve_slope45(0);
 				counter = counter + 1;
+				position = character.getPosition();
+				character.tilex = (((int)position.left + (int)position.width) / TILE_SIZE);
+				character.tiley = ((int)position.top / TILE_SIZE) + 1;
 			}
 
 
@@ -124,6 +129,7 @@ for (int x = startX; x < endX; x++)
 			{
 				{
 					if (m_ArrayLevel[character.tiley - 1][character.tilex + 1] == 10)
+
 						character.m_on_slope = true;
 					else
 						character.m_on_slope = false;

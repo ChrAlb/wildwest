@@ -34,19 +34,21 @@ void PlayableCharacter::resolve_slope45(float tileposition)
 
 		
 	{
-
-		  m_Position.y = m_Position.y - (m_Position.x - m_oldposition.x);
-
-		  m_isFalling = false;
-
+		if (m_RightPressed)
+		{
+			m_Position.y = m_Position.y - (m_Position.x - m_oldposition.x);
+		}
+		m_isFalling = false;
+		
 	}
 	
 	 
 	if (m_vel.x < 0)
 	{  
-		
+		if (m_LeftPressed)
+		{
         m_Position.y = m_Position.y + (m_oldposition.x - m_Position.x);
-				
+		}       
 		m_isFalling = false;
 	}
 	
