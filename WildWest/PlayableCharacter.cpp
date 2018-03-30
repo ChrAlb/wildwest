@@ -7,8 +7,7 @@ PlayableCharacter::PlayableCharacter() : m_id(0)
 	m_leftslope_end = false;
 	m_rightslope_end = false;
 	m_on_slope = false;
-	tilex = 0;
-	tiley = 0;
+	tile_pos = { 0,0 };
 }
 
 void PlayableCharacter::spawn(Vector2f startPosition, float gravity)

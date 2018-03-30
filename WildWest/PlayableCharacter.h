@@ -54,8 +54,8 @@ public:
 	
 	Vector2f m_vel;   // muss alles zu protected!!!
 	bool m_on_slope;
-	Vector2i slope_index;
-	int tilex, tiley;
+	Vector2i tile_pos;
+	
 
 	void set_iscollided(bool iscollided);
 

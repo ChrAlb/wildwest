@@ -82,10 +82,10 @@ for (int x = startX; x < endX; x++)
 					character.m_on_slope = true;
 					character.resolve_slope45(0);
 					position = character.getPosition();
-					character.tilex = (((int)position.left + (int)position.width) / TILE_SIZE);
-					character.tiley = ((int)position.top / TILE_SIZE) + 1;
+					character.tile_pos.x = (((int)position.left + (int)position.width) / TILE_SIZE);
+					character.tile_pos.y = ((int)position.top / TILE_SIZE) + 1;
 
-					if (checkNextTile(character.m_vel, character.tiley, character.tilex))
+					if (checkNextTile(character.m_vel, character.tile_pos))
 						character.m_on_slope = true;
 					else
 						character.m_on_slope = false;
@@ -102,17 +102,15 @@ for (int x = startX; x < endX; x++)
 				character.resolve_slope45(0);
 				counter = counter + 1;
 				position = character.getPosition();
-				character.tilex = (((int)position.left + (int)position.width) / TILE_SIZE);
-				character.tiley = ((int)position.top / TILE_SIZE) + 1;
+				character.tile_pos.x = (((int)position.left + (int)position.width) / TILE_SIZE);
+				character.tile_pos.y = ((int)position.top / TILE_SIZE) + 1;
 			}
 
 			
-			if (checkNextTile(character.m_vel, character.tiley, character.tilex))
+			if (checkNextTile(character.m_vel, character.tile_pos))
 				character.m_on_slope = true;
 			else
 				character.m_on_slope = false;
-
-
 
 		}
 
@@ -174,13 +172,13 @@ for (int x = startX; x < endX; x++)
 	return reachedGoal;
 }
 
-bool GameStateGame::checkNextTile(Vector2f &vel, int & x, int & y)
+bool GameStateGame::checkNextTile(Vector2f &vel, Vector2i &tile_pos)
 {
 	
 	if (vel.x > 0)
 	{
 		{
-			if (m_ArrayLevel[y - 1][x + 1] == 10)
+			if (m_ArrayLevel[tile_pos.y - 1][tile_pos.x + 1] == 10)
 				return true;
 			else
 				return false;
@@ -191,7 +189,7 @@ bool GameStateGame::checkNextTile(Vector2f &vel, int & x, int & y)
 		if (vel.x < 0)
 		{
 			{
-				if (m_ArrayLevel[y + 1][x - 1] == 10)
+				if (m_ArrayLevel[tile_pos.y + 1][tile_pos.x - 1] == 10)
 					return true;
 				else
 					return false;

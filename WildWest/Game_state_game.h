@@ -54,7 +54,7 @@ private:
 
 	bool detectCollisions(PlayableCharacter& character);
 
-	bool checkNextTile(Vector2f &vel, int &x, int &y);
+	bool checkNextTile(Vector2f &vel, Vector2i &tile_pos);
 	
 
 	sf::RectangleShape  head_box;
