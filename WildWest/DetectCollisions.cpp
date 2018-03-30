@@ -85,28 +85,10 @@ for (int x = startX; x < endX; x++)
 					character.tilex = (((int)position.left + (int)position.width) / TILE_SIZE);
 					character.tiley = ((int)position.top / TILE_SIZE) + 1;
 
-					if (character.m_vel.x > 0)
-					{
-						{
-							if (m_ArrayLevel[character.tiley - 1][character.tilex + 1] == 10)
-								character.m_on_slope = true;
-							else
-								character.m_on_slope = false;
-						}
-					}
+					if (checkNextTile(character.m_vel, character.tiley, character.tilex))
+						character.m_on_slope = true;
 					else
-					{
-						if (character.m_vel.x < 0)
-						{
-							{
-								if (m_ArrayLevel[character.tiley + 1][character.tilex - 1] == 10)
-									character.m_on_slope = true;
-								else
-									character.m_on_slope = false;
-							}
-						}
-					}
-
+						character.m_on_slope = false;
 
 
 				}
@@ -124,29 +106,12 @@ for (int x = startX; x < endX; x++)
 				character.tiley = ((int)position.top / TILE_SIZE) + 1;
 			}
 
-
-			if (character.m_vel.x > 0)
-			{
-				{
-					if (m_ArrayLevel[character.tiley - 1][character.tilex + 1] == 10)
-
-						character.m_on_slope = true;
-					else
-						character.m_on_slope = false;
-				}
-			}
+			
+			if (checkNextTile(character.m_vel, character.tiley, character.tilex))
+				character.m_on_slope = true;
 			else
-			{
-				if (character.m_vel.x < 0)
-				{
-					{
-						if (m_ArrayLevel[character.tiley + 1][character.tilex - 1] == 10)
-							character.m_on_slope = true;
-						else
-							character.m_on_slope = false;
-					}
-				}
-			}
+				character.m_on_slope = false;
+
 
 
 		}
@@ -207,6 +172,36 @@ for (int x = startX; x < endX; x++)
 		} // end for
 	}  // end for
 	return reachedGoal;
+}
+
+bool GameStateGame::checkNextTile(Vector2f &vel, int & x, int & y)
+{
+	
+	if (vel.x > 0)
+	{
+		{
+			if (m_ArrayLevel[y - 1][x + 1] == 10)
+				return true;
+			else
+				return false;
+		}
+	}
+	else
+	{
+		if (vel.x < 0)
+		{
+			{
+				if (m_ArrayLevel[y + 1][x - 1] == 10)
+					return true;
+				else
+					return false;
+			}
+		}else 
+			return false;
+
+	}
+
+
 }
 
 

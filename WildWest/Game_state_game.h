@@ -53,6 +53,8 @@ private:
 	void loadLevel();
 
 	bool detectCollisions(PlayableCharacter& character);
+
+	bool checkNextTile(Vector2f &vel, int &x, int &y);
 	
 
 	sf::RectangleShape  head_box;
