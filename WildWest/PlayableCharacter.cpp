@@ -36,6 +36,7 @@ void PlayableCharacter::resolve_slope45(float tileposition)
 		if (m_RightPressed)
 		{
 			m_Position.y = m_Position.y - (m_Position.x - m_oldposition.x);
+			//m_Sprite.setRotation(10);
 		}
 		m_isFalling = false;
 		

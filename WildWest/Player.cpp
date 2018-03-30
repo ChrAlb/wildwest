@@ -123,6 +123,15 @@ void Player::update(float elapsedTime)
 		curAnimation = curAnimation = AnimationIndex::Stoping;
 	}
 
+	if (m_on_slope)
+	{
+		if (dir.x>0)
+			curAnimation = curAnimation = AnimationIndex::WalkingRight;
+		else 
+        if (dir.x<0)
+			curAnimation = curAnimation = AnimationIndex::WalkingLeft;
+	}
+
 	mlevelsize = Player::get_maxlevelsize();
 
 	if (Player::m_Position.x > mlevelsize)
