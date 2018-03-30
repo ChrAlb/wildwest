@@ -11,7 +11,7 @@ bool GameStateGame::detectCollisions(PlayableCharacter& character)
 
 bool reachedGoal = false;
 FloatRect detecionZone = character.getPosition();
-FloatRect position;
+
 int counter = 0;
 
 
@@ -80,10 +80,8 @@ for (int x = startX; x < endX; x++)
 				if (character.get_Center().intersects(block))
 				{
 					character.m_on_slope = true;
+					character.tile_pos = character.getTile_pos();
 					character.resolve_slope45(0);
-					position = character.getPosition();
-					character.tile_pos.x = (((int)position.left + (int)position.width) / TILE_SIZE);
-					character.tile_pos.y = ((int)position.top / TILE_SIZE) + 1;
 
 					if (checkNextTile(character.m_vel, character.tile_pos))
 						character.m_on_slope = true;
@@ -99,11 +97,9 @@ for (int x = startX; x < endX; x++)
 			if (counter < 1)
 			{
 
-				character.resolve_slope45(0);
 				counter = counter + 1;
-				position = character.getPosition();
-				character.tile_pos.x = (((int)position.left + (int)position.width) / TILE_SIZE);
-				character.tile_pos.y = ((int)position.top / TILE_SIZE) + 1;
+				character.tile_pos = character.getTile_pos();
+				character.resolve_slope45(0);
 			}
 
 			

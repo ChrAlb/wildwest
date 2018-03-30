@@ -58,6 +58,17 @@ Vector2f PlayableCharacter::getCenter()
 	return Vector2f(m_Position.x + m_Sprite.getGlobalBounds().width / 2,m_Position.y + m_Sprite.getGlobalBounds().height/2);
 }
 
+Vector2i PlayableCharacter::getTile_pos()
+{
+	FloatRect position;
+	Vector2i tile_pos;
+	
+	position = PlayableCharacter::getPosition();
+	tile_pos.x = (((int)position.left + (int)position.width) / TILE_SIZE);
+	tile_pos.y = ((int)position.top / TILE_SIZE) + 1;
+	return tile_pos;
+}
+
 Sprite PlayableCharacter::getSprite()
 {
 	return m_Sprite;

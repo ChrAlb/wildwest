@@ -12,6 +12,7 @@
 
 class GameStateGame : public GameState
 {
+
 private:
 
 	//******************

@@ -14,6 +14,8 @@ class PlayableCharacter
 
 public:
 
+	const int TILE_SIZE = 50;
+
 	PlayableCharacter();
 	void spawn(Vector2f startPosition, float gravity);
 	bool virtual handleInput() = 0;
@@ -47,6 +49,8 @@ public:
 	void set_rightslope_end(bool setend);
 	
 	Vector2f getCenter();
+
+	Vector2i getTile_pos();
 
 	void set_maxlevelsize(int mlevelsize);
 	int get_maxlevelsize();
