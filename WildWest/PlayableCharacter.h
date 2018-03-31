@@ -44,7 +44,7 @@ public:
 	object_types get_objecttype();
 
 	
-	void resolve_slope45(float position);
+	void resolve_slope(float position, int &slopenumber);
 	void set_leftslope_end(bool setend);
 	void set_rightslope_end(bool setend);
 	

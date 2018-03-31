@@ -202,7 +202,7 @@ void GameStateGame::handleInput()
 
 GameStateGame::GameStateGame(Game* game)
 {
-	
+	slopenumber = 0;
 	m_font.loadFromFile("graphics/Arial.ttf");
 	this->game = game;
 	

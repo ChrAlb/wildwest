@@ -27,30 +27,66 @@ FloatRect PlayableCharacter::getPosition()
 	return m_Sprite.getGlobalBounds();
 }
  
-void PlayableCharacter::resolve_slope45(float tileposition)
+void PlayableCharacter::resolve_slope(float tileposition, int &slopenumber)
 { 
-	if (m_vel.x > 0)
-
-		
+	if (slopenumber == 10)
 	{
-		if (m_RightPressed)
+		if (m_vel.x > 0)
+
+
 		{
-			m_Position.y = m_Position.y - (m_Position.x - m_oldposition.x);
-			//m_Sprite.setRotation(10);
+			if (m_RightPressed)
+			{
+				m_Position.y = m_Position.y - (m_Position.x - m_oldposition.x);
+				//m_Sprite.setRotation(10);
+			}
+			m_isFalling = false;
+
 		}
-		m_isFalling = false;
-		
-	}
-	
-	 
-	if (m_vel.x < 0)
-	{  
-		if (m_LeftPressed)
+
+
+		if (m_vel.x < 0)
 		{
-        m_Position.y = m_Position.y + (m_oldposition.x - m_Position.x);
-		}       
-		m_isFalling = false;
+			if (m_LeftPressed)
+			{
+				m_Position.y = m_Position.y + (m_oldposition.x - m_Position.x);
+			}
+			m_isFalling = false;
+		}
+
 	}
+
+	
+	if (slopenumber == 26)
+	{
+		if (m_vel.x > 0)
+
+
+		{
+			if (m_RightPressed)
+			{
+				m_Position.y = m_Position.y + (m_oldposition.x - m_Position.x);
+				//m_Position.y = m_Position.y - (m_Position.x - m_oldposition.x);
+				//m_Sprite.setRotation(10);
+			}
+			m_isFalling = false;
+
+		}
+
+
+		if (m_vel.x < 0)
+		{
+			if (m_LeftPressed)
+			{
+				//m_Position.y = m_Position.y + (m_oldposition.x - m_Position.x);
+				m_Position.y = m_Position.y - (m_Position.x - m_oldposition.x);
+			}
+			m_isFalling = false;
+		}
+
+	}
+
+
 	
 }
 

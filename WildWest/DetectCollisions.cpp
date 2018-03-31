@@ -75,15 +75,27 @@ for (int x = startX; x < endX; x++)
 
 		if (!character.m_on_slope)
 		{
-			if ((m_ArrayLevel[y][x] == 10))
+			if ((m_ArrayLevel[y][x] == 10) || (m_ArrayLevel[y][x] == 26))
 			{
 				if (character.get_Center().intersects(block))
 				{
+					
+					switch (m_ArrayLevel[y][x])
+					{
+					case 10:  // Tile # 10
+						slopenumber = 10;
+						break;
+					case 26:  // Tile #26
+						slopenumber = 25;
+						break;
+					}
+
+					
 					character.m_on_slope = true;
 					character.tile_pos = character.getTile_pos();
-					character.resolve_slope45(0);
+					character.resolve_slope(0,slopenumber);
 
-					if (checkNextTile(character.m_vel, character.tile_pos))
+					if (checkNextTile(character.m_vel, character.tile_pos,slopenumber))
 						character.m_on_slope = true;
 					else
 						character.m_on_slope = false;
@@ -99,11 +111,11 @@ for (int x = startX; x < endX; x++)
 
 				counter = counter + 1;
 				character.tile_pos = character.getTile_pos();
-				character.resolve_slope45(0);
+				character.resolve_slope(0,slopenumber);
 			}
 
 			
-			if (checkNextTile(character.m_vel, character.tile_pos))
+			if (checkNextTile(character.m_vel, character.tile_pos,slopenumber))
 				character.m_on_slope = true;
 			else
 				character.m_on_slope = false;
@@ -168,21 +180,41 @@ for (int x = startX; x < endX; x++)
 	return reachedGoal;
 }
 
-bool GameStateGame::checkNextTile(Vector2f &vel, Vector2i &tile_pos)
+bool GameStateGame::checkNextTile(Vector2f &vel, Vector2i &tile_pos, int &slopenumber)
 {
 	
-	if (vel.x > 0)
+	if (slopenumber == 10)
 	{
+		if (vel.x > 0)
 		{
-			if (m_ArrayLevel[tile_pos.y - 1][tile_pos.x + 1] == 10)
-				return true;
+			{
+				if (m_ArrayLevel[tile_pos.y - 1][tile_pos.x + 1] == 10)
+					return true;
+				else
+					return false;
+			}
+		}
+		else
+		{
+			if (vel.x < 0)
+			{
+				{
+					if (m_ArrayLevel[tile_pos.y + 1][tile_pos.x - 1] == 10)
+						return true;
+					else
+						return false;
+				}
+			}
 			else
 				return false;
+
 		}
 	}
-	else
+
+	
+	if (slopenumber == 26)
 	{
-		if (vel.x < 0)
+		if (vel.x > 0)
 		{
 			{
 				if (m_ArrayLevel[tile_pos.y + 1][tile_pos.x - 1] == 10)
@@ -190,9 +222,22 @@ bool GameStateGame::checkNextTile(Vector2f &vel, Vector2i &tile_pos)
 				else
 					return false;
 			}
-		}else 
-			return false;
+		}
+		else
+		{
+			if (vel.x < 0)
+			{
+				{
+					if (m_ArrayLevel[tile_pos.y - 1][tile_pos.x + 1] == 10)
+						return true;
+					else
+						return false;
+				}
+			}
+			else
+				return false;
 
+		}
 	}
 
 
