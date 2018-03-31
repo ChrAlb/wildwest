@@ -75,7 +75,7 @@ for (int x = startX; x < endX; x++)
 
 		if (!character.m_on_slope)
 		{
-			if ((m_ArrayLevel[y][x] == 10) || (m_ArrayLevel[y][x] == 26))
+			if (   (m_ArrayLevel[y][x] == 10) || (m_ArrayLevel[y][x] == 28)   )
 			{
 				if (character.get_Center().intersects(block))
 				{
@@ -85,8 +85,8 @@ for (int x = startX; x < endX; x++)
 					case 10:  // Tile # 10
 						slopenumber = 10;
 						break;
-					case 26:  // Tile #26
-						slopenumber = 25;
+					case 28:  // Tile #28
+						slopenumber = 28;
 						break;
 					}
 
@@ -212,7 +212,7 @@ bool GameStateGame::checkNextTile(Vector2f &vel, Vector2i &tile_pos, int &slopen
 	}
 
 	
-	if (slopenumber == 26)
+	if (slopenumber == 28)
 	{
 		if (vel.x > 0)
 		{
