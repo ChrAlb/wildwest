@@ -188,7 +188,7 @@ bool GameStateGame::checkNextTile(Vector2f &vel, Vector2i &tile_pos, int &slopen
 		if (vel.x > 0)
 		{
 			{
-				if (m_ArrayLevel[tile_pos.y - 1][tile_pos.x + 1] == 10)
+				if (m_ArrayLevel[tile_pos.y - 1][tile_pos.x + 1] == slopenumber)
 					return true;
 				else
 					return false;
@@ -199,7 +199,7 @@ bool GameStateGame::checkNextTile(Vector2f &vel, Vector2i &tile_pos, int &slopen
 			if (vel.x < 0)
 			{
 				{
-					if (m_ArrayLevel[tile_pos.y + 1][tile_pos.x - 1] == 10)
+					if (m_ArrayLevel[tile_pos.y + 1][tile_pos.x - 1] == slopenumber)
 						return true;
 					else
 						return false;
@@ -217,7 +217,7 @@ bool GameStateGame::checkNextTile(Vector2f &vel, Vector2i &tile_pos, int &slopen
 		if (vel.x > 0)
 		{
 			{
-				if (m_ArrayLevel[tile_pos.y + 1][tile_pos.x - 1] == 10)
+				if (m_ArrayLevel[tile_pos.y + 1][tile_pos.x + 1] == slopenumber)
 					return true;
 				else
 					return false;
@@ -228,7 +228,7 @@ bool GameStateGame::checkNextTile(Vector2f &vel, Vector2i &tile_pos, int &slopen
 			if (vel.x < 0)
 			{
 				{
-					if (m_ArrayLevel[tile_pos.y - 1][tile_pos.x + 1] == 10)
+					if (m_ArrayLevel[tile_pos.y + 1][tile_pos.x - 1] == slopenumber)
 						return true;
 					else
 						return false;
