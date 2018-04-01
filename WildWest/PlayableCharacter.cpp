@@ -61,7 +61,7 @@ void PlayableCharacter::resolve_slope(float tileposition, int &slopenumber)
 	{
 		if (m_vel.x > 0)
 
-
+			 
 		{
 			if (m_RightPressed)
 			{
