@@ -43,7 +43,7 @@ void PlayableCharacter::resolve_slope(float tileposition, int &slopenumber)
 			m_isFalling = false;
 
 		}
-
+ 
 
 		if (m_vel.x < 0)
 		{
