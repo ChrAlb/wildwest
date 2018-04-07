@@ -4,9 +4,8 @@
 
 PlayableCharacter::PlayableCharacter() : m_id(0)
 {
-	m_leftslope_end = false;
-	m_rightslope_end = false;
 	m_on_slope = false;
+	m_slope_end = false;
 	tile_pos = { 0,0 };
 }
 
@@ -50,6 +49,7 @@ void PlayableCharacter::resolve_slope(float tileposition, int &slopenumber)
 			if (m_LeftPressed)
 			{
 				m_Position.y = m_Position.y + (m_oldposition.x - m_Position.x);
+			
 			}
 			m_isFalling = false;
 		}
@@ -178,16 +178,6 @@ void PlayableCharacter::set_maxlevelsize(int mlevelsize)
 int PlayableCharacter::get_maxlevelsize()
 {
 	return m_maxlevelsize;
-}
-
-void PlayableCharacter::set_leftslope_end(bool setend)
-{
-	m_leftslope_end = setend;
-}
-
-void PlayableCharacter::set_rightslope_end(bool setend)
-{
-	m_rightslope_end = setend;
 }
 
 void PlayableCharacter::set_iscollided(bool iscollided)

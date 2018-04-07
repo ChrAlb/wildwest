@@ -45,8 +45,7 @@ public:
 
 	
 	void resolve_slope(float position, int &slopenumber);
-	void set_leftslope_end(bool setend);
-	void set_rightslope_end(bool setend);
+	
 	
 	Vector2f getCenter();
 
@@ -58,6 +57,7 @@ public:
 	
 	Vector2f m_vel;   // muss alles zu protected!!!
 	bool m_on_slope;
+	bool m_slope_end;
 	Vector2i tile_pos;
 	
 
@@ -78,9 +78,6 @@ protected:
 	bool m_LeftPressed;
 	bool m_RightPressed;
 
-	
-	bool m_leftslope_end;
-	bool m_rightslope_end;
 
 	float m_TimeThisJump;
 

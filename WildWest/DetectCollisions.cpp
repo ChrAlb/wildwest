@@ -73,37 +73,50 @@ for (int x = startX; x < endX; x++)
 		}
 		//**************
 
-		if (!character.m_on_slope)
+		
+		if (character.m_slope_end)
 		{
-			if (   (m_ArrayLevel[y][x] == 10) || (m_ArrayLevel[y][x] == 28)   )
+			character.m_slope_end = false;
+
+		}
+		else
+		{
+			if (!character.m_on_slope)
 			{
-				if (character.get_Center().intersects(block))
+				if ((m_ArrayLevel[y][x] == 10) || (m_ArrayLevel[y][x] == 28))
 				{
-					
-					switch (m_ArrayLevel[y][x])
+					if (character.get_Center().intersects(block))
 					{
-					case 10:  // Tile # 10
-						slopenumber = 10;
-						break;
-					case 28:  // Tile #28
-						slopenumber = 28;
-						break;
-					}
 
-					
-					character.m_on_slope = true;
-					character.tile_pos = character.getTile_pos();
-					character.resolve_slope(0,slopenumber);
+						switch (m_ArrayLevel[y][x])
+						{
+						case 10:  // Tile # 10
+							slopenumber = 10;
+							break;
+						case 28:  // Tile #28
+							slopenumber = 28;
+							break;
+						}
 
-					if (checkNextTile(character.m_vel, character.tile_pos,slopenumber))
+
 						character.m_on_slope = true;
-					else
-						character.m_on_slope = false;
+						character.tile_pos = character.getTile_pos();
+						character.resolve_slope(0, slopenumber);
+
+						if (checkNextTile(character.m_vel, character.tile_pos, slopenumber))
+							character.m_on_slope = true;
+						else
+						{
+							character.m_slope_end = true;
+							character.m_on_slope = false;
+						}
+							
 
 
+					}
 				}
 			}
-		}  
+		}
 		if (character.m_on_slope)
 		{
 			if (counter < 1)
@@ -118,7 +131,10 @@ for (int x = startX; x < endX; x++)
 			if (checkNextTile(character.m_vel, character.tile_pos,slopenumber))
 				character.m_on_slope = true;
 			else
+			{
+				character.m_slope_end = true;
 				character.m_on_slope = false;
+			}
 
 		}
 
