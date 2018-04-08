@@ -73,14 +73,13 @@ for (int x = startX; x < endX; x++)
 		}
 		//**************
 
-		
 		if (character.m_slope_end)
-		{
+		    {
 			character.m_slope_end = false;
-
-		}
+			}
 		else
 		{
+		
 			if (!character.m_on_slope)
 			{
 				if ((m_ArrayLevel[y][x] == 10) || (m_ArrayLevel[y][x] == 28))
@@ -110,8 +109,6 @@ for (int x = startX; x < endX; x++)
 							character.m_slope_end = true;
 							character.m_on_slope = false;
 						}
-							
-
 
 					}
 				}
