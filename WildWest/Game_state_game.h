@@ -23,14 +23,9 @@ private:
 	sf::View gameview;
 	sf::View bgview;
 
-    TextureHolder th;
 	Sprite m_BackgroundSprite;
-	Texture m_BackgroundTexture;
-	
-	Texture m_Tree;
 	Sprite m_Tree_Sprite;
 
-	//Player m_player;
 	
 	LevelManager m_LM;
 
@@ -48,8 +43,6 @@ private:
 	float oldpos;
 
 	int** m_ArrayLevel = NULL;
-
-	Texture m_TextureTiles;
 
 	void loadLevel();
 

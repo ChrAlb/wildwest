@@ -3,17 +3,17 @@
 #include <SFML\Graphics.hpp>
 
 #include "Game_state.h"
-#include "TextureHolder.h"
+#include "ResourceHolder.h"
+#include "ResourceIdentifiers.h"
 
 class GameStateEnd : public GameState
 {
 private:
 	sf::View view;
 
-	TextureHolder th;
-
 	Sprite m_endSprite;
-	Texture m_endTexture;
+	
+	TextureHolder m_Textures;
 
 public:
 

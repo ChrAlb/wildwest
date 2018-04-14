@@ -2,7 +2,8 @@
 #include <SFML\Graphics.hpp>
 
 #include "Game_state.h"
-#include "TextureHolder.h"
+#include "ResourceHolder.h"
+#include "ResourceIdentifiers.h"
 
 class GameStateStart : public GameState
 {
@@ -11,10 +12,9 @@ private:
 
 	void loadgame();
 
-	TextureHolder th;
-
 	Sprite m_BackgroundSprite;
-	Texture m_BackgroundTexture;
+	
+	TextureHolder m_Textures;
 
 public:
 

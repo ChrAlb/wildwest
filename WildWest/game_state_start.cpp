@@ -14,7 +14,9 @@ Status für den Spielstart: gmae_state_start
 
 void GameStateStart::draw(const float dt)
 {
-	m_BackgroundSprite.setTexture(m_BackgroundTexture);
+	m_BackgroundSprite.setTexture(m_Textures.get(Textures::TitleScreen
+	
+	));
 	
 	this->game->window.setView(this->view);
 
@@ -65,7 +67,7 @@ void GameStateStart::handleInput()
 GameStateStart::GameStateStart(Game* game)
 {
 	// Grafikstartbild: Title.png wird geladen
-	m_BackgroundTexture = TextureHolder::GetTexture("graphics/Title.png");
+	m_Textures.load(Textures::TitleScreen, "graphics/Title.png");
 
 	this->game = game;
 	sf::Vector2f pos = sf::Vector2f(this->game->window.getSize());
