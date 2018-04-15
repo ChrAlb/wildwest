@@ -10,7 +10,7 @@
 void GameStateGame::loadLevel()
 
 {
-	
+	 
 	m_Playing = false;
 	leveldate leveldata;
 
