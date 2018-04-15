@@ -37,10 +37,18 @@ void GameStateGame::loadLevel()
 
 
 	m_ArrayLevel = m_LM.nextLevel(m_VALevel, leveldata);
+
+	// Load Textures
+	m_Textures.load(Textures::Backgroud, leveldata.BGFileName);
+	m_Textures.load(Textures::Tiles, leveldata.TilSetName);
+	m_Textures.load(Textures::Tree, "graphics/Tree.png");
 	
-	player = new Player();
+	// end Load Textures
+	
+	
+    player = new Player();
     player->spawn(m_LM.getStartPosition(), GRAVITY); 
-	m_BackgroundTexture = TextureHolder::GetTexture(leveldata.BGFileName);
+	
 
 	int maxlevelsize = (m_LM.getLevelSize().x * TILE_SIZE) - TILE_SIZE;
 
@@ -55,16 +63,15 @@ void GameStateGame::loadLevel()
 	startpoint.x = 800;
 	startpoint.y = 700;
 	enemy->spawn(startpoint,GRAVITY);
-	//m_BackgroundTexture = TextureHolder::GetTexture(leveldata.BGFileName);
+	
 	enemy->set_objecttype(t_Enemy);
 	enemy->set_maxlevelsize(maxlevelsize);
 	enemy->set_iscollided(false);
 	objects.push_back(enemy);
 */	
+	
 
-	m_TextureTiles = TextureHolder::GetTexture(leveldata.TilSetName);
-	m_Tree = TextureHolder::GetTexture("graphics/Tree.png");
-
+	
 	this->bgview.reset(sf::FloatRect(0, 0, VideoMode::getDesktopMode().width, VideoMode::getDesktopMode().height));
 	this->gameview.reset(sf::FloatRect(0, 0, VideoMode::getDesktopMode().width, VideoMode::getDesktopMode().height));
 

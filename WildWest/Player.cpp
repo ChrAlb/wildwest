@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Player.h"
-#include "TextureHolder.h"
+#include "ResourceHolder.h"
+#include "ResourceIdentifiers.h"
 
 #include <iostream>
 

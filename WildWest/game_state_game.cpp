@@ -12,9 +12,9 @@
 
 void GameStateGame::draw(const float dt)
 {
-
-	m_BackgroundSprite.setTexture(m_BackgroundTexture);
-	m_Tree_Sprite.setTexture(m_Tree);
+	
+	m_BackgroundSprite.setTexture(m_Textures.get(Textures::Backgroud));
+	m_Tree_Sprite.setTexture(m_Textures.get(Textures::Tree));
 	m_Tree_Sprite.setPosition(Vector2f(1000, 700));
 
 	this->game->window.clear(sf::Color::White);
@@ -26,7 +26,7 @@ void GameStateGame::draw(const float dt)
 
 	this->game->window.draw(m_Tree_Sprite);
 
-	this->game->window.draw(m_VALevel, &m_TextureTiles);
+	this->game->window.draw(m_VALevel, &m_Textures.get(Textures::Tiles));
 
 	for (iter = objects.begin(); iter != objects.end(); ++iter)
 	{

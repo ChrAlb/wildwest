@@ -1,6 +1,8 @@
 #pragma once
 
 #include <SFML\Graphics.hpp>
+#include "ResourceHolder.h"
+#include "ResourceIdentifiers.h"
 
 class Animation
 {
@@ -19,7 +21,8 @@ private:
 private:
 	static constexpr int nFrames = 8;
 	static constexpr float holdtime = 0.1f;
-	sf::Texture m_texture;
+	
+	TextureHolder m_Textures;
 
 	std::vector<sf::IntRect> m_frames;
 	int iFrame = 0;

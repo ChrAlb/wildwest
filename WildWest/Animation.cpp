@@ -1,10 +1,11 @@
 #include "stdafx.h"
 #include "Animation.h"
-#include "TextureHolder.h"
+#include "ResourceHolder.h"
+#include "ResourceIdentifiers.h"
 
 Animation::Animation()
 {
-	m_texture = TextureHolder::GetTexture("graphics/joe_sheet.png");
+	m_Textures.load(Textures::Player, "graphics/joe_sheet.png");
 	
 }
 
@@ -23,7 +24,7 @@ void Animation::addRow(int x, int y, int width,int height,int maxframe)
 
 void Animation::ApplytoSprite(sf::Sprite& s)
 {
-	s.setTexture(m_texture);
+	s.setTexture(m_Textures.get(Textures::Player));
 	s.setTextureRect(m_frames[iFrame]);
 }
 

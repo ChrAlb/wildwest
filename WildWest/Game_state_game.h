@@ -4,7 +4,8 @@
 #include <list>
 
 #include "Game_state.h"
-#include "TextureHolder.h"
+#include "ResourceHolder.h"
+#include "ResourceIdentifiers.h"
 #include "Player.h"
 #include "Enemy.h"
 
@@ -25,6 +26,8 @@ private:
 
 	Sprite m_BackgroundSprite;
 	Sprite m_Tree_Sprite;
+
+	TextureHolder m_Textures;
 
 	
 	LevelManager m_LM;

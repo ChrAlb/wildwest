@@ -1,12 +1,13 @@
 
 #include "stdafx.h"
-#include "TextureHolder.h"
+
 #include <iostream>
 #include "Enemy.h"
 
 Enemy::Enemy() : m_hasDestination(false)
 {
-	m_Sprite = Sprite(TextureHolder::GetTexture("graphics/Slyppy.png"));
+	m_Textures.load(Textures::Enemy, "graphics/Slyppy.png");
+	m_Sprite = Sprite(m_Textures.get(Textures::Enemy ));
 }
 
 

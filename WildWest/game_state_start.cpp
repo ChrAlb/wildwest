@@ -14,9 +14,7 @@ Status für den Spielstart: gmae_state_start
 
 void GameStateStart::draw(const float dt)
 {
-	m_BackgroundSprite.setTexture(m_Textures.get(Textures::TitleScreen
-	
-	));
+	m_BackgroundSprite.setTexture(m_Textures.get(Textures::TitleScreen));
 	
 	this->game->window.setView(this->view);
 
