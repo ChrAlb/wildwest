@@ -7,11 +7,11 @@ MusicPlayer::MusicPlayer()
 	, mFilenames()
 	, mVolume(100.f)
 {
-	mFilenames[Music::Intro] = "IntroTheme.ogg";
+	mFilenames[Musik::Intro] = "sounds//IntroTheme.ogg";
 	
 }
 
-void MusicPlayer::play(Music::ID theme)
+void MusicPlayer::play(Musik::ID theme)
 {
 	std::string filename = mFilenames[theme];
 

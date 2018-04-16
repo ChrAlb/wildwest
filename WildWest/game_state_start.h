@@ -2,9 +2,9 @@
 #include <SFML\Graphics.hpp>
 
 #include "Game_state.h"
-#include "ResourceHolder.h"
-#include "ResourceIdentifiers.h"
-//#include "MusicPlayer.h"
+//#include "ResourceHolder.h"
+//#include "ResourceIdentifiers.h"
+#include "MusicPlayer.h"
 
 class GameStateStart : public GameState
 {
@@ -17,7 +17,7 @@ private:
 	
 	TextureHolder m_Textures;
 
-	//MusicPlayer* m_music;
+	MusicPlayer  m_music;
 
 public:
 

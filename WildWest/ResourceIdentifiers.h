@@ -50,14 +50,7 @@ namespace SoundEffect
 	};
 }
 
-namespace Music
-{
-	enum ID
-	{
-		Intro,
-	};
-}
- 
+
 
 // Forward declaration and a few type definitions
 template <typename Resource, typename Identifier>
