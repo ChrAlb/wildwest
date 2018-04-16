@@ -1,6 +1,8 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include "ResourceHolder.h"
+#include "ResourceIdentifiers.h"
 
 using namespace sf;
 using namespace std;
@@ -11,6 +13,7 @@ struct leveldate
 	string TilSetName;
 	string LevelName;
 	int MaxInt;
+	Textures::ID m_bg_texture;
 
 };
 

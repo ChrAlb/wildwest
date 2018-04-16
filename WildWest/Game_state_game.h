@@ -29,6 +29,8 @@ private:
 
 	TextureHolder m_Textures;
 
+	leveldate m_leveldaten;
+
 	
 	LevelManager m_LM;
 

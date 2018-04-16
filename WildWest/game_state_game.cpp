@@ -13,7 +13,7 @@
 void GameStateGame::draw(const float dt)
 {
 	
-	m_BackgroundSprite.setTexture(m_Textures.get(Textures::Backgroud));
+	m_BackgroundSprite.setTexture(m_Textures.get(m_leveldaten.m_bg_texture));
 	m_Tree_Sprite.setTexture(m_Textures.get(Textures::Tree));
 	m_Tree_Sprite.setPosition(Vector2f(1000, 700));
 
@@ -204,6 +204,8 @@ GameStateGame::GameStateGame(Game* game)
 {
 	slopenumber = 0;
 	m_font.loadFromFile("graphics/Arial.ttf");
+	m_Textures.load(Textures::Tiles, "graphics/tiles_sheet.png");
+	m_Textures.load(Textures::Tree, "graphics/Tree.png");
 	this->game = game;
 	
 	
