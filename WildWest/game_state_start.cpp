@@ -67,12 +67,14 @@ GameStateStart::GameStateStart(Game* game)
 	// Grafikstartbild: Title.png wird geladen
 	m_Textures.load(Textures::TitleScreen, "graphics/Title.png");
 
+	//m_music->play(Music::Intro);
+
 	this->game = game;
 	sf::Vector2f pos = sf::Vector2f(this->game->window.getSize());
 	this->view.setSize(pos);
 	pos *= 0.5f;
 	this->view.setCenter(pos);
-	m_music.play;
+	
 	
 
 }
