@@ -159,6 +159,7 @@
     <ClInclude Include="Game_state_game.h" />
     <ClInclude Include="game_state_start.h" />
     <ClInclude Include="LevelManager.h" />
+    <ClInclude Include="MusicPlayer.h" />
     <ClInclude Include="PlayableCharacter.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="ResourceHolder.h" />
@@ -176,6 +177,7 @@
     <ClCompile Include="game_state_start.cpp" />
     <ClCompile Include="LevelManager.cpp" />
     <ClCompile Include="LoadLevel.cpp" />
+    <ClCompile Include="musicPlayer.cpp" />
     <ClCompile Include="PlayableCharacter.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="stdafx.cpp">

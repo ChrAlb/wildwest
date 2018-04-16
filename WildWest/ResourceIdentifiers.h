@@ -54,7 +54,7 @@ namespace Music
 {
 	enum ID
 	{
-		
+		Intro,
 	};
 }
  
