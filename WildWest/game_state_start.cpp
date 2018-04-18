@@ -81,6 +81,6 @@ GameStateStart::GameStateStart(Game* game)
 
 void GameStateStart::loadgame()
 {
-	m_music.stop();
+	//m_music.stop();
 	this->game->pushState(new GameStateGame(this->game)); 
 }
