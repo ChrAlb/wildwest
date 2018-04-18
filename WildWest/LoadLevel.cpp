@@ -12,9 +12,7 @@ void GameStateGame::loadLevel()
 {
 	 
 	m_Playing = false;
-	//leveldate leveldata;
-
-
+	
 
 
 // Delete alle Objekte und ArrayLevel
@@ -39,7 +37,8 @@ void GameStateGame::loadLevel()
 	m_ArrayLevel = m_LM.nextLevel(m_VALevel, m_leveldaten);
 
 	// Load Textures
-	m_Textures.load(m_leveldaten.m_bg_texture, m_leveldaten.BGFileName);
+	if (!m_LM.get_allLeveldone())
+	     m_Textures.load(m_leveldaten.m_bg_texture, m_leveldaten.BGFileName);
 	//m_Textures.load(Textures::Tiles, m_leveldaten.TilSetName);
 	//m_Textures.load(Textures::Tree, "graphics/Tree.png");
 	

@@ -8,7 +8,8 @@
 
 void GameStateEnd::draw(const float dt)
 {
-	m_Textures.get(Textures::FinishLine);
+	
+	m_endSprite.setTexture(m_Textures.get(Textures::FinishLine));
 
 	this->game->window.setView(this->view);
 
@@ -55,9 +56,10 @@ void GameStateEnd::handleInput()
 
 GameStateEnd::GameStateEnd(Game* game)
 {
-	m_Textures.load(Textures::FinishLine, "graphics/end.png");
+	
 	
 	this->game = game;
+	m_Textures.load(Textures::FinishLine, "graphics/end.png");
 	sf::Vector2f pos = sf::Vector2f(this->game->window.getSize());
 	this->view.setSize(pos);
 	pos *= 0.5f;
