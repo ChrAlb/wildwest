@@ -99,6 +99,16 @@ Vector2f PlayableCharacter::getm_Vel()
 	return m_vel;
 }
 
+bool PlayableCharacter::get_m_on_slope()
+{
+	return m_on_slope;
+}
+
+void PlayableCharacter::m_set_m_on_slope(bool onslope)
+{
+	m_on_slope = onslope;
+}
+
 Vector2i PlayableCharacter::getTile_pos()
 {
 	FloatRect position;

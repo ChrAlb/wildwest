@@ -80,7 +80,7 @@ for (int x = startX; x < endX; x++)
 		else
 		{
 		
-			if (!character.m_on_slope)
+			if (!character.get_m_on_slope())
 			{
 				if ((m_ArrayLevel[y][x] == 10) || (m_ArrayLevel[y][x] == 28))
 				{
@@ -97,24 +97,23 @@ for (int x = startX; x < endX; x++)
 							break;
 						}
 
-
-						character.m_on_slope = true;
+						character.m_set_m_on_slope(true);
 						character.tile_pos = character.getTile_pos();
 						character.resolve_slope(0, slopenumber);
 
 						if (checkNextTile(character.getm_Vel(), character.tile_pos, slopenumber))
-							character.m_on_slope = true;
+							character.m_set_m_on_slope(true);
 						else
 						{
 							character.m_slope_end = true;
-							character.m_on_slope = false;
+							character.m_set_m_on_slope(false);
 						}
 
 					}
 				}
 			}
 		}
-		if (character.m_on_slope)
+		if (character.get_m_on_slope())
 		{
 			if (counter < 1)
 			{
@@ -126,17 +125,17 @@ for (int x = startX; x < endX; x++)
 
 			
 			if (checkNextTile(character.getm_Vel(), character.tile_pos,slopenumber))
-				character.m_on_slope = true;
+				character.m_set_m_on_slope(true);
 			else
 			{
 				character.m_slope_end = true;
-				character.m_on_slope = false;
+				character.m_set_m_on_slope(false);
 			}
 
 		}
 
 
-		if (!character.m_on_slope)
+		if (!character.get_m_on_slope())
 		{
 
 				if (

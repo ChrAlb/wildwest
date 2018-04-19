@@ -51,14 +51,16 @@ public:
 
 	Vector2f getm_Vel();
 
+	bool get_m_on_slope();
+	void m_set_m_on_slope(bool onslope);
+
 	Vector2i getTile_pos();
 
 	void set_maxlevelsize(int mlevelsize);
 	int get_maxlevelsize();
 
 	
-	//Vector2f m_vel;   // muss alles zu protected!!!
-	bool m_on_slope;
+	//bool m_on_slope;
 	bool m_slope_end;
 	Vector2i tile_pos;
 	
@@ -80,6 +82,7 @@ protected:
 	bool m_LeftPressed;
 	bool m_RightPressed;
 
+	bool m_on_slope;
 
 	float m_TimeThisJump;
 
