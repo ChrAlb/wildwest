@@ -102,7 +102,7 @@ for (int x = startX; x < endX; x++)
 						character.tile_pos = character.getTile_pos();
 						character.resolve_slope(0, slopenumber);
 
-						if (checkNextTile(character.m_vel, character.tile_pos, slopenumber))
+						if (checkNextTile(character.getm_Vel(), character.tile_pos, slopenumber))
 							character.m_on_slope = true;
 						else
 						{
@@ -125,7 +125,7 @@ for (int x = startX; x < endX; x++)
 			}
 
 			
-			if (checkNextTile(character.m_vel, character.tile_pos,slopenumber))
+			if (checkNextTile(character.getm_Vel(), character.tile_pos,slopenumber))
 				character.m_on_slope = true;
 			else
 			{

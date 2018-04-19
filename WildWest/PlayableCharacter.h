@@ -49,13 +49,15 @@ public:
 	
 	Vector2f getCenter();
 
+	Vector2f getm_Vel();
+
 	Vector2i getTile_pos();
 
 	void set_maxlevelsize(int mlevelsize);
 	int get_maxlevelsize();
 
 	
-	Vector2f m_vel;   // muss alles zu protected!!!
+	//Vector2f m_vel;   // muss alles zu protected!!!
 	bool m_on_slope;
 	bool m_slope_end;
 	Vector2i tile_pos;
@@ -91,6 +93,8 @@ protected:
 	Vector2i max_levelsize;
 
 	Vector2f m_Position;
+
+	Vector2f m_vel;
 
 	Texture m_Texture;
 

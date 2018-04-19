@@ -94,6 +94,11 @@ Vector2f PlayableCharacter::getCenter()
 	return Vector2f(m_Position.x + m_Sprite.getGlobalBounds().width / 2,m_Position.y + m_Sprite.getGlobalBounds().height/2);
 }
 
+Vector2f PlayableCharacter::getm_Vel()
+{
+	return m_vel;
+}
+
 Vector2i PlayableCharacter::getTile_pos()
 {
 	FloatRect position;
