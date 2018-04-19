@@ -52,7 +52,7 @@ public:
 	Vector2f getm_Vel();
 
 	bool get_m_on_slope();
-	void m_set_m_on_slope(bool onslope);
+	void set_m_on_slope(bool onslope);
 
 	Vector2i getTile_pos();
 

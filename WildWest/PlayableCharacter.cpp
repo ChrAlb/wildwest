@@ -104,7 +104,7 @@ bool PlayableCharacter::get_m_on_slope()
 	return m_on_slope;
 }
 
-void PlayableCharacter::m_set_m_on_slope(bool onslope)
+void PlayableCharacter::set_m_on_slope(bool onslope)
 {
 	m_on_slope = onslope;
 }
