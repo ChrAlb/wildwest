@@ -20,7 +20,8 @@ namespace Textures
 		Enemy,
 		Level1Bg,
 		Level2Bg,
-		Tiles,
+		Tileset1,
+		Tileset2,
 		Tree,
 		FinishLine,
 		

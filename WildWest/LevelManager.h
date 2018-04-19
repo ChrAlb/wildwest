@@ -14,6 +14,7 @@ struct leveldate
 	string LevelName;
 	int MaxInt;
 	Textures::ID m_bg_texture;
+	Textures::ID m_tileset;
 
 };
 

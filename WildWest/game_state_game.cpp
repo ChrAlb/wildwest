@@ -14,6 +14,8 @@ void GameStateGame::draw(const float dt)
 {
 	
 	m_BackgroundSprite.setTexture(m_Textures.get(m_leveldaten.m_bg_texture));
+	
+	
 	m_Tree_Sprite.setTexture(m_Textures.get(Textures::Tree));
 	m_Tree_Sprite.setPosition(Vector2f(1000, 700));
 
@@ -26,7 +28,8 @@ void GameStateGame::draw(const float dt)
 
 	this->game->window.draw(m_Tree_Sprite);
 
-	this->game->window.draw(m_VALevel, &m_Textures.get(Textures::Tiles));
+	this->game->window.draw(m_VALevel, &m_Textures.get(m_leveldaten.m_tileset));
+
 
 	for (iter = objects.begin(); iter != objects.end(); ++iter)
 	{
@@ -204,7 +207,7 @@ GameStateGame::GameStateGame(Game* game)
 {
 	slopenumber = 0;
 	m_font.loadFromFile("graphics/Arial.ttf");
-	m_Textures.load(Textures::Tiles, "graphics/tiles_sheet.png");
+	// Dummy für Deco in Levels, später zu LevelManager zügeln!
 	m_Textures.load(Textures::Tree, "graphics/Tree.png");
 	this->game = game;
 	

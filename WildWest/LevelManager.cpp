@@ -34,6 +34,7 @@ int** LevelManager::nextLevel(VertexArray& rVaLevel, leveldate& m_leveldaten)
 		m_leveldata.BGFileName = "graphics/bg.png";
 		m_leveldata.TilSetName = "graphics/tiles_sheet.png";
 		m_leveldata.m_bg_texture = Textures::Level1Bg;
+		m_leveldata.m_tileset = Textures::Tileset1;
 			
 		levelToLoad = m_leveldata.LevelName;
         m_StartPosition.x = 150;
@@ -48,6 +49,7 @@ int** LevelManager::nextLevel(VertexArray& rVaLevel, leveldate& m_leveldaten)
 		m_leveldata.BGFileName = "graphics/bg2.png";
 		m_leveldata.TilSetName = "graphics/tiles_sheet.png";
 		m_leveldata.m_bg_texture = Textures::Level2Bg;
+		m_leveldata.m_tileset = Textures::Tileset2;
 
 		levelToLoad = m_leveldata.LevelName;
 		m_StartPosition.x = 150;
