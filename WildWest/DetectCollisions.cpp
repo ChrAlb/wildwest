@@ -73,9 +73,9 @@ for (int x = startX; x < endX; x++)
 		}
 		//**************
 
-		if (character.m_slope_end)
+		if (character.get_m_end_slope())
 		    {
-			character.m_slope_end = false;
+			character.set_m_end_slope(false);
 			}
 		else
 		{
@@ -105,7 +105,7 @@ for (int x = startX; x < endX; x++)
 							character.set_m_on_slope(true);
 						else
 						{
-							character.m_slope_end = true;
+							character.set_m_end_slope(true);
 							character.set_m_on_slope(false);
 						}
 
@@ -128,7 +128,7 @@ for (int x = startX; x < endX; x++)
 				character.set_m_on_slope(true);
 			else
 			{
-				character.m_slope_end = true;
+				character.set_m_end_slope(true);
 				character.set_m_on_slope(false);
 			}
 

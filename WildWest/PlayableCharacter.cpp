@@ -109,6 +109,16 @@ void PlayableCharacter::set_m_on_slope(bool onslope)
 	m_on_slope = onslope;
 }
 
+bool PlayableCharacter::get_m_end_slope()
+{
+	return m_slope_end;
+}
+
+void PlayableCharacter::set_m_end_slope(bool endslope)
+{
+	m_slope_end = endslope;
+}
+
 Vector2i PlayableCharacter::getTile_pos()
 {
 	FloatRect position;

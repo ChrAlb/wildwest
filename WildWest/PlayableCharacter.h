@@ -53,6 +53,8 @@ public:
 
 	bool get_m_on_slope();
 	void set_m_on_slope(bool onslope);
+	bool get_m_end_slope();
+	void set_m_end_slope(bool endslope);
 
 	Vector2i getTile_pos();
 
@@ -60,8 +62,8 @@ public:
 	int get_maxlevelsize();
 
 	
-	//bool m_on_slope;
-	bool m_slope_end;
+	//beide noch zu protect
+	//bool m_slope_end;
 	Vector2i tile_pos;
 	
 
@@ -83,6 +85,7 @@ protected:
 	bool m_RightPressed;
 
 	bool m_on_slope;
+	bool m_slope_end;
 
 	float m_TimeThisJump;
 
