@@ -15,6 +15,7 @@ private:
 	
 	TextureHolder m_Textures;
 
+
 public:
 
 	virtual void draw(const float dt);

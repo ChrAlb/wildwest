@@ -75,7 +75,7 @@ void GameStateGame::update(const float dt)
 
 	if (m_Playing)
 
-
+		
 		for (iter = objects.begin(); iter != objects.end(); ++iter)
 		{
 			

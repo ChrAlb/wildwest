@@ -47,7 +47,7 @@ namespace SoundEffect
 {
 	enum ID
 	{
-		
+		Explosion,
 	};
 }
 

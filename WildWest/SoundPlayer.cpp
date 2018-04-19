@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "SoundPlayer.h"
 
 #include <SFML/Audio/Listener.hpp>
@@ -19,7 +20,7 @@ SoundPlayer::SoundPlayer()
 : mSoundBuffers()
 , mSounds()
 {
-	mSoundBuffers.load(SoundEffect::xx,	"yy");
+	mSoundBuffers.load(SoundEffect::Explosion,"sounds//Explosion2.wav");
 	
 
 	// Listener points towards the screen (default in SFML)

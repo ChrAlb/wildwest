@@ -9,6 +9,7 @@
 void GameStateEnd::draw(const float dt)
 {
 	
+	
 	m_endSprite.setTexture(m_Textures.get(Textures::FinishLine));
 
 	this->game->window.setView(this->view);
@@ -22,7 +23,7 @@ void GameStateEnd::draw(const float dt)
 
 void GameStateEnd::update(const float dt)
 {
-
+	
 }
 
 void GameStateEnd::handleInput()

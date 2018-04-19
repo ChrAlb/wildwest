@@ -20,8 +20,10 @@ Player::Player()
 	max_frames[int(AnimationIndex::Stoping)] = 1;
 
 
-	m_JumpDuration = .25;
 	
+	m_JumpDuration = .25;
+
+	m_SoundPlayer.play(SoundEffect::Explosion);
 }
 
 bool Player::handleInput()
@@ -51,6 +53,7 @@ bool Player::handleInput()
 		m_LeftPressed = true;
 		dir.x = -1.0f;
 		
+			
 	}
 	else
 	{
@@ -84,12 +87,14 @@ void Player::update(float elapsedTime)
 		m_oldposition = m_Position;
 		m_Position.x += m_Speed * elapsedTime;
 		
+		
 	}
 
 	if (m_LeftPressed)
 	{
 		m_oldposition = m_Position;
 		m_Position.x -= m_Speed * elapsedTime;
+		
 	}
 
 	if (m_isJumping)
@@ -122,6 +127,7 @@ void Player::update(float elapsedTime)
 	if ((!m_LeftPressed) && (!m_RightPressed))
 	{
 		curAnimation = curAnimation = AnimationIndex::Stoping;
+		//m_sounds.removeStoppedSounds();
 	}
 
 	if (m_on_slope)
@@ -185,10 +191,12 @@ void Player::SetDirection(const sf::Vector2f & dir)
 	if (dir.x > 0.0f)
 	{
 		curAnimation = AnimationIndex::WalkingRight;
+		//m_sounds.play(SoundEffect::PlayerWalking);
 	}
 	else if (dir.x < 0.0f)
 	{
 		curAnimation = AnimationIndex::WalkingLeft;
+		
 	}
 }
 

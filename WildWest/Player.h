@@ -1,8 +1,9 @@
 #pragma once
 #include "PlayableCharacter.h"
 #include "Animation.h"
-
-
+#include "ResourceHolder.h"
+#include "ResourceIdentifiers.h"
+#include "SoundPlayer.h"
 
 class Player : public PlayableCharacter 
 
@@ -17,7 +18,7 @@ private:
 		Count
 	};
 
-	
+	SoundPlayer m_SoundPlayer;
 
 
 public:
