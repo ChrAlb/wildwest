@@ -98,7 +98,7 @@ for (int x = startX; x < endX; x++)
 						}
 
 						character.set_m_on_slope(true);
-						character.tile_pos = character.getTile_pos();
+						character.tile_pos = character.CalculateTile_pos();
 						character.resolve_slope(0, slopenumber);
 
 						if (checkNextTile(character.getm_Vel(), character.tile_pos, slopenumber))
@@ -119,7 +119,7 @@ for (int x = startX; x < endX; x++)
 			{
 
 				counter = counter + 1;
-				character.tile_pos = character.getTile_pos();
+				character.tile_pos = character.CalculateTile_pos();
 				character.resolve_slope(0,slopenumber);
 			}
 

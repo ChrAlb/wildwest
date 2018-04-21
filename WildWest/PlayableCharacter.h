@@ -56,14 +56,12 @@ public:
 	bool get_m_end_slope();
 	void set_m_end_slope(bool endslope);
 
-	Vector2i getTile_pos();
+	Vector2i CalculateTile_pos();
 
 	void set_maxlevelsize(int mlevelsize);
 	int get_maxlevelsize();
 
-	
-	//beide noch zu protect
-	//bool m_slope_end;
+	// zu protected
 	Vector2i tile_pos;
 	
 
