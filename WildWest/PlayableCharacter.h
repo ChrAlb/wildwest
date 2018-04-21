@@ -43,26 +43,25 @@ public:
 	void set_objecttype(object_types otype);
 	object_types get_objecttype();
 
-	
 	void resolve_slope(float position, int &slopenumber);
 	
-	
 	Vector2f getCenter();
-
-	Vector2f getm_Vel();
+    Vector2f getm_Vel();
 
 	bool get_m_on_slope();
 	void set_m_on_slope(bool onslope);
 	bool get_m_end_slope();
 	void set_m_end_slope(bool endslope);
+	Vector2i get_tilepos();
+	void set_tilepos(Vector2i tpos);
 
 	Vector2i CalculateTile_pos();
 
 	void set_maxlevelsize(int mlevelsize);
 	int get_maxlevelsize();
 
-	// zu protected
-	Vector2i tile_pos;
+	
+	
 	
 
 	void set_iscollided(bool iscollided);
@@ -95,6 +94,7 @@ protected:
 	
 
 	Vector2i max_levelsize;
+	Vector2i tile_pos;
 
 	Vector2f m_Position;
 
@@ -115,6 +115,7 @@ protected:
 	bool m_iscollided;
 
 	Vector2f m_oldposition;
+	
 	
 	sf::Vector2f dir = { 0.0f,0.0f };
 

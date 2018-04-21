@@ -119,6 +119,16 @@ void PlayableCharacter::set_m_end_slope(bool endslope)
 	m_slope_end = endslope;
 }
 
+Vector2i PlayableCharacter::get_tilepos()
+{
+	return tile_pos;
+}
+
+void PlayableCharacter::set_tilepos(Vector2i tpos)
+{
+	tile_pos = tpos;
+}
+
 Vector2i PlayableCharacter::CalculateTile_pos()
 {
 	FloatRect position;
