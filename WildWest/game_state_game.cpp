@@ -148,15 +148,23 @@ void GameStateGame::update(const float dt)
 					this->gameview.move(move, 0);
 				}
 
+
+
 			}
 			
-			if (debug)
+			if (stats)
 			{
+			FloatRect printpos;
+
             text.setFont(m_font);
-			text.setString("hello");
-			text.setCharacterSize(24);
-			text.setFillColor(sf::Color::Red);
 			
+			text.setCharacterSize(24);
+			text.setFillColor(sf::Color::Black);
+
+			printpos = (*iter)->getPosition();
+			
+			//text.s...
+
 			}
 			
 
