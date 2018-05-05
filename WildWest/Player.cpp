@@ -181,7 +181,10 @@ void Player::update(float elapsedTime)
 	animations[int(curAnimation)].Update(elapsedTime, max_frames[int(curAnimation)]);
 	animations[int(curAnimation)].ApplytoSprite(m_Sprite);
 	
-	m_Sprite.setPosition(m_Position);	
+	m_Sprite.setPosition(m_Position);
+
+	w_text = 3.13;
+	m_playerInfo.setTest(3.4563);
 }
  
 

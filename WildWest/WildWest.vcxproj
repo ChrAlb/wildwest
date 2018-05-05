@@ -162,6 +162,7 @@
     <ClInclude Include="MusicPlayer.h" />
     <ClInclude Include="PlayableCharacter.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerInfo.h" />
     <ClInclude Include="ResourceHolder.h" />
     <ClInclude Include="ResourceIdentifiers.h" />
     <ClInclude Include="SoundPlayer.h" />
@@ -181,6 +182,7 @@
     <ClCompile Include="musicPlayer.cpp" />
     <ClCompile Include="PlayableCharacter.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerInfo.cpp" />
     <ClCompile Include="SoundPlayer.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

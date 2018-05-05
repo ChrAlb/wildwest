@@ -36,6 +36,10 @@ void GameStateGame::draw(const float dt)
       this->game->window.draw((*iter)->getSprite());
 	}
 	
+	if (stats)
+	{
+		m_PlayerInfo.print(this->game->window);
+	}
 	this->game->window.draw(text);
 
     // DEBUG
@@ -152,23 +156,7 @@ void GameStateGame::update(const float dt)
 
 			}
 			
-			if (stats)
-			{
-			FloatRect printpos;
-
-            text.setFont(m_font);
 			
-			text.setCharacterSize(24);
-			text.setFillColor(sf::Color::Black);
-
-			printpos = (*iter)->getPosition();
-			
-			//text.s...
-
-			}
-			
-
-
 		}
 
 	return;
@@ -214,7 +202,7 @@ void GameStateGame::handleInput()
 GameStateGame::GameStateGame(Game* game)
 {
 	slopenumber = 0;
-	m_font.loadFromFile("graphics/Arial.ttf");
+	//m_font.loadFromFile("graphics/Arial.ttf");
 	// Dummy für Deco in Levels, später zu LevelManager zügeln!
 	m_Textures.load(Textures::Tree, "graphics/Tree.png");
 	this->game = game;

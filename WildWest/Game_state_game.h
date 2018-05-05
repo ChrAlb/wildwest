@@ -8,6 +8,7 @@
 #include "ResourceIdentifiers.h"
 #include "Player.h"
 #include "Enemy.h"
+#include "PlayerInfo.h"
 
 class GameStateGame : public GameState
 {
@@ -74,13 +75,13 @@ private:
 	Player *player;
 	Enemy *enemy;
 
-
-	sf::Font m_font;
 	sf::Text text;
 
 	bool m_onSlope = false;
 	
 	float m_Gravity;
+
+	PlayerInfo m_PlayerInfo;
 
 public:
 
