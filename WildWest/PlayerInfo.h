@@ -12,9 +12,10 @@ public:
 
 private:
 
-	sf::Text m_test;
+	sf::Text m_txt;
 	sf::Font m_font;
 	
+	std::string Convert(float number);
 
 
 };
