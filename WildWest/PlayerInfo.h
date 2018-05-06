@@ -7,14 +7,14 @@ class PlayerInfo
 {
 public:
 	PlayerInfo();
-	void print(sf::RenderWindow& windowRef);
-	void setTest(float test);
+	void print(sf::RenderWindow& windowRef, Player& RefPlayer);
+	
 
 private:
 
 	sf::Text m_test;
 	sf::Font m_font;
-	float q_test;
+	
 
 
 };

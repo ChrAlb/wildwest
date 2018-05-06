@@ -183,8 +183,7 @@ void Player::update(float elapsedTime)
 	
 	m_Sprite.setPosition(m_Position);
 
-	w_text = 3.13;
-	m_playerInfo.setTest(3.4563);
+	
 }
  
 

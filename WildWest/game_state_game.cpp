@@ -38,7 +38,7 @@ void GameStateGame::draw(const float dt)
 	
 	if (stats)
 	{
-		m_PlayerInfo.print(this->game->window);
+		m_PlayerInfo.print(this->game->window, *player);
 	}
 	this->game->window.draw(text);
 

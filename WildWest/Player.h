@@ -4,7 +4,7 @@
 #include "ResourceHolder.h"
 #include "ResourceIdentifiers.h"
 #include "SoundPlayer.h"
-#include "PlayerInfo.h"
+
 
 class Player : public PlayableCharacter 
 
@@ -20,7 +20,7 @@ private:
 	};
 
 	SoundPlayer m_SoundPlayer;
-	PlayerInfo  m_playerInfo;
+	
 
 
 public:
