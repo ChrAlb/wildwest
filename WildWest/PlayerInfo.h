@@ -12,8 +12,11 @@ public:
 
 private:
 
-	sf::Text m_txt;
+	sf::Text m_title;
+	sf::Text m_pos;
+
 	sf::Font m_font;
+	String string;
 	
 	std::string Convert(float number);
 

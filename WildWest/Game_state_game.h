@@ -23,6 +23,7 @@ private:
 	 
 	sf::View gameview;
 	sf::View bgview;
+	sf::View PlInfo;
 
 	Sprite m_BackgroundSprite;
 	Sprite m_Tree_Sprite;

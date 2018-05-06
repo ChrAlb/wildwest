@@ -24,6 +24,12 @@ void GameStateGame::draw(const float dt)
 	this->game->window.setView(bgview);
     this->game->window.draw(m_BackgroundSprite);
 	
+	if (stats)
+	{
+		this->game->window.setView(PlInfo);
+		m_PlayerInfo.print(this->game->window, *player);
+	}
+
 	this->game->window.setView(gameview);
 
 	this->game->window.draw(m_Tree_Sprite);
@@ -36,10 +42,7 @@ void GameStateGame::draw(const float dt)
       this->game->window.draw((*iter)->getSprite());
 	}
 	
-	if (stats)
-	{
-		m_PlayerInfo.print(this->game->window, *player);
-	}
+
 	this->game->window.draw(text);
 
     // DEBUG
