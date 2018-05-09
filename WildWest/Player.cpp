@@ -13,13 +13,17 @@ Player::Player()
 	
     animations[int(AnimationIndex::WalkingRight)].addRow(0, 0, 80, 100,8);
 	animations[int(AnimationIndex::WalkingLeft)].addRow(0, 100, 80, 100,8);
-	animations[int(AnimationIndex::Stoping)].addRow(0, 200, 80, 100, 1);
+	animations[int(AnimationIndex::Jumping)].addRow(0, 200, 80, 100, 1);
+	animations[int(AnimationIndex::StopingRight)].addRow(0, 300, 80, 100, 1);
+	animations[int(AnimationIndex::StopingLeft)].addRow(0, 400, 80, 100, 1);
 
 	max_frames[int(AnimationIndex::WalkingRight)] = 8;
 	max_frames[int(AnimationIndex::WalkingLeft)] = 8;
-	max_frames[int(AnimationIndex::Stoping)] = 1;
+	max_frames[int(AnimationIndex::Jumping)] = 1;
+	max_frames[int(AnimationIndex::StopingLeft)] = 1;
+	max_frames[int(AnimationIndex::StopingRight)] = 1;
 
-
+	m_countJumpLoops = 0;
 	
 	m_JumpDuration = .25;
 
@@ -104,17 +108,22 @@ void Player::update(float elapsedTime)
 		if (m_TimeThisJump < m_JumpDuration)
 		{
 			m_Position.y -= m_Gravity * 2 * elapsedTime;
+			m_countJumpLoops = m_countJumpLoops + 1;
 		}
 		else
 		{
 			m_isJumping = false;
 			m_isFalling = true;
+			
 		}
 	}
+	
+		
 
 	if  (m_isFalling)
 	{
 		m_Position.y += m_Gravity * elapsedTime;
+		m_countJumpLoops = 0;
 	} 
 
   
@@ -123,13 +132,13 @@ void Player::update(float elapsedTime)
 		Player::m_Position.x = 0;
        }
 	
-
+/*
 	if ((!m_LeftPressed) && (!m_RightPressed))
 	{
 		curAnimation = curAnimation = AnimationIndex::Stoping;
 		//m_sounds.removeStoppedSounds();
 	}
-
+*/
 	if (m_on_slope)
 	{
 		if (dir.x>0)
@@ -191,14 +200,27 @@ void Player::SetDirection(const sf::Vector2f & dir)
 {
 	m_vel = dir * m_Speed;
 	if (dir.x > 0.0f)
-	{
-		curAnimation = AnimationIndex::WalkingRight;
-		//m_sounds.play(SoundEffect::PlayerWalking);
-	}
-	else if (dir.x < 0.0f)
-	{
-		curAnimation = AnimationIndex::WalkingLeft;
+		if (m_LeftPressed)
+	       {
+		     curAnimation = AnimationIndex::StopingRight;
 		
+	        }
+		else
+		{
+			curAnimation = AnimationIndex::WalkingRight;
+		}
+	else if (dir.x < 0.0f)
+		if (m_RightPressed)
+	      {
+		    curAnimation = AnimationIndex::StopingLeft;
+		  }
+		else
+		{
+			curAnimation = AnimationIndex::WalkingLeft;
+		}
+	if (m_isJumping)
+	{
+		curAnimation = AnimationIndex::Jumping;
 	}
 }
 

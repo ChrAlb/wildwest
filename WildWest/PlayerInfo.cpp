@@ -28,9 +28,23 @@ void PlayerInfo::print(sf::RenderWindow & windowRef, Player& PlayerRef)
 	string = string + Convert(PlayerRef.getPosition().top);
 	string = string + "    Left:  ";
 	string = string + Convert(PlayerRef.getPosition().left);
-	
 	m_pos.setString(string);
+
+
+	// Count Jump Loops
+	m_jumpFrames.setFont(m_font);
+	m_jumpFrames.setCharacterSize(14);
+	m_jumpFrames.setFillColor(sf::Color::Black);
+	m_jumpFrames.setPosition(0, 50);
+	string = "#Frames while jumping: ";
+
 	
+	std::stringstream ss;
+	ss << PlayerRef.m_countJumpLoops;
+	string = string + ss.str();
+	m_jumpFrames.setString(string);
+	
+	windowRef.draw(m_jumpFrames);
 	windowRef.draw(m_title);
 	windowRef.draw(m_pos);
 }

@@ -15,11 +15,14 @@ private:
 	{
 		WalkingLeft,
 		WalkingRight,
-		Stoping,
+		StopingLeft,
+		StopingRight,
+		Jumping,
 		Count
 	};
 
 	SoundPlayer m_SoundPlayer;
+	
 	
 
 
@@ -33,8 +36,9 @@ public:
 	void update(float dt);
 
 	Animation animations[int(AnimationIndex::Count)];
-	AnimationIndex curAnimation = AnimationIndex::Stoping;
+	AnimationIndex curAnimation = AnimationIndex::StopingLeft;
 	int max_frames[int(AnimationIndex::Count)];
+	int m_countJumpLoops;
 	
 
 

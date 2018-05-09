@@ -14,6 +14,7 @@ private:
 
 	sf::Text m_title;
 	sf::Text m_pos;
+	sf::Text m_jumpFrames;
 
 	sf::Font m_font;
 	String string;
