@@ -132,22 +132,6 @@ void Player::update(float elapsedTime)
 		Player::m_Position.x = 0;
        }
 	
-/*
-	if ((!m_LeftPressed) && (!m_RightPressed))
-	{
-		curAnimation = curAnimation = AnimationIndex::Stoping;
-		//m_sounds.removeStoppedSounds();
-	}
-*/
-	if (m_on_slope)
-	{
-		if (dir.x>0)
-			curAnimation = curAnimation = AnimationIndex::WalkingRight;
-		else 
-        if (dir.x<0)
-			curAnimation = curAnimation = AnimationIndex::WalkingLeft;
-	}
-
 	mlevelsize = Player::get_maxlevelsize();
 
 	if (Player::m_Position.x > mlevelsize)
@@ -200,24 +184,27 @@ void Player::SetDirection(const sf::Vector2f & dir)
 {
 	m_vel = dir * m_Speed;
 	if (dir.x > 0.0f)
-		if (m_LeftPressed)
-	       {
-		     curAnimation = AnimationIndex::StopingRight;
 		
-	        }
-		else
 		{
 			curAnimation = AnimationIndex::WalkingRight;
 		}
 	else if (dir.x < 0.0f)
-		if (m_RightPressed)
-	      {
-		    curAnimation = AnimationIndex::StopingLeft;
-		  }
-		else
+		
 		{
 			curAnimation = AnimationIndex::WalkingLeft;
 		}
+
+	
+	if ((!m_LeftPressed) && (!m_RightPressed))
+	{
+
+      if (dir.x > 0.0f)
+              curAnimation = curAnimation = AnimationIndex::StopingRight;
+	  else if (dir.x < 0.0f)
+		      curAnimation = curAnimation = AnimationIndex::StopingLeft;
+	}
+	
+
 	if (m_isJumping)
 	{
 		curAnimation = AnimationIndex::Jumping;

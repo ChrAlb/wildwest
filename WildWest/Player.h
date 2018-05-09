@@ -36,7 +36,7 @@ public:
 	void update(float dt);
 
 	Animation animations[int(AnimationIndex::Count)];
-	AnimationIndex curAnimation = AnimationIndex::StopingLeft;
+	AnimationIndex curAnimation = AnimationIndex::StopingRight;
 	int max_frames[int(AnimationIndex::Count)];
 	int m_countJumpLoops;
 	
