@@ -13,13 +13,17 @@ Player::Player()
 	
     animations[int(AnimationIndex::WalkingRight)].addRow(0, 0, 80, 100,8);
 	animations[int(AnimationIndex::WalkingLeft)].addRow(0, 100, 80, 100,8);
-	animations[int(AnimationIndex::Jumping)].addRow(0, 200, 80, 100, 1);
-	animations[int(AnimationIndex::StopingRight)].addRow(0, 300, 80, 100, 1);
-	animations[int(AnimationIndex::StopingLeft)].addRow(0, 400, 80, 100, 1);
+	animations[int(AnimationIndex::JumpingLeft)].addRow(0, 300, 80, 100, 1);
+	animations[int(AnimationIndex::JumpingRight)].addRow(0, 400, 80, 100, 1);
+	animations[int(AnimationIndex::Stoping)].addRow(0, 200, 80, 100, 1);
+	animations[int(AnimationIndex::StopingRight)].addRow(0, 0, 80, 100, 1);
+	animations[int(AnimationIndex::StopingLeft)].addRow(0, 100, 80, 100, 1);
 
 	max_frames[int(AnimationIndex::WalkingRight)] = 8;
 	max_frames[int(AnimationIndex::WalkingLeft)] = 8;
-	max_frames[int(AnimationIndex::Jumping)] = 1;
+	max_frames[int(AnimationIndex::JumpingLeft)] = 1;
+	max_frames[int(AnimationIndex::JumpingRight)] = 1;
+	max_frames[int(AnimationIndex::Stoping)] = 1;
 	max_frames[int(AnimationIndex::StopingLeft)] = 1;
 	max_frames[int(AnimationIndex::StopingRight)] = 1;
 
@@ -207,7 +211,11 @@ void Player::SetDirection(const sf::Vector2f & dir)
 
 	if (m_isJumping)
 	{
-		curAnimation = AnimationIndex::Jumping;
+
+		if (dir.x > 0.0f)
+			curAnimation = curAnimation = AnimationIndex::JumpingLeft;
+		else if (dir.x < 0.0f)
+			curAnimation = curAnimation = AnimationIndex::JumpingRight;
 	}
 }
 

@@ -17,7 +17,9 @@ private:
 		WalkingRight,
 		StopingLeft,
 		StopingRight,
-		Jumping,
+		Stoping,
+		JumpingLeft,
+		JumpingRight,
 		Count
 	};
 
@@ -36,7 +38,7 @@ public:
 	void update(float dt);
 
 	Animation animations[int(AnimationIndex::Count)];
-	AnimationIndex curAnimation = AnimationIndex::StopingRight;
+	AnimationIndex curAnimation = AnimationIndex::Stoping;
 	int max_frames[int(AnimationIndex::Count)];
 	int m_countJumpLoops;
 	
