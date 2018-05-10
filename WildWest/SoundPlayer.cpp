@@ -21,6 +21,7 @@ SoundPlayer::SoundPlayer()
 , mSounds()
 {
 	mSoundBuffers.load(SoundEffect::Explosion,"sounds//Explosion2.wav");
+	mSoundBuffers.load(SoundEffect::Jump, "sounds//Jump.ogg");
 	
 
 	// Listener points towards the screen (default in SFML)

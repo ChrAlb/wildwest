@@ -49,6 +49,7 @@ namespace SoundEffect
 	enum ID
 	{
 		Explosion,
+		Jump,
 	};
 }
 
