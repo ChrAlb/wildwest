@@ -7,7 +7,7 @@ MusicPlayer::MusicPlayer()
 	, mFilenames()
 	, mVolume(100.f)
 {
-	mFilenames[Musik::Intro] = "sounds//Intro.ogg";
+	mFilenames[Musik::Intro] = "sounds//Bonanza.ogg";
 	
 }
 

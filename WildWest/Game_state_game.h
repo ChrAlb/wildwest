@@ -17,7 +17,7 @@ private:
 
 	//******************
 	// falls debug= true; Kollisionsboxen werden angezeigt
-	bool debug = false;
+	bool debug = true;
 	bool stats = true;
 	//******************
 	 
@@ -56,6 +56,8 @@ private:
 
 	bool checkNextTile(Vector2f &vel, Vector2i &tile_pos, int &slopenumber);
 
+	bool m_justexploded;
+
 	int slopenumber;
 
 	
@@ -83,6 +85,8 @@ private:
 	float m_Gravity;
 
 	PlayerInfo m_PlayerInfo;
+
+	SoundPlayer m_SoundPlayer;
 
 public:
 

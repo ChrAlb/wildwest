@@ -31,7 +31,7 @@ Player::Player()
 	
 	m_JumpDuration = .25;
 
-	m_SoundPlayer.play(SoundEffect::Explosion);
+	
 }
 
 bool Player::handleInput()
@@ -107,13 +107,20 @@ void Player::update(float elapsedTime)
 
 	if (m_isJumping)
 	{
-		//m_SoundPlayer.play(SoundEffect::Jump);
+	
+		
 		m_TimeThisJump += elapsedTime;
 
 		if (m_TimeThisJump < m_JumpDuration)
 		{
 			m_Position.y -= m_Gravity * 2 * elapsedTime;
 			m_countJumpLoops = m_countJumpLoops + 1;
+
+			if (m_JustJumped)
+			{
+				m_SoundPlayer.play(SoundEffect::Jump);
+				m_JustJumped = false;
+			}
 			
 		}
 		else

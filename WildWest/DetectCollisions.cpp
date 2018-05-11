@@ -49,10 +49,12 @@ if (!character.getPosition().intersects(level))
 {
 	if (character.get_objecttype() == t_Player)
 	{
+		m_justexploded = false;
 		character.spawn(m_LM.getStartPosition(), GRAVITY);
 		this->gameview.reset(sf::FloatRect(0, 0, VideoMode::getDesktopMode().width, VideoMode::getDesktopMode().height));
 	}
 }
+
 
 
 for (int x = startX; x < endX; x++)
@@ -141,6 +143,7 @@ for (int x = startX; x < endX; x++)
 				if (
 
 					(m_ArrayLevel[y][x] == 0) ||
+					(m_ArrayLevel[y][x] == 1) ||
 					(m_ArrayLevel[y][x] == 7) ||
 					(m_ArrayLevel[y][x] == 8) ||
 					(m_ArrayLevel[y][x] == 9) ||
@@ -170,7 +173,20 @@ for (int x = startX; x < endX; x++)
 
 					if (character.getFeet().intersects(block))
 					{
-						character.stopFalling(block.top);
+						if (m_ArrayLevel[y][x] == 1)
+						{
+							if (!m_justexploded)
+							{
+								m_SoundPlayer.play(SoundEffect::Explosion);
+								m_justexploded = true;
+							}
+						}
+						else
+						{
+                           character.stopFalling(block.top);
+						  
+						}
+						    
 					}
 					else
 						if (character.getHead().intersects(block))
