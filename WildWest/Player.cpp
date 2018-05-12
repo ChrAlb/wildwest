@@ -31,6 +31,7 @@ Player::Player()
 	
 	m_JumpDuration = .25;
 
+
 	
 }
 
@@ -40,7 +41,10 @@ bool Player::handleInput()
 
 	m_JustJumped = false;
 	
-	
+	if (Keyboard::isKeyPressed(Keyboard::S))
+		m_isfiring = true;
+	else
+		m_isfiring = false;
 
 	if (Keyboard::isKeyPressed(Keyboard::Space))
 	{
@@ -151,6 +155,11 @@ void Player::update(float elapsedTime)
 	{
 		Player::m_Position.x = mlevelsize;
 	}
+
+	if (m_isfiring)
+
+		m_SoundPlayer.play(SoundEffect::Colt);
+
 
 	FloatRect r = getPosition();
 

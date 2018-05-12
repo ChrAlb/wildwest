@@ -50,6 +50,7 @@ namespace SoundEffect
 	{
 		Explosion,
 		Jump,
+		Colt,
 	};
 }
 

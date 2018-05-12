@@ -114,6 +114,9 @@ protected:
 
 	bool m_iscollided;
 
+	bool m_isfiring;
+	
+
 	Vector2f m_oldposition;
 	
 	
