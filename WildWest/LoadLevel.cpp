@@ -44,7 +44,7 @@ void GameStateGame::loadLevel()
 	}
 	// end Load Textures
 	
-	
+
     player = new Player();
     player->spawn(m_LM.getStartPosition(), GRAVITY); 
 	
@@ -55,14 +55,7 @@ void GameStateGame::loadLevel()
 	player->set_maxlevelsize(maxlevelsize);
 	objects.push_back(player);
 
-	if (player->get_isfiring())
-	{
-		bullet = new Bullet();
-		bullet->spawn(player->getCenter(), 0);
-		objects.push_back(bullet);
-
-	}
-
+	
 /*
 	enemy = new Enemy();
 	Vector2f startpoint;

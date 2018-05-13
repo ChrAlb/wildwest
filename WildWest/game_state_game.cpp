@@ -84,11 +84,20 @@ void GameStateGame::update(const float dt)
 	}
 
 	if (m_Playing)
+	{
+		if (player->get_isfiring())
+		{
+			bullet = new Bullet();
+			bullet->spawn(player->getCenter(), 0);
+			objects.push_back(bullet);
 
-		
+		}
+
+
+
 		for (iter = objects.begin(); iter != objects.end(); ++iter)
 		{
-			
+
 
 			{
 				//(*iter)->update(dt);
@@ -96,7 +105,7 @@ void GameStateGame::update(const float dt)
 				// DEBUG
 				if (debug)
 				{
-									
+
 					head_box.setSize(sf::Vector2f((*iter)->getHead().width, (*iter)->getHead().height));
 					head_box.setOutlineColor(sf::Color::Red);
 					head_box.setOutlineThickness(5);
@@ -134,10 +143,10 @@ void GameStateGame::update(const float dt)
 					}
 				}
 				(*iter)->update(dt);
-						
+
 				if ((*iter)->get_objecttype() == t_Player)
 				{
-					
+
 					newpos = (*iter)->getCenter().x;
 
 
@@ -158,9 +167,10 @@ void GameStateGame::update(const float dt)
 
 
 			}
-			
-			
+
+
 		}
+	}
 
 	return;
 }
