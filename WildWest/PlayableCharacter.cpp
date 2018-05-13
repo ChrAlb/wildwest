@@ -8,7 +8,7 @@ PlayableCharacter::PlayableCharacter() : m_id(0)
 	m_slope_end = false;
 	tile_pos = { 0,0 };
 	m_isfiring = false;
-	
+	m_justfired = true;
 }
 
 void PlayableCharacter::spawn(Vector2f startPosition, float gravity)
@@ -202,7 +202,7 @@ FloatRect PlayableCharacter::get_Center()
 	return m_Center;
 }
 
-void PlayableCharacter::set_objecttype(object_types otype) { m_otype = otype; }
+//void PlayableCharacter::set_objecttype(object_types otype) { m_otype = otype; }
 
 object_types PlayableCharacter::get_objecttype() { return m_otype; }
 
@@ -215,6 +215,11 @@ void PlayableCharacter::set_maxlevelsize(int mlevelsize)
 int PlayableCharacter::get_maxlevelsize()
 {
 	return m_maxlevelsize;
+}
+
+bool PlayableCharacter::get_isfiring()
+{
+	return m_isfiring;
 }
 
 void PlayableCharacter::set_iscollided(bool iscollided)

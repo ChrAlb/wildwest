@@ -51,10 +51,17 @@ void GameStateGame::loadLevel()
 
 	int maxlevelsize = (m_LM.getLevelSize().x * TILE_SIZE) - TILE_SIZE;
 
-	player->set_objecttype(t_Player);
+	
 	player->set_maxlevelsize(maxlevelsize);
-	player->set_iscollided(false);    
 	objects.push_back(player);
+
+	if (player->get_isfiring())
+	{
+		bullet = new Bullet();
+		bullet->spawn(player->getCenter(), 0);
+		objects.push_back(bullet);
+
+	}
 
 /*
 	enemy = new Enemy();
@@ -63,11 +70,11 @@ void GameStateGame::loadLevel()
 	startpoint.y = 700;
 	enemy->spawn(startpoint,GRAVITY);
 	
-	enemy->set_objecttype(t_Enemy);
+	
 	enemy->set_maxlevelsize(maxlevelsize);
-	enemy->set_iscollided(false);
+	
 	objects.push_back(enemy);
-*/	
+*/
 	
 
 	this->PlInfo.reset(sf::FloatRect(0, 0, VideoMode::getDesktopMode().width, VideoMode::getDesktopMode().height));

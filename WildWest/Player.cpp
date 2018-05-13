@@ -11,6 +11,10 @@
 Player::Player()
 {
 	
+	m_otype = t_Player;
+	m_iscollided = false;
+	
+
     animations[int(AnimationIndex::WalkingRight)].addRow(0, 0, 80, 100,8);
 	animations[int(AnimationIndex::WalkingLeft)].addRow(0, 100, 80, 100,8);
 	animations[int(AnimationIndex::JumpingLeft)].addRow(0, 300, 80, 100, 1);
@@ -44,7 +48,11 @@ bool Player::handleInput()
 	if (Keyboard::isKeyPressed(Keyboard::S))
 		m_isfiring = true;
 	else
+	{
 		m_isfiring = false;
+		m_justfired = true;
+	}
+		
 
 	if (Keyboard::isKeyPressed(Keyboard::Space))
 	{
@@ -157,8 +165,12 @@ void Player::update(float elapsedTime)
 	}
 
 	if (m_isfiring)
-
-		m_SoundPlayer.play(SoundEffect::Colt);
+		if (m_justfired)
+		{
+           m_SoundPlayer.play(SoundEffect::Colt);
+		   m_justfired = false;
+		}
+             
 
 
 	FloatRect r = getPosition();

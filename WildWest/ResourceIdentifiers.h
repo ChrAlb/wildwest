@@ -23,6 +23,7 @@ namespace Textures
 		Tileset1,
 		Tileset2,
 		Tree,
+		Bullet,
 		FinishLine,
 		
 	};

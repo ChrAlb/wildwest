@@ -34,7 +34,7 @@ public:
 	void SetDirection(const sf::Vector2f& dir);
 	Player::Player();
 	
-	bool virtual handleInput();
+	bool handleInput();
 	void update(float dt);
 
 	Animation animations[int(AnimationIndex::Count)];

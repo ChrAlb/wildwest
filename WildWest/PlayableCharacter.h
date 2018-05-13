@@ -5,7 +5,7 @@
 
 using namespace sf;
 
-enum object_types { t_Player, t_Enemy, t_Others };
+enum object_types { t_Player, t_Enemy, t_Bullets, t_Others };
 
 class PlayableCharacter
 	
@@ -40,7 +40,7 @@ public:
 	void stopJump();
 
 	
-	void set_objecttype(object_types otype);
+	//void set_objecttype(object_types otype);
 	object_types get_objecttype();
 
 	void resolve_slope(float position, int &slopenumber);
@@ -61,6 +61,7 @@ public:
 	int get_maxlevelsize();
 
 	
+	bool get_isfiring();
 	
 	
 
@@ -115,6 +116,7 @@ protected:
 	bool m_iscollided;
 
 	bool m_isfiring;
+	bool m_justfired;
 	
 
 	Vector2f m_oldposition;

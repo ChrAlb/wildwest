@@ -9,6 +9,7 @@
 #include "Player.h"
 #include "Enemy.h"
 #include "PlayerInfo.h"
+#include "Bullet.h"
 
 class GameStateGame : public GameState
 {
@@ -17,8 +18,8 @@ private:
 
 	//******************
 	// falls debug= true; Kollisionsboxen werden angezeigt
-	bool debug = true;
-	bool stats = true;
+	bool debug = false;
+	bool stats = false;
 	//******************
 	 
 	sf::View gameview;
@@ -77,6 +78,7 @@ private:
 
 	Player *player;
 	Enemy *enemy;
+	Bullet *bullet;
 
 	sf::Text text;
 
