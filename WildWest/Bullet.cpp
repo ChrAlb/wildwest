@@ -19,7 +19,7 @@ bool Bullet::handleInput()
 
 void Bullet::update(float dt)
 {
-	m_Position.x += 25 *dt ;
+	m_Position.x += m_Speed * dt;
 	m_Sprite.setPosition(m_Position);
 
 }

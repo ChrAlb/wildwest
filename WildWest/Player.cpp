@@ -35,6 +35,8 @@ Player::Player()
 	
 	m_JumpDuration = .25;
 
+	m_justfired = true;
+
 
 	
 }
@@ -164,13 +166,7 @@ void Player::update(float elapsedTime)
 		Player::m_Position.x = mlevelsize;
 	}
 
-	if (m_isfiring)
-		if (m_justfired)
-		{
-           m_SoundPlayer.play(SoundEffect::Colt);
-		   m_justfired = false;
-		}
-             
+
 
 
 	FloatRect r = getPosition();

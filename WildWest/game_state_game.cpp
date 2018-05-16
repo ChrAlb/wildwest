@@ -86,13 +86,19 @@ void GameStateGame::update(const float dt)
 	if (m_Playing)
 	{
 		if (player->get_isfiring())
-		{
-			bullet = new Bullet();
-			bullet->spawn(player->getCenter(), 0);
-			objects.push_back(bullet);
+			if (player->get_justfired())
 
-		}
+			{
+				bullet = new Bullet();
+				bullet->spawn(player->getCenter(), 0);
+				m_SoundPlayer.play(SoundEffect::Colt);
+				objects.push_back(bullet);
+				player->set_justfired(false);
 
+			}
+			else
+				player->set_justfired(false);
+	
 
 
 		for (iter = objects.begin(); iter != objects.end(); ++iter)
@@ -218,7 +224,7 @@ GameStateGame::GameStateGame(Game* game)
 	//m_font.loadFromFile("graphics/Arial.ttf");
 	// Dummy für Deco in Levels, später zu LevelManager zügeln!
 	m_Textures.load(Textures::Tree, "graphics/Tree.png");
-
+	
 	m_justexploded = false;
 
 	this->game = game;

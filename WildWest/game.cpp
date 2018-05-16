@@ -67,6 +67,7 @@ Game::Game()
 
 	this->window.create(sf::VideoMode(resolution.x, resolution.y), "Wild Wild West",Style::Close);
 	this->window.setFramerateLimit(0);
+	
 
 }
 

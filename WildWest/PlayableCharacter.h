@@ -62,6 +62,9 @@ public:
 
 	
 	bool get_isfiring();
+
+	bool get_justfired();
+	void set_justfired(bool jfired);
 	
 	
 

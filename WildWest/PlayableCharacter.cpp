@@ -222,6 +222,16 @@ bool PlayableCharacter::get_isfiring()
 	return m_isfiring;
 }
 
+bool PlayableCharacter::get_justfired()
+{
+	return m_justfired;
+}
+
+void PlayableCharacter::set_justfired(bool jfired)
+{
+	m_justfired = jfired;
+}
+
 void PlayableCharacter::set_iscollided(bool iscollided)
 {
 
