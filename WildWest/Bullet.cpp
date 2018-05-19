@@ -33,8 +33,8 @@ void Bullet::update(float dt)
 
 }
 
-void Bullet::setm_Vel(Vector2f vel)
+Vector2f Bullet::setm_vel(Vector2f vel)
 {
-	m_vel = vel;
+	return m_vel = vel;
 }
 

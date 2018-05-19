@@ -89,13 +89,21 @@ void GameStateGame::update(const float dt)
 			if (player->get_justfired())
 
 			{
-				
+				Vector2f tt = player->getCenter();
+
+
 				m_SoundPlayer.play(SoundEffect::Colt);
                 bullet = new Bullet();
 				
-				bullet->setm_Vel(player->getm_Vel());
-			
-				bullet->spawn(player->getCenter(), 0);
+				Vector2f vel = player->getm_Vel();
+				
+				bullet->setm_vel(vel);
+				if (vel.x > 0)
+					tt.x = tt.x + TILE_SIZE; 
+				else
+					tt.x = tt.x - TILE_SIZE;
+							
+				bullet->spawn(tt, 0);
 				objects.push_back(bullet);
 				player->set_justfired(false);
 				

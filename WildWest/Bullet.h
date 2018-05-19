@@ -12,7 +12,7 @@ public:
 	Bullet();
     bool handleInput();
 	void update(float dt);
-	void setm_Vel(Vector2f vel);
+	Vector2f setm_vel(Vector2f vel);
 
 	
 private:
