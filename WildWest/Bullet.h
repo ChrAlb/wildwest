@@ -12,10 +12,12 @@ public:
 	Bullet();
     bool handleInput();
 	void update(float dt);
+	void setm_Vel(Vector2f vel);
 
 	
 private:
 
+	Vector2f m_vel;
 	TextureHolder m_Textures;
 
 };

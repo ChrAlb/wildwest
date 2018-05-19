@@ -89,12 +89,16 @@ void GameStateGame::update(const float dt)
 			if (player->get_justfired())
 
 			{
-				bullet = new Bullet();
-				bullet->spawn(player->getCenter(), 0);
+				
 				m_SoundPlayer.play(SoundEffect::Colt);
+                bullet = new Bullet();
+				
+				bullet->setm_Vel(player->getm_Vel());
+			
+				bullet->spawn(player->getCenter(), 0);
 				objects.push_back(bullet);
 				player->set_justfired(false);
-
+				
 			}
 			else
 				player->set_justfired(false);

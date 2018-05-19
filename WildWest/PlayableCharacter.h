@@ -66,7 +66,6 @@ public:
 	bool get_justfired();
 	void set_justfired(bool jfired);
 	
-	
 
 	void set_iscollided(bool iscollided);
 
