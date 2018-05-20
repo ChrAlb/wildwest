@@ -68,8 +68,12 @@ public:
 	
 
 	void set_iscollided(bool iscollided);
+	bool get_iscollided();
+	
 
 	void set_gravity(float gravity);
+
+	
 
 
 protected:

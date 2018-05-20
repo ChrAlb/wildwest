@@ -239,7 +239,15 @@ void PlayableCharacter::set_iscollided(bool iscollided)
 
 }
 
+bool PlayableCharacter::get_iscollided()
+{
+	return m_iscollided;
+}
+
+
+
 void PlayableCharacter::set_gravity(float gravity)
 {
 	m_Gravity = gravity;
 }
+

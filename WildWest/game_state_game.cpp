@@ -162,6 +162,8 @@ void GameStateGame::update(const float dt)
 				}
 				(*iter)->update(dt);
 
+				
+
 				if ((*iter)->get_objecttype() == t_Player)
 				{
 
@@ -182,13 +184,18 @@ void GameStateGame::update(const float dt)
 					this->gameview.move(move, 0);
 				}
 
-
+				if ((*iter)->get_iscollided())
+				{
+					//delete (*iter);
+				}
 
 			}
 
 
 		}
 	}
+
+	
 
 	return;
 }
