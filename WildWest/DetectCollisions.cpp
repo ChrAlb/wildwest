@@ -215,14 +215,15 @@ void GameStateGame::clean_objects()
 {
 	
 	{
-		for (iter = objects.begin(); iter != objects.end();)
+		for (iter = objects.begin(); iter != objects.end(); ++*iter)
 		{
-			if ((*iter)->get_objecttype() == t_Player)
+			if ((*iter)->get_iscollided())
 			{
             delete (*iter);
 			iter = objects.erase(iter);
 
 			}
+			
 			
 		}		
 	}

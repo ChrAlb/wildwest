@@ -161,14 +161,7 @@ void GameStateGame::update(const float dt)
 					}
 				}
 				(*iter)->update(dt);
-/*
-				if ((*iter)->get_objecttype() == t_Bullets)
-				{
-					delete (*iter);
-					iter = objects.erase(iter);
 
-				}
-*/
 				if ((*iter)->get_objecttype() == t_Player)
 				{
 
@@ -193,7 +186,7 @@ void GameStateGame::update(const float dt)
 
 			}
 
-
+			//clean_objects();
 		}
 	}
 
