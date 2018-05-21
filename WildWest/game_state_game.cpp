@@ -67,6 +67,8 @@ void GameStateGame::update(const float dt)
 {
 	float newpos,move;
 	//LevelManager lm;
+
+	clean_objects();
 	
 	if (m_LM.get_allLeveldone())
 	{

@@ -214,19 +214,20 @@ for (int x = startX; x < endX; x++)
 void GameStateGame::clean_objects()
 {
 	
-	{
-		for (iter = objects.begin(); iter != objects.end(); ++*iter)
+	
+		for (iter = objects.begin(); iter != objects.end();)
 		{
 			if ((*iter)->get_iscollided())
 			{
-            delete (*iter);
-			iter = objects.erase(iter);
-
+				delete (*iter);
+				iter = objects.erase(iter);
 			}
+			else
+				iter++;
 			
 			
 		}		
-	}
+	
 
 }
 
