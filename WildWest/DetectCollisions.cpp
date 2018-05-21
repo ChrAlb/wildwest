@@ -211,6 +211,24 @@ for (int x = startX; x < endX; x++)
 	return reachedGoal;
 }
 
+void GameStateGame::clean_objects()
+{
+	
+	{
+		for (iter = objects.begin(); iter != objects.end();)
+		{
+			if ((*iter)->get_objecttype() == t_Player)
+			{
+            delete (*iter);
+			iter = objects.erase(iter);
+
+			}
+			
+		}		
+	}
+
+}
+
 bool GameStateGame::checkNextTile(Vector2f &vel, Vector2i &tile_pos, int &slopenumber)
 {
 	

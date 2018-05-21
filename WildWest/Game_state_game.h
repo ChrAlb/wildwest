@@ -55,6 +55,8 @@ private:
 
 	bool detectCollisions(PlayableCharacter& character);
 
+	void clean_objects();
+
 	bool checkNextTile(Vector2f &vel, Vector2i &tile_pos, int &slopenumber);
 
 	bool m_justexploded;

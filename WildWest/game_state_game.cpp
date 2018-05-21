@@ -161,9 +161,14 @@ void GameStateGame::update(const float dt)
 					}
 				}
 				(*iter)->update(dt);
+/*
+				if ((*iter)->get_objecttype() == t_Bullets)
+				{
+					delete (*iter);
+					iter = objects.erase(iter);
 
-				
-
+				}
+*/
 				if ((*iter)->get_objecttype() == t_Player)
 				{
 
@@ -184,10 +189,7 @@ void GameStateGame::update(const float dt)
 					this->gameview.move(move, 0);
 				}
 
-				if ((*iter)->get_iscollided())
-				{
-					//delete (*iter);
-				}
+				
 
 			}
 
@@ -195,7 +197,6 @@ void GameStateGame::update(const float dt)
 		}
 	}
 
-	
 
 	return;
 }
