@@ -15,21 +15,25 @@ Player::Player()
 	m_iscollided = false;
 	
 
-    animations[int(AnimationIndex::WalkingRight)].addRow(0, 0, 80, 100,8);
-	animations[int(AnimationIndex::WalkingLeft)].addRow(0, 100, 80, 100,8);
-	animations[int(AnimationIndex::JumpingLeft)].addRow(0, 300, 80, 100, 1);
-	animations[int(AnimationIndex::JumpingRight)].addRow(0, 400, 80, 100, 1);
-	animations[int(AnimationIndex::Stoping)].addRow(0, 200, 80, 100, 1);
+    animations[int(AnimationIndex::WalkingRight)].addRow(0, 0, 80, 100,4);
+	animations[int(AnimationIndex::WalkingLeft)].addRow(0, 100, 80, 100,4);
+	animations[int(AnimationIndex::JumpingLeft)].addRow(0, 200, 80, 100, 9);
+	animations[int(AnimationIndex::JumpingRight)].addRow(0, 300, 80, 100, 9);
+	animations[int(AnimationIndex::Stoping)].addRow(0, 000, 80, 100, 1);
 	animations[int(AnimationIndex::StopingRight)].addRow(0, 0, 80, 100, 1);
 	animations[int(AnimationIndex::StopingLeft)].addRow(0, 100, 80, 100, 1);
+	animations[int(AnimationIndex::ShootingLeft)].addRow(0, 400, 80, 100, 5);
+	animations[int(AnimationIndex::ShootingRight)].addRow(0, 500, 80, 100, 5);
 
-	max_frames[int(AnimationIndex::WalkingRight)] = 8;
-	max_frames[int(AnimationIndex::WalkingLeft)] = 8;
-	max_frames[int(AnimationIndex::JumpingLeft)] = 1;
-	max_frames[int(AnimationIndex::JumpingRight)] = 1;
+	max_frames[int(AnimationIndex::WalkingRight)] = 4;
+	max_frames[int(AnimationIndex::WalkingLeft)] = 4;
+	max_frames[int(AnimationIndex::JumpingLeft)] = 9;
+	max_frames[int(AnimationIndex::JumpingRight)] = 9;
 	max_frames[int(AnimationIndex::Stoping)] = 1;
 	max_frames[int(AnimationIndex::StopingLeft)] = 1;
 	max_frames[int(AnimationIndex::StopingRight)] = 1;
+	max_frames[int(AnimationIndex::ShootingLeft)] = 5;
+	max_frames[int(AnimationIndex::ShootingRight)] = 5;
 
 	m_countJumpLoops = 0;
 	
@@ -243,5 +247,17 @@ void Player::SetDirection(const sf::Vector2f & dir)
 		else if (dir.x < 0.0f)
 			curAnimation = curAnimation = AnimationIndex::JumpingRight;
 	}
+
+
+	if (m_isfiring)
+	{
+
+		if (dir.x > 0.0f)
+			curAnimation = curAnimation = AnimationIndex::ShootingLeft;
+		else if (dir.x < 0.0f)
+			curAnimation = curAnimation = AnimationIndex::ShootingRight;
+	}
+
+
 }
 

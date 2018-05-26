@@ -5,7 +5,7 @@
 
 Animation::Animation()
 {
-	m_Textures.load(Textures::Player, "graphics/joe_sheet.png");
+	m_Textures.load(Textures::Player, "graphics/joe_sheet1.png");
 	
 }
 

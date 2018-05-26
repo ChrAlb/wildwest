@@ -20,6 +20,8 @@ private:
 		Stoping,
 		JumpingLeft,
 		JumpingRight,
+		ShootingLeft,
+	    ShootingRight,
 		Count
 	};
 
