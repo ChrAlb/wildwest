@@ -11,14 +11,17 @@ Enemy::Enemy() : m_hasDestination(false)
 
 	m_otype = t_Enemy;
 	m_iscollided = false;
+	m_is_alive = true;
 	m_destination.x = 1;
+	m_JustJumped = false;
+	m_isFalling = true;
+
 }
 
 
 bool Enemy::handleInput() 
 {
-	m_JustJumped = false;
-	m_isFalling = true;
+	
 	return m_JustJumped;
 }
 
@@ -47,17 +50,18 @@ void Enemy::update(float dt)
 	}
 
 	
-	if (m_Position.x < 0)
+	if ((m_Position.x < 0) && (!m_iscollided) )
 	{
 		m_Position.x = 0;
-		m_hasDestination = false;
+		m_iscollided = true;
+
 	}
 	
 
 	if (m_Position.x > Enemy::get_maxlevelsize())
 	{
 		m_Position.x = Enemy::get_maxlevelsize();
-		m_hasDestination = false;
+		m_iscollided = true;
   	}
     
 	m_Position.x +=  EnemySpeed * m_destination.x * dt;

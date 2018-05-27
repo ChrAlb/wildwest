@@ -188,7 +188,6 @@ void GameStateGame::update(const float dt)
 
 			}
 
-			//clean_objects();
 		}
 	}
 

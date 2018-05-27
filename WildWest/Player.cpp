@@ -13,6 +13,7 @@ Player::Player()
 	
 	m_otype = t_Player;
 	m_iscollided = false;
+	m_is_alive = true;
 	
 
     animations[int(AnimationIndex::WalkingRight)].addRow(0, 0, 80, 100,4);

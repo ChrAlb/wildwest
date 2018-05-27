@@ -9,6 +9,8 @@ Bullet::Bullet()
 	
 	m_Textures.load(Textures::Bullet, "graphics/bullet.png");
 	m_Sprite = Sprite(m_Textures.get(Textures::Bullet));
+	m_is_alive = true;
+	m_iscollided = false;
 
 	
 }

@@ -69,6 +69,9 @@ public:
 
 	void set_iscollided(bool iscollided);
 	bool get_iscollided();
+
+	void set_isalive(bool alive);
+	bool get_isalive();
 	
 
 	void set_gravity(float gravity);
@@ -123,6 +126,8 @@ protected:
 
 	bool m_isfiring;
 	bool m_justfired;
+
+	bool m_is_alive;
 	
 
 	Vector2f m_oldposition;

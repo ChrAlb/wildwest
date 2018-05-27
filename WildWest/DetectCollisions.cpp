@@ -163,7 +163,11 @@ for (int x = startX; x < endX; x++)
 						character.stopRight(block.left);
 						
 						if (character.get_objecttype() == t_Bullets)
-							character.set_iscollided(true);
+						{
+                            character.set_iscollided(true);
+							character.set_isalive(false);
+						}
+							
 
 						if (character.get_objecttype() == t_Enemy)
 							character.set_iscollided(true);
@@ -174,7 +178,11 @@ for (int x = startX; x < endX; x++)
 						{
 							character.stopLeft(block.left + TILE_SIZE);
 							if (character.get_objecttype() == t_Bullets)
-								character.set_iscollided(true);
+							{
+                                character.set_iscollided(true);
+								character.set_isalive(false);
+							}
+								
 
 							if (character.get_objecttype() == t_Enemy)
 								character.set_iscollided(true);
@@ -224,7 +232,7 @@ void GameStateGame::clean_objects()
 	
 		for (iter = objects.begin(); iter != objects.end();)
 		{
-			if ((*iter)->get_iscollided())
+			if (!(*iter)->get_isalive())
 			{
 				delete (*iter);
 				iter = objects.erase(iter);

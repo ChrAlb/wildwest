@@ -244,6 +244,16 @@ bool PlayableCharacter::get_iscollided()
 	return m_iscollided;
 }
 
+void PlayableCharacter::set_isalive(bool alive)
+{
+	m_is_alive = alive;
+}
+
+bool PlayableCharacter::get_isalive()
+{
+	return m_is_alive;
+}
+
 
 
 void PlayableCharacter::set_gravity(float gravity)
