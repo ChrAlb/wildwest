@@ -44,9 +44,11 @@ void Enemy::update(float dt)
 		}		
 	}
 
-	if (m_iscollided)
+	if (m_iscollided) 
 	{
-		m_hasDestination = false;
+		
+		m_destination.x = -m_destination.x;
+		//m_Position.x = m_Position.x * m_destination.x *1.5 ;
 	}
 
 	
