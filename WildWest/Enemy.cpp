@@ -11,6 +11,7 @@ Enemy::Enemy() : m_hasDestination(false)
 
 	m_otype = t_Enemy;
 	m_iscollided = false;
+	m_destination.x = 1;
 }
 
 
@@ -29,14 +30,14 @@ void Enemy::update(float dt)
 		m_Position.y += m_Gravity * dt;
 	}
 	
-	m_destination.x = 1;
-
+	
 	if (!m_hasDestination)
 	{
 		if (int random = rand() % 2);
 		{
 			m_destination.x = -m_destination.x;
 			m_hasDestination = true;
+			m_iscollided = false;
 		}		
 	}
 
@@ -46,16 +47,16 @@ void Enemy::update(float dt)
 	}
 
 	
-	if (Enemy::m_Position.x < 0)
+	if (m_Position.x < 0)
 	{
-		Enemy::m_Position.x = 0;
+		m_Position.x = 0;
 		m_hasDestination = false;
 	}
 	
 
-	if (Enemy::m_Position.x > Enemy::get_maxlevelsize())
+	if (m_Position.x > Enemy::get_maxlevelsize())
 	{
-		Enemy::m_Position.x = Enemy::get_maxlevelsize();
+		m_Position.x = Enemy::get_maxlevelsize();
 		m_hasDestination = false;
   	}
     

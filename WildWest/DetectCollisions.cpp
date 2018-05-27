@@ -165,6 +165,9 @@ for (int x = startX; x < endX; x++)
 						if (character.get_objecttype() == t_Bullets)
 							character.set_iscollided(true);
 
+						if (character.get_objecttype() == t_Enemy)
+							character.set_iscollided(true);
+
 					}
 					else
 						if (character.getLeft().intersects(block))
@@ -172,6 +175,10 @@ for (int x = startX; x < endX; x++)
 							character.stopLeft(block.left + TILE_SIZE);
 							if (character.get_objecttype() == t_Bullets)
 								character.set_iscollided(true);
+
+							if (character.get_objecttype() == t_Enemy)
+								character.set_iscollided(true);
+
 						}
 
 					if (character.getFeet().intersects(block))
