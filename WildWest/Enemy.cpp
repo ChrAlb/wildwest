@@ -50,10 +50,10 @@ void Enemy::update(float dt)
 	}
 
 	
-	if ((m_Position.x < 0) && (!m_iscollided) )
+	if (m_Position.x < 0) 
 	{
 		m_Position.x = 0;
-		m_iscollided = true;
+		m_destination.x = -m_destination.x;
 
 	}
 	
@@ -61,7 +61,7 @@ void Enemy::update(float dt)
 	if (m_Position.x > Enemy::get_maxlevelsize())
 	{
 		m_Position.x = Enemy::get_maxlevelsize();
-		m_iscollided = true;
+		m_destination.x = -m_destination.x;
   	}
     
 	m_Position.x +=  EnemySpeed * m_destination.x * dt;
