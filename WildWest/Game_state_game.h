@@ -18,7 +18,7 @@ private:
 
 	//******************
 	// falls debug= true; Kollisionsboxen werden angezeigt
-	bool debug = false;
+	bool debug = true;
 	bool stats = true;
 	//******************
 	 

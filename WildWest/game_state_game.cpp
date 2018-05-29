@@ -87,6 +87,9 @@ void GameStateGame::update(const float dt)
 
 	if (m_Playing)
 	{
+
+
+
 		if (player->get_isfiring())
 			if (player->get_justfired())
 

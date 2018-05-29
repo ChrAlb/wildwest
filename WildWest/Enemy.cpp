@@ -12,43 +12,38 @@ Enemy::Enemy() : m_hasDestination(false)
 	m_otype = t_Enemy;
 	m_iscollided = false;
 	m_is_alive = true;
-	m_destination.x = 1;
+	m_destination.x = -1;
 	m_JustJumped = false;
 	m_isFalling = true;
+
+	m_LeftPressed = true;
+	m_RightPressed = true;
 
 }
 
 
 bool Enemy::handleInput() 
 {
-	
+	m_vel = m_destination;
 	return m_JustJumped;
 }
 
 void Enemy::update(float dt)
 {    	
 	
+	m_oldposition = m_Position;
+
 	if (m_isFalling)
 	{
 		m_Position.y += m_Gravity * dt;
 	}
 	
-	
-	if (!m_hasDestination)
-	{
-		if (int random = rand() % 2);
-		{
-			m_destination.x = -m_destination.x;
-			m_hasDestination = true;
-			m_iscollided = false;
-		}		
-	}
 
 	if (m_iscollided) 
 	{
-		
+		m_iscollided = false;
 		m_destination.x = -m_destination.x;
-		//m_Position.x = m_Position.x * m_destination.x *1.5 ;
+		//m_Position.x = m_Position.x - 100;
 	}
 
 	
@@ -93,6 +88,12 @@ void Enemy::update(float dt)
 	m_Left.top = r.top + r.height * .35;
 	m_Left.width = 1;
 	m_Left.height = r.height * .3;
+
+	// Center
+	m_Center.left = r.left + (r.width / 2) - 1;
+	m_Center.top = r.top + (r.height *.3);
+	m_Center.width = 2;
+	m_Center.height = r.height - (r.height *.3);
 
 	m_Sprite.setPosition(m_Position);
 
