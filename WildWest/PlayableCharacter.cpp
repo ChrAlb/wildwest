@@ -138,6 +138,7 @@ Vector2i PlayableCharacter::CalculateTile_pos()
 	
 	position = PlayableCharacter::getPosition();
 	tile_pos.x = (((int)position.left + (int)position.width) / TILE_SIZE);
+	//tile_pos.y = (((int)position.top + (int)position.height) / TILE_SIZE);
 	tile_pos.y = ((int)position.top / TILE_SIZE) + 1;
 	return tile_pos;
 }
@@ -220,6 +221,14 @@ int PlayableCharacter::get_maxlevelsize()
 bool PlayableCharacter::get_isfiring()
 {
 	return m_isfiring;
+}
+
+bool PlayableCharacter::get_deltax()
+{
+	if (abs((m_Position.x - old_position.x)) < (TILE_SIZE - m_Position.x))
+		return true;
+	else
+		return false;
 }
 
 bool PlayableCharacter::get_justfired()

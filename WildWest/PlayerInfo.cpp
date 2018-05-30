@@ -37,16 +37,41 @@ void PlayerInfo::print(sf::RenderWindow & windowRef, Player& PlayerRef)
 	m_jumpFrames.setFillColor(sf::Color::Black);
 	m_jumpFrames.setPosition(0, 50);
 	string = "#Frames while jumping: ";
-
-	
-	std::stringstream ss;
+    std::stringstream ss;
 	ss << PlayerRef.m_countJumpLoops;
 	string = string + ss.str();
 	m_jumpFrames.setString(string);
+
+	//onslope
+	m_onslope.setFont(m_font);
+	m_onslope.setCharacterSize(14);
+	m_onslope.setFillColor(sf::Color::Black);
+	m_onslope.setPosition(0, 75);
+	string = "OnSlope: ";
+	if (PlayerRef.get_m_on_slope())
+		string = string + "     TRUE";
+	else
+		string = string + "     FALSE";
+	m_onslope.setString(string);
+
+	//slopeend
+	m_slopeend.setFont(m_font);
+	m_slopeend.setCharacterSize(14);
+	m_slopeend.setFillColor(sf::Color::Black);
+	m_slopeend.setPosition(0, 100);
+	string = "SlopeEnd: ";
+	if (PlayerRef.get_m_end_slope())
+		string = string + "     TRUE";
+	else
+		string = string + "     FALSE";
+	m_slopeend.setString(string);
 	
 	windowRef.draw(m_jumpFrames);
 	windowRef.draw(m_title);
 	windowRef.draw(m_pos);
+	windowRef.draw(m_onslope);
+	windowRef.draw(m_slopeend);
+
 }
 
 std::string PlayerInfo::Convert(float number)
