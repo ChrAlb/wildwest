@@ -9,7 +9,7 @@
 class Player : public PlayableCharacter 
 
 {
-
+	 
 private:
 	enum class AnimationIndex
 	{
