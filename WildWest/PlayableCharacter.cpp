@@ -223,13 +223,7 @@ bool PlayableCharacter::get_isfiring()
 	return m_isfiring;
 }
 
-bool PlayableCharacter::get_deltax()
-{
-	if (abs((m_Position.x - old_position.x)) < (TILE_SIZE - m_Position.x))
-		return true;
-	else
-		return false;
-}
+
 
 bool PlayableCharacter::get_justfired()
 {

@@ -6,7 +6,7 @@
 
 Enemy::Enemy() : m_hasDestination(false)
 { 
-	m_Textures.load(Textures::Enemy, "graphics/Slyppy.png");
+	m_Textures.load(Textures::Enemy, "graphics/enemy.png");
 	m_Sprite = Sprite(m_Textures.get(Textures::Enemy ));
 
 	m_otype = t_Enemy;
