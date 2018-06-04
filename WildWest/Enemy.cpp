@@ -12,7 +12,7 @@ Enemy::Enemy() : m_hasDestination(false)
 	m_otype = t_Enemy;
 	m_iscollided = false;
 	m_is_alive = true;
-	m_destination.x = -1;
+	m_destination.x = 1;
 	m_JustJumped = false;
 	m_isFalling = true;
 
@@ -24,6 +24,7 @@ Enemy::Enemy() : m_hasDestination(false)
 
 bool Enemy::handleInput() 
 {
+	m_isFalling = true;
 	m_vel = m_destination;
 	return m_JustJumped;
 }
