@@ -109,7 +109,8 @@ for (int x = startX; x < endX; x++)
 						{
 							character.set_m_end_slope(true);
 							character.set_m_on_slope(false);
-						}
+							m_blockblock = true;
+													}
 
 					}
 				}
@@ -133,6 +134,7 @@ for (int x = startX; x < endX; x++)
 			{
 				character.set_m_end_slope(true);
 				character.set_m_on_slope(false);
+				
 			}
 
 		}
@@ -162,7 +164,13 @@ for (int x = startX; x < endX; x++)
 					if (character.getRight().intersects(block))
 					{
 						character.stopRight(block.left);
-						
+
+						if (m_blockblock)
+						{
+							m_blockblock = false;
+							
+						}
+												
 						if (character.get_objecttype() == t_Bullets)
 						{
                             character.set_iscollided(true);
@@ -178,6 +186,13 @@ for (int x = startX; x < endX; x++)
 						if (character.getLeft().intersects(block))
 						{
 							character.stopLeft(block.left + TILE_SIZE);
+
+							if (m_blockblock)
+							{
+								m_blockblock = false;
+								
+							}
+							
 							if (character.get_objecttype() == t_Bullets)
 							{
                                 character.set_iscollided(true);

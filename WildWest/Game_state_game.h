@@ -18,8 +18,8 @@ private:
 
 	//******************
 	// falls debug= true; Kollisionsboxen werden angezeigt
-	bool debug = true;
-	bool stats = true;
+	bool debug = false;
+	bool stats = false;
 	//******************
 	 
 	sf::View gameview;
@@ -60,6 +60,8 @@ private:
 	bool checkNextTile(Vector2f &vel, Vector2i &tile_pos, int &slopenumber);
 
 	bool m_justexploded;
+
+	bool m_blockblock;
 
 	int slopenumber;
 

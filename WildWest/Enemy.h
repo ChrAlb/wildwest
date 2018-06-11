@@ -9,6 +9,8 @@ public:
 	Enemy();
 	bool handleInput();
 	void update(float dt);
+
+	void set_destination(bool destination);
 	
 	const int EnemySpeed = 50;
 

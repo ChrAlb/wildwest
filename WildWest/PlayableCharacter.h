@@ -55,6 +55,8 @@ public:
 	Vector2i get_tilepos();
 	void set_tilepos(Vector2i tpos);
 
+	
+	
 	Vector2i CalculateTile_pos();
 
 	void set_maxlevelsize(int mlevelsize);
@@ -95,6 +97,7 @@ protected:
 	bool m_on_slope;
 	bool m_slope_end;
 
+	
 	float m_TimeThisJump;
 
 	bool m_JustJumped;
@@ -129,8 +132,8 @@ protected:
 	bool m_justfired;
 
 	bool m_is_alive;
-	
 
+		
 	Vector2f m_oldposition;
 	
 	

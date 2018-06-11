@@ -58,8 +58,8 @@ void GameStateGame::loadLevel()
 
 	enemy = new Enemy();
 	Vector2f startpoint;
-	startpoint.x = 50;
-	startpoint.y = 300;
+	startpoint.x = 300;
+	startpoint.y = 200;
 	enemy->spawn(startpoint,GRAVITY);
 	
 	

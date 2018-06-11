@@ -131,6 +131,8 @@ void PlayableCharacter::set_tilepos(Vector2i tpos)
 	tile_pos = tpos;
 }
 
+
+
 Vector2i PlayableCharacter::CalculateTile_pos()
 {
 	FloatRect position;

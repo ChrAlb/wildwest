@@ -19,6 +19,7 @@ Enemy::Enemy() : m_hasDestination(false)
 	m_LeftPressed = true;
 	m_RightPressed = true;
 
+	
 }
 
 
@@ -47,7 +48,7 @@ void Enemy::update(float dt)
 		//m_Position.x = m_Position.x - 100;
 	}
 
-	
+		
 	if (m_Position.x < 0) 
 	{
 		m_Position.x = 0;
@@ -61,8 +62,7 @@ void Enemy::update(float dt)
 		m_Position.x = Enemy::get_maxlevelsize();
 		m_destination.x = -m_destination.x;
   	}
-    
-
+ 
 	m_Position.x +=  EnemySpeed * m_destination.x * dt;
 
 	FloatRect r = getPosition();
@@ -102,4 +102,11 @@ void Enemy::update(float dt)
 
 }
 
+void Enemy::set_destination(bool destination)
+{
+	if (destination)
+	{
+		m_destination.x = -m_destination.x;
+	}
+}
 
