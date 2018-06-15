@@ -28,6 +28,7 @@ void GameStateGame::draw(const float dt)
 	{
 		this->game->window.setView(PlInfo);
 		m_PlayerInfo.print(this->game->window, *player);
+		m_PlayerInfo.printEnemy(this->game->window, *enemy);
 	}
 
 	this->game->window.setView(gameview);
@@ -241,7 +242,7 @@ GameStateGame::GameStateGame(Game* game)
 	//m_font.loadFromFile("graphics/Arial.ttf");
 	// Dummy für Deco in Levels, später zu LevelManager zügeln!
 	m_Textures.load(Textures::Tree, "graphics/Tree.png");
-	m_blockblock = false;
+	
 	m_justexploded = false;
 
 	this->game = game;

@@ -3,6 +3,7 @@
 #include "ResourceHolder.h"
 #include "ResourceIdentifiers.h"
 
+
 class Enemy : public PlayableCharacter
 {
 public:

@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML\Graphics.hpp>
 #include "Player.h"
+#include "Enemy.h"
 
 class PlayerInfo
 
@@ -8,7 +9,7 @@ class PlayerInfo
 public:
 	PlayerInfo();
 	void print(sf::RenderWindow& windowRef, Player& RefPlayer);
-	
+	void printEnemy(sf::RenderWindow& windowRef, Enemy& RefPlayer);
 
 private:
 
