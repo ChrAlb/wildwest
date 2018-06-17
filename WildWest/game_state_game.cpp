@@ -124,8 +124,7 @@ void GameStateGame::update(const float dt)
 
 
 			{
-				//(*iter)->update(dt);
-
+				
 				// DEBUG
 				if (debug)
 				{

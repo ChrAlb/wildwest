@@ -53,7 +53,16 @@ if (!character.getPosition().intersects(level))
 		character.spawn(m_LM.getStartPosition(), GRAVITY);
 		this->gameview.reset(sf::FloatRect(0, 0, VideoMode::getDesktopMode().width, VideoMode::getDesktopMode().height));
 	}
+	if (character.get_objecttype() == t_Enemy)
+	{
+		character.set_isalive(false);
+	}
+	if (character.get_objecttype() == t_Bullets)
+	{
+		character.set_isalive(false);
+	}
 }
+
 
 
 

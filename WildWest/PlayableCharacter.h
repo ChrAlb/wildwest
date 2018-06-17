@@ -29,9 +29,7 @@ public:
 	FloatRect getLeft();
 	FloatRect get_Center();
 
-	Vector2f old_position;
-
-	 
+	
 	Sprite getSprite();
 	 
 	void stopFalling(float position);

@@ -65,11 +65,10 @@ void Enemy::update(float dt)
  
 	m_Position.x +=  EnemySpeed * m_destination.x * dt;
 
-	if (old_position.x == m_Position.x)
+	if ( fabs(m_oldposition.x - m_Position.x ) < 0.01 )
 	{
 		m_destination.x = -m_destination.x;
 	}
-	
 	
 
 	FloatRect r = getPosition();

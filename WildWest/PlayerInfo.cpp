@@ -86,7 +86,7 @@ void PlayerInfo::printEnemy(sf::RenderWindow & windowRef, Enemy & RefPlayer)
 	m_title.setString("Enemy Information");
 
 
-	// Player Position
+	// Enemy Position
 	m_pos.setFont(m_font);
 	m_pos.setCharacterSize(14);
 	m_pos.setFillColor(sf::Color::Black);
@@ -96,6 +96,8 @@ void PlayerInfo::printEnemy(sf::RenderWindow & windowRef, Enemy & RefPlayer)
 	string = string + Convert(RefPlayer.getPosition().top);
 	string = string + "    Left:  ";
 	string = string + Convert(RefPlayer.getPosition().left);
+
+	
 	m_pos.setString(string);
 
 	windowRef.draw(m_title);
