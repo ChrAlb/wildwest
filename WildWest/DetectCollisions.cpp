@@ -269,7 +269,11 @@ void GameStateGame::detectCollisions_Objects()
 	{
 		for (iter2 = iter; iter2 != objects.end; ++iter2)
 		{
-			;
+			if ((*iter)->getPosition().intersects((*iter2)->getPosition()))
+			{
+				;
+			}
+        
 		}
 	}
 }
