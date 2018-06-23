@@ -57,6 +57,8 @@ private:
 
 	void clean_objects();
 
+	void detectCollisions_Objects();
+
 	bool checkNextTile(Vector2f &vel, Vector2i &tile_pos, int &slopenumber);
 
 	bool m_justexploded;

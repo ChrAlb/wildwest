@@ -263,6 +263,17 @@ void GameStateGame::clean_objects()
 
 }
 
+void GameStateGame::detectCollisions_Objects()
+{
+	for (iter = objects.begin(); iter != objects.end(); ++iter)
+	{
+		for (iter2 = iter; iter2 != objects.end; ++iter2)
+		{
+			;
+		}
+	}
+}
+
 bool GameStateGame::checkNextTile(Vector2f &vel, Vector2i &tile_pos, int &slopenumber)
 {
 	
