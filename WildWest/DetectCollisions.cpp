@@ -278,22 +278,32 @@ void GameStateGame::detectCollisions_Objects()
 				}
 				else
 				{
-                   if  ( (  (*iter)->get_objecttype() == t_Enemy)  && ((*iter)->get_objecttype() == t_Enemy) )
-				      { 
-					    (*iter)->set_isalive(false);
-                      }
+					if (((*iter)->get_objecttype() == t_Enemy) && ((*iter2)->get_objecttype() == t_Enemy))
+					{
+						if (((*iter)->get_objecttype() == t_Bullets) && ((*iter2)->get_objecttype() == t_Bullets))
+							(*iter)->set_isalive(false);
+					}
+					else
+					{
+						if (((*iter)->get_objecttype() == t_Bullets) && ((*iter2)->get_objecttype() == t_Bullets))
+						{
+							if ((*iter)->get_objecttype() == t_Player)
+							{
+								(*iter)->spawn(m_LM.getStartPosition(), GRAVITY);
+							}
+							else
+							{
+								(*iter2)->spawn(m_LM.getStartPosition(), GRAVITY);
+							}
 
-
-				    
+						}
+					}
 				}
-				
 			}
-
-
-        
-		}
-	}
-}
+				        
+		} // for
+	} //for
+} //end
 
 bool GameStateGame::checkNextTile(Vector2f &vel, Vector2i &tile_pos, int &slopenumber)
 {
