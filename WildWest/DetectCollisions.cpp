@@ -267,20 +267,29 @@ void GameStateGame::detectCollisions_Objects()
 {
 	for (iter = objects.begin(); iter != objects.end(); ++iter)
 	{
-		for (iter2 = iter; iter2 != objects.end(); ++iter2)
+		for (iter2 = objects.begin(); iter2 != objects.end(); ++iter2)
 		{
 			if ((*iter)->getPosition().intersects((*iter2)->getPosition()))
 			{
-				if (  (*iter)->get_objecttype() == t_Enemy) 
-				  { 
-					//(*iter)->set_isalive(false);
-                  }
-
-
-				if ((*iter2)->get_objecttype() == t_Enemy)
+				
+				if (iter == iter2)
 				{
-					//(*iter2)->set_isalive(false);
+					;
 				}
+				else
+				{
+                   if (  (*iter)->get_objecttype() == t_Enemy) 
+				      { 
+					    (*iter)->set_isalive(false);
+                      }
+
+
+				    if ((*iter2)->get_objecttype() == t_Enemy)
+				      {
+					    (*iter2)->set_isalive(false);
+				      }
+				}
+				
 			}
 
 
