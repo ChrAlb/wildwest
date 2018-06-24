@@ -172,19 +172,19 @@ for (int x = startX; x < endX; x++)
 				{
 					if (character.getRight().intersects(block))
 					{
-						character.stopRight(block.left);
+character.stopRight(block.left);
 
-						
-												
-						if (character.get_objecttype() == t_Bullets)
-						{
-                            character.set_iscollided(true);
-							character.set_isalive(false);
-						}
-							
 
-						if (character.get_objecttype() == t_Enemy)
-							character.set_iscollided(true);
+
+if (character.get_objecttype() == t_Bullets)
+{
+	character.set_iscollided(true);
+	character.set_isalive(false);
+}
+
+
+if (character.get_objecttype() == t_Enemy)
+character.set_iscollided(true);
 
 					}
 					else
@@ -192,42 +192,42 @@ for (int x = startX; x < endX; x++)
 						{
 							character.stopLeft(block.left + TILE_SIZE);
 
-							
-							
+
+
 							if (character.get_objecttype() == t_Bullets)
 							{
-                                character.set_iscollided(true);
+								character.set_iscollided(true);
 								character.set_isalive(false);
 							}
-								
+
 
 							if (character.get_objecttype() == t_Enemy)
 								character.set_iscollided(true);
 
 						}
 
-					if (character.getFeet().intersects(block))
-					{
-						if (m_ArrayLevel[y][x] == 1)
+						if (character.getFeet().intersects(block))
 						{
-							if (!m_justexploded)
+							if (m_ArrayLevel[y][x] == 1)
 							{
-								m_SoundPlayer.play(SoundEffect::Explosion);
-								m_justexploded = true;
+								if (!m_justexploded)
+								{
+									m_SoundPlayer.play(SoundEffect::Explosion);
+									m_justexploded = true;
+								}
 							}
+							else
+							{
+								character.stopFalling(block.top);
+
+							}
+
 						}
 						else
-						{
-                           character.stopFalling(block.top);
-						  
-						}
-						    
-					}
-					else
-						if (character.getHead().intersects(block))
-						{
-							character.stopJump();
-						}
+							if (character.getHead().intersects(block))
+							{
+								character.stopJump();
+							}
 
 				}
 
@@ -245,21 +245,21 @@ for (int x = startX; x < endX; x++)
 
 void GameStateGame::clean_objects()
 {
-	
-	
-		for (iter = objects.begin(); iter != objects.end();)
+
+
+	for (iter = objects.begin(); iter != objects.end();)
+	{
+		if (!(*iter)->get_isalive())
 		{
-			if (!(*iter)->get_isalive())
-			{
-				delete (*iter);
-				iter = objects.erase(iter);
-			}
-			else
-				iter++;
-			
-			
-		}		
-	
+			delete (*iter);
+			iter = objects.erase(iter);
+		}
+		else
+			iter++;
+
+
+	}
+
 
 }
 
@@ -267,12 +267,23 @@ void GameStateGame::detectCollisions_Objects()
 {
 	for (iter = objects.begin(); iter != objects.end(); ++iter)
 	{
-		for (iter2 = iter; iter2 != objects.end; ++iter2)
+		for (iter2 = iter; iter2 != objects.end(); ++iter2)
 		{
 			if ((*iter)->getPosition().intersects((*iter2)->getPosition()))
 			{
-				;
+				if (  (*iter)->get_objecttype() == t_Enemy) 
+				  { 
+					//(*iter)->set_isalive(false);
+                  }
+
+
+				if ((*iter2)->get_objecttype() == t_Enemy)
+				{
+					//(*iter2)->set_isalive(false);
+				}
 			}
+
+
         
 		}
 	}

@@ -69,7 +69,6 @@ void GameStateGame::update(const float dt)
 	float newpos,move;
 	//LevelManager lm;
 
-	clean_objects();
 	
 	if (m_LM.get_allLeveldone())
 	{
@@ -118,6 +117,8 @@ void GameStateGame::update(const float dt)
 				player->set_justfired(false);
 	
 
+		detectCollisions_Objects();
+		clean_objects();
 
 		for (iter = objects.begin(); iter != objects.end(); ++iter)
 		{
@@ -165,6 +166,9 @@ void GameStateGame::update(const float dt)
 
 					}
 				}
+
+				
+
 				(*iter)->update(dt);
 
 				if ((*iter)->get_objecttype() == t_Player)
