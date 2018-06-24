@@ -278,27 +278,35 @@ void GameStateGame::detectCollisions_Objects()
 				}
 				else
 				{
-					if (((*iter)->get_objecttype() == t_Enemy) && ((*iter2)->get_objecttype() == t_Enemy))
-					{
-						if (((*iter)->get_objecttype() == t_Bullets) && ((*iter2)->get_objecttype() == t_Bullets))
-							(*iter)->set_isalive(false);
-					}
-					else
-					{
-						if (((*iter)->get_objecttype() == t_Bullets) && ((*iter2)->get_objecttype() == t_Bullets))
-						{
-							if ((*iter)->get_objecttype() == t_Player)
-							{
-								(*iter)->spawn(m_LM.getStartPosition(), GRAVITY);
-							}
-							else
-							{
-								(*iter2)->spawn(m_LM.getStartPosition(), GRAVITY);
-							}
 
+					if ((*iter)->get_objecttype() == t_Bullets)
+						if ((*iter2)->get_objecttype() == t_Enemy)
+						{
+                           (*iter2)->set_isalive(false);
+						   (*iter)->set_isalive(false);
 						}
-					}
+							
+
+					if ((*iter2)->get_objecttype() == t_Bullets)
+						if ((*iter)->get_objecttype() == t_Enemy)
+						{
+							(*iter2)->set_isalive(false);
+							(*iter)->set_isalive(false);
+						}
+
+					if ((*iter)->get_objecttype() == t_Player)
+						if ((*iter2)->get_objecttype() == t_Enemy)
+						{
+							(*iter)->spawn(m_LM.getStartPosition(), GRAVITY);
+						}
+
+					if ((*iter2)->get_objecttype() == t_Player)
+						if ((*iter)->get_objecttype() == t_Enemy)
+						{
+							(*iter2)->spawn(m_LM.getStartPosition(), GRAVITY);
+						}
 				}
+					
 			}
 				        
 		} // for
