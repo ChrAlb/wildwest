@@ -19,7 +19,7 @@ public:
 	PlayableCharacter();
 	void spawn(Vector2f startPosition, float gravity);
 	bool virtual handleInput() = 0;
-	void virtual update(float dt) = 0;
+	void virtual update(float dt, Vector2f Plpos) = 0;
 
 	FloatRect getPosition();
 
@@ -78,7 +78,6 @@ public:
 	void set_gravity(float gravity);
 
 	
-
 
 protected:
 	Sprite m_Sprite;

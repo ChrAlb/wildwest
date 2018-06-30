@@ -11,7 +11,7 @@ class Bullet : public PlayableCharacter
 public:
 	Bullet();
     bool handleInput();
-	void update(float dt);
+	void update(float dt, Vector2f Plpos);
 	Vector2f setm_vel(Vector2f vel);
 
 	

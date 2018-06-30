@@ -20,7 +20,7 @@ bool Bullet::handleInput()
 	return m_JustJumped;
 }
 
-void Bullet::update(float dt)
+void Bullet::update(float dt, Vector2f Plpos)
 {
 	if (m_vel.x > 0)
 	{

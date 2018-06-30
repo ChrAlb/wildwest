@@ -37,7 +37,7 @@ public:
 	Player::Player();
 	
 	bool handleInput();
-	void update(float dt);
+	void update(float dt, Vector2f Plpos);
 
 	Animation animations[int(AnimationIndex::Count)];
 	AnimationIndex curAnimation = AnimationIndex::Stoping;

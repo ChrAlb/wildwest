@@ -169,7 +169,7 @@ void GameStateGame::update(const float dt)
 
 				
 
-				(*iter)->update(dt);
+				(*iter)->update(dt, { 0,0 });
 
 				if ((*iter)->get_objecttype() == t_Player)
 				{

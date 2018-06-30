@@ -30,7 +30,7 @@ bool Enemy::handleInput()
 	return m_JustJumped;
 }
 
-void Enemy::update(float dt)
+void Enemy::update(float dt, Vector2f Plpos)
 {    	
 	
 	m_oldposition = m_Position;

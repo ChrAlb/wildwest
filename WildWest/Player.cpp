@@ -104,7 +104,7 @@ bool Player::handleInput()
 
 
 
-void Player::update(float elapsedTime)
+void Player::update(float elapsedTime, Vector2f Plpos)
 {
 	int mlevelsize;
 

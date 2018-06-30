@@ -97,7 +97,7 @@ private:
 	SoundPlayer m_SoundPlayer;
 
 public:
-
+	
 	
 
 	virtual void draw(const float dt);
