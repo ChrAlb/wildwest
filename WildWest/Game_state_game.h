@@ -104,6 +104,7 @@ public:
 	virtual void update(const float dt);
 	virtual void handleInput();
 	 
+	Vector2f getPlayer_position_putofList  ();
 	
 	GameStateGame(Game* game);
 };

@@ -119,6 +119,8 @@ void GameStateGame::update(const float dt)
 
 		detectCollisions_Objects();
 		clean_objects();
+		Vector2f tt;
+		tt = 	getPlayer_position_putofList();
 
 		for (iter = objects.begin(); iter != objects.end(); ++iter)
 		{
@@ -169,7 +171,7 @@ void GameStateGame::update(const float dt)
 
 				
 
-				(*iter)->update(dt, { 0,0 });
+				(*iter)->update(dt, tt);
 
 				if ((*iter)->get_objecttype() == t_Player)
 				{
@@ -238,6 +240,17 @@ void GameStateGame::handleInput()
 	
 	return;
 }
+
+Vector2f GameStateGame::getPlayer_position_putofList()
+{
+	
+	for (iter = objects.begin(); iter != objects.end(); ++iter)
+
+		if ((*iter)->get_objecttype() == t_Player)
+			return (*iter)->getCenter();
+	
+}
+
 
 GameStateGame::GameStateGame(Game* game)
 {

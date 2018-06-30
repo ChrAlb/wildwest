@@ -35,6 +35,11 @@ void Enemy::update(float dt, Vector2f Plpos)
 	
 	m_oldposition = m_Position;
 
+	if (Plpos.x < m_Position.x)
+		m_destination.x = -1;
+	else
+		m_destination.x = 1;
+
 	if (m_isFalling)
 	{
 		m_Position.y += m_Gravity * dt;

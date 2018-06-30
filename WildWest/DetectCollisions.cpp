@@ -297,14 +297,14 @@ void GameStateGame::detectCollisions_Objects()
 					if ((*iter)->get_objecttype() == t_Player)
 						if ((*iter2)->get_objecttype() == t_Enemy)
 						{
-							(*iter)->spawn({ 0,400}, GRAVITY);
+							(*iter)->spawn({ 0,500}, GRAVITY);
 							this->gameview.reset(sf::FloatRect(0, 0, VideoMode::getDesktopMode().width, VideoMode::getDesktopMode().height));
 						}
 
 					if ((*iter2)->get_objecttype() == t_Player)
 						if ((*iter)->get_objecttype() == t_Enemy)
 						{
-							(*iter2)->spawn({ 0,400 }, GRAVITY);
+							(*iter2)->spawn({ 0,500 }, GRAVITY);
 							this->gameview.reset(sf::FloatRect(0, 0, VideoMode::getDesktopMode().width, VideoMode::getDesktopMode().height));
 						}
 				}
