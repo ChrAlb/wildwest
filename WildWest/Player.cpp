@@ -45,6 +45,9 @@ Player::Player()
 	m_justfired = true;
 
 
+	m_explosion_counter = 0;
+
+
 	
 }
 
@@ -262,7 +265,29 @@ void Player::SetDirection(const sf::Vector2f & dir)
 	}
 
 	if (m_iscollided)
-		curAnimation = AnimationIndex::Explode;
+	{
+		AnimationIndex temp;
+		temp = curAnimation;
+
+		if (m_explosion_counter < m_explosion_time)
+		{
+		  if (m_explosion_counter == 1)
+		     m_SoundPlayer.play(SoundEffect::Explosion);
+          curAnimation = AnimationIndex::Explode;
+		  m_explosion_counter++;
+
+		}
+		else
+		{
+           curAnimation = temp;
+		   m_explosion_counter = 0;
+		   m_iscollided =false;
+		}
+        
+		
+		
+	}
+		
 
 }
 

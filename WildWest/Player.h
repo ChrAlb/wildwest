@@ -44,6 +44,9 @@ public:
 	AnimationIndex curAnimation = AnimationIndex::Stoping;
 	int max_frames[int(AnimationIndex::Count)];
 	int m_countJumpLoops;
+
+	int m_explosion_counter;
+	const int m_explosion_time = 90;
 	
 
 
