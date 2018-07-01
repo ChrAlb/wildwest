@@ -4,7 +4,7 @@
 
 class GameState
 {
-
+	 
 public:
 
     Game* game;
