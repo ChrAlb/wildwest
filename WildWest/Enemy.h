@@ -33,7 +33,7 @@ public:
 	const int EnemySpeed = 50;
 
 	Animation animations[int(AnimationIndex::Count)];
-	AnimationIndex curAnimation = AnimationIndex::WalkingRight);
+	AnimationIndex curAnimation = AnimationIndex::WalkingRight;
 	int max_frames[int(AnimationIndex::Count)];
 
 

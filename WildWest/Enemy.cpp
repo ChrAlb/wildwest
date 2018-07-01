@@ -6,8 +6,8 @@
 
 Enemy::Enemy() : m_hasDestination(false)
 { 
-	m_Textures.load(Textures::Enemy, "graphics/ennemysheet.png");
-	//m_Sprite = Sprite(m_Textures.get(Textures::Enemy ));
+	
+	m_Sprite = Sprite(m_Textures.get(Textures::Enemy ));
 
 	animations[int(AnimationIndex::WalkingRight)].addRow(0, 0, 100, 100, 5);
 	animations[int(AnimationIndex::WalkingLeft)].addRow(0, 100, 100, 100, 5);
@@ -113,6 +113,11 @@ void Enemy::update(float dt, Vector2f Plpos)
 	m_Center.top = r.top + (r.height *.3);
 	m_Center.width = 2;
 	m_Center.height = r.height - (r.height *.3);
+
+	curAnimation = curAnimation = AnimationIndex::WalkingRight;
+
+	animations[int(curAnimation)].Update(dt , max_frames[int(curAnimation)]);
+	animations[int(curAnimation)].ApplytoSprite(m_Sprite);
 
 	m_Sprite.setPosition(m_Position);
 
