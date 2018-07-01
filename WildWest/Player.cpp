@@ -254,7 +254,7 @@ void Player::SetDirection(const sf::Vector2f & dir)
 
 	if (m_isfiring)
 	{
-
+		 
 		if (dir.x > 0.0f)
 			curAnimation = AnimationIndex::ShootingLeft;
 		else if (dir.x < 0.0f)
