@@ -25,7 +25,6 @@ namespace Textures
 		Tree,
 		Bullet,
 		FinishLine,
-		Explosion,
 		
 	};
 }

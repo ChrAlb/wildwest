@@ -22,6 +22,7 @@ private:
 		JumpingRight,
 		ShootingLeft,
 	    ShootingRight,
+		Explode,
 		Count
 	};
 

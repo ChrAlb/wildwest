@@ -25,6 +25,7 @@ Player::Player()
 	animations[int(AnimationIndex::StopingLeft)].addRow(0, 100, 80, 100, 1);
 	animations[int(AnimationIndex::ShootingLeft)].addRow(0, 400, 80, 100, 5);
 	animations[int(AnimationIndex::ShootingRight)].addRow(0, 500, 80, 100, 5);
+	animations[int(AnimationIndex::Explode)].addRow(0, 600, 80, 100, 1);
 
 	max_frames[int(AnimationIndex::WalkingRight)] = 4;
 	max_frames[int(AnimationIndex::WalkingLeft)] = 4;
@@ -35,6 +36,7 @@ Player::Player()
 	max_frames[int(AnimationIndex::StopingRight)] = 1;
 	max_frames[int(AnimationIndex::ShootingLeft)] = 5;
 	max_frames[int(AnimationIndex::ShootingRight)] = 5;
+	max_frames[int(AnimationIndex::ShootingRight)] = 1;
 
 	m_countJumpLoops = 0;
 	
@@ -254,11 +256,13 @@ void Player::SetDirection(const sf::Vector2f & dir)
 	{
 
 		if (dir.x > 0.0f)
-			curAnimation = curAnimation = AnimationIndex::ShootingLeft;
+			curAnimation = AnimationIndex::ShootingLeft;
 		else if (dir.x < 0.0f)
-			curAnimation = curAnimation = AnimationIndex::ShootingRight;
+			curAnimation = AnimationIndex::ShootingRight;
 	}
 
+	if (m_iscollided)
+		curAnimation = AnimationIndex::Explode;
 
 }
 
