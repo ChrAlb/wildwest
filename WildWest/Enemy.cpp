@@ -6,8 +6,14 @@
 
 Enemy::Enemy() : m_hasDestination(false)
 { 
-	m_Textures.load(Textures::Enemy, "graphics/ennemy.png");
-	m_Sprite = Sprite(m_Textures.get(Textures::Enemy ));
+	m_Textures.load(Textures::Enemy, "graphics/ennemysheet.png");
+	//m_Sprite = Sprite(m_Textures.get(Textures::Enemy ));
+
+	animations[int(AnimationIndex::WalkingRight)].addRow(0, 0, 100, 100, 5);
+	animations[int(AnimationIndex::WalkingLeft)].addRow(0, 100, 100, 100, 5);
+
+	max_frames[int(AnimationIndex::WalkingRight)] = 5;
+	max_frames[int(AnimationIndex::WalkingLeft)] = 5;
 
 	m_otype = t_Enemy;
 	m_iscollided = false;
