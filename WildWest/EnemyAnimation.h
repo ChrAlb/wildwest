@@ -12,7 +12,7 @@ public:
 	void addRow(int x, int y, int width, int height, int maxframe);
 	void ApplytoSprite(sf::Sprite& s);
 	void Update(float dt, int maxframes);
-	
+
 
 private:
 	void Advance();
@@ -21,7 +21,7 @@ private:
 private:
 	static constexpr int nFrames = 8;
 	static constexpr float holdtime = 0.1f;
-	
+
 	TextureHolder m_Textures;
 
 	std::vector<sf::IntRect> m_frames;
@@ -29,6 +29,5 @@ private:
 	float time = 0.0f;
 
 	int mframe;
-
 
 };
