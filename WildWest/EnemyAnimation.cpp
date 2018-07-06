@@ -3,18 +3,18 @@
 #include "ResourceHolder.h"
 #include "ResourceIdentifiers.h"
 
-Animation::Animation()
+EnemyAnimation::EnemyAnimation()
 {
-	m_Textures.load(Textures::Player, "graphics/enemysheet.png");
+	m_Textures.load(Textures::Enemy, "graphics/enemysheet.png");
 
 }
 
-void Animation::addFrame(sf::IntRect rect)
+void EnemyAnimation::addFrame(sf::IntRect rect)
 {
 	m_frames.push_back(rect);
 }
 
-void Animation::addRow(int x, int y, int width, int height, int maxframe)
+void  EnemyAnimation::addRow(int x, int y, int width, int height, int maxframe)
 {
 	for (int i = 0; i < maxframe; i++)
 	{
@@ -22,13 +22,13 @@ void Animation::addRow(int x, int y, int width, int height, int maxframe)
 	}
 }
 
-void Animation::ApplytoSprite(sf::Sprite& s)
+void  EnemyAnimation::ApplytoSprite(sf::Sprite& s)
 {
 	s.setTexture(m_Textures.get(Textures::Player));
 	s.setTextureRect(m_frames[iFrame]);
 }
 
-void Animation::Update(float dt, int maxframes)
+void  EnemyAnimation::Update(float dt, int maxframes)
 {
 	mframe = maxframes;
 	time += dt;
@@ -41,7 +41,7 @@ void Animation::Update(float dt, int maxframes)
 }
 
 
-void Animation::Advance()
+void  EnemyAnimation::Advance()
 {
 
 	//if (++iFrame >= maxframes)   => hier geht es noch nicht

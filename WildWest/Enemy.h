@@ -1,11 +1,27 @@
 #pragma once
 #include "PlayableCharacter.h"
+#include "EnemyAnimation.h"
 #include "ResourceHolder.h"
 #include "ResourceIdentifiers.h"
 
 
 class Enemy : public PlayableCharacter
 {
+
+private:
+
+	enum class EnemyAnimationIndex
+	{
+		WalkingLeft,
+		WalkingRight,
+		Count
+	};
+
+	sf::Vector2f m_destination;
+	bool m_hasDestination;
+
+	TextureHolder m_Textures;
+
 public:
 	Enemy();
 	bool handleInput();
@@ -15,11 +31,11 @@ public:
 	
 	const int EnemySpeed = 50;
 
+	EnemyAnimation animations[int(EnemyAnimationIndex::Count)];
+	EnemyAnimationIndex curAnimation = EnemyAnimationIndex::WalkingLeft;
+	int max_frames[int(EnemyAnimationIndex::Count)];
 
-private:
-	sf::Vector2f m_destination;
-	bool m_hasDestination;
 
-	TextureHolder m_Textures;
+
 
 };

@@ -4,10 +4,10 @@
 #include "ResourceHolder.h"
 #include "ResourceIdentifiers.h"
 
-class Animation
+class EnemyAnimation
 {
 public:
-	Animation();
+	EnemyAnimation();
 	void addFrame(sf::IntRect rect);
 	void addRow(int x, int y, int width, int height, int maxframe);
 	void ApplytoSprite(sf::Sprite& s);
