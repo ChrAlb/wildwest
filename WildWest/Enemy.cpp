@@ -115,10 +115,12 @@ void Enemy::update(float dt, Vector2f Plpos)
 	m_Center.height = r.height - (r.height *.3);
 
 	animations[int(curAnimation)].Update(dt, max_frames[int(curAnimation)]);
-	animations[int(curAnimation)].ApplytoSprite(m_Sprite);
-
+	
 	m_Sprite.setPosition(m_Position);
 
+	animations[int(curAnimation)].ApplytoSprite(m_Sprite);
+
+	
 
 }
 
