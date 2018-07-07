@@ -24,7 +24,7 @@ void  EnemyAnimation::addRow(int x, int y, int width, int height, int maxframe)
 
 void  EnemyAnimation::ApplytoSprite(sf::Sprite& s)
 {
-	s.setTexture(m_Textures.get(Textures::Player));
+	s.setTexture(m_Textures.get(Textures::Enemy));
 	s.setTextureRect(m_frames[iFrame]);
 }
 

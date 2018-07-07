@@ -6,9 +6,7 @@
 
 Enemy::Enemy() : m_hasDestination(false)
 { 
-	//m_Textures.load(Textures::Enemy, "graphics/ennemy.png");
-	//m_Sprite = Sprite(m_Textures.get(Textures::Enemy ));
-
+	
 	animations[int(EnemyAnimationIndex::WalkingRight)].addRow(0, 0, 100, 100, 5);
 	animations[int(EnemyAnimationIndex::WalkingLeft)].addRow(0, 100, 100, 100, 5);
 	
