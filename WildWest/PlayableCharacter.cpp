@@ -249,6 +249,11 @@ bool PlayableCharacter::get_iscollided()
 	return m_iscollided;
 }
 
+void PlayableCharacter::set_iscollidedwithobject(bool iscollided)
+{
+	m_iscollidedwithobject = iscollided;
+}
+
 void PlayableCharacter::set_isalive(bool alive)
 {
 	m_is_alive = alive;

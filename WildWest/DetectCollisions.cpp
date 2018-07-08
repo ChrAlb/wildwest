@@ -279,7 +279,7 @@ void GameStateGame::detectCollisions_Objects()
 					if ((*iter)->get_objecttype() == t_Bullets)
 						if ((*iter2)->get_objecttype() == t_Enemy)
 						{
-                           (*iter2)->set_isalive(false);
+							(*iter2)->set_iscollidedwithobject(true);
 						   (*iter)->set_isalive(false);
 						}
 							
@@ -288,7 +288,7 @@ void GameStateGame::detectCollisions_Objects()
 						if ((*iter)->get_objecttype() == t_Enemy)
 						{
 							(*iter2)->set_isalive(false);
-							(*iter)->set_isalive(false);
+							(*iter)->set_iscollidedwithobject(true);
 						}
 
 					if ((*iter)->get_objecttype() == t_Player)
@@ -296,8 +296,6 @@ void GameStateGame::detectCollisions_Objects()
 						{
 							(*iter)->set_iscollided(true);
 							(*iter2)->set_isalive(false);
-							//(*iter)->spawn({ 0,500}, GRAVITY);
-							//this->gameview.reset(sf::FloatRect(0, 0, VideoMode::getDesktopMode().width, VideoMode::getDesktopMode().height));
 						}
 
 					if ((*iter2)->get_objecttype() == t_Player)
@@ -305,8 +303,6 @@ void GameStateGame::detectCollisions_Objects()
 						{
 							(*iter2)->set_iscollided(true);
 							(*iter)->set_isalive(false);
-							//(*iter2)->spawn({ 0,500 }, GRAVITY);
-							//this->gameview.reset(sf::FloatRect(0, 0, VideoMode::getDesktopMode().width, VideoMode::getDesktopMode().height));
 						}
 				}
 					

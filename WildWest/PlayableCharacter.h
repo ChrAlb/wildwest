@@ -71,6 +71,8 @@ public:
 	void set_iscollided(bool iscollided);
 	bool get_iscollided();
 
+	void set_iscollidedwithobject(bool iscollided);
+
 	void set_isalive(bool alive);
 	bool get_isalive();
 	
@@ -124,6 +126,7 @@ protected:
 	int m_maxlevelsize;
 
 	bool m_iscollided;
+	bool m_iscollidedwithobject;
 
 	bool m_isfiring;
 	bool m_justfired;

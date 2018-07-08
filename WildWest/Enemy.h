@@ -14,6 +14,7 @@ private:
 	{
 		WalkingLeft,
 		WalkingRight,
+		DyingRight,
 		Count
 	};
 

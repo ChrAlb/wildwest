@@ -13,11 +13,11 @@ Enemy::Enemy() : m_hasDestination(false)
 	
 	animations[int(EnemyAnimationIndex::WalkingRight)].addRow(0, 0, 100, 100, 5);
 	animations[int(EnemyAnimationIndex::WalkingLeft)].addRow(0, 100, 100, 100, 5);
-	
+	animations[int(EnemyAnimationIndex::DyingRight)].addRow(0, 200, 100, 100, 5);
 
 	max_frames[int(EnemyAnimationIndex::WalkingRight)] = 5;
 	max_frames[int(EnemyAnimationIndex::WalkingLeft)] = 5;
-	
+	max_frames[int(EnemyAnimationIndex::DyingRight)] = 5;
 
 	m_otype = t_Enemy;
 	m_iscollided = false;
@@ -59,10 +59,9 @@ void Enemy::update(float dt, Vector2f Plpos)
 	if (m_iscollided) 
 	{
 		m_iscollided = false;
-		//m_destination.x = -m_destination.x;
-		//m_Position.x = m_Position.x - 100;
 	}
 
+	
 		
 	if (m_Position.x < 0) 
 	{
@@ -90,6 +89,12 @@ void Enemy::update(float dt, Vector2f Plpos)
 		curAnimation = EnemyAnimationIndex::WalkingLeft;
 	else
 		curAnimation = EnemyAnimationIndex::WalkingRight;
+
+	if (m_iscollidedwithobject)
+	{
+		curAnimation = EnemyAnimationIndex::DyingRight;
+		//m_is_alive = false;
+	}
 
 	FloatRect r = getPosition();
 
