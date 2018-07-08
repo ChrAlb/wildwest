@@ -30,7 +30,6 @@ private:
 	
 	
 
-
 public:
 
 	

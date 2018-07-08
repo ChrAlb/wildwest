@@ -213,11 +213,10 @@ void Player::update(float elapsedTime, Vector2f Plpos)
 
 	animations[int(curAnimation)].Update(elapsedTime, max_frames[int(curAnimation)]);
 
-	m_Sprite.setPosition(m_Position);
 	
 	animations[int(curAnimation)].ApplytoSprite(m_Sprite);
 	
-	
+	m_Sprite.setPosition(m_Position);
 
 	
 }
