@@ -268,14 +268,16 @@ void Player::SetDirection(const sf::Vector2f & dir)
 
 	if (m_iscollided)
 	{
-		AnimationIndex temp;
+		
 		temp = curAnimation;
 
 		if (m_explosion_counter < m_explosion_time)
 		{
+		 
 		  if (m_explosion_counter == 1)
-		     m_SoundPlayer.play(SoundEffect::Explosion);
+		       m_SoundPlayer.play(SoundEffect::Explosion);
           curAnimation = AnimationIndex::Explode;
+		  temp = curAnimation;
 		  m_explosion_counter++;
 
 		}
