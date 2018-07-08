@@ -29,7 +29,7 @@ public:
 
 	void set_destination(bool destination);
 	
-	const int EnemySpeed = 50;
+	const int EnemySpeed = 75;
 
 	EnemyAnimation animations[int(EnemyAnimationIndex::Count)];
 	EnemyAnimationIndex curAnimation = EnemyAnimationIndex::WalkingRight;
