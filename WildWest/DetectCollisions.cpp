@@ -172,19 +172,16 @@ for (int x = startX; x < endX; x++)
 				{
 					if (character.getRight().intersects(block))
 					{
-character.stopRight(block.left);
+                      character.stopRight(block.left);
 
+                          if (character.get_objecttype() == t_Bullets)
+                             {
+	                             character.set_iscollided(true);
+	                             character.set_isalive(false);
+                             }
 
-
-if (character.get_objecttype() == t_Bullets)
-{
-	character.set_iscollided(true);
-	character.set_isalive(false);
-}
-
-
-if (character.get_objecttype() == t_Enemy)
-character.set_iscollided(true);
+                        if (character.get_objecttype() == t_Enemy)
+                             character.set_iscollided(true);
 
 					}
 					else

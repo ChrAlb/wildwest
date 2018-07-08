@@ -20,6 +20,8 @@ private:
 	sf::Vector2f m_destination;
 	bool m_hasDestination;
 
+	
+
 	TextureHolder m_Textures;
 
 public:
@@ -32,6 +34,8 @@ public:
 	EnemyAnimation animations[int(EnemyAnimationIndex::Count)];
 	EnemyAnimationIndex curAnimation = EnemyAnimationIndex::WalkingRight;
 	int max_frames[int(EnemyAnimationIndex::Count)];
+
+	
 
 
 
