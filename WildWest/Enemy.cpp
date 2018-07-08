@@ -37,6 +37,7 @@ bool Enemy::handleInput()
 {
 	m_isFalling = true;
 	m_vel = m_destination;
+	Enemy::set_destination(true);
 	return m_JustJumped;
 }
 
@@ -117,6 +118,8 @@ void Enemy::update(float dt, Vector2f Plpos)
 	m_Center.top = r.top + (r.height *.3);
 	m_Center.width = 2;
 	m_Center.height = r.height - (r.height *.3);
+
+	
 
 	animations[int(curAnimation)].Update(dt, max_frames[int(curAnimation)]);
 	
