@@ -27,8 +27,6 @@ public:
 	bool handleInput();
 	void update(float dt, Vector2f Plpos);
 
-	void set_destination(bool destination);
-	
 	const int EnemySpeed = 75;
 
 	EnemyAnimation animations[int(EnemyAnimationIndex::Count)];

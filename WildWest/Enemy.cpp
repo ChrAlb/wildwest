@@ -37,7 +37,6 @@ bool Enemy::handleInput()
 {
 	m_isFalling = true;
 	m_vel = m_destination;
-	Enemy::set_destination(true);
 	return m_JustJumped;
 }
 
@@ -69,6 +68,7 @@ void Enemy::update(float dt, Vector2f Plpos)
 	{
 		m_Position.x = 0;
 		m_destination.x = -m_destination.x;
+		
 
 	}
 	
@@ -86,6 +86,10 @@ void Enemy::update(float dt, Vector2f Plpos)
 		m_destination.x = -m_destination.x;
 	}
 	
+	if (m_destination.x < 0)
+		curAnimation = EnemyAnimationIndex::WalkingLeft;
+	else
+		curAnimation = EnemyAnimationIndex::WalkingRight;
 
 	FloatRect r = getPosition();
 
@@ -129,24 +133,4 @@ void Enemy::update(float dt, Vector2f Plpos)
 
 }
 
-void Enemy::set_destination(bool destination)
-{
-	if (destination)
-	{
-		m_destination.x = -m_destination.x;
-	}
-
-	m_vel = dir * m_Speed;
-	if (dir.x > 0.0f)
-
-	{
-		curAnimation = EnemyAnimationIndex::WalkingRight;
-	}
-	else if (dir.x < 0.0f)
-
-	{
-		curAnimation = EnemyAnimationIndex::WalkingLeft;
-	}
-
-}
 
