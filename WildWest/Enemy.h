@@ -18,7 +18,7 @@ private:
 		Dead,
 		Count
 	};
-
+	 
 	sf::Vector2f m_destination;
 	bool m_hasDestination;
 
