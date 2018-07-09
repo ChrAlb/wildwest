@@ -15,11 +15,15 @@ private:
 		WalkingLeft,
 		WalkingRight,
 		DyingRight,
+		Dead,
 		Count
 	};
 
 	sf::Vector2f m_destination;
 	bool m_hasDestination;
+
+	int m_dying_counter;
+	const int m_dying_time = 190;
 
 	
 
