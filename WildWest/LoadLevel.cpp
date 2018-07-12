@@ -2,10 +2,7 @@
 #include "game.h"
 #include "Game_state_game.h"
 #include <iostream>
-//#include "EntityManager.h"
 
-//#include "Player.h"
-//#include  "PlayableCharacter.h"
 
 void GameStateGame::loadLevel()
 

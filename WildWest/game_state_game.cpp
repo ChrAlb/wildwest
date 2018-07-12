@@ -83,6 +83,7 @@ void GameStateGame::update(const float dt)
 		//oldpos = 150;
 		m_newlevelrequiered = false;
 		loadLevel();
+		
 	}
 
 	if (m_Playing)
@@ -121,6 +122,8 @@ void GameStateGame::update(const float dt)
 		clean_objects();
 		Vector2f tt;
 		tt = 	getPlayer_position_putofList();
+		spawnRandomEnemies();
+
 
 		for (iter = objects.begin(); iter != objects.end(); ++iter)
 		{
@@ -251,6 +254,30 @@ Vector2f GameStateGame::getPlayer_position_putofList()
 	
 }
 
+void GameStateGame::spawnRandomEnemies()
+{
+	int random = rand() % 5000	+ 1;
+	if (random == 1000)
+	{
+		
+		float newx = rand() % m_LM.getLevelSize().x*TILE_SIZE +  1;
+		float newy = rand() % 15*TILE_SIZE + 1;
+
+        Vector2f spawnpos;
+
+		
+		spawnpos.x = newx;
+		spawnpos.y = newy;
+
+		enemy = new Enemy();
+		
+		enemy->spawn(spawnpos, GRAVITY);
+
+        objects.push_back(enemy);
+
+	}
+	
+}
 
 GameStateGame::GameStateGame(Game* game)
 {

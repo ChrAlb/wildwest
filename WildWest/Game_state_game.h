@@ -66,8 +66,6 @@ private:
 	
 
 	int slopenumber;
-
-	
 	
 
 	sf::RectangleShape  head_box;
@@ -104,7 +102,9 @@ public:
 	virtual void update(const float dt);
 	virtual void handleInput();
 	 
-	Vector2f getPlayer_position_putofList  ();
+	Vector2f getPlayer_position_putofList();
+
+	void spawnRandomEnemies();
 	
 	GameStateGame(Game* game);
 };
