@@ -208,6 +208,7 @@ for (int x = startX; x < endX; x++)
 							if (m_ArrayLevel[y][x] == 1)
 							{
 								if (!m_justexploded)
+									if (character.get_objecttype() == t_Player)
 								{
 									m_SoundPlayer.play(SoundEffect::Explosion);
 									m_justexploded = true;
