@@ -55,16 +55,13 @@ void GameStateGame::loadLevel()
 
 	enemy = new Enemy();
 	Vector2f startpoint;
-	startpoint.x = 700;
+	startpoint.x = 300;
 	startpoint.y = 0;
 	enemy->spawn(startpoint,GRAVITY);
 	
 	
 	enemy->set_maxlevelsize(maxlevelsize);
 	objects.push_back(enemy);
-
-
-	
 
 	this->PlInfo.reset(sf::FloatRect(0, 0, VideoMode::getDesktopMode().width, VideoMode::getDesktopMode().height));
 	this->bgview.reset(sf::FloatRect(0, 0, VideoMode::getDesktopMode().width, VideoMode::getDesktopMode().height));

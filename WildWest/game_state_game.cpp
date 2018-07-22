@@ -125,6 +125,7 @@ void GameStateGame::update(const float dt)
 		spawnRandomEnemies();
 
 
+
 		for (iter = objects.begin(); iter != objects.end(); ++iter)
 		{
 
@@ -256,9 +257,13 @@ Vector2f GameStateGame::getPlayer_position_putofList()
 
 void GameStateGame::spawnRandomEnemies()
 {
+	//unschön!
+	int maxlevelsize = (m_LM.getLevelSize().x * TILE_SIZE) - TILE_SIZE;
+	
 	int random = rand() % 5000	+ 1;
 	if (random == 1000)
 	{
+		enemy = new Enemy();
 		
 		float newx = rand() % m_LM.getLevelSize().x*TILE_SIZE +  1;
 		float newy = rand() % 15*TILE_SIZE + 1;
@@ -269,10 +274,11 @@ void GameStateGame::spawnRandomEnemies()
 		spawnpos.x = newx;
 		spawnpos.y = newy;
 
-		enemy = new Enemy();
+		
 		
 		enemy->spawn(spawnpos, GRAVITY);
-
+		//unschön!
+		enemy->set_maxlevelsize(maxlevelsize);
         objects.push_back(enemy);
 
 	}
