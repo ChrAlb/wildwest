@@ -38,7 +38,7 @@ void Bullet::update(float dt, Vector2f Plpos)
 	m_Feet.top = r.top + r.height - 1;
 	m_Feet.width = r.width - 6;
 	m_Feet.height = 1;
-
+	 
 	// Head
 	m_Head.left = r.left;
 	m_Head.top = r.top + (r.height *.3);
