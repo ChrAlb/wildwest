@@ -14,6 +14,7 @@ Player::Player()
 	m_otype = t_Player;
 	m_iscollided = false;
 	m_is_alive = true;
+
 	
 
     animations[int(AnimationIndex::WalkingRight)].addRow(0, 0, 80, 100,4);
@@ -58,16 +59,23 @@ bool Player::handleInput()
 	m_JustJumped = false;
 	
 	if (Keyboard::isKeyPressed(Keyboard::S))
-		m_isfiring = true;
+	{
+       m_isfiring = true;
+	  
+
+	}
+		
 	else
 	{
 		m_isfiring = false;
 		m_justfired = true;
+		
 	}
 		
 
-	if (Keyboard::isKeyPressed(Keyboard::Space))
+	if ( (Keyboard::isKeyPressed(Keyboard::Space)) )
 	{
+		//m_anykeypressed = true;
 		if (!m_isJumping && !m_isFalling)
 		{
 			m_isJumping = true;
@@ -77,6 +85,7 @@ bool Player::handleInput()
 	}
 	else
 	{
+		//m_anykeypressed = false;
 		m_isJumping = false;
 		m_isFalling = true;
 	}

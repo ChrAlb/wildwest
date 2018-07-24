@@ -177,7 +177,7 @@ void PlayableCharacter::stopJump()
 	m_isJumping = false;
 
 	// Gelöscht, weil bei 2 Steinen aufeinander sonst Character fällt
-	//m_isFalling = true;
+	m_isFalling = true;
 }
 
 
