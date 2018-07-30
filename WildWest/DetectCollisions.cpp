@@ -282,6 +282,7 @@ void GameStateGame::detectCollisions_Objects()
 						{
 							(*iter2)->set_iscollidedwithobject(true);
 						   (*iter)->set_isalive(false);
+						   m_PlayergetPoints = true;
 						}
 							
 
@@ -290,13 +291,19 @@ void GameStateGame::detectCollisions_Objects()
 						{
 							(*iter2)->set_isalive(false);
 							(*iter)->set_iscollidedwithobject(true);
+							m_PlayergetPoints = true;
 						}
 
 					if ((*iter)->get_objecttype() == t_Player)
 						if ((*iter2)->get_objecttype() == t_Enemy)
 						{
 							(*iter)->set_iscollided(true);
-							(*iter2)->set_isalive(false);
+                            (*iter2)->set_isalive(false);
+							(*iter)->set_lives((*iter)->get_lives() - 1);
+							    {
+								(*iter)->set_points((*iter)->get_points() + m_pointsperdeathenemy);
+								m_PlayergetPoints = false;
+							    }
 						}
 
 					if ((*iter2)->get_objecttype() == t_Player)
@@ -304,6 +311,12 @@ void GameStateGame::detectCollisions_Objects()
 						{
 							(*iter2)->set_iscollided(true);
 							(*iter)->set_isalive(false);
+							(*iter2)->set_lives((*iter2)->get_lives() - 1);
+							if (m_PlayergetPoints)
+							{
+								(*iter2)->set_points((*iter2)->get_points() + m_pointsperdeathenemy);
+								m_PlayergetPoints = false;
+							}
 						}
 				}
 					

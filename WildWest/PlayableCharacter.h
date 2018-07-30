@@ -53,6 +53,12 @@ public:
 	Vector2i get_tilepos();
 	void set_tilepos(Vector2i tpos);
 
+	int get_points();
+	void set_points(int points);
+
+
+	int get_lives();
+	void set_lives(int lives);
 	
 	
 	Vector2i CalculateTile_pos();
@@ -133,6 +139,9 @@ protected:
 
 	bool m_is_alive;
 
+	int m_lives, m_points;
+
+	
 		
 	Vector2f m_oldposition;
 	

@@ -15,6 +15,8 @@ Player::Player()
 	m_iscollided = false;
 	m_is_alive = true;
 
+	m_lives = 3;
+	m_points = 0;
 	
 
     animations[int(AnimationIndex::WalkingRight)].addRow(0, 0, 80, 100,4);

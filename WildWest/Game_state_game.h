@@ -87,12 +87,18 @@ private:
 	sf::Text text;
 
 	bool m_onSlope = false;
+
+	bool m_PlayergetPoints;
 	
 	float m_Gravity;
 
 	PlayerInfo m_PlayerInfo;
 
 	SoundPlayer m_SoundPlayer;
+
+	const int m_pointsperdeathenemy = 50;
+
+
 
 public:
 	
