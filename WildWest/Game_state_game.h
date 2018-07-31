@@ -9,6 +9,7 @@
 #include "Player.h"
 #include "Enemy.h"
 #include "PlayerInfo.h"
+#include "GameStats.h"
 #include "Bullet.h"
 
 class GameStateGame : public GameState
@@ -19,8 +20,10 @@ private:
 	//******************
 	// falls debug= true; Kollisionsboxen werden angezeigt
 	bool debug = false;
-	bool stats = true;
+	bool stats = false;
 	//******************
+
+	bool gamestat = true;
 	 
 	sf::View gameview;
 	sf::View bgview;
@@ -93,6 +96,7 @@ private:
 	float m_Gravity;
 
 	PlayerInfo m_PlayerInfo;
+	GameStats m_gameStats;
 
 	SoundPlayer m_SoundPlayer;
 

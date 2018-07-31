@@ -156,6 +156,7 @@
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="EnemyAnimation.h" />
     <ClInclude Include="game.h" />
+    <ClInclude Include="GameStats.h" />
     <ClInclude Include="Game_state.h" />
     <ClInclude Include="game_state_end.h" />
     <ClInclude Include="Game_state_game.h" />
@@ -178,6 +179,7 @@
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="EnemyAnimation.cpp" />
     <ClCompile Include="game.cpp" />
+    <ClCompile Include="GameStats.cpp" />
     <ClCompile Include="game_state_end.cpp" />
     <ClCompile Include="game_state_game.cpp" />
     <ClCompile Include="game_state_start.cpp" />
