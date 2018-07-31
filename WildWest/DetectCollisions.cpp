@@ -300,6 +300,7 @@ void GameStateGame::detectCollisions_Objects()
 							(*iter)->set_iscollided(true);
                             (*iter2)->set_isalive(false);
 							(*iter)->set_lives((*iter)->get_lives() - 1);
+							if (m_PlayergetPoints)
 							    {
 								(*iter)->set_points((*iter)->get_points() + m_pointsperdeathenemy);
 								m_PlayergetPoints = false;
