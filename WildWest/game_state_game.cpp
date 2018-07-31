@@ -300,8 +300,6 @@ GameStateGame::GameStateGame(Game* game)
 	
 	m_justexploded = false;
 
-	m_PlayergetPoints = false;
-
 	this->game = game;
 	
 	

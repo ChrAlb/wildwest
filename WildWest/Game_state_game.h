@@ -91,7 +91,6 @@ private:
 
 	bool m_onSlope = false;
 
-	bool m_PlayergetPoints;
 	
 	float m_Gravity;
 
@@ -101,6 +100,7 @@ private:
 	SoundPlayer m_SoundPlayer;
 
 	const int m_pointsperdeathenemy = 50;
+
 
 
 

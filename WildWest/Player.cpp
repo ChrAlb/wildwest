@@ -306,3 +306,23 @@ void Player::SetDirection(const sf::Vector2f & dir)
 
 }
 
+int Player::get_points()
+{
+	return m_points;
+}
+
+void Player::set_points(int points)
+{
+	m_points = points;
+}
+
+int Player::get_lives()
+{
+	return m_lives;
+}
+
+void Player::set_lives(int lives)
+{
+	m_lives = lives;
+}
+

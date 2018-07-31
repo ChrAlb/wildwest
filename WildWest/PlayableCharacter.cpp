@@ -132,26 +132,6 @@ void PlayableCharacter::set_tilepos(Vector2i tpos)
 	tile_pos = tpos;
 }
 
-int PlayableCharacter::get_points()
-{
-	return m_points;
-}
-
-void PlayableCharacter::set_points(int points)
-{
-	m_points = points;
-}
-
-int PlayableCharacter::get_lives()
-{
-	return m_lives;
-}
-
-void PlayableCharacter::set_lives(int lives)
-{
-	m_lives = lives;
-}
-
 
 
 Vector2i PlayableCharacter::CalculateTile_pos()
