@@ -284,7 +284,7 @@ void GameStateGame::detectCollisions_Objects()
 						    (*iter)->set_isalive(false);
 							int t;
 							
-							//player->set_points(t + m_pointsperdeathenemy);
+							m_gameStats.addpointfordeadeney();
 						}
 							
 
@@ -295,7 +295,7 @@ void GameStateGame::detectCollisions_Objects()
 							(*iter)->set_iscollidedwithobject(true);
 							int t;
 							
-							//player->set_points(t + m_pointsperdeathenemy);
+							m_gameStats.addpointfordeadeney();
 						}
 
 					if ((*iter)->get_objecttype() == t_Player)
@@ -304,7 +304,7 @@ void GameStateGame::detectCollisions_Objects()
 							(*iter)->set_iscollided(true);
                             (*iter2)->set_isalive(false);
 							
-							//player->set_points(t -1);
+							m_gameStats.subtractlive();
 							
 						}
 
@@ -314,7 +314,7 @@ void GameStateGame::detectCollisions_Objects()
 							(*iter2)->set_iscollided(true);
 							(*iter)->set_isalive(false);
 							
-							//player->set_points(t - 1);
+							m_gameStats.subtractlive();
 						}
 
 					
