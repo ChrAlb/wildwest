@@ -10,9 +10,20 @@ class GameStats
 public:
 	GameStats();
 	void print(sf::RenderWindow& windowRef, Player& RefPlayer);
+
+	void addpointfordeadeney();
+
+	void subtractlive();
 	
 
 private:
+
+	const int m_pointsperdeathenemy = 50;
+	int m_lives;
+	int m_points;
+
+
+
 
 	sf::Text m_Title;
 	sf::Text m_Points;

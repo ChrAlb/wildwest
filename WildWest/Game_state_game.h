@@ -99,10 +99,7 @@ private:
 
 	SoundPlayer m_SoundPlayer;
 
-	const int m_pointsperdeathenemy = 50;
-
-
-
+	
 
 public:
 	

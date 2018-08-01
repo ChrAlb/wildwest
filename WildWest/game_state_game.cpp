@@ -30,13 +30,13 @@ void GameStateGame::draw(const float dt)
 		m_PlayerInfo.print(this->game->window, *player);
 		m_PlayerInfo.printEnemy(this->game->window, *enemy);
 	}
-
+/*
 	if (gamestat)
 	{
 		this->game->window.setView(PlInfo);
 		m_gameStats.print(this->game->window, *player);
 	}
-
+*/
 	this->game->window.setView(gameview);
 
 	this->game->window.draw(m_Tree_Sprite);

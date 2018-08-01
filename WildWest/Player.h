@@ -28,8 +28,6 @@ private:
 
 	SoundPlayer m_SoundPlayer;
 
-	int m_lives, m_points;
-
 	
 	
 	AnimationIndex temp;
@@ -50,16 +48,6 @@ public:
 
 	int m_explosion_counter;
 	const int m_explosion_time = 90;
-
-	int get_points();
-	void set_points(int points);
-
-
-	int get_lives();
-	void set_lives(int lives);
-
-	
-
 
 	
 	

@@ -15,9 +15,6 @@ Player::Player()
 	m_iscollided = false;
 	m_is_alive = true;
 
-	m_lives = 3;
-	m_points = 0;
-	
 
     animations[int(AnimationIndex::WalkingRight)].addRow(0, 0, 80, 100,4);
 	animations[int(AnimationIndex::WalkingLeft)].addRow(0, 100, 80, 100,4);
@@ -304,25 +301,5 @@ void Player::SetDirection(const sf::Vector2f & dir)
 	}
 		
 
-}
-
-int Player::get_points()
-{
-	return m_points;
-}
-
-void Player::set_points(int points)
-{
-	m_points = points;
-}
-
-int Player::get_lives()
-{
-	return m_lives;
-}
-
-void Player::set_lives(int lives)
-{
-	m_lives = lives;
 }
 
