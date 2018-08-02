@@ -16,6 +16,8 @@ public:
 	void addpointfordeadeney();
 
 	void subtractlive();
+
+	void print_lives(int lives, sf::RenderWindow& windowRef);
 	
 
 private:
@@ -26,7 +28,8 @@ private:
 
 
 	FontHolder m_fonts;
-
+	TextureHolder m_Textures;
+	Sprite m_hufeisen;
 
 	sf::Text m_Title;
 	sf::Text m_Points;

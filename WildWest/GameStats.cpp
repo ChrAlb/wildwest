@@ -6,6 +6,7 @@
 GameStats::GameStats()
 {
 	m_fonts.load(Fonts::ComicS, "graphics/Comics.ttf");
+	m_Textures.load(Textures::Hufeisen, "graphics/Hufeisen.png");
 	
 	m_lives = 3;
 	m_points = 0;
@@ -39,13 +40,13 @@ void GameStats::print(sf::RenderWindow & windowRef, Player& PlayerRef)
 	m_Lives.setPosition(0, 50);
 	
 	string = "Leben:     ";
-	string = string + Convert(m_lives);
+	//string = string + Convert(m_lives);
 	m_Lives.setString(string);
 
 
 	windowRef.draw(m_Title);
 	windowRef.draw(m_Points);
-	windowRef.draw(m_Lives);
+	print_lives(m_lives,windowRef);
 	
 
 }
@@ -58,6 +59,19 @@ void GameStats::addpointfordeadeney()
 void GameStats::subtractlive()
 {
 	m_lives = m_lives - 1;
+}
+
+void GameStats::print_lives(int lives, sf::RenderWindow& windowRef)
+{
+
+	m_hufeisen.setTexture(m_Textures.get(Textures::Hufeisen));
+
+	for (int i = 0; i < lives; i++)
+	{
+		m_hufeisen.setPosition(Vector2f(i*30, 120));
+		windowRef.draw(m_hufeisen);
+	}
+	
 }
 
 
