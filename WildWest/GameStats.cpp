@@ -69,7 +69,7 @@ void GameStats::print_lives(int lives, sf::RenderWindow& windowRef)
 
 	for (int i = 0; i < lives; i++)
 	{
-		m_hufeisen.setPosition(Vector2f(i*30, 80));
+		m_hufeisen.setPosition(Vector2f(i*45, 80));
 		windowRef.draw(m_hufeisen);
 	}
 	

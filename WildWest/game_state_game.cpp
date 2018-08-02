@@ -230,6 +230,22 @@ void GameStateGame::handleInput()
 			break;
 		}
 		
+		case sf::Event::KeyPressed:
+		
+			if ( (event.key.code == sf::Keyboard::F1) && (!stats) )
+			{
+				gamestat = true;
+			}
+			
+			if (event.key.code == sf::Keyboard::F2)
+			{
+				debug = true;
+			}
+
+			if  ( (event.key.code == sf::Keyboard::F3)  && (!gamestat) )
+			{
+				stats = true;
+			}
 		
 		default: break;
 		}
