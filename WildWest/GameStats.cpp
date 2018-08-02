@@ -46,6 +46,7 @@ void GameStats::print(sf::RenderWindow & windowRef, Player& PlayerRef)
 
 	windowRef.draw(m_Title);
 	windowRef.draw(m_Points);
+	windowRef.draw(m_Lives);
 	print_lives(m_lives,windowRef);
 	
 
@@ -68,7 +69,7 @@ void GameStats::print_lives(int lives, sf::RenderWindow& windowRef)
 
 	for (int i = 0; i < lives; i++)
 	{
-		m_hufeisen.setPosition(Vector2f(i*30, 120));
+		m_hufeisen.setPosition(Vector2f(i*30, 80));
 		windowRef.draw(m_hufeisen);
 	}
 	
