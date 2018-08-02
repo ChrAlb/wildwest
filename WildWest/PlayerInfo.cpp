@@ -5,13 +5,14 @@
 
 PlayerInfo::PlayerInfo()
 {
-	m_font.loadFromFile("graphics/Arial.ttf");
+	m_fonts.load(Fonts::Arial, "graphics/arial.ttf");
+	
 }
 
 void PlayerInfo::print(sf::RenderWindow & windowRef, Player& PlayerRef)
 {
 	// Titel
-	m_title.setFont(m_font);
+	m_title.setFont(m_fonts.get(Fonts::Arial));
 	m_title.setCharacterSize(16);
 	m_title.setPosition(0, 0);
 	m_title.setFillColor(sf::Color::Black);
@@ -20,7 +21,7 @@ void PlayerInfo::print(sf::RenderWindow & windowRef, Player& PlayerRef)
 
 	
     // Player Position
-	m_pos.setFont(m_font);
+	m_pos.setFont(m_fonts.get(Fonts::Arial));
 	m_pos.setCharacterSize(14);
 	m_pos.setFillColor(sf::Color::Black);
 	m_pos.setPosition(0, 25);
@@ -33,7 +34,7 @@ void PlayerInfo::print(sf::RenderWindow & windowRef, Player& PlayerRef)
 
 
 	// Count Jump Loops
-	m_jumpFrames.setFont(m_font);
+	m_jumpFrames.setFont(m_fonts.get(Fonts::Arial));
 	m_jumpFrames.setCharacterSize(14);
 	m_jumpFrames.setFillColor(sf::Color::Black);
 	m_jumpFrames.setPosition(0, 50);
@@ -44,7 +45,7 @@ void PlayerInfo::print(sf::RenderWindow & windowRef, Player& PlayerRef)
 	m_jumpFrames.setString(string);
 
 	//onslope
-	m_onslope.setFont(m_font);
+	m_onslope.setFont(m_fonts.get(Fonts::Arial));
 	m_onslope.setCharacterSize(14);
 	m_onslope.setFillColor(sf::Color::Black);
 	m_onslope.setPosition(0, 75);
@@ -56,7 +57,7 @@ void PlayerInfo::print(sf::RenderWindow & windowRef, Player& PlayerRef)
 	m_onslope.setString(string);
 
 	//slopeend
-	m_slopeend.setFont(m_font);
+	m_slopeend.setFont(m_fonts.get(Fonts::Arial));
 	m_slopeend.setCharacterSize(14);
 	m_slopeend.setFillColor(sf::Color::Black);
 	m_slopeend.setPosition(0, 100);
@@ -78,7 +79,7 @@ void PlayerInfo::print(sf::RenderWindow & windowRef, Player& PlayerRef)
 void PlayerInfo::printEnemy(sf::RenderWindow & windowRef, Enemy & RefPlayer)
 {
 	// Titel
-	m_title.setFont(m_font);
+	m_title.setFont(m_fonts.get(Fonts::Arial));
 	m_title.setCharacterSize(16);
 	m_title.setPosition(300, 0);
 	m_title.setFillColor(sf::Color::Black);
@@ -87,7 +88,7 @@ void PlayerInfo::printEnemy(sf::RenderWindow & windowRef, Enemy & RefPlayer)
 
 
 	// Enemy Position
-	m_pos.setFont(m_font);
+	m_pos.setFont(m_fonts.get(Fonts::Arial));
 	m_pos.setCharacterSize(14);
 	m_pos.setFillColor(sf::Color::Black);
 	m_pos.setPosition(300, 25);

@@ -5,10 +5,8 @@
 
 GameStats::GameStats()
 {
-	//m_fonts.load(Fonts::ComicS, "graphics/arial.ttf");
-	//m_font.loadFromMemory(m_fonts.get(Fonts::ComicS);
+	m_fonts.load(Fonts::ComicS, "graphics/Comics.ttf");
 	
-	m_font.loadFromFile("graphics/Comics.ttf");
 	m_lives = 3;
 	m_points = 0;
 }
@@ -16,7 +14,7 @@ GameStats::GameStats()
 void GameStats::print(sf::RenderWindow & windowRef, Player& PlayerRef)
 {
 	// Titel
-	m_Title.setFont(m_font);
+	m_Title.setFont(m_fonts.get(Fonts::ComicS));
 	m_Title.setCharacterSize(16);
 	m_Title.setPosition(0, 0);
 	m_Title.setFillColor(sf::Color::Black);
@@ -25,7 +23,7 @@ void GameStats::print(sf::RenderWindow & windowRef, Player& PlayerRef)
 
 
 	// Player Points
-	m_Points.setFont(m_font);
+	m_Points.setFont(m_fonts.get(Fonts::ComicS));
 	m_Points.setCharacterSize(14);
 	m_Points.setFillColor(sf::Color::Black);
 	m_Points.setPosition(0, 25);
@@ -35,7 +33,7 @@ void GameStats::print(sf::RenderWindow & windowRef, Player& PlayerRef)
 	m_Points.setString(string);
 
 	// Player Lives
-	m_Lives.setFont(m_font);
+	m_Lives.setFont(m_fonts.get(Fonts::ComicS));
 	m_Lives.setCharacterSize(14);
 	m_Lives.setFillColor(sf::Color::Black);
 	m_Lives.setPosition(0, 50);

@@ -2,6 +2,9 @@
 #include <SFML\Graphics.hpp>
 #include "Player.h"
 #include "Enemy.h"
+#include "ResourceHolder.h"
+#include "ResourceIdentifiers.h"
+
 
 class PlayerInfo
 
@@ -18,6 +21,8 @@ private:
 	sf::Text m_jumpFrames;
 	sf::Text m_onslope;
 	sf::Text m_slopeend;
+
+	FontHolder m_fonts;
 
 	sf::Font m_font;
 	String string;
