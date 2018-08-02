@@ -251,6 +251,11 @@ void GameStateGame::handleInput()
 	return;
 }
 
+void GameStateGame::set_gamestats(bool stat)
+{
+	m_gameStats = stat;
+}
+
 Vector2f GameStateGame::getPlayer_position_putofList()
 {
 	

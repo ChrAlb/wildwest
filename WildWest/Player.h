@@ -29,7 +29,6 @@ private:
 	SoundPlayer m_SoundPlayer;
 
 	
-	
 	AnimationIndex temp;
 
 public:
