@@ -6,6 +6,8 @@
 GameStats::GameStats()
 {
 	m_font.loadFromFile("graphics/Arial.ttf");
+	m_lives = 3;
+	m_points = 0;
 }
 
 void GameStats::print(sf::RenderWindow & windowRef, Player& PlayerRef)
@@ -49,7 +51,7 @@ void GameStats::print(sf::RenderWindow & windowRef, Player& PlayerRef)
 
 void GameStats::addpointfordeadeney()
 {
-	m_points 0 m_points + m_pointsperdeathenemy;
+	m_points = m_points + m_pointsperdeathenemy;
 }
 
 void GameStats::subtractlive()
