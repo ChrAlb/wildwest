@@ -41,7 +41,8 @@ namespace Fonts
 {
 	enum ID
 	{
-		
+		Arial,
+		ComicS,
 	};
 }
 

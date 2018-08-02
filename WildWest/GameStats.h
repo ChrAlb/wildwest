@@ -2,6 +2,8 @@
 
 #include <SFML\Graphics.hpp>
 #include "Player.h"
+#include "ResourceHolder.h"
+#include "ResourceIdentifiers.h"
 
 
 class GameStats
@@ -23,6 +25,7 @@ private:
 	int m_points;
 
 
+	FontHolder m_fonts;
 
 
 	sf::Text m_Title;

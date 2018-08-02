@@ -5,7 +5,10 @@
 
 GameStats::GameStats()
 {
-	m_font.loadFromFile("graphics/Arial.ttf");
+	//m_fonts.load(Fonts::ComicS, "graphics/arial.ttf");
+	//m_font.loadFromMemory(m_fonts.get(Fonts::ComicS);
+	
+	m_font.loadFromFile("graphics/Comics.ttf");
 	m_lives = 3;
 	m_points = 0;
 }
@@ -18,7 +21,7 @@ void GameStats::print(sf::RenderWindow & windowRef, Player& PlayerRef)
 	m_Title.setPosition(0, 0);
 	m_Title.setFillColor(sf::Color::Black);
 	m_Title.setStyle(sf::Text::Bold | sf::Text::Underlined);
-	m_Points.setString("Punkte");
+	m_Title.setString("Spielstand:");
 
 
 	// Player Points
@@ -27,7 +30,7 @@ void GameStats::print(sf::RenderWindow & windowRef, Player& PlayerRef)
 	m_Points.setFillColor(sf::Color::Black);
 	m_Points.setPosition(0, 25);
 	
-	string = "Punkte: ";
+	string = "Punkte:     ";
 	string = string + Convert(m_points);
 	m_Points.setString(string);
 
@@ -37,7 +40,7 @@ void GameStats::print(sf::RenderWindow & windowRef, Player& PlayerRef)
 	m_Lives.setFillColor(sf::Color::Black);
 	m_Lives.setPosition(0, 50);
 	
-	string = "Leben: ";
+	string = "Leben:     ";
 	string = string + Convert(m_lives);
 	m_Lives.setString(string);
 

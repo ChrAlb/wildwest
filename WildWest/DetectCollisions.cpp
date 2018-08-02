@@ -212,6 +212,7 @@ for (int x = startX; x < endX; x++)
 								{
 									m_SoundPlayer.play(SoundEffect::Explosion);
 									m_justexploded = true;
+									m_gameStats.subtractlive();
 								}
 							}
 							else
