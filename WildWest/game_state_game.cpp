@@ -234,17 +234,26 @@ void GameStateGame::handleInput()
 		
 			if ( (event.key.code == sf::Keyboard::F1) && (!stats) )
 			{
-				gamestat = true;
+				if (gamestat)
+                    gamestat = false;
+				else
+					gamestat = true;
 			}
 			
 			if (event.key.code == sf::Keyboard::F2)
 			{
-				debug = true;
+				if (debug)
+					debug = false;
+				else
+					debug = true;
 			}
 
 			if  ( (event.key.code == sf::Keyboard::F3)  && (!gamestat) )
 			{
-				stats = true;
+				if (stats)
+					stats = false;
+				else
+					stats = true;
 			}
 		
 		default: break;
