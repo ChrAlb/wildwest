@@ -12,7 +12,7 @@ GameStats::GameStats()
 	m_lives = 3;
 	m_points = 0;
 }
-
+ 
 void GameStats::print(sf::RenderWindow & windowRef, Player& PlayerRef)
 {
 	// Titel
