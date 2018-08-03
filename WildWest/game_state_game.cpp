@@ -76,7 +76,7 @@ void GameStateGame::update(const float dt)
 	//LevelManager lm;
 
 	
-	if (m_LM.get_allLeveldone())
+	if ( (m_LM.get_allLeveldone())  || (m_gameStats.nomorelives()) )
 	{
 		
 		this->game->pushState(new GameStateEnd(this->game));

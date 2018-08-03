@@ -18,6 +18,8 @@ public:
 	void subtractlive();
 
 	void print_lives(int lives, sf::RenderWindow& windowRef);
+
+	bool nomorelives();
 	
 
 private:
