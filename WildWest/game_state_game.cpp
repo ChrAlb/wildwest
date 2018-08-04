@@ -297,10 +297,9 @@ void GameStateGame::spawnRandomEnemies()
 	//unschön!
 	int maxlevelsize = (m_LM.getLevelSize().x * TILE_SIZE) - TILE_SIZE;
 	
-	//srand((int)time(0) * 10);
-
-	int random = rand() % 5000	+ 1;
-	if (random == 1000)
+	
+	int random = rand() % 3000	+ 1;
+	if (random == 3000)
 	{
 		enemy = new Enemy();
 		

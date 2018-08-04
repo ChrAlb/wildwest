@@ -120,13 +120,6 @@ void Enemy::update(float dt, Vector2f Plpos)
 	}
 
 
-	
-
-
-
-
-
-
 	FloatRect r = getPosition();
 
 	// Feet
