@@ -87,6 +87,7 @@ void GameStateGame::update(const float dt)
 	{
 		//oldpos = (*iter)->getCenter().x;
 		//oldpos = 150;
+		// Hier alle Objects löschen!?
 		m_newlevelrequiered = false;
 		loadLevel();
 		
@@ -296,6 +297,8 @@ void GameStateGame::spawnRandomEnemies()
 	//unschön!
 	int maxlevelsize = (m_LM.getLevelSize().x * TILE_SIZE) - TILE_SIZE;
 	
+	//srand((int)time(0) * 10);
+
 	int random = rand() % 5000	+ 1;
 	if (random == 1000)
 	{

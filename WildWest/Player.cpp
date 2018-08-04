@@ -47,6 +47,8 @@ Player::Player()
 
 	m_explosion_counter = 0;
 
+	dir.x = 1;
+
 	//Player::
 	
 }
