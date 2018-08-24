@@ -3,6 +3,8 @@
 #include <functional>
 #include <unordered_map>
 #include "BaseState.h"
+#include "game.h"
+
 
 
 enum class StateType{ Intro = 1, MainMenu, Game, Paused, GameOver, Credits };
@@ -16,7 +18,7 @@ using StateFactory = std::unordered_map<StateType, std::function<BaseState*(void
 
 class StateManager{
 public:
-	StateManager();
+	StateManager(Game *l_game);
 	~StateManager();
 
 	void Update(const sf::Time& l_time);
@@ -44,7 +46,7 @@ private:
 	}
 
 	// Members.
-	
+	Game *m_game;
 	StateContainer m_states;
 	TypeContainer m_toRemove;
 	StateFactory m_stateFactory;
