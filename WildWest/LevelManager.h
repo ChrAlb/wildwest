@@ -18,7 +18,7 @@ struct leveldate
 
 };
 
-
+ 
 class LevelManager
 {
 private:
