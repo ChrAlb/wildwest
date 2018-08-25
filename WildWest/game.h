@@ -12,6 +12,9 @@ class Game
 
 public:
 	
+	Game();
+	~Game();
+
 	std::stack<GameState*> states;
 
 	RenderWindow window;
@@ -19,10 +22,9 @@ public:
 	sf::Clock m_clock;
 	sf::Time m_elapsed;
 
-	Game();
-	~Game();
+	
 
-	void HandleInput();
+	//void HandleInput();
 	void Update();
 	void Render();
 	void LateUpdate();

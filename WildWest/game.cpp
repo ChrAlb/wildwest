@@ -11,7 +11,8 @@
 
 
 
-Game::Game()
+Game::Game() : m_stateManager()
+
 {
 	Vector2f resolution;
 	resolution.x = VideoMode::getDesktopMode().width;

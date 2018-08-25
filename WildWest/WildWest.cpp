@@ -26,7 +26,7 @@ int main()
 
 	while (game.window.isOpen())
 	{
-		game.HandleInput();
+		//game.HandleInput();
 		game.Update();
 		game.Render();
 		game.LateUpdate();
