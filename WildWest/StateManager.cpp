@@ -1,6 +1,6 @@
 #include "StateManager.h"
 
-StateManager::StateManager(Game *l_game) : m_game(l_game)
+StateManager::StateManager(RenderWindow *window) : m_window(window)
 	
 {
 	//RegisterState<State_Intro>(StateType::Intro);
@@ -47,7 +47,7 @@ void StateManager::Draw(){
 			--itr;
 		}
 		for(; itr != m_states.end(); ++itr){
-			m_game->window.setView(itr->second->GetView());
+			m_window->setView(itr->second->GetView());
 			itr->second->Draw();
 		}
 	} else {
@@ -88,7 +88,7 @@ void StateManager::SwitchTo(const StateType& l_type){
 			m_states.erase(itr);
 			m_states.emplace_back(tmp_type, tmp_state);
 			tmp_state->Activate();
-			m_game->window.setView(tmp_state->GetView());
+			m_window->setView(tmp_state->GetView());
 			return;
 		}
 	}
@@ -97,7 +97,7 @@ void StateManager::SwitchTo(const StateType& l_type){
 	if (!m_states.empty()){ m_states.back().second->Deactivate(); }
 	CreateState(l_type);
 	m_states.back().second->Activate();
-	m_game->window.setView(m_states.back().second->GetView());
+	m_window->setView(m_states.back().second->GetView());
 }
 
 void StateManager::Remove(const StateType& l_type){
@@ -110,7 +110,7 @@ void StateManager::CreateState(const StateType& l_type){
 	auto newState = m_stateFactory.find(l_type);
 	if (newState == m_stateFactory.end()){ return; }
 	BaseState* state = newState->second();
-	state->m_view = m_game->window.getDefaultView();
+	state->m_view = m_window->getDefaultView();
 	m_states.emplace_back(l_type, state);
 	state->OnCreate();
 }

@@ -18,7 +18,7 @@ using StateFactory = std::unordered_map<StateType, std::function<BaseState*(void
 
 class StateManager{
 public:
-	StateManager(Game *l_game);
+	StateManager(RenderWindow *window);
 	~StateManager();
 
 	void Update(const sf::Time& l_time);
@@ -46,7 +46,7 @@ private:
 	}
 
 	// Members.
-	Game *m_game;
+	RenderWindow* m_window;
 	StateContainer m_states;
 	TypeContainer m_toRemove;
 	StateFactory m_stateFactory;

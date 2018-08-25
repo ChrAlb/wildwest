@@ -11,7 +11,7 @@
 
 
 
-Game::Game() : m_stateManager()
+Game::Game() : m_stateManager(&window)
 
 {
 	Vector2f resolution;

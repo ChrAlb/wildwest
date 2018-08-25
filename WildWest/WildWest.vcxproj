@@ -170,6 +170,7 @@
     <ClInclude Include="ResourceIdentifiers.h" />
     <ClInclude Include="SoundPlayer.h" />
     <ClInclude Include="StateManager.h" />
+    <ClInclude Include="State_Intro.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -192,6 +193,7 @@
     <ClCompile Include="PlayerInfo.cpp" />
     <ClCompile Include="SoundPlayer.cpp" />
     <ClCompile Include="StateManager.cpp" />
+    <ClCompile Include="State_Intro.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

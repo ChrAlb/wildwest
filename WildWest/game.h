@@ -1,7 +1,6 @@
 #pragma once
 
 #include <stack>
-#include <SFML\Graphics.hpp>
 #include "StateManager.h"
 
 #include "LevelManager.h"
@@ -15,15 +14,11 @@ public:
 	Game();
 	~Game();
 
-	std::stack<GameState*> states;
+	Clock m_clock;
+	Time m_elapsed;
 
 	RenderWindow window;
-
-	sf::Clock m_clock;
-	sf::Time m_elapsed;
-
 	
-
 	//void HandleInput();
 	void Update();
 	void Render();
@@ -31,6 +26,5 @@ public:
 
 
 private:
-
 	StateManager m_stateManager;
 };
