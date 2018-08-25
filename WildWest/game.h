@@ -2,15 +2,13 @@
 
 #include <stack>
 #include <SFML\Graphics.hpp>
-//#include "TextureHolder.h"
+#include "StateManager.h"
 
 #include "LevelManager.h"
 
-class GameState;
 
 class Game
 {
-private:
 
 public:
 	
@@ -18,13 +16,19 @@ public:
 
 	RenderWindow window;
 
-	void pushState(GameState* state);
-	void popState();
-	void changeState(GameState* state);
-	GameState* peekState();
-
-	void gameLoop();
+	sf::Clock m_clock;
+	sf::Time m_elapsed;
 
 	Game();
 	~Game();
+
+	void HandleInput();
+	void Update();
+	void Render();
+	void LateUpdate();
+
+
+private:
+
+	StateManager m_stateManager;
 };

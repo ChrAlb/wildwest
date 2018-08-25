@@ -20,12 +20,20 @@ Github:  https://github.com/ChrAlb/wildwest
 int main()
 {
 	Game game;
-
+   
 	srand(time(NULL));
 
-	game.pushState(new GameStateStart(&game));
 
-    game.gameLoop();
+	while (game.window.isOpen())
+	{
+		game.HandleInput();
+		game.Update();
+		game.Render();
+		game.LateUpdate();
+
+	}
+	
+    
 	return 0;
 }
 
