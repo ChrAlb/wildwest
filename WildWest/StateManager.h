@@ -27,7 +27,7 @@ public:
 	void ProcessRequests();
 
 	
-
+	 
 	bool HasState(const StateType& l_type);
 
 	void SwitchTo(const StateType& l_type);
